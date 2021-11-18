@@ -21,14 +21,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="310.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="jII-oG-K31">
-                                        <rect key="frame" x="107" y="77" width="200" height="187"/>
+                                        <rect key="frame" x="107" y="62" width="200" height="187"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="E9R-CN-vd2" secondAttribute="height" multiplier="1:0.75" id="0Ap-m5-gi4"/>
                                     <constraint firstItem="jII-oG-K31" firstAttribute="centerX" secondItem="E9R-CN-vd2" secondAttribute="centerX" id="Qvv-g7-g3P"/>
-                                    <constraint firstItem="jII-oG-K31" firstAttribute="centerY" secondItem="E9R-CN-vd2" secondAttribute="centerY" constant="15" id="URr-7b-kxd"/>
+                                    <constraint firstItem="jII-oG-K31" firstAttribute="centerY" secondItem="E9R-CN-vd2" secondAttribute="centerY" id="URr-7b-kxd"/>
                                     <constraint firstItem="jII-oG-K31" firstAttribute="width" secondItem="E9R-CN-vd2" secondAttribute="width" multiplier="200:414" id="jOa-k4-vVY"/>
                                 </constraints>
                             </view>
