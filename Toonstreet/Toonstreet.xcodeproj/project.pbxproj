@@ -1,0 +1,561 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8A8D7EA52746BCCE0073E261 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D7EA42746BCCE0073E261 /* AppDelegate.swift */; };
+		8A8D7EA72746BCCE0073E261 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D7EA62746BCCE0073E261 /* SceneDelegate.swift */; };
+		8A8D7EAC2746BCCE0073E261 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D7EAA2746BCCE0073E261 /* Main.storyboard */; };
+		8A8D7EAE2746BCCF0073E261 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D7EAD2746BCCF0073E261 /* Assets.xcassets */; };
+		8A8D7EB12746BCCF0073E261 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D7EAF2746BCCF0073E261 /* LaunchScreen.storyboard */; };
+		8A8D7EB92746BCFB0073E261 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D7EB82746BCFB0073E261 /* GoogleService-Info.plist */; };
+		8A8D7EBD2746BE2A0073E261 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D7EBC2746BE2A0073E261 /* BaseViewController.swift */; };
+		8A8D7EC22746BFCC0073E261 /* TSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D7EC12746BFCC0073E261 /* TSTextField.swift */; };
+		8A8D7EC42746C0410073E261 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D7EC32746C0410073E261 /* LoginViewController.swift */; };
+		8A8D7ECD2746C8D90073E261 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D7ECB2746C8D90073E261 /* Constant.swift */; };
+		8A8D7ECE2746C8D90073E261 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D7ECC2746C8D90073E261 /* Extension.swift */; };
+		8A8D7ED02746C8EC0073E261 /* TSLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D7ECF2746C8EC0073E261 /* TSLoader.swift */; };
+		8A8D7ED12746D4280073E261 /* AvenirLTStd-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D7EC92746C7110073E261 /* AvenirLTStd-Black.otf */; };
+		8A8D7ED22746D4280073E261 /* NunitoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D7EC72746C6450073E261 /* NunitoSans-Bold.ttf */; };
+		8A8D7ED32746D4280073E261 /* NunitoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D7EC82746C6CD0073E261 /* NunitoSans-Regular.ttf */; };
+		8A8D7ED42746D4280073E261 /* AvenirLTStd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D7ECA2746C7110073E261 /* AvenirLTStd-Book.otf */; };
+		8A8D7ED82746D4590073E261 /* TSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D7ED52746D4590073E261 /* TSButton.swift */; };
+		8A8D7ED92746D4590073E261 /* TSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D7ED62746D4590073E261 /* TSLabel.swift */; };
+		8A8D7EDA2746D4590073E261 /* TSNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D7ED72746D4590073E261 /* TSNavigationBar.swift */; };
+		8A8D7EDC2746D8670073E261 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D7EDB2746D8670073E261 /* ValidationService.swift */; };
+		8A8D7EDF2746DBD30073E261 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D7EDE2746DBD30073E261 /* TabBarController.swift */; };
+		8A8D7EE22746E3140073E261 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D7EE12746E3140073E261 /* SignupViewController.swift */; };
+		9DBFF594EC95984D7A1EBEDC /* Pods_Toonstreet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06AC0994BB852D3AC488D49A /* Pods_Toonstreet.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		06AC0994BB852D3AC488D49A /* Pods_Toonstreet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Toonstreet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A8D7EA12746BCCE0073E261 /* Toonstreet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Toonstreet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A8D7EA42746BCCE0073E261 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8A8D7EA62746BCCE0073E261 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8A8D7EAB2746BCCE0073E261 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8A8D7EAD2746BCCF0073E261 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8A8D7EB02746BCCF0073E261 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8A8D7EB22746BCCF0073E261 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A8D7EB82746BCFB0073E261 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8A8D7EBC2746BE2A0073E261 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		8A8D7EC12746BFCC0073E261 /* TSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSTextField.swift; sourceTree = "<group>"; };
+		8A8D7EC32746C0410073E261 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8A8D7EC72746C6450073E261 /* NunitoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Bold.ttf"; sourceTree = "<group>"; };
+		8A8D7EC82746C6CD0073E261 /* NunitoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Regular.ttf"; sourceTree = "<group>"; };
+		8A8D7EC92746C7110073E261 /* AvenirLTStd-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Black.otf"; sourceTree = "<group>"; };
+		8A8D7ECA2746C7110073E261 /* AvenirLTStd-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Book.otf"; sourceTree = "<group>"; };
+		8A8D7ECB2746C8D90073E261 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		8A8D7ECC2746C8D90073E261 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		8A8D7ECF2746C8EC0073E261 /* TSLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSLoader.swift; sourceTree = "<group>"; };
+		8A8D7ED52746D4590073E261 /* TSButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSButton.swift; sourceTree = "<group>"; };
+		8A8D7ED62746D4590073E261 /* TSLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSLabel.swift; sourceTree = "<group>"; };
+		8A8D7ED72746D4590073E261 /* TSNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSNavigationBar.swift; sourceTree = "<group>"; };
+		8A8D7EDB2746D8670073E261 /* ValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
+		8A8D7EDE2746DBD30073E261 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		8A8D7EE12746E3140073E261 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		AB3D1FD60C1563D85DDADEA5 /* Pods-Toonstreet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Toonstreet.debug.xcconfig"; path = "Target Support Files/Pods-Toonstreet/Pods-Toonstreet.debug.xcconfig"; sourceTree = "<group>"; };
+		C2A41D6B45D93EDAF33971B6 /* Pods-Toonstreet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Toonstreet.release.xcconfig"; path = "Target Support Files/Pods-Toonstreet/Pods-Toonstreet.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8A8D7E9E2746BCCE0073E261 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DBFF594EC95984D7A1EBEDC /* Pods_Toonstreet.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5ED2377708D26E4568B573AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				06AC0994BB852D3AC488D49A /* Pods_Toonstreet.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A8D7E982746BCCE0073E261 = {
+			isa = PBXGroup;
+			children = (
+				8A8D7EA32746BCCE0073E261 /* Toonstreet */,
+				8A8D7EA22746BCCE0073E261 /* Products */,
+				C7C79FB2E898991FEFA6D71C /* Pods */,
+				5ED2377708D26E4568B573AE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8A8D7EA22746BCCE0073E261 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A8D7EA12746BCCE0073E261 /* Toonstreet.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8A8D7EA32746BCCE0073E261 /* Toonstreet */ = {
+			isa = PBXGroup;
+			children = (
+				8A8D7EC62746C6320073E261 /* Assets */,
+				8A8D7EC52746C4C80073E261 /* Utils */,
+				8A8D7EC02746BF910073E261 /* Controllers */,
+				8A8D7EBA2746BD3E0073E261 /* ViewController */,
+				8A8D7EB82746BCFB0073E261 /* GoogleService-Info.plist */,
+				8A8D7EA42746BCCE0073E261 /* AppDelegate.swift */,
+				8A8D7EA62746BCCE0073E261 /* SceneDelegate.swift */,
+				8A8D7EAA2746BCCE0073E261 /* Main.storyboard */,
+				8A8D7EAD2746BCCF0073E261 /* Assets.xcassets */,
+				8A8D7EAF2746BCCF0073E261 /* LaunchScreen.storyboard */,
+				8A8D7EB22746BCCF0073E261 /* Info.plist */,
+			);
+			path = Toonstreet;
+			sourceTree = "<group>";
+		};
+		8A8D7EBA2746BD3E0073E261 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8A8D7EE02746E3000073E261 /* SignupViewController */,
+				8A8D7EDD2746DBB20073E261 /* TabBarController */,
+				8A8D7EBF2746BE420073E261 /* LoginViewController */,
+				8A8D7EBB2746BE140073E261 /* BaseViewController */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8A8D7EBB2746BE140073E261 /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8A8D7EBC2746BE2A0073E261 /* BaseViewController.swift */,
+			);
+			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		8A8D7EBF2746BE420073E261 /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8A8D7EC32746C0410073E261 /* LoginViewController.swift */,
+			);
+			path = LoginViewController;
+			sourceTree = "<group>";
+		};
+		8A8D7EC02746BF910073E261 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8A8D7EC12746BFCC0073E261 /* TSTextField.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8A8D7EC52746C4C80073E261 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8A8D7EDB2746D8670073E261 /* ValidationService.swift */,
+				8A8D7ED52746D4590073E261 /* TSButton.swift */,
+				8A8D7ED62746D4590073E261 /* TSLabel.swift */,
+				8A8D7ED72746D4590073E261 /* TSNavigationBar.swift */,
+				8A8D7ECB2746C8D90073E261 /* Constant.swift */,
+				8A8D7ECC2746C8D90073E261 /* Extension.swift */,
+				8A8D7ECF2746C8EC0073E261 /* TSLoader.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		8A8D7EC62746C6320073E261 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				8A8D7EC72746C6450073E261 /* NunitoSans-Bold.ttf */,
+				8A8D7EC92746C7110073E261 /* AvenirLTStd-Black.otf */,
+				8A8D7ECA2746C7110073E261 /* AvenirLTStd-Book.otf */,
+				8A8D7EC82746C6CD0073E261 /* NunitoSans-Regular.ttf */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		8A8D7EDD2746DBB20073E261 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				8A8D7EDE2746DBD30073E261 /* TabBarController.swift */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		8A8D7EE02746E3000073E261 /* SignupViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8A8D7EE12746E3140073E261 /* SignupViewController.swift */,
+			);
+			path = SignupViewController;
+			sourceTree = "<group>";
+		};
+		C7C79FB2E898991FEFA6D71C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AB3D1FD60C1563D85DDADEA5 /* Pods-Toonstreet.debug.xcconfig */,
+				C2A41D6B45D93EDAF33971B6 /* Pods-Toonstreet.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8A8D7EA02746BCCE0073E261 /* Toonstreet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A8D7EB52746BCCF0073E261 /* Build configuration list for PBXNativeTarget "Toonstreet" */;
+			buildPhases = (
+				73D800AD5E04AA09EA9B2413 /* [CP] Check Pods Manifest.lock */,
+				8A8D7E9D2746BCCE0073E261 /* Sources */,
+				8A8D7E9E2746BCCE0073E261 /* Frameworks */,
+				8A8D7E9F2746BCCE0073E261 /* Resources */,
+				975F5D38C352D9FEC74290B5 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Toonstreet;
+			productName = Toonstreet;
+			productReference = 8A8D7EA12746BCCE0073E261 /* Toonstreet.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8A8D7E992746BCCE0073E261 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					8A8D7EA02746BCCE0073E261 = {
+						CreatedOnToolsVersion = 13.0;
+					};
+				};
+			};
+			buildConfigurationList = 8A8D7E9C2746BCCE0073E261 /* Build configuration list for PBXProject "Toonstreet" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8A8D7E982746BCCE0073E261;
+			productRefGroup = 8A8D7EA22746BCCE0073E261 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8A8D7EA02746BCCE0073E261 /* Toonstreet */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8A8D7E9F2746BCCE0073E261 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A8D7EB12746BCCF0073E261 /* LaunchScreen.storyboard in Resources */,
+				8A8D7EB92746BCFB0073E261 /* GoogleService-Info.plist in Resources */,
+				8A8D7EAE2746BCCF0073E261 /* Assets.xcassets in Resources */,
+				8A8D7ED42746D4280073E261 /* AvenirLTStd-Book.otf in Resources */,
+				8A8D7ED32746D4280073E261 /* NunitoSans-Regular.ttf in Resources */,
+				8A8D7ED22746D4280073E261 /* NunitoSans-Bold.ttf in Resources */,
+				8A8D7ED12746D4280073E261 /* AvenirLTStd-Black.otf in Resources */,
+				8A8D7EAC2746BCCE0073E261 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		73D800AD5E04AA09EA9B2413 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Toonstreet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		975F5D38C352D9FEC74290B5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Toonstreet/Pods-Toonstreet-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Toonstreet/Pods-Toonstreet-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Toonstreet/Pods-Toonstreet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8A8D7E9D2746BCCE0073E261 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A8D7EDA2746D4590073E261 /* TSNavigationBar.swift in Sources */,
+				8A8D7EDF2746DBD30073E261 /* TabBarController.swift in Sources */,
+				8A8D7EBD2746BE2A0073E261 /* BaseViewController.swift in Sources */,
+				8A8D7EDC2746D8670073E261 /* ValidationService.swift in Sources */,
+				8A8D7ED92746D4590073E261 /* TSLabel.swift in Sources */,
+				8A8D7EA52746BCCE0073E261 /* AppDelegate.swift in Sources */,
+				8A8D7ED82746D4590073E261 /* TSButton.swift in Sources */,
+				8A8D7ECE2746C8D90073E261 /* Extension.swift in Sources */,
+				8A8D7EE22746E3140073E261 /* SignupViewController.swift in Sources */,
+				8A8D7EA72746BCCE0073E261 /* SceneDelegate.swift in Sources */,
+				8A8D7EC42746C0410073E261 /* LoginViewController.swift in Sources */,
+				8A8D7EC22746BFCC0073E261 /* TSTextField.swift in Sources */,
+				8A8D7ECD2746C8D90073E261 /* Constant.swift in Sources */,
+				8A8D7ED02746C8EC0073E261 /* TSLoader.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8A8D7EAA2746BCCE0073E261 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A8D7EAB2746BCCE0073E261 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8A8D7EAF2746BCCF0073E261 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A8D7EB02746BCCF0073E261 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8A8D7EB32746BCCF0073E261 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8A8D7EB42746BCCF0073E261 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8A8D7EB62746BCCF0073E261 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB3D1FD60C1563D85DDADEA5 /* Pods-Toonstreet.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Toonstreet/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Sholom-Scheiner.Toonstreet";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8A8D7EB72746BCCF0073E261 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2A41D6B45D93EDAF33971B6 /* Pods-Toonstreet.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Toonstreet/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Sholom-Scheiner.Toonstreet";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8A8D7E9C2746BCCE0073E261 /* Build configuration list for PBXProject "Toonstreet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A8D7EB32746BCCF0073E261 /* Debug */,
+				8A8D7EB42746BCCF0073E261 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A8D7EB52746BCCF0073E261 /* Build configuration list for PBXNativeTarget "Toonstreet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A8D7EB62746BCCF0073E261 /* Debug */,
+				8A8D7EB72746BCCF0073E261 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8A8D7E992746BCCE0073E261 /* Project object */;
+}

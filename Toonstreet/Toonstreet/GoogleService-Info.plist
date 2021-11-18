@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>750957201990-8efj1jj1nifhhngs3vo1s9as255cnrvc.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.750957201990-8efj1jj1nifhhngs3vo1s9as255cnrvc</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDG573WMFa6FM0Z8dhljLCjpmf94aH-Vk0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>750957201990</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.toonstreet.comic</string>
+	<key>PROJECT_ID</key>
+	<string>toonstreetbackend</string>
+	<key>STORAGE_BUCKET</key>
+	<string>toonstreetbackend.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:750957201990:ios:6ca1e44fba8b638b009847</string>
+</dict>
+</plist>
