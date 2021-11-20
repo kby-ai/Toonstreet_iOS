@@ -99,9 +99,9 @@ extension UIFont {
     class func font_bold(_ size : CGFloat) -> UIFont {
         return UIFont(name: kFontBold, size: size+delatFontSize)!;
     }
-//    class func font_extrabold(_ size : CGFloat) -> UIFont {
-//        return UIFont(name: kFontExtraBold, size: size+delatFontSize)!;
-//    }
+    class func font_extrabold(_ size : CGFloat) -> UIFont {
+        return UIFont(name: kFontExtraBold, size: size+delatFontSize)!;
+    }
 //    class func font_light(_ size : CGFloat) -> UIFont {
 //        return UIFont(name: kFontLight, size: size+delatFontSize)!;
 //    }
@@ -111,9 +111,9 @@ extension UIFont {
     class func font_regular(_ size : CGFloat) -> UIFont {
         return UIFont(name: kFontRegular, size: size+delatFontSize)!;
     }
-//    class func font_semibold(_ size : CGFloat) -> UIFont {
-//        return UIFont(name: kFontSemiBold, size: size+delatFontSize)!;
-//    }
+    class func font_semibold(_ size : CGFloat) -> UIFont {
+        return UIFont(name: kFontSemiBold, size: size+delatFontSize)!;
+    }
 //    class func font_thin(_ size : CGFloat) -> UIFont {
 //        return UIFont(name: kFontThin, size: size+delatFontSize)!;
 //    }
@@ -226,9 +226,10 @@ extension UIView{
 
 extension UIColor {
     struct Theme {
+        static var themeLightBlackColor: UIColor { return UIColor(named: "lightBlack")! }
         static var themeBlackColor: UIColor { return UIColor(named: "themeBlack")! }
         static var textYellowColor: UIColor { return UIColor(named: "themeYellow")! }
-                
+        static var transparentBlackColor: UIColor { return UIColor(named: "transparentBlack")! }
     }
 }
 extension UIView {

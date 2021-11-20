@@ -34,7 +34,7 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        self.setupUI()
+        self.setupUI()
         // Do any additional setup after loading the view.
     }
     
@@ -96,8 +96,8 @@ class BaseViewController: UIViewController {
     }
     
     
-//    func setupUI(){
-//        self.view.backgroundColor = UIColor.Theme.themeBlackColor
-//    }
+    func setupUI(){
+        self.view.backgroundColor = UIColor.Theme.themeBlackColor
+    }
 
 }

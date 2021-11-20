@@ -3,8 +3,7 @@
 import UIKit
 
 class TSLabel: UILabel {
-    //Kavin-Update
-    private static let LabelTextColor:UIColor = UIColor.yellow
+    
     
     //MARK:- Init
     required init?(coder aDecoder: NSCoder) {
@@ -23,7 +22,6 @@ class TSLabel: UILabel {
     //MARK:- Common Init
     func commonInit() -> Void
     {
-        self.textColor = TSLabel.LabelTextColor
         self.numberOfLines = 0
         //Kavin-Update
         self.font = self.font.withSize(self.font.pointSize.proportionalFontSize());

@@ -1,0 +1,55 @@
+//
+//  ReleaseSoonTableViewCell.swift
+//  Toonstreet
+//
+//  Created by Kavin Soni on 20/11/21.
+//
+
+import UIKit
+
+class ReleaseSoonTableViewCell: TSTableViewCell {
+    
+    @IBOutlet weak var lblTitle:TSLabel!
+    @IBOutlet weak var lblSubTitle:TSLabel!
+    @IBOutlet weak var mainView:UIView!
+    @IBOutlet weak var viewCollection:UIView!
+    @IBOutlet weak var releaseSoonCollectionView:ReleaseSoonCollectionView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+        self.commonInit()
+    }
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.commonInit()
+    }
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+    }
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+    func commonInit(){
+        self.lblTitle.text = "Release Soon!"
+        self.lblTitle.numberOfLines = 0
+        self.lblTitle.textColor = UIColor.white
+        self.lblTitle.font = UIFont.appFont_Bold(Size: 18)
+        
+        
+        self.lblSubTitle.text = "Keep watching, wait for the latest manga"
+        self.lblSubTitle.numberOfLines = 0
+        self.lblSubTitle.textColor = UIColor.white
+        self.lblSubTitle.font = UIFont.appFont_FontRegular(Size: 10.0)
+        
+        
+        self.mainView.backgroundColor = UIColor.Theme.themeBlackColor
+        
+        self.viewCollection.backgroundColor = UIColor.clear
+        
+        self.releaseSoonCollectionView.loadBooks(withBooks: [TSBook(),TSBook(),TSBook()])
+    }
+}

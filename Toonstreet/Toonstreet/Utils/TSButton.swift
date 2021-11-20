@@ -65,7 +65,8 @@ class TSButton: UIButton {
             self.titleLabel?.font = UIFont.appFont_Bold(Size: CGFloat(self.titleLabel?.font.pointSize ?? 15.0))
             self.layoutIfNeeded()
             self.titleLabel?.textColor = UIColor.Theme.themeBlackColor
-            
+            self.tintColor = UIColor.white
+
             break
         case .image(image: let image):
             self.backgroundColor = UIColor.clear

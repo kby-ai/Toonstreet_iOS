@@ -23,15 +23,17 @@ typealias tblCellDelegate = UITableViewDelegate & UITableViewDataSource
 
 let AppName =  "Toonstreet"
 
-
+//Screen Bounds
+let screenHeight = UIScreen.main.bounds.height
+let screenWidth = UIScreen.main.bounds.width
 
 //MARK:- font style
 var kFontBold = "NunitoSans-Bold"
-//var kFontExtraBold = "Raleway-ExtraBold"
+var kFontExtraBold = "NunitoSans-ExtraBold"
 //var kFontLight = "Raleway-Light"
 //var kFontMedium = "Raleway-Medium"
 var kFontRegular = "NunitoSans-Regular"
-//var kFontSemiBold = "Raleway-SemiBold"
+var kFontSemiBold = "NunitoSans-SemiBold"
 //var kFontThin = "Raleway-Thin"
 var kAppLanguage:String = "es"
 

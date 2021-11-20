@@ -141,6 +141,65 @@
             </objects>
             <point key="canvasLocation" x="589.85507246376812" y="61.607142857142854"/>
         </scene>
+        <!--Home View Controller-->
+        <scene sceneID="h2g-Rp-0Cb">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gkd-kd-FEf" customClass="HomeViewController" customModule="Toonstreet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wNF-zg-MUu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CPg-fc-p0l">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Hkh-gk-9eG" customClass="HomeTableView" customModule="Toonstreet" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Hkh-gk-9eG" firstAttribute="top" secondItem="CPg-fc-p0l" secondAttribute="top" id="G2d-pi-Sxi"/>
+                                    <constraint firstItem="Hkh-gk-9eG" firstAttribute="leading" secondItem="CPg-fc-p0l" secondAttribute="leading" id="IbL-da-hvb"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hkh-gk-9eG" secondAttribute="trailing" id="Pcm-Le-tju"/>
+                                    <constraint firstAttribute="bottom" secondItem="Hkh-gk-9eG" secondAttribute="bottom" id="ZuK-jm-WaN"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kpe-0A-jzO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kpe-0A-jzO" firstAttribute="bottom" secondItem="CPg-fc-p0l" secondAttribute="bottom" id="NUG-aA-qnL"/>
+                            <constraint firstItem="CPg-fc-p0l" firstAttribute="top" secondItem="kpe-0A-jzO" secondAttribute="top" id="PtW-v2-q3R"/>
+                            <constraint firstItem="kpe-0A-jzO" firstAttribute="trailing" secondItem="CPg-fc-p0l" secondAttribute="trailing" id="gV4-pz-sbw"/>
+                            <constraint firstItem="CPg-fc-p0l" firstAttribute="leading" secondItem="kpe-0A-jzO" secondAttribute="leading" id="m5s-sl-Fzv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="WBc-cY-A4O"/>
+                    <connections>
+                        <outlet property="mainView" destination="CPg-fc-p0l" id="smo-Xn-x9m"/>
+                        <outlet property="tblHomeTableView" destination="Hkh-gk-9eG" id="dNE-5C-j9d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sov-jZ-tDO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2008.6956521739132" y="726.5625"/>
+        </scene>
+        <!--Tab Bar Controller View Controller-->
+        <scene sceneID="YLh-mz-hJ5">
+            <objects>
+                <viewController storyboardIdentifier="TSTabBarControllerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sX8-hv-HqA" customClass="TSTabBarControllerViewController" customModule="Toonstreet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1fW-3F-cwn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="glT-iY-0qj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HLc-1M-PTt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="413" y="727"/>
+        </scene>
         <!--Item 2-->
         <scene sceneID="SAq-zV-f6x">
             <objects>
@@ -155,7 +214,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fmC-6w-QWk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3179.7101449275365" y="375"/>
+            <point key="canvasLocation" x="4089.8550724637685" y="375"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="rEJ-zm-3dS">
@@ -300,6 +359,9 @@
                                                                                 </constraints>
                                                                                 <state key="normal" title="Button"/>
                                                                                 <buttonConfiguration key="configuration" style="plain"/>
+                                                                                <connections>
+                                                                                    <action selector="buttonCheckbox_clicked:" destination="uZA-d6-8pL" eventType="touchUpInside" id="E5R-7a-tvn"/>
+                                                                                </connections>
                                                                             </button>
                                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GOu-53-oo4">
                                                                                 <rect key="frame" x="40" y="0.0" width="324" height="40"/>
@@ -414,6 +476,28 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mlA-Uj-k0j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-320.28985507246381" y="61.607142857142854"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="C2u-qZ-Hio">
+            <objects>
+                <navigationController storyboardIdentifier="HomeNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Zxe-UW-Mbh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nnz-FU-N8C" customClass="TSNavigationBar" customModule="Toonstreet" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sF5-eA-PDr">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="gkd-kd-FEf" kind="relationship" relationship="rootViewController" id="unp-DK-65b"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q32-Qw-OdK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1119" y="727"/>
         </scene>
     </scenes>
     <resources>

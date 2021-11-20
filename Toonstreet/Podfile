@@ -13,5 +13,6 @@ pod 'TTTAttributedLabel'
 pod 'Firebase/Analytics'
 pod 'Firebase/Crashlytics'
 pod 'Firebase/Auth'
+pod 'PureLayout','3.1.4'
 
 end

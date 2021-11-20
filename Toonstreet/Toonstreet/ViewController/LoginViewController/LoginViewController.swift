@@ -31,12 +31,11 @@ class LoginViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.setupUI()
         // Do any additional setup after loading the view.
     }
     
     //MARK: Setup UI
-    func setupUI(){
+    override func setupUI(){
         self.txtUsername.keyboardType = .emailAddress
         self.txtPassword.isSecureTextEntry = true
         self.txtUsername.leftViewImage = UIImage.init(named: "icon")
@@ -107,11 +106,20 @@ class LoginViewController: BaseViewController {
     //MARK: Buttons Action
     
     @objc func btnSignupPush(){
-           
+        
            if let objSignupVC = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController") as? SignupViewController{
                self.navigationController?.pushViewController(objSignupVC, animated: true )
            }
-       }
+        
+    
+//        #warning("Redirect To Home Screen Code")
+        
+//        if let objTabbar = self.storyboard?.instantiateViewController(withIdentifier: "TSTabBarControllerViewController") as? TSTabBarControllerViewController{
+//            appDelegate.window?.rootViewController = objTabbar
+//            //self.navigationController?.pushViewController(objSignupVC, animated: true )
+//        }
+         
+    }
     
     
     @IBAction func btnForgotPasswordClicked(_ sender: Any) {
@@ -139,19 +147,19 @@ class LoginViewController: BaseViewController {
                 do{
                     let emailStr = try self.isEmptyCheckEmail(email)
                     let passwordStr = try self.validatePassword(password)
-//                    TSLoader.shared.showLoader()
+                    TSLoader.shared.showLoader()
         
                     Auth.auth().signIn(withEmail: emailStr, password: passwordStr) { [weak self] authResult, error in
         //              guard let strongSelf = self else { return }
                         if error != nil{
-//                            TSLoader.shared.hideLoader()
+                            TSLoader.shared.hideLoader()
                             completion(.failure(error!))
 //                            TSLoader.shared.hideLoader()
                             UIAlertController.alert(message: error!.localizedDescription)
                         }else{
                 
         
-//                            TSLoader.shared.hideLoader()
+                            TSLoader.shared.hideLoader()
 //                            UserDefaults.standard.set(true, forKey: "isLogin") //Bool
 //                            UserDefaults.standard.synchronize()
                             completion(.success(true))
@@ -160,7 +168,7 @@ class LoginViewController: BaseViewController {
                     }
         
                 }catch {
-//                    TSLoader.shared.hideLoader()
+                    TSLoader.shared.hideLoader()
                     UIAlertController.alert(message: error.localizedDescription)
                     completion(.failure(error))
                 }
@@ -201,8 +209,15 @@ class LoginViewController: BaseViewController {
     func loginSuccess() {
         
         print("Login Success")
-        let tabBar:TabBarController = UIStoryboard(storyboard: .Main).instantiateViewController()
-        self.navigationController?.pushViewController(tabBar, animated: true)
+        
+        if let objTabbar = self.storyboard?.instantiateViewController(withIdentifier: "TSTabBarControllerViewController") as? TSTabBarControllerViewController{
+            appDelegate.window?.rootViewController = objTabbar
+            //self.navigationController?.pushViewController(objSignupVC, animated: true )
+        }
+        
+        
+//        let tabBar:TabBarController = UIStoryboard(storyboard: .Main).instantiateViewController()
+//        self.navigationController?.pushViewController(tabBar, animated: true)
     }
 
     //Handle Error

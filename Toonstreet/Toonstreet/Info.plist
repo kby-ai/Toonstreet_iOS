@@ -27,6 +27,8 @@
 		<string>NunitoSans-Regular.ttf</string>
 		<string>AvenirLTStd-Black.otf</string>
 		<string>AvenirLTStd-Book.otf</string>
+		<string>NunitoSans-ExtraBold.ttf</string>
+		<string>NunitoSans-SemiBold.ttf</string>
 	</array>
 </dict>
 </plist>
