@@ -9,6 +9,8 @@ import UIKit
 
 class HomeViewController: BaseViewController {
 
+   
+    
     //MARK: - IBOutlet
     @IBOutlet weak var tblHomeTableView:HomeTableView!
     @IBOutlet weak var mainView:UIView!
@@ -26,6 +28,13 @@ class HomeViewController: BaseViewController {
         mainView.backgroundColor = UIColor.Theme.themeBlackColor
          self.view.backgroundColor = UIColor.Theme.themeBlackColor
         tblHomeTableView.setTableViewData()
+         tblHomeTableView.closerForTableView = { [unowned self](index) in 
+             
+                if let objDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController{
+                    self.navigationController?.pushViewController(objDetailViewController, animated: true )
+                }
+             
+         }
     }
     /*
     // MARK: - Navigation

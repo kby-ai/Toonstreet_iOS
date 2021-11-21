@@ -14,6 +14,9 @@ class HomeTableView: TSTableView {
         case ReleaseSoon
     }
     
+    typealias onCompletionHandler = (Int) -> Void
+    var closerForTableView:onCompletionHandler?
+    
     var aryHomeTypes:[HomeType] = [.ResumeReading,.UpdateComics]
 
     override init(frame: CGRect, style: UITableView.Style) {
@@ -95,7 +98,9 @@ extension HomeTableView:UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             
-            
+        if closerForTableView != nil{
+            closerForTableView!(indexPath.row)
+        }
         }
     
 }

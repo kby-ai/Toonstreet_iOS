@@ -56,6 +56,10 @@
 		8A8D7EDC2746D8670073E261 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D7EDB2746D8670073E261 /* ValidationService.swift */; };
 		8A8D7EDF2746DBD30073E261 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D7EDE2746DBD30073E261 /* TabBarController.swift */; };
 		8A8D7EE22746E3140073E261 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D7EE12746E3140073E261 /* SignupViewController.swift */; };
+		8AB7ECCE27494E9800455B31 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB7ECCD27494E9800455B31 /* DetailViewController.swift */; };
+		8AB7ECD32749549C00455B31 /* TSScollViewSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB7ECD22749549C00455B31 /* TSScollViewSegment.swift */; };
+		8AB7ECD727496CE200455B31 /* EpisodesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB7ECD527496CE200455B31 /* EpisodesTableCell.swift */; };
+		8AB7ECD827496CE200455B31 /* EpisodesTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AB7ECD627496CE200455B31 /* EpisodesTableCell.xib */; };
 		9DBFF594EC95984D7A1EBEDC /* Pods_Toonstreet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06AC0994BB852D3AC488D49A /* Pods_Toonstreet.framework */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +116,10 @@
 		8A8D7EDB2746D8670073E261 /* ValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 		8A8D7EDE2746DBD30073E261 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		8A8D7EE12746E3140073E261 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		8AB7ECCD27494E9800455B31 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		8AB7ECD22749549C00455B31 /* TSScollViewSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSScollViewSegment.swift; sourceTree = "<group>"; };
+		8AB7ECD527496CE200455B31 /* EpisodesTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesTableCell.swift; sourceTree = "<group>"; };
+		8AB7ECD627496CE200455B31 /* EpisodesTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodesTableCell.xib; sourceTree = "<group>"; };
 		AB3D1FD60C1563D85DDADEA5 /* Pods-Toonstreet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Toonstreet.debug.xcconfig"; path = "Target Support Files/Pods-Toonstreet/Pods-Toonstreet.debug.xcconfig"; sourceTree = "<group>"; };
 		C2A41D6B45D93EDAF33971B6 /* Pods-Toonstreet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Toonstreet.release.xcconfig"; path = "Target Support Files/Pods-Toonstreet/Pods-Toonstreet.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -258,6 +266,7 @@
 		8A8D7EBA2746BD3E0073E261 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				8AB7ECCC27494E7600455B31 /* DetailViewController */,
 				4904925D2748EF86008827DF /* HomeViewController */,
 				8A8D7EE02746E3000073E261 /* SignupViewController */,
 				8A8D7EDD2746DBB20073E261 /* TabBarController */,
@@ -286,6 +295,7 @@
 		8A8D7EC02746BF910073E261 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8AB7ECCF2749546B00455B31 /* TSScollViewSegment */,
 				490492582748EEED008827DF /* TSTableView */,
 				490492572748EEED008827DF /* TSTableViewCell */,
 				4904924F2748E388008827DF /* TSTabbarController */,
@@ -337,6 +347,32 @@
 				8A8D7EE12746E3140073E261 /* SignupViewController.swift */,
 			);
 			path = SignupViewController;
+			sourceTree = "<group>";
+		};
+		8AB7ECCC27494E7600455B31 /* DetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8AB7ECD427496CBA00455B31 /* EpisodesTableCell */,
+				8AB7ECCD27494E9800455B31 /* DetailViewController.swift */,
+			);
+			path = DetailViewController;
+			sourceTree = "<group>";
+		};
+		8AB7ECCF2749546B00455B31 /* TSScollViewSegment */ = {
+			isa = PBXGroup;
+			children = (
+				8AB7ECD22749549C00455B31 /* TSScollViewSegment.swift */,
+			);
+			path = TSScollViewSegment;
+			sourceTree = "<group>";
+		};
+		8AB7ECD427496CBA00455B31 /* EpisodesTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				8AB7ECD527496CE200455B31 /* EpisodesTableCell.swift */,
+				8AB7ECD627496CE200455B31 /* EpisodesTableCell.xib */,
+			);
+			path = EpisodesTableCell;
 			sourceTree = "<group>";
 		};
 		C7C79FB2E898991FEFA6D71C /* Pods */ = {
@@ -418,6 +454,7 @@
 				8A8D7ED42746D4280073E261 /* AvenirLTStd-Book.otf in Resources */,
 				8A8D7ED32746D4280073E261 /* NunitoSans-Regular.ttf in Resources */,
 				4904926D274910A3008827DF /* ResumeReadingCollectionViewCell.xib in Resources */,
+				8AB7ECD827496CE200455B31 /* EpisodesTableCell.xib in Resources */,
 				8A8D7ED22746D4280073E261 /* NunitoSans-Bold.ttf in Resources */,
 				4904928B27493337008827DF /* ReleaseSoonCollectionViewCell.xib in Resources */,
 				4904928527492EB5008827DF /* ReleaseSoonTableViewCell.xib in Resources */,
@@ -477,10 +514,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4904927127491136008827DF /* TSModel.swift in Sources */,
+				8AB7ECCE27494E9800455B31 /* DetailViewController.swift in Sources */,
 				490492872749311C008827DF /* ReleaseSoonCollectionView.swift in Sources */,
 				490492612748EFD1008827DF /* HomeTableView.swift in Sources */,
 				8A8D7EDA2746D4590073E261 /* TSNavigationBar.swift in Sources */,
 				8A8D7EDF2746DBD30073E261 /* TabBarController.swift in Sources */,
+				8AB7ECD727496CE200455B31 /* EpisodesTableCell.swift in Sources */,
 				490492672748F23C008827DF /* ResumeReadingTableViewCell.swift in Sources */,
 				8A8D7EBD2746BE2A0073E261 /* BaseViewController.swift in Sources */,
 				8A8D7EDC2746D8670073E261 /* ValidationService.swift in Sources */,
@@ -506,6 +545,7 @@
 				4904927427491172008827DF /* TSBook.swift in Sources */,
 				8A8D7ECD2746C8D90073E261 /* Constant.swift in Sources */,
 				4904926F274910B8008827DF /* ResumeReadingCollectionView.swift in Sources */,
+				8AB7ECD32749549C00455B31 /* TSScollViewSegment.swift in Sources */,
 				4904927A27492456008827DF /* UpdateComicTableViewCell.swift in Sources */,
 				4904928427492EB5008827DF /* ReleaseSoonTableViewCell.swift in Sources */,
 				8A8D7ED02746C8EC0073E261 /* TSLoader.swift in Sources */,

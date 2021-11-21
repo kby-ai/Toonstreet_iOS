@@ -68,7 +68,16 @@ var icon: UIImage? {
         return UIViewController()
     }
     private func ProfileViewController()->UIViewController{
+        
+        
     #warning("Replace with Your Original Controller")
+        
+//                    let storyboard = UIStoryboard.init(storyboard: UIStoryboard.Storyboard.Main, bundle: nil)
+//                if let objProfileVC = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController{
+//                    return objProfileVC
+//                }
+//                return UIViewController()
+        
             let storyboard = UIStoryboard.init(storyboard: UIStoryboard.Storyboard.Main, bundle: nil)
         if let objProfileVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController{
             return objProfileVC
