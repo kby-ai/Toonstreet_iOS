@@ -28,13 +28,18 @@ class HomeViewController: BaseViewController {
         mainView.backgroundColor = UIColor.Theme.themeBlackColor
          self.view.backgroundColor = UIColor.Theme.themeBlackColor
         tblHomeTableView.setTableViewData()
-         tblHomeTableView.closerForTableView = { [unowned self](index) in 
-             
-                if let objDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController{
-                    self.navigationController?.pushViewController(objDetailViewController, animated: true )
-                }
-             
-         }
+        
+        tblHomeTableView.didSelectCellItem { [weak self] (type, book) in
+            self?.openDetailScreen()
+        }
+    }
+    private func openDetailScreen(){
+        print("Data")
+        
+        if let objDetailView = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController{
+            self.navigationController?.pushViewController(objDetailView, animated: true )
+        }
+
     }
     /*
     // MARK: - Navigation

@@ -13,6 +13,7 @@ class UpdateComicTableViewCell: TSTableViewCell {
     @IBOutlet weak var mainView:UIView!
     @IBOutlet weak var viewCollection:UIView!
     @IBOutlet weak var updateComicsCollectionView:UpdateComicsCollectionView!
+    private var didSelectCellItem:HomeScreenBookTableViewCellSelectionHandler?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,5 +44,17 @@ class UpdateComicTableViewCell: TSTableViewCell {
         self.viewCollection.backgroundColor = UIColor.clear
         
         self.updateComicsCollectionView.loadBooks(withBooks: [TSBook(),TSBook(),TSBook()])
+        self.updateComicsCollectionView.setDidSelectPhotoHandler { [weak self] (aryBook, index) in
+            
+            if let value = self?.didSelectCellItem{
+                value(HomeType.UpdateComics,aryBook[index])
+            }
+        }
+        
+    }
+    func didSelectCellItem(withHandler handler:HomeScreenBookTableViewCellSelectionHandler?){
+        if let value = handler{
+            self.didSelectCellItem = value
+        }
     }
 }

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SliderCollectionViewCell" customModule="Toonstreet" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="218" height="106"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="218" height="106"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wTD-I8-aGJ">
+                        <rect key="frame" x="0.0" y="0.0" width="218" height="106"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LeY-7f-AbX" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
+                                <rect key="frame" x="8" y="15" width="202" height="75.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xV8-lw-vb3">
+                                <rect key="frame" x="0.0" y="105.5" width="218" height="0.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.69999999999999996" id="gNY-a2-CRz"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xV8-lw-vb3" firstAttribute="leading" secondItem="wTD-I8-aGJ" secondAttribute="leading" id="6sm-RL-IPn"/>
+                            <constraint firstItem="xV8-lw-vb3" firstAttribute="top" secondItem="LeY-7f-AbX" secondAttribute="bottom" constant="15" id="E9q-2d-ONe"/>
+                            <constraint firstAttribute="trailing" secondItem="xV8-lw-vb3" secondAttribute="trailing" id="XJO-Zi-8W5"/>
+                            <constraint firstItem="LeY-7f-AbX" firstAttribute="top" secondItem="wTD-I8-aGJ" secondAttribute="top" constant="15" id="eXj-dc-rDk"/>
+                            <constraint firstAttribute="trailing" secondItem="LeY-7f-AbX" secondAttribute="trailing" constant="8" id="mtp-T2-JRd"/>
+                            <constraint firstItem="LeY-7f-AbX" firstAttribute="leading" secondItem="wTD-I8-aGJ" secondAttribute="leading" constant="8" id="olo-gc-DHR"/>
+                            <constraint firstAttribute="bottom" secondItem="xV8-lw-vb3" secondAttribute="bottom" id="zfa-y0-zny"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="wTD-I8-aGJ" secondAttribute="bottom" id="4Nr-jE-Ngn"/>
+                <constraint firstItem="wTD-I8-aGJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Ps2-vo-vZS"/>
+                <constraint firstAttribute="trailing" secondItem="wTD-I8-aGJ" secondAttribute="trailing" id="eJ5-4O-G6X"/>
+                <constraint firstItem="wTD-I8-aGJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="yPu-5w-Bid"/>
+            </constraints>
+            <size key="customSize" width="218" height="106"/>
+            <connections>
+                <outlet property="lblValue" destination="LeY-7f-AbX" id="Y3K-c9-B2B"/>
+                <outlet property="mainView" destination="wTD-I8-aGJ" id="OCe-eC-EXe"/>
+                <outlet property="selectionIndicationView" destination="xV8-lw-vb3" id="2W5-VX-cMn"/>
+            </connections>
+            <point key="canvasLocation" x="259.4202898550725" y="96.428571428571431"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

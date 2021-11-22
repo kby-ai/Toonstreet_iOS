@@ -1,19 +1,20 @@
 //
-//  ResumeReadingTableViewCell.swift
+//  ContinueReadingTableViewCell.swift
 //  Toonstreet
 //
 //  Created by Kavin Soni on 20/11/21.
 //
 
 import UIKit
-typealias HomeScreenBookTableViewCellSelectionHandler = ((_ type:HomeType, _ book:TSBook)->Void)
-class ResumeReadingTableViewCell: TSTableViewCell {
+
+class ContinueReadingTableViewCell: TSTableViewCell {
     
     @IBOutlet weak var lblTitle:TSLabel!
     @IBOutlet weak var mainView:UIView!
     @IBOutlet weak var viewCollection:UIView!
-    @IBOutlet weak var resumeCollectionView:ResumeReadingCollectionView!
+    @IBOutlet weak var continueReadingCollectionView:ContinueReadingCollectionView!
     private var didSelectCellItem:HomeScreenBookTableViewCellSelectionHandler?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -33,7 +34,7 @@ class ResumeReadingTableViewCell: TSTableViewCell {
         // Configure the view for the selected state
     }
     func commonInit(){
-        self.lblTitle.text = "Resume Reading"
+        self.lblTitle.text = "Continue Reading"
         self.lblTitle.numberOfLines = 0
         self.lblTitle.textColor = UIColor.white
         self.lblTitle.font = UIFont.appFont_Bold(Size: 20)
@@ -42,19 +43,19 @@ class ResumeReadingTableViewCell: TSTableViewCell {
         
         self.viewCollection.backgroundColor = UIColor.clear
         
-        self.resumeCollectionView.loadBooks(withBooks: [TSBook(),TSBook(),TSBook()])
+        self.continueReadingCollectionView.loadBooks(withBooks: [TSBook(),TSBook(),TSBook()])
         
-        self.resumeCollectionView.setDidSelectPhotoHandler { [weak self] (aryBook, index) in
+        self.continueReadingCollectionView.setDidSelectPhotoHandler { [weak self] (aryBook, index) in
             
             if let value = self?.didSelectCellItem{
-                value(HomeType.ResumeReading,aryBook[index])
+                value(HomeType.ReleaseSoon,aryBook[index])
             }
         }
+        
     }
     func didSelectCellItem(withHandler handler:HomeScreenBookTableViewCellSelectionHandler?){
         if let value = handler{
             self.didSelectCellItem = value
         }
     }
-    
 }

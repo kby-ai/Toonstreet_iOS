@@ -230,6 +230,9 @@ extension UIColor {
         static var themeBlackColor: UIColor { return UIColor(named: "themeBlack")! }
         static var textYellowColor: UIColor { return UIColor(named: "themeYellow")! }
         static var transparentBlackColor: UIColor { return UIColor(named: "transparentBlack")! }
+        static var newReleaseTransparentBlackColor: UIColor { return UIColor(named: "newReleaseTransperantView")! }
+        static var lightGrayColor: UIColor { return UIColor(named: "lightGrayColor")! }
+        
     }
 }
 extension UIView {

@@ -5,6 +5,7 @@ enum TSButtonType {
     case none
     case solid
     case image(image:UIImage)
+    case text(text:String,textColor:UIColor)
     
 }
 class TSButton: UIButton {
@@ -71,7 +72,19 @@ class TSButton: UIButton {
         case .image(image: let image):
             self.backgroundColor = UIColor.clear
             self.setTitle("", for: .normal)
+            self.tintColor = UIColor.white
+            self.titleLabel?.text = ""
+            self.titleLabel?.textColor = UIColor.clear
             self.setImage(image, for: .normal)
+        case .text(text: let title, textColor: let color):
+            self.backgroundColor = UIColor.clear
+            self.titleLabel?.text = title
+            self.titleLabel?.textColor = color
+            self.setTitleColor(color, for: .normal)
+            
+            self.titleLabel?.font = UIFont.appFont_Bold(Size: CGFloat(self.titleLabel?.font.pointSize ?? 15.0))
+            //self.tintColor = UIColor.white
+            
         default:
 
             self.setTitleColor(UIColor.white, for: UIControl.State.normal)

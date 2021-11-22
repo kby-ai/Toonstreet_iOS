@@ -1,19 +1,23 @@
 //
-//  ResumeReadingTableViewCell.swift
+//  MostPopularComicTableViewCell.swift
 //  Toonstreet
 //
 //  Created by Kavin Soni on 20/11/21.
 //
 
 import UIKit
-typealias HomeScreenBookTableViewCellSelectionHandler = ((_ type:HomeType, _ book:TSBook)->Void)
-class ResumeReadingTableViewCell: TSTableViewCell {
+
+class MostPopularComicTableViewCell: UITableViewCell {
     
     @IBOutlet weak var lblTitle:TSLabel!
+    @IBOutlet weak var lblSubTitle:TSLabel!
     @IBOutlet weak var mainView:UIView!
     @IBOutlet weak var viewCollection:UIView!
-    @IBOutlet weak var resumeCollectionView:ResumeReadingCollectionView!
+    @IBOutlet weak var mostPopularCollectionView:MostPopularCollectionView!
+    @IBOutlet weak var viewCollectionWithoutType:UIView!
+    @IBOutlet weak var mostPopularWithoutTypeCollectionView:MostPopularCollectionView!
     private var didSelectCellItem:HomeScreenBookTableViewCellSelectionHandler?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -33,28 +37,43 @@ class ResumeReadingTableViewCell: TSTableViewCell {
         // Configure the view for the selected state
     }
     func commonInit(){
-        self.lblTitle.text = "Resume Reading"
+        self.lblTitle.text = "Most Popular Comics"
         self.lblTitle.numberOfLines = 0
         self.lblTitle.textColor = UIColor.white
         self.lblTitle.font = UIFont.appFont_Bold(Size: 20)
         
+        
+        self.lblSubTitle.text = "Lots of interesting comics here"
+        self.lblSubTitle.numberOfLines = 0
+        self.lblSubTitle.textColor = UIColor.white
+        self.lblSubTitle.font = UIFont.appFont_FontRegular(Size: 10.0)
+        
+        
         self.mainView.backgroundColor = UIColor.Theme.themeBlackColor
         
         self.viewCollection.backgroundColor = UIColor.clear
+        self.viewCollectionWithoutType.backgroundColor = UIColor.clear
         
-        self.resumeCollectionView.loadBooks(withBooks: [TSBook(),TSBook(),TSBook()])
-        
-        self.resumeCollectionView.setDidSelectPhotoHandler { [weak self] (aryBook, index) in
+        self.mostPopularCollectionView.loadBooks(withBooks: [TSBook(),TSBook(),TSBook()])
+        self.mostPopularCollectionView.setDidSelectPhotoHandler { [weak self] (aryBook, index) in
             
             if let value = self?.didSelectCellItem{
-                value(HomeType.ResumeReading,aryBook[index])
+                value(HomeType.ReleaseSoon,aryBook[index])
             }
         }
+        self.mostPopularWithoutTypeCollectionView.loadBooks(withBooks: [TSBook(),TSBook(),TSBook(),TSBook()],isTypeHide: true  )
+        self.mostPopularWithoutTypeCollectionView.setDidSelectPhotoHandler { [weak self] (aryBook, index) in
+            
+            if let value = self?.didSelectCellItem{
+                value(HomeType.ReleaseSoon,aryBook[index])
+            }
+        }
+        
+        
     }
     func didSelectCellItem(withHandler handler:HomeScreenBookTableViewCellSelectionHandler?){
         if let value = handler{
             self.didSelectCellItem = value
         }
     }
-    
 }

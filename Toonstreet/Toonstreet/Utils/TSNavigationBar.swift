@@ -36,25 +36,23 @@ class TSNavigationBar: UINavigationBar {
        
         if #available(iOS 15, *) {
             let appearance = UINavigationBarAppearance()
-            appearance.configureWithTransparentBackground()
+            appearance.configureWithOpaqueBackground()//configureWithTransparentBackground()
             appearance.backgroundColor = UIColor.Theme.themeBlackColor
             appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white,NSAttributedString.Key.font:UIFont.systemFont(ofSize: 20.0)]
             UINavigationBar.appearance().standardAppearance = appearance
             UINavigationBar.appearance().scrollEdgeAppearance = appearance
-        }
+    }
         
+        if #available(iOS 13.0, *) {
+            let tabBarAppearance: UITabBarAppearance = UITabBarAppearance()
+            tabBarAppearance.configureWithDefaultBackground()
+            tabBarAppearance.backgroundColor = UIColor.Theme.themeBlackColor
+            UITabBar.appearance().standardAppearance = tabBarAppearance
 
-         //self.navigationItem.prompt = "No Internet Connection."
-        //self.titleTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue: UIColor.red]
-        
-       // self.addNoInternetAvailableView()
-       // isShowNoInterviewAvailable = true
-        
-       // self.showNoInternetAvailableView(withInternetAvailable: false  )
-        
-        //no internet available view display
-        
-        
+            if #available(iOS 15.0, *) {
+                UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+            }
+        }
     }
     
     override func layoutSubviews() {

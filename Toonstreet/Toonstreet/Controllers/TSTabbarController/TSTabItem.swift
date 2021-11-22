@@ -52,7 +52,6 @@ var icon: UIImage? {
     }
     
     private func HomeScreenViewController()->UIViewController{
-    #warning("Replace with Your Original Controller")
         let storyboard = UIStoryboard.init(storyboard: UIStoryboard.Storyboard.Main, bundle: nil)
         if let objHomeVC = storyboard.instantiateViewController(withIdentifier: "HomeNavigationController") as? UINavigationController{
             return objHomeVC
@@ -60,9 +59,8 @@ var icon: UIImage? {
         return UIViewController()
     }
     private func DiscoverViewController()->UIViewController{
-    #warning("Replace with Your Original Controller")
         let storyboard = UIStoryboard.init(storyboard: UIStoryboard.Storyboard.Main, bundle: nil)
-        if let objDiscoverVC = storyboard.instantiateViewController(withIdentifier: "SignupViewController") as? SignupViewController{
+        if let objDiscoverVC = storyboard.instantiateViewController(withIdentifier: "DiscoveryNavigationBarController") as? UINavigationController{
             return objDiscoverVC
         }
         return UIViewController()

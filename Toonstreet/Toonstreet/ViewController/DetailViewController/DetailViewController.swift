@@ -7,12 +7,12 @@
 
 import UIKit
 
-class DetailViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
-
+class DetailViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource ,UICollectionViewDelegateFlowLayout{
+    
+    var arrGenre = ["Action","Adventure","Comedy","Drama","Fantasy","Game"]
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var segmentController: TSScollViewSegment!
-    
     @IBOutlet weak var btnShare: UIButton!
     @IBOutlet weak var btnSubscribe: TSButton!
     @IBOutlet weak var lblStaticRating: TSLabel!
@@ -21,17 +21,32 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var lblTitle: TSLabel!
     @IBOutlet weak var viewEpisod: UIView!
     @IBOutlet weak var imgProduct: UIImageView!
-    
     @IBOutlet weak var tblEpisod: UITableView!
-    
     @IBOutlet weak var lblEpisodesTitle: TSLabel!
-    
-    
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var viewDetails: UIView!
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.collectionView.register(UINib.init(nibName: "GenreCollectionCell", bundle: nil), forCellWithReuseIdentifier: "GenreCollectionCell")
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        self.collectionView.collectionViewLayout = layout
+//        self.collectionView.delegate = self
+//
+        
+        layout.scrollDirection = .vertical //.horizontal
+//        layout.itemSize = cellSize'
+        layout.itemSize =  CGSize(width:100, height: 32)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+//        layout.minimumLineSpacing = 1.0
+//        layout.minimumInteritemSpacing = 1.0
+        self.collectionView.setCollectionViewLayout(layout, animated: true)
+
+        
+        
     }
         
     
@@ -137,8 +152,53 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
         }
         return cell
     }
+   
 }
 
+extension DetailViewController:UICollectionViewDataSource,UICollectionViewDelegate{
+    // MARK: UICollectionViewDataSource
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return self.arrGenre.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GenreCollectionCell", for: indexPath) as? GenreCollectionCell
+            else { preconditionFailure("Failed to load collection view cell") }
+        cell.lblTitle.text = self.arrGenre[indexPath.item]
+        
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        if let handler = self.didSelectBookSelectionHandler{
+//            handler(self.arrGenre,indexPath.item)
+//        }
+    }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+//    {
+//        let label = TSLabel(frame: CGRect.zero)
+//        label.text = arrGenre[indexPath.item]
+//        label.sizeToFit()
+//        return CGSize(width:200, height: 32)//label.frame.width + 50
+//
+//    }
+//
+    
+
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//                let label = TSLabel(frame: CGRect.zero)
+//                label.text = arrGenre[indexPath.item]
+//                label.sizeToFit()
+//                return CGSize(width: label.frame.width, height: label.frame.height)
+//            }
+
+    
+}
 extension UIScrollView {
 
     func resizeScrollViewContentSize() {

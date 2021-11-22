@@ -14,6 +14,7 @@ class ReleaseSoonTableViewCell: TSTableViewCell {
     @IBOutlet weak var mainView:UIView!
     @IBOutlet weak var viewCollection:UIView!
     @IBOutlet weak var releaseSoonCollectionView:ReleaseSoonCollectionView!
+    private var didSelectCellItem:HomeScreenBookTableViewCellSelectionHandler?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -51,5 +52,16 @@ class ReleaseSoonTableViewCell: TSTableViewCell {
         self.viewCollection.backgroundColor = UIColor.clear
         
         self.releaseSoonCollectionView.loadBooks(withBooks: [TSBook(),TSBook(),TSBook()])
+        self.releaseSoonCollectionView.setDidSelectPhotoHandler { [weak self] (aryBook, index) in
+            
+            if let value = self?.didSelectCellItem{
+                value(HomeType.ReleaseSoon,aryBook[index])
+            }
+        }
+    }
+    func didSelectCellItem(withHandler handler:HomeScreenBookTableViewCellSelectionHandler?){
+        if let value = handler{
+            self.didSelectCellItem = value
+        }
     }
 }
