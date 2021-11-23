@@ -670,7 +670,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="q5k-ES-N8y"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="themeBlack"/>
                         <constraints>
                             <constraint firstItem="5qd-kw-eLD" firstAttribute="top" secondItem="q5k-ES-N8y" secondAttribute="top" id="0eR-hJ-93f"/>
                             <constraint firstItem="q5k-ES-N8y" firstAttribute="bottom" secondItem="5qd-kw-eLD" secondAttribute="bottom" id="6wM-bf-Dwy"/>
