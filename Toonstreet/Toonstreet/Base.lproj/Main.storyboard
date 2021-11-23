@@ -1525,50 +1525,159 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ey-5e-A5X">
-                                <rect key="frame" x="0.0" y="84" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="80"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coin" translatesAutoresizingMaskIntoConstraints="NO" id="178-6h-FA6">
-                                        <rect key="frame" x="20" y="36" width="28" height="28"/>
+                                        <rect key="frame" x="20" y="26" width="28" height="28"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="320 coins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0b-PO-5wc" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                        <rect key="frame" x="58" y="40.5" width="72" height="19.5"/>
+                                        <rect key="frame" x="63" y="30.5" width="72" height="19.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8J-hZ-fQm">
-                                        <rect key="frame" x="310" y="34.5" width="89" height="31"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8J-hZ-fQm" customClass="TSButton" customModule="Toonstreet" customModuleProvider="target">
+                                        <rect key="frame" x="310" y="24.5" width="89" height="31"/>
                                         <color key="backgroundColor" name="themeYellow"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Buy Coins">
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="btnCoinsClicked:" destination="RCV-5h-fgE" eventType="touchUpInside" id="Dq1-bT-Nus"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="lightBlack"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="0Ml-qB-HbD"/>
+                                    <constraint firstAttribute="height" constant="80" id="0Ml-qB-HbD"/>
                                     <constraint firstAttribute="trailing" secondItem="F8J-hZ-fQm" secondAttribute="trailing" constant="15" id="9XW-fo-d4N"/>
                                     <constraint firstItem="R0b-PO-5wc" firstAttribute="centerY" secondItem="178-6h-FA6" secondAttribute="centerY" id="Qmq-LU-JsH"/>
-                                    <constraint firstItem="R0b-PO-5wc" firstAttribute="leading" secondItem="178-6h-FA6" secondAttribute="trailing" constant="10" id="WoK-q4-UEU"/>
+                                    <constraint firstItem="R0b-PO-5wc" firstAttribute="leading" secondItem="178-6h-FA6" secondAttribute="trailing" constant="15" id="WoK-q4-UEU"/>
                                     <constraint firstItem="F8J-hZ-fQm" firstAttribute="centerY" secondItem="R0b-PO-5wc" secondAttribute="centerY" id="axb-oO-ZYy"/>
                                     <constraint firstItem="178-6h-FA6" firstAttribute="leading" secondItem="1Ey-5e-A5X" secondAttribute="leading" constant="20" id="q0C-BT-Vts"/>
                                     <constraint firstItem="178-6h-FA6" firstAttribute="centerY" secondItem="1Ey-5e-A5X" secondAttribute="centerY" id="zxJ-Ie-9u3"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UFv-vR-8VG" customClass="ProfileTableView" customModule="Toonstreet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="168" width="414" height="728"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KBf-7d-0wG"/>
                         <color key="backgroundColor" name="themeBlack"/>
                         <constraints>
                             <constraint firstItem="1Ey-5e-A5X" firstAttribute="leading" secondItem="KBf-7d-0wG" secondAttribute="leading" id="D5H-Vy-h1r"/>
                             <constraint firstItem="KBf-7d-0wG" firstAttribute="trailing" secondItem="1Ey-5e-A5X" secondAttribute="trailing" id="Hi2-iD-jkG"/>
-                            <constraint firstItem="1Ey-5e-A5X" firstAttribute="top" secondItem="KBf-7d-0wG" secondAttribute="top" constant="40" id="INM-IH-vwy"/>
+                            <constraint firstItem="1Ey-5e-A5X" firstAttribute="top" secondItem="KBf-7d-0wG" secondAttribute="top" id="INM-IH-vwy"/>
+                            <constraint firstItem="KBf-7d-0wG" firstAttribute="trailing" secondItem="UFv-vR-8VG" secondAttribute="trailing" id="MIU-O7-bZO"/>
+                            <constraint firstAttribute="bottom" secondItem="UFv-vR-8VG" secondAttribute="bottom" id="fJE-92-VZR"/>
+                            <constraint firstItem="UFv-vR-8VG" firstAttribute="top" secondItem="1Ey-5e-A5X" secondAttribute="bottom" id="i5u-e7-MFe"/>
+                            <constraint firstItem="UFv-vR-8VG" firstAttribute="leading" secondItem="qZj-bM-M4S" secondAttribute="leading" id="kCY-9X-Vkg"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="7LV-G4-lq3"/>
+                    <connections>
+                        <outlet property="btnBuyCoin" destination="F8J-hZ-fQm" id="UzF-wM-Axa"/>
+                        <outlet property="lblCoins" destination="R0b-PO-5wc" id="kfH-Ah-aJQ"/>
+                        <outlet property="tblProfile" destination="UFv-vR-8VG" id="csS-i9-EIW"/>
+                        <outlet property="viewCoins" destination="1Ey-5e-A5X" id="b0A-Qo-imw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A9j-Pi-21c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6552" y="-202"/>
+            <point key="canvasLocation" x="7460.8695652173919" y="-202.23214285714286"/>
+        </scene>
+        <!--Buy Coin View Controller-->
+        <scene sceneID="e2l-dX-vE1">
+            <objects>
+                <viewController storyboardIdentifier="BuyCoinViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VpH-wU-CsJ" customClass="BuyCoinViewController" customModule="Toonstreet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8mU-ps-yRd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZCN-aA-Zle">
+                                <rect key="frame" x="0.0" y="44" width="414" height="80"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W9f-eQ-zcy">
+                                        <rect key="frame" x="129.5" y="0.0" width="155" height="80"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coin" translatesAutoresizingMaskIntoConstraints="NO" id="o4O-LT-e33">
+                                                <rect key="frame" x="20" y="26" width="28" height="28"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="28" id="bFW-NF-Pvp"/>
+                                                    <constraint firstAttribute="height" constant="28" id="q0I-oH-3yS"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="320 coins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d18-ho-P9T" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
+                                                <rect key="frame" x="63" y="30.5" width="72" height="19.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="d18-ho-P9T" firstAttribute="centerY" secondItem="W9f-eQ-zcy" secondAttribute="centerY" id="Mfw-6a-6BF"/>
+                                            <constraint firstItem="d18-ho-P9T" firstAttribute="leading" secondItem="o4O-LT-e33" secondAttribute="trailing" constant="15" id="PqT-Jh-L3H"/>
+                                            <constraint firstItem="o4O-LT-e33" firstAttribute="leading" secondItem="W9f-eQ-zcy" secondAttribute="leading" constant="20" id="h7x-4P-u2G"/>
+                                            <constraint firstItem="o4O-LT-e33" firstAttribute="centerY" secondItem="W9f-eQ-zcy" secondAttribute="centerY" id="mXh-te-KwM"/>
+                                            <constraint firstAttribute="trailing" secondItem="d18-ho-P9T" secondAttribute="trailing" constant="20" id="uD2-8c-nNR"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" name="lightBlack"/>
+                                <constraints>
+                                    <constraint firstItem="W9f-eQ-zcy" firstAttribute="centerX" secondItem="ZCN-aA-Zle" secondAttribute="centerX" id="0pc-JL-hC0"/>
+                                    <constraint firstAttribute="bottom" secondItem="W9f-eQ-zcy" secondAttribute="bottom" id="4uw-Pi-Qcy"/>
+                                    <constraint firstItem="W9f-eQ-zcy" firstAttribute="top" secondItem="ZCN-aA-Zle" secondAttribute="top" id="8Fr-Mi-6hY"/>
+                                    <constraint firstItem="W9f-eQ-zcy" firstAttribute="centerY" secondItem="ZCN-aA-Zle" secondAttribute="centerY" id="GzX-fN-DO5"/>
+                                    <constraint firstAttribute="height" constant="80" id="aOh-pr-4UR"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6Gd-Hf-TzO">
+                                <rect key="frame" x="0.0" y="124" width="414" height="772"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zkG-9U-98r"/>
+                        <color key="backgroundColor" name="themeBlack"/>
+                        <constraints>
+                            <constraint firstItem="zkG-9U-98r" firstAttribute="trailing" secondItem="6Gd-Hf-TzO" secondAttribute="trailing" id="0NK-Yx-3FH"/>
+                            <constraint firstItem="zkG-9U-98r" firstAttribute="trailing" secondItem="ZCN-aA-Zle" secondAttribute="trailing" id="EG4-8C-C8B"/>
+                            <constraint firstItem="6Gd-Hf-TzO" firstAttribute="top" secondItem="ZCN-aA-Zle" secondAttribute="bottom" id="dI4-Ck-QNU"/>
+                            <constraint firstAttribute="bottom" secondItem="6Gd-Hf-TzO" secondAttribute="bottom" id="eFo-hl-NJ4"/>
+                            <constraint firstItem="ZCN-aA-Zle" firstAttribute="leading" secondItem="8mU-ps-yRd" secondAttribute="leading" id="eKw-jm-Vbc"/>
+                            <constraint firstItem="6Gd-Hf-TzO" firstAttribute="leading" secondItem="zkG-9U-98r" secondAttribute="leading" id="oMa-ZZ-lvG"/>
+                            <constraint firstItem="ZCN-aA-Zle" firstAttribute="top" secondItem="zkG-9U-98r" secondAttribute="top" id="pOi-da-rwS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lblcoins" destination="d18-ho-P9T" id="oAf-bf-IoV"/>
+                        <outlet property="tblBuyCoins" destination="6Gd-Hf-TzO" id="UO0-Ha-gbT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5wx-NF-bh0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8160.8695652173919" y="-202.23214285714286"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jgz-Z3-Ydn">
+            <objects>
+                <navigationController storyboardIdentifier="ProfileNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="06q-NB-Gkv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UWQ-K8-HCe">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="RCV-5h-fgE" kind="relationship" relationship="rootViewController" id="0Gd-ne-c72"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AeU-sh-Ltb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6550.7246376811599" y="-202.23214285714286"/>
         </scene>
     </scenes>
     <resources>
