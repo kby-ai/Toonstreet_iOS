@@ -129,17 +129,17 @@ class LoginViewController: BaseViewController {
         
 #warning("Temp Skip Login")
 
-        self.loginSuccess()
+//        self.loginSuccess()
 
         
-//        self.loginFirebaseAuthMethod(email: self.txtUsername.text ?? "", password: self.txtPassword.text ?? "") { [unowned self] result in
-//            switch result {
-//                case .success:
-//                    self.loginSuccess()
-//                case .failure(let error):
-//                    self.didFailToLogin(withError: error)
-//            }
-//        }
+        self.loginFirebaseAuthMethod(email: self.txtUsername.text ?? "", password: self.txtPassword.text ?? "") { [unowned self] result in
+            switch result {
+                case .success:
+                    self.loginSuccess()
+                case .failure(let error):
+                    self.didFailToLogin(withError: error)
+            }
+        }
         
     }
     
