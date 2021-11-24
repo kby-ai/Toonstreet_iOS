@@ -107,17 +107,16 @@ class LoginViewController: BaseViewController {
     
     @objc func btnSignupPush(){
         
-           if let objSignupVC = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController") as? SignupViewController{
-               self.navigationController?.pushViewController(objSignupVC, animated: true )
-           }
+//           if let objSignupVC = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController") as? SignupViewController{
+//               self.navigationController?.pushViewController(objSignupVC, animated: true )
+//           }
         
     
 //        #warning("Redirect To Home Screen Code")
         
-//        if let objTabbar = self.storyboard?.instantiateViewController(withIdentifier: "TSTabBarControllerViewController") as? TSTabBarControllerViewController{
-//            appDelegate.window?.rootViewController = objTabbar
-//            //self.navigationController?.pushViewController(objSignupVC, animated: true )
-//        }
+        if let objTabbar = self.storyboard?.instantiateViewController(withIdentifier: "TSTabBarControllerViewController") as? TSTabBarControllerViewController{
+            appDelegate.window?.rootViewController = objTabbar
+        }
          
     }
     
@@ -135,6 +134,9 @@ class LoginViewController: BaseViewController {
         self.loginFirebaseAuthMethod(email: self.txtUsername.text ?? "", password: self.txtPassword.text ?? "") { [unowned self] result in
             switch result {
                 case .success:
+//                TSUser.shared.isLogin = true
+//                TSUser.shared.saveUserDetails()
+                
                     self.loginSuccess()
                 case .failure(let error):
                     self.didFailToLogin(withError: error)
@@ -165,8 +167,8 @@ class LoginViewController: BaseViewController {
                 
         
                             TSLoader.shared.hideLoader()
-//                            UserDefaults.standard.set(true, forKey: "isLogin") //Bool
-//                            UserDefaults.standard.synchronize()
+                            UserDefaults.standard.set(true, forKey: "isLogin") //Bool
+                            UserDefaults.standard.synchronize()
                             completion(.success(true))
 
                         }
@@ -214,6 +216,10 @@ class LoginViewController: BaseViewController {
     func loginSuccess() {
         
         print("Login Success")
+        
+        UserDefaults.standard.set(true, forKey: "isLogin") //Bool
+        UserDefaults.standard.synchronize()
+        
         
         if let objTabbar = self.storyboard?.instantiateViewController(withIdentifier: "TSTabBarControllerViewController") as? TSTabBarControllerViewController{
             appDelegate.window?.rootViewController = objTabbar

@@ -20,12 +20,30 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window = self.window
         
-       
+        let isLogin = UserDefaults.standard.bool(forKey: "isLogin")
+        if isLogin == true{
+            self.navigateToTabViewController()
+        }
         
         
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 
+    
+    func navigateToTabViewController(){
+        
+//        if let objTabbar = self.storyboard?.instantiateViewController(withIdentifier: "TSTabBarControllerViewController") as? TSTabBarControllerViewController{
+//            appDelegate.window?.rootViewController = objTabbar
+//        }
+
+        
+        
+        let destinationTab:TSTabBarControllerViewController = UIStoryboard(storyboard: .Main).instantiateViewController()
+//        self.storyboard?.instantiateViewController(withIdentifier: "TSTabBarControllerViewController") as? TSTabBarControllerViewController
+        self.window?.rootViewController = destinationTab
+        self.window?.makeKeyAndVisible()
+    }
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.

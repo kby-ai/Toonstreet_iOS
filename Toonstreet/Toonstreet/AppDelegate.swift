@@ -24,9 +24,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.toolbarPreviousNextAllowedClasses = [UIScrollView.self, UIView.self]//To Solve Scrolling issue
         
         
+    
+//        if TSUser.shared.isLogin == true{
+//            navigateToTabViewController()
+//        }else{
+//
+//        }
         return true
     }
 
+    func navigateToTabViewController(){
+        
+//        if let objTabbar = self.storyboard?.instantiateViewController(withIdentifier: "TSTabBarControllerViewController") as? TSTabBarControllerViewController{
+//            appDelegate.window?.rootViewController = objTabbar
+//        }
+
+        
+        
+        let destinationTab:TSTabBarControllerViewController = UIStoryboard(storyboard: .Main).instantiateViewController()
+//        self.storyboard?.instantiateViewController(withIdentifier: "TSTabBarControllerViewController") as? TSTabBarControllerViewController
+        self.window?.rootViewController = destinationTab
+        self.window?.makeKeyAndVisible()
+    }
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

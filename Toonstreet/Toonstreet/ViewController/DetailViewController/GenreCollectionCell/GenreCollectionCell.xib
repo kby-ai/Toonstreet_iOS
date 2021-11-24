@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,20 +11,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="GenreCollectionCell" customModule="Toonstreet" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="170" height="60"/>
+            <rect key="frame" x="0.0" y="0.0" width="211" height="116"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="170" height="60"/>
+                <rect key="frame" x="0.0" y="0.0" width="211" height="116"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SPA-rg-zP4">
-                        <rect key="frame" x="0.0" y="0.0" width="170" height="60"/>
+                        <rect key="frame" x="0.0" y="0.0" width="211" height="116"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mae-PN-wYy">
-                                <rect key="frame" x="10" y="10" width="150" height="40"/>
+                                <rect key="frame" x="10" y="10" width="191" height="96"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZa-0C-UZx">
-                                        <rect key="frame" x="10" y="9.5" width="130" height="21"/>
+                                        <rect key="frame" x="10" y="9.5" width="171" height="77"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -58,12 +58,12 @@
                 <constraint firstAttribute="bottom" secondItem="SPA-rg-zP4" secondAttribute="bottom" id="VvR-Tz-rFW"/>
                 <constraint firstAttribute="trailing" secondItem="SPA-rg-zP4" secondAttribute="trailing" id="mcn-vO-feQ"/>
             </constraints>
-            <size key="customSize" width="170" height="60"/>
+            <size key="customSize" width="211" height="116"/>
             <connections>
                 <outlet property="lblTitle" destination="xZa-0C-UZx" id="Ncr-Ev-708"/>
                 <outlet property="viewBack" destination="mae-PN-wYy" id="Fk3-9x-w9k"/>
             </connections>
-            <point key="canvasLocation" x="224.63768115942031" y="78.348214285714278"/>
+            <point key="canvasLocation" x="254.34782608695653" y="97.098214285714278"/>
         </collectionViewCell>
     </objects>
     <resources>

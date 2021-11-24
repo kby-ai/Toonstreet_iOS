@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource ,UICollectionViewDelegateFlowLayout{
+class DetailViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
     var arrGenre = ["Action","Adventure","Comedy","Drama","Fantasy","Game"]
     
@@ -23,12 +23,16 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var imgProduct: UIImageView!
     @IBOutlet weak var tblEpisod: UITableView!
     @IBOutlet weak var lblEpisodesTitle: TSLabel!
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var genreCollectionView: GenreCollectionView!
     @IBOutlet weak var viewDetails: UIView!
-        
+    @IBOutlet var collectionViewHeight:NSLayoutConstraint!
+    @IBOutlet weak var contentView:UIView!
+    @IBOutlet weak var mainView:UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        /*
         self.collectionView.register(UINib.init(nibName: "GenreCollectionCell", bundle: nil), forCellWithReuseIdentifier: "GenreCollectionCell")
         
         let layout = UICollectionViewFlowLayout()
@@ -45,7 +49,7 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
 //        layout.minimumInteritemSpacing = 1.0
         self.collectionView.setCollectionViewLayout(layout, animated: true)
 
-        
+        */
         
     }
         
@@ -64,7 +68,7 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
         
         self.tblEpisod.register(UINib.init(nibName: "EpisodesTableCell", bundle: nil), forCellReuseIdentifier: "EpisodesTableCell")
 
-        
+        self.loadCollectionView()
         
         self.tblEpisod.dataSource = self
         self.tblEpisod.delegate = self
@@ -117,15 +121,35 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
         }else{
             viewEpisod.isHidden = true
             viewDetails.isHidden = false
+            self.genreCollectionView.reloadData()
         }
       }
     
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+       
+        
+    }
+   
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.updateCollectionViewHeight()
+    }
     
+    private func updateCollectionViewHeight(){
+       
+        let height = genreCollectionView.collectionViewLayout.collectionViewContentSize.height
+        collectionViewHeight.constant = height
+        self.view.layoutIfNeeded()
+    }
+    private func loadCollectionView(){
+        self.genreCollectionView.loadItems(items: self.arrGenre)
+        self.contentView.layoutIfNeeded()
+        self.viewDetails.layoutIfNeeded()
+    }
     
-  
-    
-    //MARK:Button Action
+    //MARK: Button Action
     @IBAction func btnShareClicked(_ sender: Any) {
     }
     
@@ -153,8 +177,18 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
         return cell
     }
    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        //PDFViewController
+        
+        if let objPDFVC = self.storyboard?.instantiateViewController(withIdentifier: "PDFViewController") as? PDFViewController{
+            self.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(objPDFVC, animated: true )
+        }
+    }
 }
-
+/*
 extension DetailViewController:UICollectionViewDataSource,UICollectionViewDelegate{
     // MARK: UICollectionViewDataSource
 
@@ -167,7 +201,7 @@ extension DetailViewController:UICollectionViewDataSource,UICollectionViewDelega
 
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GenreCollectionCell", for: indexPath) as? GenreCollectionCell
             else { preconditionFailure("Failed to load collection view cell") }
-        cell.lblTitle.text = self.arrGenre[indexPath.item]
+        cell.strCategory = self.arrGenre[indexPath.item]
         
         return cell
     }
@@ -190,15 +224,33 @@ extension DetailViewController:UICollectionViewDataSource,UICollectionViewDelega
     
 
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//                let label = TSLabel(frame: CGRect.zero)
-//                label.text = arrGenre[indexPath.item]
-//                label.sizeToFit()
-//                return CGSize(width: label.frame.width, height: label.frame.height)
-//            }
-
     
 }
+extension DetailViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//                let label = TSLabel(frame: CGRect.zero)
+//                label.text = arrGenre[indexPath.item]
+//        label.font = UIFont.font_semibold(15)
+//                label.sizeToFit()
+//                return CGSize(width: label.frame.width+20, height: label.frame.height+20)
+        let item = arrGenre[indexPath.item]
+                let itemSize = item.size(withAttributes: [
+                    NSAttributedString.Key.font : UIFont.font_semibold(15)
+                ])
+        print("Cell:: Index :: \(indexPath.item) Cell Size :: \(itemSize.width+20) * \(itemSize.height+20)")
+        return CGSize(width: itemSize.width + 20 , height: itemSize.height+20)
+
+
+        }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+            return 10
+        }
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+            return 10
+        }
+}
+ */
+
 extension UIScrollView {
 
     func resizeScrollViewContentSize() {
