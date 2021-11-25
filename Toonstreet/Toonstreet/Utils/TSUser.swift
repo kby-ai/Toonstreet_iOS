@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TSUser: NSObject {
+class TSUser: NSObject,NSCoding {
     
     static var shared:TSUser = TSUser()
     
@@ -20,7 +20,7 @@ class TSUser: NSObject {
 
     private override init() {
         super.init()
-        if let encodeObject:Data = UserDefaults.standard.object(forKey: "TSUser") as! Data?
+        if let encodeObject:Data = UserDefaults.standard.object(forKey: "TSUser") as? Data
         {
             if let saveObj:TSUser = NSKeyedUnarchiver.unarchiveObject(with: encodeObject) as? TSUser
             {
@@ -39,13 +39,26 @@ class TSUser: NSObject {
     }
     required init(coder decoder: NSCoder) {
         
-        self.firstName =  decoder.decodeObject(forKey: "firstName") as! String
-        self.lastName =  decoder.decodeObject(forKey: "lastName") as! String
-        self.email =  decoder.decodeObject(forKey: "email") as! String
-        self.phoneNumber = decoder.decodeObject(forKey: "phoneNumber") as! String
+        if let value = decoder.decodeObject(forKey: "firstName") as? String{
+            self.firstName = value
+        }
+        if let value = decoder.decodeObject(forKey: "lastName") as? String{
+            self.lastName = value
+        }
+        if let value = decoder.decodeObject(forKey: "email") as? String{
+            self.email = value
+        }
+        if let value = decoder.decodeObject(forKey: "phoneNumber") as? String{
+            self.phoneNumber = value
+        }
+        if let value = decoder.decodeObject(forKey: "uID") as? String{
+            self.uID = value
+        }
+        if let value = decoder.decodeObject(forKey: "isLogin") as? Bool{
+            self.isLogin = value
+        }
         
-        self.uID = decoder.decodeObject(forKey: "uID") as! String
-        self.isLogin = decoder.decodeBool(forKey: "isLogin") as! Bool
+        
 
     }
     
@@ -54,7 +67,6 @@ class TSUser: NSObject {
         coder.encode(self.lastName, forKey: "lastName")
         coder.encode(self.email, forKey:"email")
         coder.encode(self.phoneNumber, forKey:"phoneNumber")
-        
         coder.encode(self.uID, forKey:"uID")
         coder.encode(self.isLogin, forKey:"isLogin")
 
@@ -91,9 +103,14 @@ class TSUser: NSObject {
     /*                 Save Current User Details                      */
     /***********************************************/
     func saveUserDetails() -> Void {
-        let currentUserRef:Data = NSKeyedArchiver.archivedData(withRootObject: self)
-        UserDefaults.standard.set(currentUserRef, forKey: "TSUser")
-        UserDefaults.standard.synchronize()
+        
+        do{
+            let currentUserRef:Data = try NSKeyedArchiver.archivedData(withRootObject: self)
+            UserDefaults.standard.set(currentUserRef, forKey: "TSUser")
+            UserDefaults.standard.synchronize()
+        }catch{
+            print(error.localizedDescription)
+        }
     }
     /***********************************************/
     /*                 Load Current User Details                      */

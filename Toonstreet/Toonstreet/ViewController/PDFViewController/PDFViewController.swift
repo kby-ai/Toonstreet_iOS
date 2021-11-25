@@ -11,6 +11,9 @@ import PDFKit
 class PDFViewController: BaseViewController {
 
     
+    @IBOutlet weak var btnPrevious:UIButton!
+    @IBOutlet weak var btnNext:UIButton!
+    
     @IBOutlet weak var viewPDF: UIView!
     var pdfView:PDFView = PDFView()
     
@@ -19,39 +22,72 @@ class PDFViewController: BaseViewController {
 
         self.leftBarButtonItems = [.BackArrow]
 
-        self.navigationController?.title = "Episod 1"
-//        var documentURL = NSBundle.main.GetUrlForResource("testcomic", "pdf");
-//        var pdfdoc = new PdfDocument(documentURL);
-        
-        
-        // Add PDFView to view controller.
-        pdfView = PDFView(frame: CGRect.init(x: 0, y: 0, width: self.viewPDF.frame.width, height: self.viewPDF.frame.height - 50))
-              self.view.addSubview(pdfView)
 
-              // Fit content in PDFView.
-              pdfView.autoScales = true
-
-              // Load Sample.pdf file.
-              let fileURL = Bundle.main.url(forResource: "testcomic", withExtension: "pdf")
+        self.setupPDFView()
+        self.setupGesture()
+       
         
-        pdfView.displayMode = .singlePageContinuous
-        pdfView.autoScales = false
-        pdfView.displayDirection = .horizontal
-        
-        pdfView.document = PDFDocument(url: fileURL!)
-        
-//        if let path = Bundle.main.path(forResource: "testcomic", ofType: "pdf") {
-//                   if let pdfDocument = PDFDocument(url: URL(fileURLWithPath: path)) {
-//                       pdfView.displayMode = .singlePageContinuous
-//                       pdfView.autoScales = true
-//                       pdfView.displayDirection = .vertical
-//                       pdfView.document = pdfDocument
-//                   }
-//               }
-        
-        // Do any additional setup after loading the view.
     }
- 
+    private func setupPDFView(){
+        // Add PDFView to view controller.
+        pdfView = PDFView(frame: CGRect.init(x: 0, y: 0, width: self.viewPDF.frame.width, height: self.viewPDF.frame.height))
+        pdfView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.viewPDF.addSubview(pdfView)
+
+       
+
+        let fileURL = Bundle.main.url(forResource: "testcomic", withExtension: "pdf")
+        pdfView.displayMode = .singlePageContinuous
+        pdfView.autoScales = true
+        pdfView.displayDirection = .horizontal
+        pdfView.document = PDFDocument(url: fileURL!)
+        pdfView.goToFirstPage(nil)
+        pdfView.isUserInteractionEnabled = false
+        
+        self.updateButtonViewUI()
+        
+    }
+    private func setupGesture(){
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        swipeRight.direction = UISwipeGestureRecognizer.Direction.right
+        self.viewPDF.addGestureRecognizer(swipeRight)
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
+        self.viewPDF.addGestureRecognizer(swipeLeft)
+    }
+    private func updateButtonViewUI(){
+        if pdfView.canGoToPreviousPage{
+            self.btnPrevious.isEnabled = true
+        }
+        else {
+            self.btnPrevious.isEnabled = false
+        }
+        if pdfView.canGoToNextPage{
+            self.btnNext.isEnabled = true
+            
+        }else {
+            self.btnPrevious.isEnabled = false
+        }
+    }
+    @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+            if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+                switch swipeGesture.direction {
+                case UISwipeGestureRecognizer.Direction.left:
+                    print("Swiped back")
+                    if pdfView.canGoToNextPage {
+                        pdfView.goToNextPage(nil)
+                    }
+                case UISwipeGestureRecognizer.Direction.right:
+                    print("Swiped back")
+                    if pdfView.canGoToPreviousPage {
+                        pdfView.goToPreviousPage(nil)
+                    }
+                default:
+                    break
+                }
+            }
+        }
     
     override func viewDidAppear(_ animated: Bool) {
 //        NotificationCenter.default.addObserver (self, selector: #selector(handlePageChange), name: Notification.Name.PDFViewPageChanged, object: nil)
@@ -61,12 +97,23 @@ class PDFViewController: BaseViewController {
     
     @IBAction func btnPreviousClick(_ sender: Any) {
         
+        if pdfView.canGoToPreviousPage{
+            pdfView.goToPreviousPage(sender)
+        }
+        
+       
+        self.updateButtonViewUI()
     }
     
     @IBAction func btnNextClick(_ sender: Any) {
 //        pdfView.next =
         
-        pdfView.usePageViewController(true, withViewOptions: nil)
+        if pdfView.canGoToNextPage{
+            pdfView.goToNextPage(sender)
+        }
+       
+        self.updateButtonViewUI()
+        //pdfView.usePageViewController(true, withViewOptions: nil)
 
     }
     
