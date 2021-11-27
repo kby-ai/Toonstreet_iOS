@@ -18,13 +18,12 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YmJ-u7-N7W">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummy_image" translatesAutoresizingMaskIntoConstraints="NO" id="meb-O2-nXv">
                                 <rect key="frame" x="20" y="10" width="45" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Iiq-cc-Bxs"/>
-                                    <constraint firstAttribute="width" constant="45" id="h18-Vj-sip"/>
                                     <constraint firstAttribute="width" secondItem="meb-O2-nXv" secondAttribute="height" multiplier="1:1" id="hae-RN-6RN"/>
                                 </constraints>
                             </imageView>
@@ -48,7 +47,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ps-GN-GeO">
-                                <rect key="frame" x="266" y="10" width="44" height="34"/>
+                                <rect key="frame" x="360" y="10" width="44" height="34"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="download"/>
                             </button>
@@ -63,8 +62,11 @@
                             <constraint firstItem="d0h-Fn-1R0" firstAttribute="leading" secondItem="meb-O2-nXv" secondAttribute="trailing" constant="15" id="MPj-8M-n7r"/>
                             <constraint firstItem="6Ps-GN-GeO" firstAttribute="top" secondItem="YmJ-u7-N7W" secondAttribute="top" constant="10" id="cda-iC-csy"/>
                             <constraint firstItem="Dx9-kM-9aM" firstAttribute="leading" secondItem="meb-O2-nXv" secondAttribute="trailing" constant="15" id="fG8-xK-t4a"/>
-                            <constraint firstItem="d0h-Fn-1R0" firstAttribute="bottom" secondItem="meb-O2-nXv" secondAttribute="bottom" id="fqc-BG-Dg7"/>
+                            <constraint firstItem="d0h-Fn-1R0" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="meb-O2-nXv" secondAttribute="bottom" id="fqc-BG-Dg7">
+                                <variation key="heightClass=regular-widthClass=regular" constant="-20"/>
+                            </constraint>
                             <constraint firstItem="meb-O2-nXv" firstAttribute="top" secondItem="YmJ-u7-N7W" secondAttribute="top" constant="10" id="kd7-gQ-pD3"/>
+                            <constraint firstItem="d0h-Fn-1R0" firstAttribute="top" secondItem="Dx9-kM-9aM" secondAttribute="bottom" constant="5" id="qaR-Mu-46r"/>
                             <constraint firstAttribute="trailing" secondItem="6Ps-GN-GeO" secondAttribute="trailing" constant="10" id="rSF-bj-EwL"/>
                             <constraint firstItem="48K-V1-EQU" firstAttribute="centerY" secondItem="d0h-Fn-1R0" secondAttribute="centerY" id="yXl-Qa-E8x"/>
                         </constraints>
@@ -74,6 +76,7 @@
                     <constraint firstAttribute="bottom" secondItem="YmJ-u7-N7W" secondAttribute="bottom" id="IMG-NY-5fW"/>
                     <constraint firstItem="YmJ-u7-N7W" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="JaJ-4f-eju"/>
                     <constraint firstAttribute="trailing" secondItem="YmJ-u7-N7W" secondAttribute="trailing" id="Kz1-4g-SKS"/>
+                    <constraint firstItem="meb-O2-nXv" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="45:414" id="Tix-EW-YPz"/>
                     <constraint firstItem="YmJ-u7-N7W" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="v5t-RM-tJD"/>
                 </constraints>
             </tableViewCellContentView>

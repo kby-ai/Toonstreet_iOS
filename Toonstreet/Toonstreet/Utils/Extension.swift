@@ -204,7 +204,7 @@ extension CGFloat{
                 case .iPhonex_xs,.iPhonexr_xsmax:
                     sizeToCheckAgainst += 0;
                 case .iPad :
-                    sizeToCheckAgainst += 9;
+                    sizeToCheckAgainst += 3;
                 }
                 return sizeToCheckAgainst
     }
