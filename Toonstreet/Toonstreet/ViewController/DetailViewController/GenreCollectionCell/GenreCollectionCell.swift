@@ -38,6 +38,7 @@ class GenreCollectionCell: UICollectionViewCell {
     }
     private func updateUI(){
         self.lblTitle.text = strCategory
+    
         
     }
     

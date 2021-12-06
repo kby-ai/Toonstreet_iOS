@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import FirebaseStorage
+import SDWebImage
 
 class DetailViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var objBook:TSBook?
     
     var arrGenre = ["Action","Adventure","Comedy","Drama","Fantasy","Game"]
     
@@ -55,8 +59,11 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
         
     
     
+    
     override func setupUI() {
         
+        
+       
         self.leftBarButtonItems = [.BackArrow]
 
         
@@ -129,7 +136,27 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
        
+        self.lblTitle.text = self.objBook?.title ?? "OVERLOAD"
+        self.lblAuther.text = self.objBook?.publisher ?? ""
         
+        if self.objBook?.cover != ""{
+        let storage = Storage.storage()
+        let starsRef = storage.reference(forURL: self.objBook?.cover ?? "")
+
+//         Fetch the download URL
+        starsRef.downloadURL { url, error in
+          if let error = error {
+            // Handle any errors
+              print(error)
+          } else {
+            // Get the download URL for 'images/stars.jpg'
+//              print(url)
+              self.imgProduct.sd_setImage(with: url, completed: nil)
+
+          }
+        }
+
+        }
     }
    
     override func viewDidLayoutSubviews() {
@@ -161,7 +188,7 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
     //MARK: Tableview methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return objBook?.episodes.count ?? 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -172,8 +199,9 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
             cell.viewBack.backgroundColor = UIColor.Theme.themeBlackColor
         }else{
             cell.viewBack.backgroundColor = UIColor.Theme.themeLightBlackColor
-
         }
+        cell.setupEpisodCell(objEpisode: objBook?.episodes[indexPath.row] ?? TSEpisodes())
+    
         return cell
     }
    
@@ -184,6 +212,7 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
         
         if let objPDFVC = self.storyboard?.instantiateViewController(withIdentifier: "PDFViewController") as? PDFViewController{
             self.hidesBottomBarWhenPushed = true
+            objPDFVC.episodeList = self.objBook?.episodes[indexPath.row].strContent
             self.navigationController?.pushViewController(objPDFVC, animated: true )
         }
     }

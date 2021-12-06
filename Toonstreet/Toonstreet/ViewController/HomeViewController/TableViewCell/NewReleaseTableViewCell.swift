@@ -9,6 +9,7 @@ import UIKit
 
 class NewReleaseTableViewCell: UITableViewCell {
     
+    
     @IBOutlet weak var lblTitle:TSLabel!
     @IBOutlet weak var lblSubTitle:TSLabel!
     @IBOutlet weak var mainView:UIView!

@@ -363,17 +363,20 @@ static void FIRCLSBinaryImageChanged(bool added,
                                      const struct mach_header* mh,
                                      intptr_t vmaddr_slide) {
   //    FIRCLSSDKLog("Binary image %s %p\n", added ? "loaded" : "unloaded", mh);
+
   FIRCLSBinaryImageDetails imageDetails;
+
   memset(&imageDetails, 0, sizeof(FIRCLSBinaryImageDetails));
 
   imageDetails.slice = FIRCLSMachOSliceWithHeader((void*)mh);
   imageDetails.vmaddr_slide = vmaddr_slide;
   FIRCLSBinaryImageFillInImageDetails(&imageDetails);
 
-  // Do these time-consuming operations on a background queue
+  // this is an atomic operation
+  FIRCLSBinaryImageStoreNode(added, imageDetails);
+
+  // this isn't, so do it on a serial queue
   dispatch_async(FIRCLSGetBinaryImageQueue(), ^{
-    // this is an atomic operation
-    FIRCLSBinaryImageStoreNode(added, imageDetails);
     FIRCLSBinaryImageRecordSlice(added, imageDetails);
   });
 }

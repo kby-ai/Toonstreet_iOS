@@ -11,7 +11,6 @@
 #endif
 
 #import "FIRCrashlytics.h"
-#import "FIRCrashlyticsReport.h"
 #import "FirebaseCrashlytics.h"
 #import "FIRExceptionModel.h"
 #import "FIRStackFrame.h"

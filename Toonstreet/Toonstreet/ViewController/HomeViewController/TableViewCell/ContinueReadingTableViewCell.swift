@@ -9,6 +9,8 @@ import UIKit
 
 class ContinueReadingTableViewCell: TSTableViewCell {
     
+    var arrComics:[TSBook] = []
+    
     @IBOutlet weak var lblTitle:TSLabel!
     @IBOutlet weak var mainView:UIView!
     @IBOutlet weak var viewCollection:UIView!
@@ -33,6 +35,11 @@ class ContinueReadingTableViewCell: TSTableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func addAndReloadCell(arr:[TSBook]){
+        self.continueReadingCollectionView.loadBooks(withBooks: arr)
+    }
+    
     func commonInit(){
         self.lblTitle.text = "Continue Reading"
         self.lblTitle.numberOfLines = 0
@@ -43,7 +50,7 @@ class ContinueReadingTableViewCell: TSTableViewCell {
         
         self.viewCollection.backgroundColor = UIColor.clear
         
-        self.continueReadingCollectionView.loadBooks(withBooks: [TSBook(),TSBook(),TSBook()])
+//        self.continueReadingCollectionView.loadBooks(withBooks:arrComics) //[TSBook(),TSBook(),TSBook()])
         
         self.continueReadingCollectionView.setDidSelectPhotoHandler { [weak self] (aryBook, index) in
             

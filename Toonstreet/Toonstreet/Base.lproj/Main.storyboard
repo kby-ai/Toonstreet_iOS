@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dBb-fe-NnO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dBb-fe-NnO">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -1224,7 +1224,7 @@
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pL1-1t-D1y">
                                                 <rect key="frame" x="0.0" y="50" width="0.0" height="582"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <outlet property="dataSource" destination="ETV-CP-XxM" id="KCx-BC-aGU"/>
                                                     <outlet property="delegate" destination="ETV-CP-XxM" id="caY-ax-Mv5"/>
@@ -1672,10 +1672,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="242-v7-FMD">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="242-v7-FMD">
                                 <rect key="frame" x="0.0" y="44" width="414" height="768"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BXx-6d-GWp">
+                                <rect key="frame" x="0.0" y="44" width="414" height="768"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dKs-qS-e97">
                                 <rect key="frame" x="153" y="812" width="108.5" height="50"/>
                                 <subviews>
@@ -1715,8 +1723,12 @@
                         <color key="backgroundColor" name="themeBlack"/>
                         <constraints>
                             <constraint firstItem="242-v7-FMD" firstAttribute="top" secondItem="o7E-YK-kzg" secondAttribute="top" id="0DP-dZ-fnU"/>
+                            <constraint firstItem="o7E-YK-kzg" firstAttribute="trailing" secondItem="BXx-6d-GWp" secondAttribute="trailing" id="5aY-n4-ufX"/>
+                            <constraint firstItem="dKs-qS-e97" firstAttribute="top" secondItem="BXx-6d-GWp" secondAttribute="bottom" id="9O6-nE-Xkk"/>
                             <constraint firstItem="o7E-YK-kzg" firstAttribute="trailing" secondItem="242-v7-FMD" secondAttribute="trailing" id="LUq-ph-eYb"/>
+                            <constraint firstItem="BXx-6d-GWp" firstAttribute="leading" secondItem="o7E-YK-kzg" secondAttribute="leading" id="LXS-es-NZh"/>
                             <constraint firstItem="dKs-qS-e97" firstAttribute="centerX" secondItem="UyY-qb-nnX" secondAttribute="centerX" id="nxv-RX-Kvn"/>
+                            <constraint firstItem="BXx-6d-GWp" firstAttribute="top" secondItem="o7E-YK-kzg" secondAttribute="top" id="quW-fK-r38"/>
                             <constraint firstItem="o7E-YK-kzg" firstAttribute="bottom" secondItem="242-v7-FMD" secondAttribute="bottom" constant="50" id="rr6-D4-6Nj"/>
                             <constraint firstItem="o7E-YK-kzg" firstAttribute="bottom" secondItem="dKs-qS-e97" secondAttribute="bottom" id="s3H-jT-Cus"/>
                             <constraint firstItem="242-v7-FMD" firstAttribute="leading" secondItem="o7E-YK-kzg" secondAttribute="leading" id="vFJ-yj-oYJ"/>
@@ -1726,6 +1738,7 @@
                         <outlet property="btnNext" destination="amr-v8-7u3" id="iRf-v7-jfb"/>
                         <outlet property="btnPrevious" destination="QQh-LS-KXp" id="mhh-j2-Gcx"/>
                         <outlet property="viewPDF" destination="242-v7-FMD" id="Nrw-Ph-YCE"/>
+                        <outlet property="webKit" destination="BXx-6d-GWp" id="83A-uL-oWd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnY-jJ-H3W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

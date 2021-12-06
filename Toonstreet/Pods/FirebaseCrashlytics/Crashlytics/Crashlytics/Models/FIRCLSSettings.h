@@ -64,6 +64,29 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, readonly) uint32_t cacheDurationSeconds;
 
 /**
+ * The Crashlytics Organization identifier of the app. Allows data continuity between
+ * old and new Crashlytics SDKs.
+ */
+@property(nonatomic, nullable, readonly) NSString *orgID;
+
+/**
+ * The backend bundle identifier of the app. Crashlytics can in some cases have
+ * a different bundle identifier than the app itself (eg. Crashlytics will always downcase
+ * the bundle ID).
+ */
+@property(nonatomic, nullable, readonly) NSString *fetchedBundleID;
+
+/**
+ * Indicates whether the app needs onboarding
+ */
+@property(nonatomic, readonly) BOOL appNeedsOnboarding;
+
+/**
+ * Indicates whether the app needs an update
+ */
+@property(nonatomic, readonly) BOOL appUpdateRequired;
+
+/**
  * When this is false, Crashlytics will not start up
  */
 @property(nonatomic, readonly) BOOL collectReportsEnabled;
@@ -80,9 +103,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, readonly) BOOL customExceptionsEnabled;
 
 /**
- * When this is true, Crashlytics will collect data from MetricKit
+ * Determine if the SDK should use the new endpoint for uploading reports
  */
-@property(nonatomic, readonly) BOOL metricKitCollectionEnabled;
+@property(nonatomic, readonly) BOOL shouldUseNewReportEndpoint;
 
 /**
  * Returns the maximum number of custom exception events that will be

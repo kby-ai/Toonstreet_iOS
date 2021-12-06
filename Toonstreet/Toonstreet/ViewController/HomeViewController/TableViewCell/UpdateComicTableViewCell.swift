@@ -9,6 +9,8 @@ import UIKit
 
 class UpdateComicTableViewCell: TSTableViewCell {
     
+    var arrComics:[TSBook] = []
+
     @IBOutlet weak var lblTitle:TSLabel!
     @IBOutlet weak var mainView:UIView!
     @IBOutlet weak var viewCollection:UIView!
@@ -33,6 +35,11 @@ class UpdateComicTableViewCell: TSTableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func addAndReloadCell(arr:[TSBook]){
+        self.updateComicsCollectionView.loadBooks(withBooks: arr)
+    }
+    
     func commonInit(){
         self.lblTitle.text = "Update Comics"
         self.lblTitle.numberOfLines = 0
@@ -43,7 +50,6 @@ class UpdateComicTableViewCell: TSTableViewCell {
         
         self.viewCollection.backgroundColor = UIColor.clear
         
-        self.updateComicsCollectionView.loadBooks(withBooks: [TSBook(),TSBook(),TSBook()])
         self.updateComicsCollectionView.setDidSelectPhotoHandler { [weak self] (aryBook, index) in
             
             if let value = self?.didSelectCellItem{

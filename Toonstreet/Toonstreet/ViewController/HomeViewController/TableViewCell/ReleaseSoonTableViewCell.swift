@@ -9,6 +9,8 @@ import UIKit
 
 class ReleaseSoonTableViewCell: TSTableViewCell {
     
+    var arrComics:[TSBook] = []
+
     @IBOutlet weak var lblTitle:TSLabel!
     @IBOutlet weak var lblSubTitle:TSLabel!
     @IBOutlet weak var mainView:UIView!
@@ -34,6 +36,10 @@ class ReleaseSoonTableViewCell: TSTableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func addAndReloadCell(arr:[TSBook]){
+        self.releaseSoonCollectionView.loadBooks(withBooks: arr)
+    }
     func commonInit(){
         self.lblTitle.text = "Release Soon!"
         self.lblTitle.numberOfLines = 0
@@ -51,7 +57,7 @@ class ReleaseSoonTableViewCell: TSTableViewCell {
         
         self.viewCollection.backgroundColor = UIColor.clear
         
-        self.releaseSoonCollectionView.loadBooks(withBooks: [TSBook(),TSBook(),TSBook()])
+//        self.releaseSoonCollectionView.loadBooks(withBooks: arrComics)
         self.releaseSoonCollectionView.setDidSelectPhotoHandler { [weak self] (aryBook, index) in
             
             if let value = self?.didSelectCellItem{

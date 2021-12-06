@@ -72,6 +72,7 @@ extension ContinueReadingCollectionView:UICollectionViewDataSource,UICollectionV
             else { preconditionFailure("Failed to load collection view cell") }
 
         
+        cell.setupCellData(objBook: self.aryBooks[indexPath.item])
 
         return cell
     }

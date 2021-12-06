@@ -34,7 +34,6 @@
 #import "FirebaseAuth/Sources/Backend/RPC/FIRDeleteAccountRequest.h"
 #import "FirebaseAuth/Sources/Backend/RPC/FIRDeleteAccountResponse.h"
 #import "FirebaseAuth/Sources/Backend/RPC/FIREmailLinkSignInRequest.h"
-#import "FirebaseAuth/Sources/Backend/RPC/FIREmailLinkSignInResponse.h"
 #import "FirebaseAuth/Sources/Backend/RPC/FIRGetAccountInfoRequest.h"
 #import "FirebaseAuth/Sources/Backend/RPC/FIRGetAccountInfoResponse.h"
 #import "FirebaseAuth/Sources/Backend/RPC/FIRGetOOBConfirmationCodeRequest.h"
@@ -719,14 +718,6 @@ static void callInMainThreadWithAuthDataResultAndError(
                                  completion(error);
                                  return;
                                }
-                               FIRAuthRequestConfiguration *requestConfiguration =
-                                   self.auth.requestConfiguration;
-                               // Update the new token and refresh user info again.
-                               self->_tokenService = [[FIRSecureTokenService alloc]
-                                   initWithRequestConfiguration:requestConfiguration
-                                                    accessToken:response.IDToken
-                                      accessTokenExpirationDate:response.approximateExpirationDate
-                                                   refreshToken:response.refreshToken];
                                // Get account info to update cached user info.
                                [self getAccountInfoRefreshingCache:^(
                                          FIRGetAccountInfoResponseUser *_Nullable user,
@@ -796,8 +787,16 @@ static void callInMainThreadWithAuthDataResultAndError(
 
 #pragma mark -
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 - (void)reauthenticateWithCredential:(FIRAuthCredential *)credential
                           completion:(nullable FIRAuthDataResultCallback)completion {
+  [self reauthenticateAndRetrieveDataWithCredential:credential completion:completion];
+}
+#pragma clang diagnostic pop
+
+- (void)reauthenticateAndRetrieveDataWithCredential:(FIRAuthCredential *)credential
+                                         completion:(nullable FIRAuthDataResultCallback)completion {
   dispatch_async(FIRAuthGlobalWorkQueue(), ^{
     [self->_auth
         internalSignInAndRetrieveDataWithCredential:credential
@@ -890,22 +889,18 @@ static void callInMainThreadWithAuthDataResultAndError(
 - (void)getIDTokenResultForcingRefresh:(BOOL)forceRefresh
                             completion:(nullable FIRAuthTokenResultCallback)completion {
   dispatch_async(FIRAuthGlobalWorkQueue(), ^{
-    [self
-        internalGetTokenForcingRefresh:forceRefresh
-                              callback:^(NSString *_Nullable token, NSError *_Nullable error) {
-                                FIRAuthTokenResult *tokenResult;
-                                if (token) {
-                                  tokenResult = [FIRAuthTokenResult tokenResultWithToken:token];
-                                  FIRLogDebug(kFIRLoggerAuth, @"I-AUT000017",
-                                              @"Actual token expiration date: %@, current date: %@",
-                                              tokenResult.expirationDate, [NSDate date]);
-                                }
-                                if (completion) {
-                                  dispatch_async(dispatch_get_main_queue(), ^{
-                                    completion(tokenResult, error);
-                                  });
-                                }
-                              }];
+    [self internalGetTokenForcingRefresh:forceRefresh
+                                callback:^(NSString *_Nullable token, NSError *_Nullable error) {
+                                  FIRAuthTokenResult *tokenResult;
+                                  if (token) {
+                                    tokenResult = [FIRAuthTokenResult tokenResultWithToken:token];
+                                  }
+                                  if (completion) {
+                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                      completion(tokenResult, error);
+                                    });
+                                  }
+                                }];
   });
 }
 
@@ -1061,8 +1056,16 @@ static void callInMainThreadWithAuthDataResultAndError(
   });
 }
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 - (void)linkWithCredential:(FIRAuthCredential *)credential
                 completion:(nullable FIRAuthDataResultCallback)completion {
+  [self linkAndRetrieveDataWithCredential:credential completion:completion];
+}
+#pragma clang diagnostic pop
+
+- (void)linkAndRetrieveDataWithCredential:(FIRAuthCredential *)credential
+                               completion:(nullable FIRAuthDataResultCallback)completion {
   dispatch_async(FIRAuthGlobalWorkQueue(), ^{
     if (self->_providerData[credential.provider]) {
       callInMainThreadWithAuthDataResultAndError(completion, nil,
@@ -1113,12 +1116,6 @@ static void callInMainThreadWithAuthDataResultAndError(
                        if (error) {
                          callInMainThreadWithAuthDataResultAndError(completion, nil, error);
                        } else {
-                         // Update the new token and refresh user info again.
-                         self->_tokenService = [[FIRSecureTokenService alloc]
-                             initWithRequestConfiguration:requestConfiguration
-                                              accessToken:response.IDToken
-                                accessTokenExpirationDate:response.approximateExpirationDate
-                                             refreshToken:response.refreshToken];
                          [self internalGetTokenWithCallback:^(NSString *_Nullable accessToken,
                                                               NSError *_Nullable error) {
                            if (error) {
@@ -1180,12 +1177,6 @@ static void callInMainThreadWithAuthDataResultAndError(
                           if (error) {
                             callInMainThreadWithAuthDataResultAndError(completion, nil, error);
                           } else {
-                            // Update the new token and refresh user info again.
-                            self->_tokenService = [[FIRSecureTokenService alloc]
-                                initWithRequestConfiguration:requestConfiguration
-                                                 accessToken:response.IDToken
-                                   accessTokenExpirationDate:response.approximateExpirationDate
-                                                refreshToken:response.refreshToken];
                             [self internalGetTokenWithCallback:^(NSString *_Nullable accessToken,
                                                                  NSError *_Nullable error) {
                               if (error) {

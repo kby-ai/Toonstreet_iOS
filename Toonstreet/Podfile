@@ -15,5 +15,9 @@ pod 'Firebase/Crashlytics'
 pod 'Firebase/Auth'
 pod 'PureLayout','3.1.4'
 #pod 'ScrollableSegmentedControl', '~> 1.5.0'
+pod 'Firebase/Database'
+pod 'FirebaseUI/Storage'
+pod 'FirebaseFirestoreSwift'
+pod 'SDWebImage'
 
 end

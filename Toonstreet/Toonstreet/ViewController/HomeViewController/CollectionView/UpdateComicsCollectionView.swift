@@ -71,7 +71,8 @@ extension UpdateComicsCollectionView:UICollectionViewDataSource,UICollectionView
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UpdateComicsCollectionViewCell.identifer, for: indexPath) as? UpdateComicsCollectionViewCell
             else { preconditionFailure("Failed to load collection view cell") }
 
-        
+        cell.setupCellData(objBook: self.aryBooks[indexPath.item])
+
 
         return cell
     }

@@ -59,6 +59,7 @@
 		8A233B64274C1A6D003BF645 /* GenreCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A233B62274C1A6D003BF645 /* GenreCollectionCell.xib */; };
 		8A233B67274C2ACF003BF645 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A233B66274C2ACF003BF645 /* ProfileViewController.swift */; };
 		8A491FB4274EB54400D04A13 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A491FB3274EB54400D04A13 /* PDFViewController.swift */; };
+		8A52946D275C926200CBC055 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A52946C275C926200CBC055 /* GoogleService-Info.plist */; };
 		8A5D8F08274D5182008A4105 /* ProfileTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D8F07274D5182008A4105 /* ProfileTableView.swift */; };
 		8A5D8F0B274D5549008A4105 /* MyListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D8F0A274D5549008A4105 /* MyListCollectionView.swift */; };
 		8A5D8F1D274D713C008A4105 /* MyListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D8F1B274D713C008A4105 /* MyListCollectionViewCell.swift */; };
@@ -68,7 +69,6 @@
 		8A8D7EAC2746BCCE0073E261 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D7EAA2746BCCE0073E261 /* Main.storyboard */; };
 		8A8D7EAE2746BCCF0073E261 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D7EAD2746BCCF0073E261 /* Assets.xcassets */; };
 		8A8D7EB12746BCCF0073E261 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D7EAF2746BCCF0073E261 /* LaunchScreen.storyboard */; };
-		8A8D7EB92746BCFB0073E261 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D7EB82746BCFB0073E261 /* GoogleService-Info.plist */; };
 		8A8D7EBD2746BE2A0073E261 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D7EBC2746BE2A0073E261 /* BaseViewController.swift */; };
 		8A8D7EC22746BFCC0073E261 /* TSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D7EC12746BFCC0073E261 /* TSTextField.swift */; };
 		8A8D7EC42746C0410073E261 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D7EC32746C0410073E261 /* LoginViewController.swift */; };
@@ -85,6 +85,7 @@
 		8A8D7EDC2746D8670073E261 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D7EDB2746D8670073E261 /* ValidationService.swift */; };
 		8A8D7EDF2746DBD30073E261 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D7EDE2746DBD30073E261 /* TabBarController.swift */; };
 		8A8D7EE22746E3140073E261 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D7EE12746E3140073E261 /* SignupViewController.swift */; };
+		8AA31531275E7B8800C437E3 /* TSEpisodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA31530275E7B8800C437E3 /* TSEpisodes.swift */; };
 		8AB5CD19274EAFF500A3F15E /* testcomic.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 8AB5CD18274EAFF500A3F15E /* testcomic.pdf */; };
 		8AB7ECCE27494E9800455B31 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB7ECCD27494E9800455B31 /* DetailViewController.swift */; };
 		8AB7ECD32749549C00455B31 /* TSScollViewSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB7ECD22749549C00455B31 /* TSScollViewSegment.swift */; };
@@ -155,6 +156,7 @@
 		8A233B62274C1A6D003BF645 /* GenreCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenreCollectionCell.xib; sourceTree = "<group>"; };
 		8A233B66274C2ACF003BF645 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8A491FB3274EB54400D04A13 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
+		8A52946C275C926200CBC055 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8A5D8F07274D5182008A4105 /* ProfileTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableView.swift; sourceTree = "<group>"; };
 		8A5D8F0A274D5549008A4105 /* MyListCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListCollectionView.swift; sourceTree = "<group>"; };
 		8A5D8F1B274D713C008A4105 /* MyListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -166,7 +168,6 @@
 		8A8D7EAD2746BCCF0073E261 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A8D7EB02746BCCF0073E261 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A8D7EB22746BCCF0073E261 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8A8D7EB82746BCFB0073E261 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8A8D7EBC2746BE2A0073E261 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8A8D7EC12746BFCC0073E261 /* TSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSTextField.swift; sourceTree = "<group>"; };
 		8A8D7EC32746C0410073E261 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +184,7 @@
 		8A8D7EDB2746D8670073E261 /* ValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 		8A8D7EDE2746DBD30073E261 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		8A8D7EE12746E3140073E261 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		8AA31530275E7B8800C437E3 /* TSEpisodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSEpisodes.swift; sourceTree = "<group>"; };
 		8AB5CD18274EAFF500A3F15E /* testcomic.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = testcomic.pdf; sourceTree = "<group>"; };
 		8AB7ECCD27494E9800455B31 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8AB7ECD22749549C00455B31 /* TSScollViewSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSScollViewSegment.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 			children = (
 				4904927327491172008827DF /* TSBook.swift */,
 				4975553D274A58AE00FD2290 /* TSItem.swift */,
+				8AA31530275E7B8800C437E3 /* TSEpisodes.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -413,12 +416,12 @@
 		8A8D7EA32746BCCE0073E261 /* Toonstreet */ = {
 			isa = PBXGroup;
 			children = (
+				8A52946C275C926200CBC055 /* GoogleService-Info.plist */,
 				4904927227491161008827DF /* Model */,
 				8A8D7EC62746C6320073E261 /* Assets */,
 				8A8D7EC52746C4C80073E261 /* Utils */,
 				8A8D7EC02746BF910073E261 /* Controllers */,
 				8A8D7EBA2746BD3E0073E261 /* ViewController */,
-				8A8D7EB82746BCFB0073E261 /* GoogleService-Info.plist */,
 				8A8D7EA42746BCCE0073E261 /* AppDelegate.swift */,
 				8A8D7EA62746BCCE0073E261 /* SceneDelegate.swift */,
 				8A8D7EAA2746BCCE0073E261 /* Main.storyboard */,
@@ -667,7 +670,6 @@
 				8A8D7EB12746BCCF0073E261 /* LaunchScreen.storyboard in Resources */,
 				4904928D2749357A008827DF /* NunitoSans-SemiBold.ttf in Resources */,
 				8A5D8F1E274D713C008A4105 /* MyListCollectionViewCell.xib in Resources */,
-				8A8D7EB92746BCFB0073E261 /* GoogleService-Info.plist in Resources */,
 				8ACE003B274D7E8B00063BF2 /* CoinTableCell.xib in Resources */,
 				490492A1274944B2008827DF /* ContinueReadingCollectionViewCell.xib in Resources */,
 				4904927B27492456008827DF /* UpdateComicTableViewCell.xib in Resources */,
@@ -680,6 +682,7 @@
 				8A8D7ED32746D4280073E261 /* NunitoSans-Regular.ttf in Resources */,
 				49755544274AC65E00FD2290 /* BookListCollectionViewCell.xib in Resources */,
 				490492912749387F008827DF /* MostPopularComicTableViewCell.xib in Resources */,
+				8A52946D275C926200CBC055 /* GoogleService-Info.plist in Resources */,
 				8AB5CD19274EAFF500A3F15E /* testcomic.pdf in Resources */,
 				8ACE002E274D7A2E00063BF2 /* ProfileComicTableCell.xib in Resources */,
 				4904926D274910A3008827DF /* ResumeReadingCollectionViewCell.xib in Resources */,
@@ -758,6 +761,7 @@
 				8A8D7EBD2746BE2A0073E261 /* BaseViewController.swift in Sources */,
 				4904929627493B7B008827DF /* MostPopularCollectionViewCell.swift in Sources */,
 				49755540274AC61800FD2290 /* BookListCollectionView.swift in Sources */,
+				8AA31531275E7B8800C437E3 /* TSEpisodes.swift in Sources */,
 				8A8D7EDC2746D8670073E261 /* ValidationService.swift in Sources */,
 				8A491FB4274EB54400D04A13 /* PDFViewController.swift in Sources */,
 				8A5D8F08274D5182008A4105 /* ProfileTableView.swift in Sources */,
@@ -966,7 +970,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Sholom-Scheiner.Toonstreet";
+				PRODUCT_BUNDLE_IDENTIFIER = com.toonstreet.comic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -994,7 +998,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Sholom-Scheiner.Toonstreet";
+				PRODUCT_BUNDLE_IDENTIFIER = com.toonstreet.comic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

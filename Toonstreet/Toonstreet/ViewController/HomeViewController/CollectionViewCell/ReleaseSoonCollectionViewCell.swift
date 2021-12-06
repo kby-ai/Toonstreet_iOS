@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import SDWebImage
+import FirebaseStorage
 
 class ReleaseSoonCollectionViewCell: UICollectionViewCell {
     static let identifer = "ReleaseSoonCollectionViewCellIdentifier"
@@ -52,4 +54,29 @@ class ReleaseSoonCollectionViewCell: UICollectionViewCell {
         self.titleView.backgroundColor = UIColor.Theme.transparentBlackColor
         
     }
+    
+    func setupCellData(objBook:TSBook){
+
+        self.lblTitle.text = objBook.title
+        self.lblType.text = objBook.category
+        
+        if objBook.cover != ""{
+
+        let storage = Storage.storage()
+        let starsRef = storage.reference(forURL: objBook.cover)
+
+//         Fetch the download URL
+        starsRef.downloadURL { url, error in
+          if let error = error {
+            // Handle any errors
+              print(error)
+          } else {
+            // Get the download URL for 'images/stars.jpg'
+              print(url)
+              self.imgViewBookProfile.sd_setImage(with: url, completed: nil)
+          }
+        }
+        }
+    }
+    
 }

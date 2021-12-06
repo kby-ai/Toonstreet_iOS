@@ -73,6 +73,7 @@ extension MostPopularCollectionView:UICollectionViewDataSource,UICollectionViewD
             else { preconditionFailure("Failed to load collection view cell") }
 
         cell.updateUI(withIsHideType: self.isHideType)
+        cell.setupCellData(objBook: self.aryBooks[indexPath.item])
 
         return cell
     }

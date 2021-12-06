@@ -71,7 +71,8 @@ extension ReleaseSoonCollectionView:UICollectionViewDataSource,UICollectionViewD
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReleaseSoonCollectionViewCell.identifer, for: indexPath) as? ReleaseSoonCollectionViewCell
             else { preconditionFailure("Failed to load collection view cell") }
 
-        
+        cell.setupCellData(objBook: self.aryBooks[indexPath.item])
+
 
         return cell
     }

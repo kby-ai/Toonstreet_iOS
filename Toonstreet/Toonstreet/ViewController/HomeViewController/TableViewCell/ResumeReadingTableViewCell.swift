@@ -9,6 +9,8 @@ import UIKit
 typealias HomeScreenBookTableViewCellSelectionHandler = ((_ type:HomeType, _ book:TSBook)->Void)
 class ResumeReadingTableViewCell: TSTableViewCell {
     
+//    var arrComics:[TSBook] = []
+
     @IBOutlet weak var lblTitle:TSLabel!
     @IBOutlet weak var mainView:UIView!
     @IBOutlet weak var viewCollection:UIView!
@@ -32,6 +34,11 @@ class ResumeReadingTableViewCell: TSTableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func addAndReloadCell(arr:[TSBook]){
+        self.resumeCollectionView.loadBooks(withBooks: arr)
+    }
+    
     func commonInit(){
         self.lblTitle.text = "Resume Reading"
         self.lblTitle.numberOfLines = 0
@@ -42,7 +49,7 @@ class ResumeReadingTableViewCell: TSTableViewCell {
         
         self.viewCollection.backgroundColor = UIColor.clear
         
-        self.resumeCollectionView.loadBooks(withBooks: [TSBook(),TSBook(),TSBook()])
+//        self.resumeCollectionView.loadBooks(withBooks: arrComics ?? [])
         
         self.resumeCollectionView.setDidSelectPhotoHandler { [weak self] (aryBook, index) in
             

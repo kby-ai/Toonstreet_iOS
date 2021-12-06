@@ -14,20 +14,22 @@
 
 #import "Crashlytics/Crashlytics/Controllers/FIRCLSReportManager.h"
 #import "Crashlytics/Crashlytics/Controllers/FIRCLSReportUploader.h"
-#import "Crashlytics/Crashlytics/Models/FIRCLSLaunchMarkerModel.h"
 
 @class FIRCLSInstallIdentifierModel;
 
-@interface FIRCLSReportManager ()
+@interface FIRCLSReportManager () <FIRCLSReportUploaderDelegate, FIRCLSReportUploaderDataSource>
 
 @property(nonatomic, strong) NSOperationQueue *operationQueue;
+@property(nonatomic, strong) FIRCLSNetworkClient *networkClient;
+@property(nonatomic, readonly) FIRCLSReportUploader *uploader;
 @property(nonatomic, strong) FIRCLSFileManager *fileManager;
 
 @end
 
 @interface FIRCLSReportManager (PrivateMethods)
 
-@property(nonatomic, strong) FIRCLSLaunchMarkerModel *launchMarker;
+- (BOOL)createLaunchFailureMarker;
+- (BOOL)launchFailureMarkerPresent;
 
 - (BOOL)potentiallySubmittableCrashOccurred;
 

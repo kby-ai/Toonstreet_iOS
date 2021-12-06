@@ -34,6 +34,4 @@ bool FIRCLSHostRecord(FIRCLSFile* file);
 
 void FIRCLSHostWriteDiskUsage(FIRCLSFile* file);
 
-bool FIRCLSHostIsRosettaTranslated(void);
-
 __END_DECLS

@@ -16,7 +16,8 @@ enum HomeType{
 }
 class HomeTableView: TSTableView {
    
-    
+    var arrComics:[TSBook] = []
+
 
     var aryHomeTypes:[HomeType] = [.ResumeReading,.UpdateComics,.ReleaseSoon,.MostPopular,.ContinueReading,.NewRelease]
 
@@ -48,6 +49,11 @@ class HomeTableView: TSTableView {
         self.separatorStyle = .none
         self.contentInset = UIEdgeInsets.init(top: 5, left: 0, bottom: 5, right: 0)
         
+    }
+    
+    func setAndReloadTableView(arr:[TSBook]){
+        self.arrComics = arr
+        self.reloadData()
     }
     func setTableViewData(){
         
@@ -90,9 +96,12 @@ extension HomeTableView:UITableViewDelegate,UITableViewDataSource{
         
         let type = self.aryHomeTypes[indexPath.row]
         if type == .UpdateComics{
-            guard let cell:UpdateComicTableViewCell = tableView.dequeueReusableCell(withIdentifier: "UpdateComicTableViewCell") as? UpdateComicTableViewCell else {
+            guard let cell:UpdateComicTableViewCell = tableView.dequeueReusableCell(withIdentifier: "UpdateComicTableViewCell")
+                    as? UpdateComicTableViewCell else {
                 return UITableViewCell()
             }
+//            cell.arrComics = self.arrComics
+            cell.addAndReloadCell(arr: self.arrComics)
             cell.didSelectCellItem { [weak self] (type, book) in
                 self?.handleCellItem(type: type, book: book)
             }
@@ -101,6 +110,8 @@ extension HomeTableView:UITableViewDelegate,UITableViewDataSource{
             guard let cell:ResumeReadingTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ResumeReadingTableViewCell") as? ResumeReadingTableViewCell else {
                 return UITableViewCell()
             }
+//            cell.arrComics = self.arrComics
+            cell.addAndReloadCell(arr: self.arrComics)
             cell.didSelectCellItem { [weak self] (type, book) in
                 self?.handleCellItem(type: type, book: book)
             }
@@ -109,6 +120,9 @@ extension HomeTableView:UITableViewDelegate,UITableViewDataSource{
             guard let cell:ReleaseSoonTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ReleaseSoonTableViewCell") as? ReleaseSoonTableViewCell else {
                 return UITableViewCell()
             }
+//            cell.arrComics = self.arrComics
+            cell.addAndReloadCell(arr: self.arrComics)
+
             cell.didSelectCellItem { [weak self] (type, book) in
                 self?.handleCellItem(type: type, book: book)
             }
@@ -117,6 +131,9 @@ extension HomeTableView:UITableViewDelegate,UITableViewDataSource{
             guard let cell:MostPopularComicTableViewCell = tableView.dequeueReusableCell(withIdentifier: "MostPopularComicTableViewCell") as? MostPopularComicTableViewCell else {
                 return UITableViewCell()
             }
+//            cell.arrComics = self.arrComics
+            cell.addAndReloadCell(arr: self.arrComics)
+
             cell.didSelectCellItem { [weak self] (type, book) in
                 self?.handleCellItem(type: type, book: book)
             }
@@ -125,6 +142,9 @@ extension HomeTableView:UITableViewDelegate,UITableViewDataSource{
             guard let cell:ContinueReadingTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ContinueReadingTableViewCell") as? ContinueReadingTableViewCell else {
                 return UITableViewCell()
             }
+//            cell.arrComics = self.arrComics
+            cell.addAndReloadCell(arr: self.arrComics)
+
             cell.didSelectCellItem { [weak self] (type, book) in
                 self?.handleCellItem(type: type, book: book)
             }
@@ -134,7 +154,9 @@ extension HomeTableView:UITableViewDelegate,UITableViewDataSource{
             guard let cell:NewReleaseTableViewCell = tableView.dequeueReusableCell(withIdentifier: "NewReleaseTableViewCell") as? NewReleaseTableViewCell else {
                 return UITableViewCell()
             }
-           
+//            cell.arrComics = self.arrComics
+//            cell.addAndReloadCell(arr: self.arrComics)
+
             return cell
         }
         else {

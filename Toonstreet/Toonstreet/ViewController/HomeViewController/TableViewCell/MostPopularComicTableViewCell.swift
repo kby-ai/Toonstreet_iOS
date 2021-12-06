@@ -9,6 +9,8 @@ import UIKit
 
 class MostPopularComicTableViewCell: UITableViewCell {
     
+    var arrComics:[TSBook] = []
+
     @IBOutlet weak var lblTitle:TSLabel!
     @IBOutlet weak var lblSubTitle:TSLabel!
     @IBOutlet weak var mainView:UIView!
@@ -36,6 +38,11 @@ class MostPopularComicTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func addAndReloadCell(arr:[TSBook]){
+        self.mostPopularCollectionView.loadBooks(withBooks: arr)
+    }
+    
     func commonInit(){
         self.lblTitle.text = "Most Popular Comics"
         self.lblTitle.numberOfLines = 0
@@ -54,7 +61,7 @@ class MostPopularComicTableViewCell: UITableViewCell {
         self.viewCollection.backgroundColor = UIColor.clear
         self.viewCollectionWithoutType.backgroundColor = UIColor.clear
         
-        self.mostPopularCollectionView.loadBooks(withBooks: [TSBook(),TSBook(),TSBook()])
+//        self.mostPopularCollectionView.loadBooks(withBooks: arrComics)
         self.mostPopularCollectionView.setDidSelectPhotoHandler { [weak self] (aryBook, index) in
             
             if let value = self?.didSelectCellItem{

@@ -9,6 +9,8 @@ import UIKit
 
 class ProfileComicTableCell: UITableViewCell {
     
+    var arrComics:[TSBook] = []
+
     @IBOutlet weak var lblTitle:TSLabel!
     @IBOutlet weak var mainView:UIView!
     @IBOutlet weak var viewCollection:UIView!
@@ -50,7 +52,7 @@ class ProfileComicTableCell: UITableViewCell {
         self.viewCollection.backgroundColor = UIColor.clear
         self.viewCollectionWithoutType.backgroundColor = UIColor.clear
         
-        self.mostPopularCollectionView.loadBooks(withBooks: [TSBook(),TSBook(),TSBook()])
+        self.mostPopularCollectionView.loadBooks(withBooks: arrComics)
         self.mostPopularCollectionView.setDidSelectPhotoHandler { [weak self] (aryBook, index) in
             
             if let value = self?.didSelectCellItem{

@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import SDWebImage
+import FirebaseStorage
 
 class EpisodesTableCell: UITableViewCell {
 
@@ -28,6 +30,31 @@ class EpisodesTableCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    
+    func setupEpisodCell(objEpisode:TSEpisodes){
+        
+        self.lblTitle.text = objEpisode.title
+    
+        if objEpisode.cover != ""{
+        let storage = Storage.storage()
+        let starsRef = storage.reference(forURL: objEpisode.cover ?? "")
+
+//         Fetch the download URL
+        starsRef.downloadURL { url, error in
+          if let error = error {
+            // Handle any errors
+              print(error)
+          } else {
+            // Get the download URL for 'images/stars.jpg'
+//              print(url)
+              self.imgBook.sd_setImage(with: url, completed: nil)
+
+          }
+        }
+
+        }
     }
     
 }

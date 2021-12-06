@@ -11,6 +11,9 @@ typealias ProfileScreenMyListTableViewCellSelectionHandler = ((_ type:ProfileTyp
 
 class MyListTableViewCell:TSTableViewCell {
     
+    var arrComics:[TSBook] = []
+
+    
     static let identifer = "MyListTableViewCell"
 
     
@@ -39,16 +42,17 @@ class MyListTableViewCell:TSTableViewCell {
         // Configure the view for the selected state
     }
     func commonInit(){
+        
         self.lblTitle.text = "My List"
         self.lblTitle.numberOfLines = 0
         self.lblTitle.textColor = UIColor.white
         self.lblTitle.font = UIFont.appFont_Bold(Size: 20)
-        
         self.mainView.backgroundColor = UIColor.Theme.themeBlackColor
-        
         self.viewCollection.backgroundColor = UIColor.clear
         
-        self.myListCollectionView.loadBooks(withBooks: [TSBook(),TSBook(),TSBook()])
+        
+        
+        self.myListCollectionView.loadBooks(withBooks: arrComics)
         
         self.myListCollectionView.setDidSelectPhotoHandler { [weak self] (aryBook, index) in
             
