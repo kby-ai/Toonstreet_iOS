@@ -538,10 +538,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="axZ-fc-4sP">
-                                        <rect key="frame" x="0.0" y="115" width="414" height="54"/>
+                                        <rect key="frame" x="0.0" y="115" width="414" height="52"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="y1G-8n-qWj" customClass="SliderCollectionView" customModule="Toonstreet" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="51.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Oa1-V2-uwZ">
                                                     <size key="itemSize" width="128" height="128"/>
@@ -552,7 +552,7 @@
                                                 <cells/>
                                             </collectionView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMr-7k-hNh">
-                                                <rect key="frame" x="0.0" y="53.5" width="414" height="0.5"/>
+                                                <rect key="frame" x="0.0" y="51.5" width="414" height="0.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="0.5" id="Dkg-Nm-keP"/>
@@ -566,19 +566,19 @@
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="XMr-7k-hNh" secondAttribute="bottom" id="2gn-oL-jW0"/>
                                             <constraint firstAttribute="trailing" secondItem="XMr-7k-hNh" secondAttribute="trailing" id="2oy-TI-9d5"/>
-                                            <constraint firstAttribute="bottom" secondItem="y1G-8n-qWj" secondAttribute="bottom" id="4Ut-dS-alX"/>
-                                            <constraint firstItem="XMr-7k-hNh" firstAttribute="top" secondItem="y1G-8n-qWj" secondAttribute="bottom" priority="999" constant="-2" id="GSD-F0-LiJ"/>
+                                            <constraint firstItem="XMr-7k-hNh" firstAttribute="top" secondItem="y1G-8n-qWj" secondAttribute="bottom" id="GSD-F0-LiJ"/>
                                             <constraint firstItem="XMr-7k-hNh" firstAttribute="leading" secondItem="axZ-fc-4sP" secondAttribute="leading" id="aoj-tZ-iRh"/>
                                             <constraint firstAttribute="trailing" secondItem="y1G-8n-qWj" secondAttribute="trailing" id="bcS-5V-vEj"/>
                                             <constraint firstItem="y1G-8n-qWj" firstAttribute="top" secondItem="axZ-fc-4sP" secondAttribute="top" id="gfA-aI-IiX"/>
                                             <constraint firstItem="y1G-8n-qWj" firstAttribute="leading" secondItem="axZ-fc-4sP" secondAttribute="leading" id="wsF-Zn-nkE"/>
+                                            <constraint firstAttribute="height" constant="52" id="x2O-vs-D4y"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qA0-Q8-TnR">
-                                        <rect key="frame" x="25" y="169" width="364" height="600"/>
+                                        <rect key="frame" x="25" y="167" width="364" height="602"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hpz-27-Ti8" customClass="BookListCollectionView" customModule="Toonstreet" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="25" width="364" height="575"/>
+                                                <rect key="frame" x="0.0" y="25" width="364" height="577"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5Kx-qV-jqx">
                                                     <size key="itemSize" width="101" height="128"/>
@@ -667,6 +667,11 @@
                                     <constraint firstAttribute="bottom" secondItem="qA0-Q8-TnR" secondAttribute="bottom" id="x74-Cy-maN"/>
                                     <constraint firstItem="bKb-UE-DvY" firstAttribute="top" secondItem="DM1-Sn-dsn" secondAttribute="bottom" constant="15" id="y88-v3-eAF"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="J2R-Cv-w2Q"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="q5k-ES-N8y"/>

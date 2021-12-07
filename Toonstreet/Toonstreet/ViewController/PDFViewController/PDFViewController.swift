@@ -8,12 +8,14 @@
 import UIKit
 import PDFKit
 import WebKit
+import FirebaseStorage
+import SDWebImage
 
 class PDFViewController: BaseViewController {
 
     
     var episodeList:[String]?
-    
+    var bookTitle:String?
     @IBOutlet weak var webKit: WKWebView!
     
     @IBOutlet weak var btnPrevious:UIButton!
@@ -103,10 +105,38 @@ class PDFViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
 //        NotificationCenter.default.addObserver (self, selector: #selector(handlePageChange), name: Notification.Name.PDFViewPageChanged, object: nil)
         
-        if episodeList?.count ?? 0 > 0{
-//            self.webKit.set
-            self.webKit.loadHTMLString(episodeList![0], baseURL: nil)
+        
+        self.navigationController?.navigationBar.topItem?.title = bookTitle ?? ""
 
+//        if episodeList?.count ?? 0 > 0{
+////            self.webKit.set
+//            self.webKit.loadHTMLString(episodeList![0], baseURL: nil)
+//
+//        }
+        
+        if episodeList?.count ?? 0 > 0{
+
+        let storage = Storage.storage()
+        let starsRef = storage.reference(forURL: episodeList?[0] ?? "")
+         
+        starsRef.downloadURL { url, error in
+          if let error = error {
+            // Handle any errors
+              print(error)
+          } else {
+            // Get the download URL for 'images/stars.jpg'
+         
+              if (url != nil) {
+                  self.webKit.load(URLRequest.init(url: url!))
+              }
+//              self.webKit.loadHTMLString(url?.relativeString ?? "", baseURL: nil)
+              
+//              self.imgViewBookProfile.sd_imageIndicator = SDWebImageActivityIndicator.white
+//              self.imgViewBookProfile.sd_setImage(with: url, completed: nil)
+//              self.imgViewBookProfile.sd_setImage(with: url, placeholderImage: UIImage(named: ""))
+
+          }
+        }
         }
         
     }

@@ -73,7 +73,10 @@ class UpdateComicsCollectionViewCell: UICollectionViewCell {
           } else {
             // Get the download URL for 'images/stars.jpg'
               print(url)
-              self.imgViewProfile.sd_setImage(with: url, completed: nil)
+//              self.imgViewProfile.sd_setImage(with: url, completed: nil)
+              
+              self.imgViewProfile.sd_imageIndicator = SDWebImageActivityIndicator.white
+              self.imgViewProfile.sd_setImage(with: url, placeholderImage: UIImage(named: ""))
           }
         }
     }

@@ -36,24 +36,6 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        /*
-        self.collectionView.register(UINib.init(nibName: "GenreCollectionCell", bundle: nil), forCellWithReuseIdentifier: "GenreCollectionCell")
-        
-        let layout = UICollectionViewFlowLayout()
-        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        self.collectionView.collectionViewLayout = layout
-//        self.collectionView.delegate = self
-//
-        
-        layout.scrollDirection = .vertical //.horizontal
-//        layout.itemSize = cellSize'
-        layout.itemSize =  CGSize(width:100, height: 32)
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
-//        layout.minimumLineSpacing = 1.0
-//        layout.minimumInteritemSpacing = 1.0
-        self.collectionView.setCollectionViewLayout(layout, animated: true)
-
-        */
         
     }
         
@@ -87,7 +69,8 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
             self.btnSubscribe.setTitleColor(UIColor.black, for: .normal)
             
         }
-               
+            
+
         self.lblTitle.font = .font_extrabold(18)
         self.lblAuther.font = .font_semibold(12)
         self.lblRateValue.font = .font_semibold(12)
@@ -138,7 +121,8 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
        
         self.lblTitle.text = self.objBook?.title ?? "OVERLOAD"
         self.lblAuther.text = self.objBook?.publisher ?? ""
-        
+        self.navigationController?.navigationBar.topItem?.title = self.objBook?.title 
+
         if self.objBook?.cover != ""{
         let storage = Storage.storage()
         let starsRef = storage.reference(forURL: self.objBook?.cover ?? "")
@@ -151,8 +135,14 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
           } else {
             // Get the download URL for 'images/stars.jpg'
 //              print(url)
-              self.imgProduct.sd_setImage(with: url, completed: nil)
+//              self.imgProduct.sd_setImage(with: url, completed: nil)
 
+              self.imgProduct.sd_imageIndicator = SDWebImageActivityIndicator.white
+//              self.imgViewBookProfile.sd_setImage(with: url, completed: nil)
+              self.imgProduct.sd_setImage(with: url, placeholderImage: UIImage(named: ""))
+
+              
+              
           }
         }
 
@@ -212,6 +202,7 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
         
         if let objPDFVC = self.storyboard?.instantiateViewController(withIdentifier: "PDFViewController") as? PDFViewController{
             self.hidesBottomBarWhenPushed = true
+            objPDFVC.bookTitle = self.objBook?.title ?? ""
             objPDFVC.episodeList = self.objBook?.episodes[indexPath.row].strContent
             self.navigationController?.pushViewController(objPDFVC, animated: true )
         }
@@ -229,7 +220,7 @@ extension DetailViewController:UICollectionViewDataSource,UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GenreCollectionCell", for: indexPath) as? GenreCollectionCell
-            else { preconditionFailure("Failed to load collection view cell") }
+ else { preconditionFailure("Faile?d to load collection view cell") }
         cell.strCategory = self.arrGenre[indexPath.item]
         
         return cell

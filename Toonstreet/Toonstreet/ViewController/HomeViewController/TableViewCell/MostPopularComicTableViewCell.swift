@@ -41,6 +41,9 @@ class MostPopularComicTableViewCell: UITableViewCell {
     
     func addAndReloadCell(arr:[TSBook]){
         self.mostPopularCollectionView.loadBooks(withBooks: arr)
+        self.mostPopularWithoutTypeCollectionView.loadBooks(withBooks: arr)
+
+//        self.mostPopularWithoutTypeCollectionView.loadBooks(withBooks: [TSBook(),TSBook(),TSBook(),TSBook()],isTypeHide: true  )
     }
     
     func commonInit(){
@@ -68,7 +71,8 @@ class MostPopularComicTableViewCell: UITableViewCell {
                 value(HomeType.ReleaseSoon,aryBook[index])
             }
         }
-        self.mostPopularWithoutTypeCollectionView.loadBooks(withBooks: [TSBook(),TSBook(),TSBook(),TSBook()],isTypeHide: true  )
+        
+//        self.mostPopularWithoutTypeCollectionView.loadBooks(withBooks: [TSBook(),TSBook(),TSBook(),TSBook()],isTypeHide: true  )
         self.mostPopularWithoutTypeCollectionView.setDidSelectPhotoHandler { [weak self] (aryBook, index) in
             
             if let value = self?.didSelectCellItem{

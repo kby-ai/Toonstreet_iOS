@@ -73,7 +73,10 @@ class ReleaseSoonCollectionViewCell: UICollectionViewCell {
           } else {
             // Get the download URL for 'images/stars.jpg'
               print(url)
-              self.imgViewBookProfile.sd_setImage(with: url, completed: nil)
+              self.imgViewBookProfile.sd_imageIndicator = SDWebImageActivityIndicator.white
+//              self.imgViewBookProfile.sd_setImage(with: url, completed: nil)
+              self.imgViewBookProfile.sd_setImage(with: url, placeholderImage: UIImage(named: ""))
+
           }
         }
         }
