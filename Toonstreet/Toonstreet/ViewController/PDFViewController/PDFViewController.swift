@@ -16,8 +16,11 @@ class PDFViewController: BaseViewController {
     
     var episodeList:[String]?
     var bookTitle:String?
-    @IBOutlet weak var webKit: WKWebView!
+    var selectedIndex:Int = 0
     
+    @IBOutlet weak var webKit: WKWebView!
+    @IBOutlet weak var imgComic: UIImageView!
+
     @IBOutlet weak var btnPrevious:UIButton!
     @IBOutlet weak var btnNext:UIButton!
     
@@ -32,7 +35,7 @@ class PDFViewController: BaseViewController {
 
 //        self.setupPDFView()
         self.setupGesture()
-       
+        self.imgComic.enableZoom()
        
         
     }
@@ -61,15 +64,27 @@ class PDFViewController: BaseViewController {
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
         swipeRight.direction = UISwipeGestureRecognizer.Direction.right
 //        self.viewPDF.addGestureRecognizer(swipeRight)
-        self.webKit.addGestureRecognizer(swipeRight)
+        self.imgComic.addGestureRecognizer(swipeRight)
 
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
         swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
 //        self.viewPDF.addGestureRecognizer(swipeLeft)
-        self.webKit.addGestureRecognizer(swipeLeft)
+        self.imgComic.addGestureRecognizer(swipeLeft)
 
     }
     private func updateButtonViewUI(){
+        if selectedIndex == 0{
+            self.btnPrevious.isEnabled = false
+        }else{
+            self.btnPrevious.isEnabled = true
+        }
+        
+        if selectedIndex == self.episodeList?.count ?? 0 - 1{
+            self.btnNext.isEnabled = false
+        }else{
+            self.btnNext.isEnabled = true
+        }
+        
 //        if pdfView.canGoToPreviousPage{
 //            self.btnPrevious.isEnabled = true
 //        }
@@ -87,12 +102,68 @@ class PDFViewController: BaseViewController {
             if let swipeGesture = gesture as? UISwipeGestureRecognizer {
                 switch swipeGesture.direction {
                 case UISwipeGestureRecognizer.Direction.left:
-                    print("Swiped back")
+                    print("Swiped Left")
 //                    if pdfView.canGoToNextPage {
 //                        pdfView.goToNextPage(nil)
 //                    }
+                    
+                    selectedIndex = selectedIndex + 1
+
+                        if selectedIndex < self.episodeList?.count ?? 0{
+
+                            
+                            if episodeList?.count ?? 0 > 0{
+
+                            let storage = Storage.storage()
+                            let starsRef = storage.reference(forURL: episodeList?[selectedIndex] ?? "")
+                             
+                            starsRef.downloadURL { url, error in
+                              if let error = error {
+                                // Handle any errors
+                                  print(error)
+                              } else {
+                                // Get the download URL for 'images/stars.jpg'
+                             
+                                  if (url != nil) {
+                                      self.imgComic.sd_setImage(with: url, completed: nil)
+                                  }
+                              }
+                            }
+                            }
+
+                        }else{ selectedIndex = selectedIndex - 1}
+                    updateButtonViewUI()
+
+                    
                 case UISwipeGestureRecognizer.Direction.right:
-                    print("Swiped back")
+                    print("Swiped right")
+                    
+                    if selectedIndex > 0 {
+                        selectedIndex = selectedIndex - 1
+                        
+                        if episodeList?.count ?? 0 > 0{
+
+                        let storage = Storage.storage()
+                        let starsRef = storage.reference(forURL: episodeList?[selectedIndex] ?? "")
+                         
+                        starsRef.downloadURL { url, error in
+                          if let error = error {
+                            // Handle any errors
+                              print(error)
+                          } else {
+                            // Get the download URL for 'images/stars.jpg'
+                         
+                              if (url != nil) {
+                                  self.imgComic.sd_setImage(with: url, completed: nil)
+                              }
+                          }
+                        }
+                        }
+
+                        
+                    }
+                   
+                    updateButtonViewUI()
 //                    if pdfView.canGoToPreviousPage {
 //                        pdfView.goToPreviousPage(nil)
 //                    }
@@ -108,11 +179,6 @@ class PDFViewController: BaseViewController {
         
         self.navigationController?.navigationBar.topItem?.title = bookTitle ?? ""
 
-//        if episodeList?.count ?? 0 > 0{
-////            self.webKit.set
-//            self.webKit.loadHTMLString(episodeList![0], baseURL: nil)
-//
-//        }
         
         if episodeList?.count ?? 0 > 0{
 
@@ -127,14 +193,8 @@ class PDFViewController: BaseViewController {
             // Get the download URL for 'images/stars.jpg'
          
               if (url != nil) {
-                  self.webKit.load(URLRequest.init(url: url!))
+                  self.imgComic.sd_setImage(with: url, completed: nil)
               }
-//              self.webKit.loadHTMLString(url?.relativeString ?? "", baseURL: nil)
-              
-//              self.imgViewBookProfile.sd_imageIndicator = SDWebImageActivityIndicator.white
-//              self.imgViewBookProfile.sd_setImage(with: url, completed: nil)
-//              self.imgViewBookProfile.sd_setImage(with: url, placeholderImage: UIImage(named: ""))
-
           }
         }
         }
@@ -144,26 +204,78 @@ class PDFViewController: BaseViewController {
     
     @IBAction func btnPreviousClick(_ sender: Any) {
         
-//        if pdfView.canGoToPreviousPage{
-//            pdfView.goToPreviousPage(sender)
-//        }
+        if selectedIndex > 0 {
+            selectedIndex = selectedIndex - 1
+        }
         
-       
-//        self.updateButtonViewUI()
+        if episodeList?.count ?? 0 > 0{
+
+        let storage = Storage.storage()
+        let starsRef = storage.reference(forURL: episodeList?[selectedIndex] ?? "")
+         
+        starsRef.downloadURL { url, error in
+          if let error = error {
+            // Handle any errors
+              print(error)
+          } else {
+            // Get the download URL for 'images/stars.jpg'
+         
+              if (url != nil) {
+                  self.imgComic.sd_setImage(with: url, completed: nil)
+              }
+          }
+        }
+        }
+        updateButtonViewUI()
     }
     
     @IBAction func btnNextClick(_ sender: Any) {
-//        pdfView.next =
         
-//        if pdfView.canGoToNextPage{
-//            pdfView.goToNextPage(sender)
-//        }
-       
-//        self.updateButtonViewUI()
-        //pdfView.usePageViewController(true, withViewOptions: nil)
+        selectedIndex = selectedIndex + 1
 
+        if selectedIndex < self.episodeList?.count ?? 0 {
+        
+        
+        if episodeList?.count ?? 0 > 0{
+
+        let storage = Storage.storage()
+        let starsRef = storage.reference(forURL: episodeList?[selectedIndex] ?? "")
+         
+        starsRef.downloadURL { url, error in
+          if let error = error {
+            // Handle any errors
+              print(error)
+          } else {
+            // Get the download URL for 'images/stars.jpg'
+         
+              if (url != nil) {
+                  self.imgComic.sd_setImage(with: url, completed: nil)
+              }
+          }
+        }
+        }
+        }else{
+            selectedIndex = selectedIndex - 1
+        }
+        updateButtonViewUI()
     }
     
     
     
+}
+
+extension UIImageView {
+  func enableZoom() {
+    let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(startZooming(_:)))
+    isUserInteractionEnabled = true
+    addGestureRecognizer(pinchGesture)
+  }
+
+  @objc
+  private func startZooming(_ sender: UIPinchGestureRecognizer) {
+    let scaleResult = sender.view?.transform.scaledBy(x: sender.scale, y: sender.scale)
+    guard let scale = scaleResult, scale.a > 1, scale.d > 1 else { return }
+    sender.view?.transform = scale
+    sender.scale = 1
+  }
 }

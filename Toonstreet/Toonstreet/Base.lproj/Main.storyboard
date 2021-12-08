@@ -1681,7 +1681,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="768"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BXx-6d-GWp">
+                            <wkWebView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BXx-6d-GWp">
                                 <rect key="frame" x="0.0" y="44" width="414" height="768"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
@@ -1723,6 +1723,9 @@
                                     <constraint firstItem="amr-v8-7u3" firstAttribute="leading" secondItem="QQh-LS-KXp" secondAttribute="trailing" constant="30" id="z1n-R4-TWa"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3gM-iQ-O4H">
+                                <rect key="frame" x="0.0" y="44" width="414" height="768"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="o7E-YK-kzg"/>
                         <color key="backgroundColor" name="themeBlack"/>
@@ -1730,18 +1733,23 @@
                             <constraint firstItem="242-v7-FMD" firstAttribute="top" secondItem="o7E-YK-kzg" secondAttribute="top" id="0DP-dZ-fnU"/>
                             <constraint firstItem="o7E-YK-kzg" firstAttribute="trailing" secondItem="BXx-6d-GWp" secondAttribute="trailing" id="5aY-n4-ufX"/>
                             <constraint firstItem="dKs-qS-e97" firstAttribute="top" secondItem="BXx-6d-GWp" secondAttribute="bottom" id="9O6-nE-Xkk"/>
+                            <constraint firstItem="3gM-iQ-O4H" firstAttribute="leading" secondItem="o7E-YK-kzg" secondAttribute="leading" id="9Up-gj-7q9"/>
                             <constraint firstItem="o7E-YK-kzg" firstAttribute="trailing" secondItem="242-v7-FMD" secondAttribute="trailing" id="LUq-ph-eYb"/>
                             <constraint firstItem="BXx-6d-GWp" firstAttribute="leading" secondItem="o7E-YK-kzg" secondAttribute="leading" id="LXS-es-NZh"/>
+                            <constraint firstItem="dKs-qS-e97" firstAttribute="top" secondItem="3gM-iQ-O4H" secondAttribute="bottom" id="c8b-NA-WX7"/>
                             <constraint firstItem="dKs-qS-e97" firstAttribute="centerX" secondItem="UyY-qb-nnX" secondAttribute="centerX" id="nxv-RX-Kvn"/>
+                            <constraint firstItem="o7E-YK-kzg" firstAttribute="trailing" secondItem="3gM-iQ-O4H" secondAttribute="trailing" id="pX5-uu-9hT"/>
                             <constraint firstItem="BXx-6d-GWp" firstAttribute="top" secondItem="o7E-YK-kzg" secondAttribute="top" id="quW-fK-r38"/>
                             <constraint firstItem="o7E-YK-kzg" firstAttribute="bottom" secondItem="242-v7-FMD" secondAttribute="bottom" constant="50" id="rr6-D4-6Nj"/>
                             <constraint firstItem="o7E-YK-kzg" firstAttribute="bottom" secondItem="dKs-qS-e97" secondAttribute="bottom" id="s3H-jT-Cus"/>
+                            <constraint firstItem="3gM-iQ-O4H" firstAttribute="top" secondItem="o7E-YK-kzg" secondAttribute="top" id="ufu-Mf-Qti"/>
                             <constraint firstItem="242-v7-FMD" firstAttribute="leading" secondItem="o7E-YK-kzg" secondAttribute="leading" id="vFJ-yj-oYJ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="btnNext" destination="amr-v8-7u3" id="iRf-v7-jfb"/>
                         <outlet property="btnPrevious" destination="QQh-LS-KXp" id="mhh-j2-Gcx"/>
+                        <outlet property="imgComic" destination="3gM-iQ-O4H" id="eGw-51-zGu"/>
                         <outlet property="viewPDF" destination="242-v7-FMD" id="Nrw-Ph-YCE"/>
                         <outlet property="webKit" destination="BXx-6d-GWp" id="83A-uL-oWd"/>
                     </connections>
