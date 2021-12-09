@@ -192,6 +192,7 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
         }
         cell.setupEpisodCell(objEpisode: objBook?.episodes[indexPath.row] ?? TSEpisodes())
     
+        cell.lblTitle.text = "Episode \(indexPath.row + 1)"
         return cell
     }
    

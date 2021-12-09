@@ -58,7 +58,7 @@ class HomeViewController: BaseViewController {
         let ref = Database.database().reference(fromURL: "https://toonstreetbackend-default-rtdb.firebaseio.com/")
 
         _ = ref.child("comics").observeSingleEvent(of: .value, with: { (snapshot) in
-//            print(snapshot)
+            print(snapshot)
             self.arrComics = []
             guard let value = snapshot.value else { return }
 

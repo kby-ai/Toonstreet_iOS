@@ -43,7 +43,7 @@ class TSBook: TSModel {
             cover = dictObj["cover"] as? String ?? ""
         }
 //        episodes
-        if let arrValue = dictObj["episodes"] as? [NSDictionary]{
+        if let arrValue = dictObj["issues"] as? [NSDictionary]{// episodes
             episodes = []
             for value in arrValue{
                 episodes.append(TSEpisodes.init(dictObj: value))

@@ -35,7 +35,7 @@ class EpisodesTableCell: UITableViewCell {
     
     func setupEpisodCell(objEpisode:TSEpisodes){
         
-        self.lblTitle.text = objEpisode.title
+//        self.lblTitle.text = objEpisode.title
     
         if objEpisode.cover != ""{
         let storage = Storage.storage()
