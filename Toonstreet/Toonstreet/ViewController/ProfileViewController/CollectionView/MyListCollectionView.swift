@@ -72,7 +72,7 @@ extension MyListCollectionView:UICollectionViewDataSource,UICollectionViewDelega
 //        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ResumeReadingCollectionViewCell.identifer, for: indexPath) as? ResumeReadingCollectionViewCell
 //            else { preconditionFailure("Failed to load collection view cell") }
 
-        
+        cell.setupCellData(objBook: self.aryBooks[indexPath.item])
 
         return cell
     }

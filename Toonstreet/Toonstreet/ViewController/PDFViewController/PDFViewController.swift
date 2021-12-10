@@ -40,6 +40,12 @@ class PDFViewController: BaseViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+
+        
+    }
+    
+    
     
 //    private func setupPDFView(){
 //        // Add PDFView to view controller.

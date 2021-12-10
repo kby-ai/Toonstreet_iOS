@@ -107,16 +107,16 @@ class LoginViewController: BaseViewController {
     
     @objc func btnSignupPush(){
         
-//           if let objSignupVC = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController") as? SignupViewController{
-//               self.navigationController?.pushViewController(objSignupVC, animated: true )
-//           }
+           if let objSignupVC = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController") as? SignupViewController{
+               self.navigationController?.pushViewController(objSignupVC, animated: true )
+           }
         
     
 //        #warning("Redirect To Home Screen Code")
         
-        if let objTabbar = self.storyboard?.instantiateViewController(withIdentifier: "TSTabBarControllerViewController") as? TSTabBarControllerViewController{
-            appDelegate.window?.rootViewController = objTabbar
-        }
+//        if let objTabbar = self.storyboard?.instantiateViewController(withIdentifier: "TSTabBarControllerViewController") as? TSTabBarControllerViewController{
+//            appDelegate.window?.rootViewController = objTabbar
+//        }
          
     }
     
@@ -156,6 +156,9 @@ class LoginViewController: BaseViewController {
                     let passwordStr = try self.validatePassword(password)
                     TSLoader.shared.showLoader()
         
+//                    Auth.auth().sign { result, error in
+//                        print(result)
+//                    }
                     Auth.auth().signIn(withEmail: emailStr, password: passwordStr) { [weak self] authResult, error in
         //              guard let strongSelf = self else { return }
                         if error != nil{
@@ -164,8 +167,8 @@ class LoginViewController: BaseViewController {
 //                            TSLoader.shared.hideLoader()
                             UIAlertController.alert(message: error!.localizedDescription)
                         }else{
-                
-        
+
+
                             TSLoader.shared.hideLoader()
                             UserDefaults.standard.set(true, forKey: "isLogin") //Bool
                             UserDefaults.standard.synchronize()

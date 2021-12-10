@@ -35,12 +35,16 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
     }
         
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+//        self.navigationController?.tabBarController?.tabBar.isHidden = false
+//        self.navigationController?.navigationBar.isHidden = false
+////        self.tabBarController?.tabBar.hidden = true/false
+        
+
+    }
     
     override func setupUI() {
         
@@ -202,7 +206,7 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
         //PDFViewController
         
         if let objPDFVC = self.storyboard?.instantiateViewController(withIdentifier: "PDFViewController") as? PDFViewController{
-            self.hidesBottomBarWhenPushed = true
+//            self.hidesBottomBarWhenPushed = true
             objPDFVC.bookTitle = self.objBook?.title ?? ""
             objPDFVC.episodeList = self.objBook?.episodes[indexPath.row].strContent
             self.navigationController?.pushViewController(objPDFVC, animated: true )

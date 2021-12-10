@@ -18,10 +18,10 @@ enum ProfileType{
 
 class ProfileTableView: TSTableView {
     
-    
+    var aryBooks:[TSBook] = []
     var aryProfileTypes:[ProfileType] = [.MyList,.ComicHistory]//,.ComicHistory]
 
-    private var didSelectTableCellSelectionHandler:HomeScreenBookTableViewCellSelectionHandler?
+    private var didSelectTableCellSelectionHandler:ProfileScreenMyListTableViewCellSelectionHandler?
     
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
@@ -34,6 +34,14 @@ class ProfileTableView: TSTableView {
         super.init(coder: aDecoder)
         
     }
+    
+    func setAndReloadTableView(arr:[TSBook]){
+        self.aryBooks = arr
+        self.reloadData()
+    }
+    
+    
+    
     override func commonInit() {
        
         self.estimatedRowHeight = 60.0
@@ -58,16 +66,16 @@ class ProfileTableView: TSTableView {
         self.dataSource = self
         self.reloadData()
     }
-    func didSelectCellItem(withHandler handler:HomeScreenBookTableViewCellSelectionHandler?){
+    func didSelectCellItem(withHandler handler:ProfileScreenMyListTableViewCellSelectionHandler?){
         if let value = handler{
             self.didSelectTableCellSelectionHandler = value
         }
     }
-//    private func handleCellItem(type:HomeType,book:TSBook){
-//        if let handler = self.didSelectTableCellSelectionHandler{
-//            handler(type,book)
-//        }
-//    }
+    private func handleCellItem(type:ProfileType,book:TSBook){
+        if let handler = self.didSelectTableCellSelectionHandler{
+            handler(type,book)
+        }
+    }
 }
 
 
@@ -98,9 +106,12 @@ extension ProfileTableView:UITableViewDelegate,UITableViewDataSource{
             guard let cell:MyListTableViewCell = tableView.dequeueReusableCell(withIdentifier: "MyListTableViewCell") as? MyListTableViewCell else {
                 return UITableViewCell()
             }
-//            cell.didSelectCellItem { [weak self] (type, book) in
-//                self?.handleCellItem(type: type, book: book)
-//            }
+            
+            cell.setAndReloadTableView(arr: self.aryBooks)
+            
+            cell.didSelectCellItem { [weak self] (type, book) in
+                self?.handleCellItem(type: type, book: book)
+            }
             return cell
         }
         else if type == .ComicHistory{
@@ -112,9 +123,12 @@ extension ProfileTableView:UITableViewDelegate,UITableViewDataSource{
 //            guard let cell:ResumeReadingTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ResumeReadingTableViewCell") as? ResumeReadingTableViewCell else {
 //                return UITableViewCell()
 //            }
-//            cell.didSelectCellItem { [weak self] (type, book) in
-//                self?.handleCellItem(type: type, book: book)
-//            }
+            cell.didSelectCellItem { [weak self] (type, book) in
+                self?.handleCellItem(type: type, book: book)
+            }
+            
+            cell.setAndReloadTableView(arr: self.aryBooks)
+
             return cell
         }
         else {

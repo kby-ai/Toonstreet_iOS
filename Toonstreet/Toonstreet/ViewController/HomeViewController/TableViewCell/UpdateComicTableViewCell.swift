@@ -56,8 +56,8 @@ class UpdateComicTableViewCell: TSTableViewCell {
                 value(HomeType.UpdateComics,aryBook[index])
             }
         }
-        
     }
+    
     func didSelectCellItem(withHandler handler:HomeScreenBookTableViewCellSelectionHandler?){
         if let value = handler{
             self.didSelectCellItem = value

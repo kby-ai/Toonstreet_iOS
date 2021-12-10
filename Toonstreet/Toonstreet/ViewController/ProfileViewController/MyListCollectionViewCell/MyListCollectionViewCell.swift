@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseStorage
+import SDWebImage
 
 class MyListCollectionViewCell: UICollectionViewCell {
     static let identifer = "MyListCollectionViewCell"
@@ -43,5 +45,32 @@ class MyListCollectionViewCell: UICollectionViewCell {
         self.lblAuthor.text = "Romance"
         
         self.mainView.backgroundColor = UIColor.clear
+    }
+    
+    func setupCellData(objBook:TSBook){
+
+        self.lblTitle.text = objBook.title
+        self.lblAuthor.text = objBook.category
+        
+        if objBook.cover != ""{
+        let storage = Storage.storage()
+        let starsRef = storage.reference(forURL: objBook.cover)
+
+//         Fetch the download URL
+        starsRef.downloadURL { url, error in
+          if let error = error {
+            // Handle any errors
+              print(error)
+          } else {
+            // Get the download URL for 'images/stars.jpg'
+              print(url)
+//              self.imgViewProfile.sd_setImage(with: url, completed: nil)
+              self.imgViewProfile.sd_imageIndicator = SDWebImageActivityIndicator.white
+              self.imgViewProfile.sd_setImage(with: url, placeholderImage: UIImage(named: ""))
+
+              
+          }
+        }
+        }
     }
 }

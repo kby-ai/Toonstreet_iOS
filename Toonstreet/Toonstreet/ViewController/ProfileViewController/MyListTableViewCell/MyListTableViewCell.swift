@@ -22,7 +22,7 @@ class MyListTableViewCell:TSTableViewCell {
     @IBOutlet weak var viewCollection:UIView!
     
     @IBOutlet weak var myListCollectionView:MyListCollectionView!
-//    private var didSelectCellItem:HomeScreenBookTableViewCellSelectionHandler?
+    private var didSelectCellItem:ProfileScreenMyListTableViewCellSelectionHandler?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -41,6 +41,13 @@ class MyListTableViewCell:TSTableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func setAndReloadTableView(arr:[TSBook]){
+        self.arrComics = arr
+        self.myListCollectionView.loadBooks(withBooks: self.arrComics)
+//        self.myListCollectionView.reloadData()
+    }
+    
     func commonInit(){
         
         self.lblTitle.text = "My List"
@@ -52,19 +59,19 @@ class MyListTableViewCell:TSTableViewCell {
         
         
         
-        self.myListCollectionView.loadBooks(withBooks: arrComics)
+//        self.myListCollectionView.loadBooks(withBooks: arrComics)
         
         self.myListCollectionView.setDidSelectPhotoHandler { [weak self] (aryBook, index) in
             
-//            if let value = self?.didSelectCellItem{
-//                value(ProfileType.ResumeReading,aryBook[index])
-//            }
+            if let value = self?.didSelectCellItem{
+                value(ProfileType.MyList,self?.arrComics[index] ?? TSBook())
+            }
         }
     }
-    func didSelectCellItem(withHandler handler:HomeScreenBookTableViewCellSelectionHandler?){
-//        if let value = handler{
-//            self.didSelectCellItem = value
-//        }
+    func didSelectCellItem(withHandler handler:ProfileScreenMyListTableViewCellSelectionHandler?){
+        if let value = handler{
+            self.didSelectCellItem = value
+        }
     }
     
 }

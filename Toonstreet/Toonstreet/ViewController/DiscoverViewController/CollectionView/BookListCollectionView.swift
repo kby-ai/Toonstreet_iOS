@@ -28,6 +28,13 @@ class BookListCollectionView: UICollectionView {
         self.commonInit()
     }
     
+
+    func setAndReloadTableView(arr:[TSBook]){
+        self.aryBooks = arr
+        self.reloadData()
+    }
+    
+    
     func commonInit(){
         self.backgroundColor = UIColor.white
         
@@ -62,7 +69,7 @@ extension BookListCollectionView:UICollectionViewDataSource,UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // Always show 50K cells so scrolling performance can be tested.
         
-        return self.aryBooks.count * 100
+        return self.aryBooks.count //* 100
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -73,7 +80,7 @@ extension BookListCollectionView:UICollectionViewDataSource,UICollectionViewDele
             else { preconditionFailure("Failed to load collection view cell") }
 
         cell.updateUI(withIsHideType: self.isHideType)
-
+        cell.setupCellData(objBook: self.aryBooks[indexPath.item])
         return cell
     }
 

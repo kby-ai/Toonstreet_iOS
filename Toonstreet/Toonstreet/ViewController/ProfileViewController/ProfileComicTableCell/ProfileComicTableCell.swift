@@ -17,7 +17,7 @@ class ProfileComicTableCell: UITableViewCell {
     @IBOutlet weak var mostPopularCollectionView:MostPopularCollectionView!
     @IBOutlet weak var viewCollectionWithoutType:UIView!
     @IBOutlet weak var mostPopularWithoutTypeCollectionView:MostPopularCollectionView!
-    private var didSelectCellItem:HomeScreenBookTableViewCellSelectionHandler?
+    private var didSelectCellItem:ProfileScreenMyListTableViewCellSelectionHandler?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,6 +37,17 @@ class ProfileComicTableCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    
+    func setAndReloadTableView(arr:[TSBook]){
+        self.arrComics = arr
+        self.mostPopularCollectionView.loadBooks(withBooks: self.arrComics)
+//        self.mostPopularCollectionView.reloadData()
+    }
+    
+    
+    
+    
     func commonInit(){
         self.lblTitle.text = "Comic History"
         self.lblTitle.numberOfLines = 0
@@ -52,24 +63,24 @@ class ProfileComicTableCell: UITableViewCell {
         self.viewCollection.backgroundColor = UIColor.clear
         self.viewCollectionWithoutType.backgroundColor = UIColor.clear
         
-        self.mostPopularCollectionView.loadBooks(withBooks: arrComics)
+//        self.mostPopularCollectionView.loadBooks(withBooks: arrComics)
         self.mostPopularCollectionView.setDidSelectPhotoHandler { [weak self] (aryBook, index) in
             
             if let value = self?.didSelectCellItem{
-                value(HomeType.ReleaseSoon,aryBook[index])
+                value(ProfileType.ComicHistory,aryBook[index])
             }
         }
-        self.mostPopularWithoutTypeCollectionView.loadBooks(withBooks: [TSBook(),TSBook(),TSBook(),TSBook()],isTypeHide: true  )
+//        self.mostPopularWithoutTypeCollectionView.loadBooks(withBooks: [TSBook(),TSBook(),TSBook(),TSBook()],isTypeHide: true  )
         self.mostPopularWithoutTypeCollectionView.setDidSelectPhotoHandler { [weak self] (aryBook, index) in
             
             if let value = self?.didSelectCellItem{
-                value(HomeType.ReleaseSoon,aryBook[index])
+                value(ProfileType.ComicHistory,aryBook[index])
             }
         }
         
         
     }
-    func didSelectCellItem(withHandler handler:HomeScreenBookTableViewCellSelectionHandler?){
+    func didSelectCellItem(withHandler handler:ProfileScreenMyListTableViewCellSelectionHandler?){
         if let value = handler{
             self.didSelectCellItem = value
         }
