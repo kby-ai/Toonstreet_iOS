@@ -131,51 +131,130 @@ class LoginViewController: BaseViewController {
 //        self.loginSuccess()
 
         
-        self.loginFirebaseAuthMethod(email: self.txtUsername.text ?? "", password: self.txtPassword.text ?? "") { [unowned self] result in
-            switch result {
-                case .success:
-//                TSUser.shared.isLogin = true
-//                TSUser.shared.saveUserDetails()
-                
-                    self.loginSuccess()
-                case .failure(let error):
-                    self.didFailToLogin(withError: error)
+        
+//        if txtUsername.text?.isValidEmail() == true{
+            self.loginFirebaseAuthMethod(email: self.txtUsername.text ?? "", password: self.txtPassword.text ?? "") { [unowned self] result in
+                switch result {
+                    case .success:
+    //                TSUser.shared.isLogin = true
+    //                TSUser.shared.saveUserDetails()
+                    
+                        self.loginSuccess()
+                    case .failure(let error):
+                        self.didFailToLogin(withError: error)
+                }
             }
-        }
+
+//        }else{
+//            retrieveUserEmail(userName: txtUsername.text ?? "") { userEmail in
+//                self.loginFirebaseAuthMethod(email: self.txtUsername.text ?? "", password: self.txtPassword.text ?? "") { [unowned self] result in
+//                    switch result {
+//                        case .success:
+//        //                TSUser.shared.isLogin = true
+//        //                TSUser.shared.saveUserDetails()
+//
+//                            self.loginSuccess()
+//                        case .failure(let error):
+//                            self.didFailToLogin(withError: error)
+//                    }
+//                }
+//
+//            }
+//        }
         
     }
     
     
+    
+//    func retrieveUserEmail(userName : String, completionBlock : ((_ userEmail : String) -> Void)){
+//
+//        var userEmail : String!
+//
+//        let ref = Database.database().reference(fromURL: "https://toonstreetbackend-default-rtdb.firebaseio.com/")
+//
+//        _ = ref.child("users").child("\(userName)").observeSingleEvent(of: .value, with: { (snapshot) in
+//            print(snapshot.value(forKey: "email"))
+//            userEmail = snapshot.value(forKey: "email") as? String
+//            completionBlock(userEmail)
+//
+//        })
+////       print(userEmail)
+//
+//    }
     
     
     //MARK:Firebase Login Method
     
     func loginFirebaseAuthMethod(email: String, password: String, completion: @escaping ((Result<Bool, Error>) -> Void)) {
                 do{
-                    let emailStr = try self.isEmptyCheckEmail(email)
+                    var emailStr = email
                     let passwordStr = try self.validatePassword(password)
                     TSLoader.shared.showLoader()
+
+                    if emailStr.isValidEmail() == false{
+                        let ref = Database.database().reference(fromURL: "https://toonstreetbackend-default-rtdb.firebaseio.com/")
+
+                        _ = ref.child("users").child("\(emailStr)").observeSingleEvent(of: .value, with: { (snapshot) in
+
+
+                            guard let value = snapshot.value else { return }
+
+                            
+                            if let dictValue = value as? NSDictionary{
+                                
+                                
+                                emailStr = dictValue.value(forKey: "email") as? String ?? ""//snapshot.value(forKey: "email") as? String ?? ""
+
+                            
+                            Auth.auth().signIn(withEmail: emailStr, password: passwordStr) { [weak self] authResult, error in
+                //              guard let strongSelf = self else { return }
+                                if error != nil{
+                                    TSLoader.shared.hideLoader()
+                                    completion(.failure(error!))
+        //                            TSLoader.shared.hideLoader()
+                                    UIAlertController.alert(message: error!.localizedDescription)
+                                }else{
+
+
+                                    TSLoader.shared.hideLoader()
+                                    UserDefaults.standard.set(true, forKey: "isLogin") //Bool
+                                    UserDefaults.standard.synchronize()
+                                    completion(.success(true))
+
+                                }
+                            }
+                            }
+                        })
+//                    }
+                    }else{
+                        
+                        Auth.auth().signIn(withEmail: emailStr, password: passwordStr) { [weak self] authResult, error in
+            //              guard let strongSelf = self else { return }
+                            if error != nil{
+                                TSLoader.shared.hideLoader()
+                                completion(.failure(error!))
+    //                            TSLoader.shared.hideLoader()
+                                UIAlertController.alert(message: error!.localizedDescription)
+                            }else{
+
+
+                                TSLoader.shared.hideLoader()
+                                UserDefaults.standard.set(true, forKey: "isLogin") //Bool
+                                UserDefaults.standard.synchronize()
+                                completion(.success(true))
+
+                            }
+                        }
+                        
+                        
+                    }
+                    
+                    
         
 //                    Auth.auth().sign { result, error in
 //                        print(result)
 //                    }
-                    Auth.auth().signIn(withEmail: emailStr, password: passwordStr) { [weak self] authResult, error in
-        //              guard let strongSelf = self else { return }
-                        if error != nil{
-                            TSLoader.shared.hideLoader()
-                            completion(.failure(error!))
-//                            TSLoader.shared.hideLoader()
-                            UIAlertController.alert(message: error!.localizedDescription)
-                        }else{
-
-
-                            TSLoader.shared.hideLoader()
-                            UserDefaults.standard.set(true, forKey: "isLogin") //Bool
-                            UserDefaults.standard.synchronize()
-                            completion(.success(true))
-
-                        }
-                    }
+                   
         
                 }catch {
                     TSLoader.shared.hideLoader()
@@ -190,29 +269,29 @@ class LoginViewController: BaseViewController {
   
 
     //MARK: Validation
-    func validatePassword(_ password:String?) throws -> String {
-        guard let password = password else {throw ValidationError.enterPassword}
-        guard password != "" else {throw ValidationError.enterPassword}
-        guard password.count >= 6 else {throw ValidationError.passwordTooShort}
-
-        return password
-    }
+//    func validatePassword(_ password:String?) throws -> String {
+//        guard let password = password else {throw ValidationError.enterPassword}
+//        guard password != "" else {throw ValidationError.enterPassword}
+//        guard password.count >= 6 else {throw ValidationError.passwordTooShort}
+//
+//        return password
+//    }
 
    
-    func isEmptyCheckEmail(_ text:String?) throws -> String  {
-
-            guard let textField = text else {throw ValidationError.enterEmail}
-            guard textField != ""  else {throw ValidationError.enterEmail}
-
-            let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-            let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-            let isValidEmail = emailTest.evaluate(with: text)
-            if isValidEmail == false{
-                throw ValidationError.enterValidEmail
-            }
-            return textField
-
-    }
+//    func isEmptyCheckEmail(_ text:String?) throws -> String  {
+//
+//            guard let textField = text else {throw ValidationError.enterEmail}
+//            guard textField != ""  else {throw ValidationError.enterEmail}
+//
+//            let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+//            let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+//            let isValidEmail = emailTest.evaluate(with: text)
+//            if isValidEmail == false{
+//                throw ValidationError.enterValidEmail
+//            }
+//            return textField
+//
+//    }
 
     
     //MARK: Login Success

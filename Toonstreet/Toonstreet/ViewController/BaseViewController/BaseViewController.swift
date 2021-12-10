@@ -100,4 +100,38 @@ class BaseViewController: UIViewController {
         self.view.backgroundColor = UIColor.Theme.themeBlackColor
     }
 
+    
+    //MARK: Validation
+    func validatePassword(_ password:String?) throws -> String {
+        guard let password = password else {throw ValidationError.enterPassword}
+        guard password != "" else {throw ValidationError.enterPassword}
+        guard password.count >= 6 else {throw ValidationError.passwordTooShort}
+
+        return password
+    }
+
+   
+    func isEmptyCheckEmail(_ text:String?) throws -> String  {
+
+            guard let textField = text else {throw ValidationError.enterEmail}
+            guard textField != ""  else {throw ValidationError.enterEmail}
+
+            let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+            let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+            let isValidEmail = emailTest.evaluate(with: text)
+            if isValidEmail == false{
+                throw ValidationError.enterValidEmail
+            }
+            return textField
+
+    }
+    
+    func isEmptyCheckUserName(_ text:String?) throws -> String  {
+
+            guard let textField = text else {throw ValidationError.enterUserName}
+         
+            return textField
+
+    }
+    
 }
