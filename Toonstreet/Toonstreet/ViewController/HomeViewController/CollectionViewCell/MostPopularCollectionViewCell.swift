@@ -31,6 +31,16 @@ class MostPopularCollectionViewCell: UICollectionViewCell {
         
         
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.imgViewProfile.image = UIImage()
+        self.imgViewProfile.image = nil
+        self.imgViewProfile.sd_cancelCurrentImageLoad()
+        
+    }
+    
+    
     func updateUI(withIsHideType isHide:Bool){
         self.lblType.isHidden = isHide
     }

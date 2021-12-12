@@ -31,6 +31,13 @@ class ContinueReadingCollectionViewCell: UICollectionViewCell {
         
         
     }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.imgViewProfile.image = UIImage()
+        self.imgViewProfile.image = nil
+        self.imgViewProfile.sd_cancelCurrentImageLoad()
+        
+    }
     
     private func commonInit(){
         self.imgViewProfile.layer.cornerRadius = 10.0

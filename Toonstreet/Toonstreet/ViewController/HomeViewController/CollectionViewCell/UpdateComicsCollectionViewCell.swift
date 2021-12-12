@@ -53,7 +53,13 @@ class UpdateComicsCollectionViewCell: UICollectionViewCell {
         self.mainView.backgroundColor = UIColor.clear
     }
     
-    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.imgViewProfile.image = UIImage()
+        self.imgViewProfile.image = nil
+        self.imgViewProfile.sd_cancelCurrentImageLoad()
+        
+    }
     func setupCellData(objBook:TSBook){
 
         self.lblTitle.text = objBook.title

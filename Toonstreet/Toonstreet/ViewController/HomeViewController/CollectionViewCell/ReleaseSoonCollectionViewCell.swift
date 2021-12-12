@@ -34,6 +34,14 @@ class ReleaseSoonCollectionViewCell: UICollectionViewCell {
         
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.imgViewBookProfile.image = UIImage()
+        self.imgViewBookProfile.image = nil
+        self.imgViewBookProfile.sd_cancelCurrentImageLoad()
+        
+    }
+    
     private func commonInit(){
         
         self.mainView.layer.cornerRadius = 10.0

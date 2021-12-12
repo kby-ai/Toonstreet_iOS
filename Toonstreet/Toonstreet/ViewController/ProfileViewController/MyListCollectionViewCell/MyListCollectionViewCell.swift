@@ -27,8 +27,6 @@ class MyListCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        
     }
     
     private func commonInit(){
@@ -46,6 +44,15 @@ class MyListCollectionViewCell: UICollectionViewCell {
         
         self.mainView.backgroundColor = UIColor.clear
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.imgViewProfile.image = UIImage()
+        self.imgViewProfile.image = nil
+        self.imgViewProfile.sd_cancelCurrentImageLoad()
+        
+    }
+    
     
     func setupCellData(objBook:TSBook){
 

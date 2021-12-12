@@ -79,9 +79,12 @@ class DiscoverViewController: BaseViewController {
          self.bookListCollectionView.setDidSelectPhotoHandler { aryBook, index in
              self.openDetailScreen(book: aryBook[index])
          }
+         
+         
          self.itemCollectionView.setDidSelectPhotoHandler { (aryBook, index,  selectedItem, selectedItemIndex) in
              print(selectedItem)
              
+             if self.model.category == .Genre {
              var commicFilter:[TSBook] = []
              
              for objComic in self.arrComics {
@@ -89,14 +92,26 @@ class DiscoverViewController: BaseViewController {
                      commicFilter.append(objComic)
                  }
              }
-             
-             if commicFilter.count > 0{
                  self.bookListCollectionView.setAndReloadTableView(arr: commicFilter)
 
-             }else{
-                 self.bookListCollectionView.setAndReloadTableView(arr: self.arrComics)
+                 if commicFilter.count > 0{
+                     self.bookListCollectionView.backgroundView = nil
+                 } else {
+                     // Display a message when the table is empty
+                     self.createEmptyCollectionView(collectionView: self.bookListCollectionView)
+                 }
 
+             }else{
+                 self.bookListCollectionView.backgroundView = nil
+
+                self.bookListCollectionView.setAndReloadTableView(arr: self.arrComics)
              }
+//             if commicFilter.count > 0{
+
+//             }else{
+//                 self.bookListCollectionView.setAndReloadTableView(arr: self.arrComics)
+
+//             }
 
 //             self?.openDetailScreen(book: arrComics])
          }
@@ -119,6 +134,30 @@ class DiscoverViewController: BaseViewController {
         }else if self.model.category == .Daily{
             self.btnDaily.tsButtonType = .text(text: "Daily", textColor: UIColor.white)
             self.btnGenre.tsButtonType = .text(text: "Genre", textColor: UIColor.Theme.lightGrayColor)
+        }
+        
+        if self.model.category == .Genre {
+        var commicFilter:[TSBook] = []
+        
+        for objComic in self.arrComics {
+            if objComic.category.contains(self.model.aryGenre[0]){
+                commicFilter.append(objComic)
+            }
+        }
+            self.bookListCollectionView.setAndReloadTableView(arr: commicFilter)
+            
+            if commicFilter.count > 0{
+                self.bookListCollectionView.backgroundView = nil
+            } else {
+                // Display a message when the table is empty
+                self.createEmptyCollectionView(collectionView: self.bookListCollectionView)
+            }
+
+            
+
+        }else{
+            self.bookListCollectionView.backgroundView = nil
+            self.bookListCollectionView.setAndReloadTableView(arr: self.arrComics)
         }
     }
     
@@ -166,7 +205,7 @@ class DiscoverViewController: BaseViewController {
                     self.arrComics.append(TSBook.init(dictObj:objDict))
                 }
             }
-  
+            self.bookListCollectionView.backgroundView = nil
             self.bookListCollectionView.setAndReloadTableView(arr: self.arrComics)
         })
     }

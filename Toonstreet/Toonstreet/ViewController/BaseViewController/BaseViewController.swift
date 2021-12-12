@@ -134,4 +134,26 @@ class BaseViewController: UIViewController {
 
     }
     
+    
+    func createEmptyTableView(tblView:UITableView) -> Void {
+        let messageLabel = UILabel()//UILabel(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height/2))
+        messageLabel.text = "No Record Found"
+        messageLabel.textColor = UIColor.black
+//            messageLabel.numberOfLines = 0
+        messageLabel.textAlignment = .center
+        messageLabel.font = UIFont.font_bold(26)
+        tblView.backgroundView = messageLabel
+        tblView.backgroundView?.backgroundColor = UIColor.white
+    }
+    
+    func createEmptyCollectionView(collectionView:UICollectionView) -> Void {
+        let messageLabel = UILabel()//UILabel(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height/2))
+        messageLabel.text = "No Record Found"
+        messageLabel.textColor = UIColor.white
+//            messageLabel.numberOfLines = 0
+        messageLabel.textAlignment = .center
+        messageLabel.font = UIFont.font_bold(26)
+        collectionView.backgroundView = messageLabel
+        collectionView.backgroundView?.backgroundColor = UIColor.clear
+    }
 }

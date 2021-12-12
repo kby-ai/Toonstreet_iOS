@@ -35,6 +35,7 @@ class BookListCollectionView: UICollectionView {
     }
     
     
+    
     func commonInit(){
         self.backgroundColor = UIColor.white
         

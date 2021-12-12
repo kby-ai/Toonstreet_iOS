@@ -26,6 +26,15 @@ class BookListCollectionViewCell: UICollectionViewCell {
         self.commonInit()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.imgViewProfile.image = UIImage()
+        self.imgViewProfile.image = nil
+        self.imgViewProfile.sd_cancelCurrentImageLoad()
+        
+    }
+    
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -49,8 +58,6 @@ class BookListCollectionViewCell: UICollectionViewCell {
         
         self.mainView.backgroundColor = UIColor.clear
     }
-    
-    
     
     func setupCellData(objBook:TSBook){
 
