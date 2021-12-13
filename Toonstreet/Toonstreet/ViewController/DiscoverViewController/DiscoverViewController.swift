@@ -13,13 +13,13 @@ import FirebaseFirestoreSwift
 
 
 enum DiscoveryCategory{
-    case Daily
+//    case Daily //temp comment
     case Genre
 }
 class DiscoverModel:TSModel{
-    var category:DiscoveryCategory = .Daily
+    var category:DiscoveryCategory = .Genre
     var strSearchTitles:String = ""
-    var aryDaily:[String] = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+//    var aryDaily:[String] = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
     var aryGenre:[String] = ["Trending","New releases","Adventure","Action","Romance","Drama","Comedy","Thriller","Superhero","Sci-fi","Mystery","Fantasy"]
     
     override init(){
@@ -63,9 +63,12 @@ class DiscoverViewController: BaseViewController {
     }
     
      override func setupUI(){
-        self.model.category = .Daily
+         
+         self.fetchComicData()
+
+         self.model.category = .Genre
         self.updateCategoryUI()
-        itemCollectionView.loadItems(items: self.model.aryDaily)
+//        itemCollectionView.loadItems(items: self.model.aryDaily)
 //        bookListCollectionView.loadBooks(withBooks: [])//,TSBook(),TSBook(),TSBook(),TSBook()
 
         mainView.backgroundColor = UIColor.Theme.themeBlackColor
@@ -119,24 +122,28 @@ class DiscoverViewController: BaseViewController {
 //             
 //         }
          
-        self.btnDaily.tsButtonType = .text(text: "Daily", textColor: UIColor.white)
+//        self.btnDaily.tsButtonType = .text(text: "Daily", textColor: UIColor.white)//temp comment
         self.btnGenre.tsButtonType = .text(text: "Genre", textColor: UIColor.Theme.lightGrayColor)
         
-         self.fetchComicData()
+         itemCollectionView.loadItems(items: self.model.aryGenre)
+         self.updateCategoryUI()
+
+         
         //tabBtn.titleEdgeInsets = UIEdgeInsetsMake(0, spacing, 0, 0);
         
     }
     private func updateCategoryUI(){
-        if self.model.category == .Genre {
-            self.btnDaily.tsButtonType = .text(text: "Daily", textColor: UIColor.Theme.lightGrayColor)
-            self.btnGenre.tsButtonType = .text(text: "Genre", textColor: UIColor.white)
+//        if self.model.category == .Genre {
+//            self.btnDaily.tsButtonType = .text(text: "Daily", textColor: UIColor.Theme.lightGrayColor) //temp comment
+//            self.btnGenre.tsButtonType = .text(text: "Genre", textColor: UIColor.white)
             
-        }else if self.model.category == .Daily{
-            self.btnDaily.tsButtonType = .text(text: "Daily", textColor: UIColor.white)
-            self.btnGenre.tsButtonType = .text(text: "Genre", textColor: UIColor.Theme.lightGrayColor)
-        }
+//        }//temp coment this section
+//        else if self.model.category == .Daily{
+//            self.btnDaily.tsButtonType = .text(text: "Daily", textColor: UIColor.white)
+//            self.btnGenre.tsButtonType = .text(text: "Genre", textColor: UIColor.Theme.lightGrayColor)
+//        }
         
-        if self.model.category == .Genre {
+//        if self.model.category == .Genre {
         var commicFilter:[TSBook] = []
         
         for objComic in self.arrComics {
@@ -155,17 +162,17 @@ class DiscoverViewController: BaseViewController {
 
             
 
-        }else{
-            self.bookListCollectionView.backgroundView = nil
-            self.bookListCollectionView.setAndReloadTableView(arr: self.arrComics)
-        }
+//        }else{
+//            self.bookListCollectionView.backgroundView = nil
+//            self.bookListCollectionView.setAndReloadTableView(arr: self.arrComics)
+//        }
     }
     
     //MARK: - Button Action
     @IBAction func btnDailyCategorySelection(_ sender:UIButton){
-        self.model.category = .Daily
-        self.updateCategoryUI()
-        itemCollectionView.loadItems(items: self.model.aryDaily)
+//        self.model.category = .Daily
+//        self.updateCategoryUI()
+//        itemCollectionView.loadItems(items: self.model.aryDaily)
     }
     @IBAction func btnGenreCategorySelection(_ sender:UIButton){
         self.model.category = .Genre
@@ -207,6 +214,9 @@ class DiscoverViewController: BaseViewController {
             }
             self.bookListCollectionView.backgroundView = nil
             self.bookListCollectionView.setAndReloadTableView(arr: self.arrComics)
+            
+            self.updateCategoryUI()
+
         })
     }
     
