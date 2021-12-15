@@ -21,24 +21,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="122" height="156"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" verticalCompressionResistancePriority="752" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hg6-UA-h1b" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="136" width="122" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="zde-Iq-KH6"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="134.5" width="122" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" verticalCompressionResistancePriority="753" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJn-8S-MKi" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="110" width="122" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="08D-EJ-Osh"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="110" width="122" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n2p-Bx-Tbs">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummy_image" translatesAutoresizingMaskIntoConstraints="NO" id="n2p-Bx-Tbs">
                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="fg2-Yw-3qS"/>
@@ -54,7 +48,7 @@
                             <constraint firstItem="hg6-UA-h1b" firstAttribute="leading" secondItem="5CH-YL-gmH" secondAttribute="leading" id="HLd-YQ-Hf4"/>
                             <constraint firstAttribute="trailing" secondItem="hg6-UA-h1b" secondAttribute="trailing" id="QVa-jh-hAU"/>
                             <constraint firstItem="kJn-8S-MKi" firstAttribute="top" secondItem="n2p-Bx-Tbs" secondAttribute="bottom" constant="10" id="fPu-xl-OGD"/>
-                            <constraint firstAttribute="bottom" secondItem="hg6-UA-h1b" secondAttribute="bottom" id="nJi-ma-pkG"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="hg6-UA-h1b" secondAttribute="bottom" id="nJi-ma-pkG"/>
                             <constraint firstItem="hg6-UA-h1b" firstAttribute="trailing" secondItem="kJn-8S-MKi" secondAttribute="trailing" id="oXS-MH-49A"/>
                             <constraint firstItem="n2p-Bx-Tbs" firstAttribute="top" secondItem="5CH-YL-gmH" secondAttribute="top" id="rrb-9Y-xIl"/>
                             <constraint firstAttribute="trailing" secondItem="n2p-Bx-Tbs" secondAttribute="trailing" priority="999" id="trf-nD-Cm8"/>
@@ -80,6 +74,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="dummy_image" width="215.5" height="140"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

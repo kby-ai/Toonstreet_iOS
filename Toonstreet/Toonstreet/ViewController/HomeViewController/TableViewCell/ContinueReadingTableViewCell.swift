@@ -42,7 +42,7 @@ class ContinueReadingTableViewCell: TSTableViewCell {
     
     func commonInit(){
         self.lblTitle.text = "Continue Reading"
-        self.lblTitle.numberOfLines = 0
+        self.lblTitle.numberOfLines = 1
         self.lblTitle.textColor = UIColor.white
         self.lblTitle.font = UIFont.appFont_Bold(Size: 20)
         

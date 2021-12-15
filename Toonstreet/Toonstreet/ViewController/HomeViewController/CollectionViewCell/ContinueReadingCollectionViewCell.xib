@@ -21,13 +21,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="102" height="197"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" verticalCompressionResistancePriority="752" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7EJ-3P-ZF5" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="176.5" width="102" height="20.5"/>
+                                <rect key="frame" x="0.0" y="134.5" width="102" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" verticalCompressionResistancePriority="753" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oip-gd-0ae" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="110" width="102" height="62.5"/>
+                                <rect key="frame" x="0.0" y="110" width="102" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -49,7 +49,7 @@
                             <constraint firstItem="EZW-hd-UsT" firstAttribute="leading" secondItem="mKG-eA-bAN" secondAttribute="leading" id="gSj-Eo-VOe"/>
                             <constraint firstItem="7EJ-3P-ZF5" firstAttribute="leading" secondItem="mKG-eA-bAN" secondAttribute="leading" id="jBX-kp-ufd"/>
                             <constraint firstAttribute="trailing" secondItem="7EJ-3P-ZF5" secondAttribute="trailing" id="mFj-0Y-M8o"/>
-                            <constraint firstAttribute="bottom" secondItem="7EJ-3P-ZF5" secondAttribute="bottom" id="sqj-38-aGM"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="7EJ-3P-ZF5" secondAttribute="bottom" id="sqj-38-aGM"/>
                             <constraint firstItem="7EJ-3P-ZF5" firstAttribute="leading" secondItem="Oip-gd-0ae" secondAttribute="leading" id="swH-sN-dCD"/>
                         </constraints>
                     </view>

@@ -36,9 +36,11 @@ class ReleaseSoonCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        self.imgViewBookProfile.image = UIImage()
-        self.imgViewBookProfile.image = nil
-        self.imgViewBookProfile.sd_cancelCurrentImageLoad()
+//        self.imgViewBookProfile.image = UIImage()
+////        self.imgViewBookProfile.image = nil
+//        self.imgViewBookProfile.image = UIImage.init(named: "dummy_image")
+//
+//        self.imgViewBookProfile.sd_cancelCurrentImageLoad()
         
     }
     
@@ -81,10 +83,33 @@ class ReleaseSoonCollectionViewCell: UICollectionViewCell {
           } else {
             // Get the download URL for 'images/stars.jpg'
               print(url)
-              self.imgViewBookProfile.sd_imageIndicator = SDWebImageActivityIndicator.white
-//              self.imgViewBookProfile.sd_setImage(with: url, completed: nil)
-              self.imgViewBookProfile.sd_setImage(with: url, placeholderImage: UIImage(named: ""))
+//              self.imgViewBookProfile.sd_imageIndicator = SDWebImageActivityIndicator.white
+////              self.imgViewBookProfile.sd_setImage(with: url, completed: nil)
+//              self.imgViewBookProfile.sd_setImage(with: url, placeholderImage: UIImage(named: ""))
 
+              SDWebImageManager.shared.loadImage(
+                with: url,//.(imageShape: .square),
+                options: .handleCookies, // or .highPriority
+                  progress: nil,
+                  completed: { [weak self] (image, data, error, cacheType, finished, url) in
+                      guard let sself = self else { return }
+
+                      if let err = error {
+                          // Do something with the error
+                          return
+                      }
+
+                      guard let img = image else {
+                          // No image handle this error
+                          return
+
+                      }
+                      self?.imgViewBookProfile.image = img
+
+                  }
+              )
+              
+              
           }
         }
         }

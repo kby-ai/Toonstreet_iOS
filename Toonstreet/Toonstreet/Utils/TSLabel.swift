@@ -22,7 +22,7 @@ class TSLabel: UILabel {
     //MARK:- Common Init
     func commonInit() -> Void
     {
-        self.numberOfLines = 0
+//        self.numberOfLines = 0
         //Kavin-Update
         self.font = self.font.withSize(self.font.pointSize.proportionalFontSize());
         //self.textColor = self.isDarkMode() ? UIColor.lightGray : UIColor.black

@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="104" height="184"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" verticalCompressionResistancePriority="752" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBU-fZ-2XG" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="163.5" width="104" height="20.5"/>
+                                <rect key="frame" x="0.0" y="138.5" width="104" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20.5" id="Cys-15-McU"/>
                                 </constraints>
@@ -29,8 +29,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" verticalCompressionResistancePriority="753" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zp9-c3-eS5" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="114" width="104" height="45.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" verticalCompressionResistancePriority="753" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zp9-c3-eS5" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="114" width="104" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -46,7 +46,7 @@
                         <constraints>
                             <constraint firstItem="bBU-fZ-2XG" firstAttribute="trailing" secondItem="zp9-c3-eS5" secondAttribute="trailing" id="6H3-l7-Tul"/>
                             <constraint firstAttribute="trailing" secondItem="bBU-fZ-2XG" secondAttribute="trailing" id="9Wq-Dx-UJ6"/>
-                            <constraint firstAttribute="bottom" secondItem="bBU-fZ-2XG" secondAttribute="bottom" id="KZQ-4P-Eu2"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="bBU-fZ-2XG" secondAttribute="bottom" id="KZQ-4P-Eu2"/>
                             <constraint firstItem="bBU-fZ-2XG" firstAttribute="top" secondItem="zp9-c3-eS5" secondAttribute="bottom" constant="4" id="Wct-jv-hEq"/>
                             <constraint firstItem="hmo-5s-cta" firstAttribute="leading" secondItem="izO-lf-1AK" secondAttribute="leading" id="aui-0c-5hm"/>
                             <constraint firstItem="bBU-fZ-2XG" firstAttribute="leading" secondItem="zp9-c3-eS5" secondAttribute="leading" id="eQ3-ZU-zEv"/>

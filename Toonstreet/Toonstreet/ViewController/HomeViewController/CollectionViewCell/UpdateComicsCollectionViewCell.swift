@@ -55,9 +55,11 @@ class UpdateComicsCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        self.imgViewProfile.image = UIImage()
-        self.imgViewProfile.image = nil
-        self.imgViewProfile.sd_cancelCurrentImageLoad()
+//        self.imgViewProfile.image = UIImage()
+////        self.imgViewProfile.image = nil
+//        self.imgViewProfile.image = UIImage.init(named: "dummy_image")
+//
+//        self.imgViewProfile.sd_cancelCurrentImageLoad()
         
     }
     func setupCellData(objBook:TSBook){
@@ -81,8 +83,31 @@ class UpdateComicsCollectionViewCell: UICollectionViewCell {
               print(url)
 //              self.imgViewProfile.sd_setImage(with: url, completed: nil)
               
-              self.imgViewProfile.sd_imageIndicator = SDWebImageActivityIndicator.white
-              self.imgViewProfile.sd_setImage(with: url, placeholderImage: UIImage(named: ""))
+//              self.imgViewProfile.sd_imageIndicator = SDWebImageActivityIndicator.white
+//              self.imgViewProfile.sd_setImage(with: url, placeholderImage: UIImage(named: ""))
+        
+              SDWebImageManager.shared.loadImage(
+                with: url,//.(imageShape: .square),
+                  options: .handleCookies, // or .highPriority
+                  progress: nil,
+                  completed: { [weak self] (image, data, error, cacheType, finished, url) in
+                      guard let sself = self else { return }
+
+                      if let err = error {
+                          // Do something with the error
+                          return
+                      }
+
+                      guard let img = image else {
+                          // No image handle this error
+                          return
+
+                      }
+                      self?.imgViewProfile.image = img
+
+                  }
+              )
+              
           }
         }
     }
