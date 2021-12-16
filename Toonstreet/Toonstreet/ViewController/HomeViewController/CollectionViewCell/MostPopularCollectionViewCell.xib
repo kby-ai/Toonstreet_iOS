@@ -31,6 +31,9 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" verticalCompressionResistancePriority="753" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zp9-c3-eS5" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="114" width="104" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20.5" id="hfs-BU-9Ci"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -76,7 +79,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="dummy_image" width="215.5" height="140"/>
+        <image name="dummy_image" width="55.666667938232422" height="55.666667938232422"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

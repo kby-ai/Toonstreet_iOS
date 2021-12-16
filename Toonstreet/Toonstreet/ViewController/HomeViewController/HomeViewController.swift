@@ -16,7 +16,9 @@ import FirebaseFirestoreSwift
 class HomeViewController: BaseViewController {
 
     var arrComics:[TSBook] = []
-    
+    var arrUpdate:[TSBook] = []
+    var arrNewRelease:[TSBook] = []
+
     //MARK: - IBOutlet
     @IBOutlet weak var tblHomeTableView:HomeTableView!
     @IBOutlet weak var mainView:UIView!
@@ -25,6 +27,8 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
 
         self.fetchComicData()
+        
+        self.getUserData()
     }
 
     
@@ -40,7 +44,7 @@ class HomeViewController: BaseViewController {
         }
     }
     private func openDetailScreen(book:TSBook){
-        print("Data")
+//        print("Data")
         
         if let objDetailView = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController{
             
@@ -54,10 +58,14 @@ class HomeViewController: BaseViewController {
     
     func fetchComicData(){
         
-        
+//        newrelease
+//        popular
+//        soonrelease
+//        update
+//
         let ref = Database.database().reference(fromURL: "https://toonstreetbackend-default-rtdb.firebaseio.com/")
 
-        _ = ref.child("comics").observeSingleEvent(of: .value, with: { (snapshot) in
+        _ = ref.child("popular").observeSingleEvent(of: .value, with: { (snapshot) in
             print(snapshot)
             self.arrComics = []
             guard let value = snapshot.value else { return }
@@ -70,32 +78,62 @@ class HomeViewController: BaseViewController {
                 }
             }
   
-            self.tblHomeTableView.setAndReloadTableView(arr: self.arrComics)
-//            self.tblHomeTableView.arrComics = self.arrComics
-//            self.tblHomeTableView.reloadData()
+            self.tblHomeTableView.setAndReloadTableViewComics(arr: self.arrComics)
         })
+        
+        
+        
+
+        _ = ref.child("newrelease").observeSingleEvent(of: .value, with: { (snapshot) in
+            print(snapshot)
+            self.arrNewRelease = []
+            guard let value = snapshot.value else { return }
+
             
-        // Create a reference to the file you want to download
-//        let urlStr = "gs://toonstreetbackend.appspot.com/cover_images/10thMuse02Volume1/1.jpg"//storageRef.child("images/island.jpg")
+            if let arrValue = value as? [NSDictionary]{
+                for objDict in arrValue{
+                    print(objDict)
+                    self.arrNewRelease.append(TSBook.init(dictObj:objDict))
+                }
+            }
+  
+            self.tblHomeTableView.setAndReloadTableViewNewRelease(arr: self.arrNewRelease)
+        })
+        
+        
+        
+
+        _ = ref.child("update").observeSingleEvent(of: .value, with: { (snapshot) in
+            print(snapshot)
+            self.arrUpdate = []
+            guard let value = snapshot.value else { return }
+
+            
+            if let arrValue = value as? [NSDictionary]{
+                for objDict in arrValue{
+                    print(objDict)
+                    self.arrUpdate.append(TSBook.init(dictObj:objDict))
+                }
+            }
+  
+            self.tblHomeTableView.setAndReloadTableViewUpdadte(arr: self.arrUpdate)
+        })
+        
+//        = ref.child("soonrelease").observeSingleEvent(of: .value, with: { (snapshot) in
+//           print(snapshot)
+//           self.arrUpdate = []
+//           guard let value = snapshot.value else { return }
 //
 //
-//        let storage = Storage.storage()
-//         let storageReference = storage.reference()
-//        let starsRef = storage.reference(forURL: urlStr)
-
-//        let starsRef = storageRef.child("images/stars.jpg")
-
-        // Fetch the download URL
-//        starsRef.downloadURL { url, error in
-//          if let error = error {
-//            // Handle any errors
-//              print(error)
-//          } else {
-//            // Get the download URL for 'images/stars.jpg'
-//              print(url)
-//          }
-//        }
-
+//           if let arrValue = value as? [NSDictionary]{
+//               for objDict in arrValue{
+//                   print(objDict)
+//                   self.arrUpdate.append(TSBook.init(dictObj:objDict))
+//               }
+//           }
+//
+//           self.tblHomeTableView.setAndReloadTableViewUpdadte(arr: self.arrUpdate)
+//       })
         
     }
 }

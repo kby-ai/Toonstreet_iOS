@@ -126,7 +126,7 @@ class LoginViewController: BaseViewController {
     
     @IBAction func btnLoginClicked(_ sender: Any) {
         
-#warning("Temp Skip Login")
+//#warning("Temp Skip Login")
 
 //        self.loginSuccess()
 
@@ -136,8 +136,10 @@ class LoginViewController: BaseViewController {
             self.loginFirebaseAuthMethod(email: self.txtUsername.text ?? "", password: self.txtPassword.text ?? "") { [unowned self] result in
                 switch result {
                     case .success:
+                    
+                    print(result)
     //                TSUser.shared.isLogin = true
-    //                TSUser.shared.saveUserDetails()
+//                    TSUser.shared.saveUserDetails()
                     
                         self.loginSuccess()
                     case .failure(let error):
@@ -215,7 +217,11 @@ class LoginViewController: BaseViewController {
                                     UIAlertController.alert(message: error!.localizedDescription)
                                 }else{
 
+                                    TSUser.shared.uID = authResult?.user.uid ?? ""
+                                    TSUser.shared.email = authResult?.user.email ?? ""
+                                    TSUser.shared.saveUserDetails()
 
+//                                    print(authResult);
                                     TSLoader.shared.hideLoader()
                                     UserDefaults.standard.set(true, forKey: "isLogin") //Bool
                                     UserDefaults.standard.synchronize()
@@ -237,8 +243,12 @@ class LoginViewController: BaseViewController {
                                 UIAlertController.alert(message: error!.localizedDescription)
                             }else{
 
+//                                print(authResult?.user.uid);
+                                TSUser.shared.uID = authResult?.user.uid ?? ""
+                                TSUser.shared.email = authResult?.user.email ?? ""
 
                                 TSLoader.shared.hideLoader()
+                                TSUser.shared.saveUserDetails()
                                 UserDefaults.standard.set(true, forKey: "isLogin") //Bool
                                 UserDefaults.standard.synchronize()
                                 completion(.success(true))

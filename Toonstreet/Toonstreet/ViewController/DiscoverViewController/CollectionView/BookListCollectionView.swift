@@ -11,6 +11,10 @@ class BookListCollectionView: UICollectionView {
     
     
     private var aryBooks:[TSBook] = []
+//    var arrComics:[TSBook] = []
+//    var arrUpdate:[TSBook] = []
+//    var arrNewRelease:[TSBook] = []
+    
     private var didSelectBookSelectionHandler:((_ aryBook:[TSBook],_ index:Int)->Void)?
     private var isHideType:Bool = false
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {

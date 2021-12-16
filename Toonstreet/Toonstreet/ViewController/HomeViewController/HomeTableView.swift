@@ -11,15 +11,17 @@ enum HomeType{
     case UpdateComics
     case ReleaseSoon
     case MostPopular
-    case ContinueReading
+//    case ContinueReading
     case NewRelease
 }
 class HomeTableView: TSTableView {
    
     var arrComics:[TSBook] = []
+    var arrNewRelease:[TSBook] = []
+    var arrUpdate:[TSBook] = []
 
 
-    var aryHomeTypes:[HomeType] = [.ResumeReading,.UpdateComics,.ReleaseSoon,.MostPopular,.ContinueReading,.NewRelease]
+    var aryHomeTypes:[HomeType] = [.ResumeReading,.UpdateComics,.ReleaseSoon,.MostPopular,.NewRelease]//,.ContinueReading
 
     private var didSelectTableCellSelectionHandler:HomeScreenBookTableViewCellSelectionHandler?
     
@@ -51,13 +53,24 @@ class HomeTableView: TSTableView {
         
     }
     
-    func setAndReloadTableView(arr:[TSBook]){
+    func setAndReloadTableViewComics(arr:[TSBook]){
         self.arrComics = arr
         self.reloadData()
     }
+    
+    func setAndReloadTableViewNewRelease(arr:[TSBook]){
+        self.arrNewRelease = arr
+        self.reloadData()
+    }
+    
+    func setAndReloadTableViewUpdadte(arr:[TSBook]){
+        self.arrUpdate = arr
+        self.reloadData()
+    }
+    
     func setTableViewData(){
         
-        self.aryHomeTypes = [.ResumeReading,.UpdateComics,.ReleaseSoon,.MostPopular,.ContinueReading,.NewRelease]
+        self.aryHomeTypes = [.ResumeReading,.UpdateComics,.ReleaseSoon,.MostPopular,.NewRelease]//.ContinueReading,
         self.delegate  = self
         self.dataSource = self
         self.reloadData()
@@ -101,7 +114,7 @@ extension HomeTableView:UITableViewDelegate,UITableViewDataSource{
                 return UITableViewCell()
             }
 //            cell.arrComics = self.arrComics
-            cell.addAndReloadCell(arr: self.arrComics)
+            cell.addAndReloadCell(arr: self.arrUpdate)
             cell.didSelectCellItem { [weak self] (type, book) in
                 self?.handleCellItem(type: type, book: book)
             }
@@ -111,7 +124,7 @@ extension HomeTableView:UITableViewDelegate,UITableViewDataSource{
                 return UITableViewCell()
             }
 //            cell.arrComics = self.arrComics
-            cell.addAndReloadCell(arr: self.arrComics)
+//            cell.addAndReloadCell(arr: self.arrComics)
             cell.didSelectCellItem { [weak self] (type, book) in
                 self?.handleCellItem(type: type, book: book)
             }
@@ -121,7 +134,7 @@ extension HomeTableView:UITableViewDelegate,UITableViewDataSource{
                 return UITableViewCell()
             }
 //            cell.arrComics = self.arrComics
-            cell.addAndReloadCell(arr: self.arrComics)
+            cell.addAndReloadCell(arr: self.arrNewRelease)
 
             cell.didSelectCellItem { [weak self] (type, book) in
                 self?.handleCellItem(type: type, book: book)
@@ -138,18 +151,19 @@ extension HomeTableView:UITableViewDelegate,UITableViewDataSource{
                 self?.handleCellItem(type: type, book: book)
             }
             return cell
-        }else if type == .ContinueReading{
-            guard let cell:ContinueReadingTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ContinueReadingTableViewCell") as? ContinueReadingTableViewCell else {
-                return UITableViewCell()
-            }
-//            cell.arrComics = self.arrComics
-            cell.addAndReloadCell(arr: self.arrComics)
-
-            cell.didSelectCellItem { [weak self] (type, book) in
-                self?.handleCellItem(type: type, book: book)
-            }
-            return cell
         }
+//        else if type == .ContinueReading{
+//            guard let cell:ContinueReadingTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ContinueReadingTableViewCell") as? ContinueReadingTableViewCell else {
+//                return UITableViewCell()
+//            }
+////            cell.arrComics = self.arrComics
+//            cell.addAndReloadCell(arr: self.arrComics)
+//
+//            cell.didSelectCellItem { [weak self] (type, book) in
+//                self?.handleCellItem(type: type, book: book)
+//            }
+//            return cell
+//        }
         else if type == .NewRelease{
             guard let cell:NewReleaseTableViewCell = tableView.dequeueReusableCell(withIdentifier: "NewReleaseTableViewCell") as? NewReleaseTableViewCell else {
                 return UITableViewCell()

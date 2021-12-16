@@ -21,21 +21,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="257" height="300"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummy_image" translatesAutoresizingMaskIntoConstraints="NO" id="Wzj-Py-8bZ">
-                                <rect key="frame" x="0.0" y="0.0" width="257" height="248"/>
+                                <rect key="frame" x="0.0" y="0.0" width="257" height="254"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1N8-aC-AHv" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="256" width="257" height="21"/>
+                                <rect key="frame" x="0.0" y="262" width="257" height="18"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="c8F-yx-6ik"/>
+                                    <constraint firstAttribute="height" constant="18" id="c8F-yx-6ik"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y47-PK-bIJ" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="277" width="257" height="18"/>
+                                <rect key="frame" x="0.0" y="280" width="257" height="15"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="18" id="qrn-Lx-gcL"/>
+                                    <constraint firstAttribute="height" constant="15" id="qrn-Lx-gcL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -76,7 +76,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="dummy_image" width="215.5" height="140"/>
+        <image name="dummy_image" width="55.666667938232422" height="55.666667938232422"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

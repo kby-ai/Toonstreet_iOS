@@ -129,7 +129,7 @@ class SignupViewController: BaseViewController {
    //MARK: Button to visable password Or Hide Password
    @objc func btnShowPasswordInPWDConfirm() -> Void
    {
-       if isShowPassword == false{
+       if isShowPasswordConfirm == false{
            self.txtConfirm.isSecureTextEntry = false
            isShowPasswordConfirm = true
            self.btnEyeConfirm.setImage(UIImage(named: "eye"), for: .normal)//eyeopen
@@ -223,9 +223,8 @@ class SignupViewController: BaseViewController {
                                
                                let ref = Database.database().reference(fromURL: "https://toonstreetbackend-default-rtdb.firebaseio.com/")
 
-                               ref.child("users").child("\(userNameStr)").setValue(["username": userNameStr,"email":emailStr,"password":emailStr])//.child(authResult.uid)
+                               ref.child("users").child("\(userNameStr)").setValue(["username": userNameStr,"email":emailStr,"password":emailStr,"uid":authResult?.user.uid ?? ""])//.child(authResult.uid)
 
-                               
                //              guard let strongSelf = self else { return }
                                if error != nil{
                                        TSLoader.shared.hideLoader()
@@ -234,10 +233,10 @@ class SignupViewController: BaseViewController {
                                    UIAlertController.alert(message: error!.localizedDescription)
                                }else{
                        
-               
+                                   TSUser.shared.uID = authResult?.user.uid ?? ""
+                                   TSUser.shared.saveUserDetails()
+                                   
                                        TSLoader.shared.hideLoader()
-        //                               UserDefaults.standard.set(true, forKey: "isLogin") //Bool
-        //                               UserDefaults.standard.synchronize()
                                    completion(.success(true))
 
                                }

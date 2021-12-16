@@ -40,8 +40,22 @@ class MostPopularComicTableViewCell: UITableViewCell {
     }
     
     func addAndReloadCell(arr:[TSBook]){
-        self.mostPopularCollectionView.loadBooks(withBooks: arr)
-        self.mostPopularWithoutTypeCollectionView.loadBooks(withBooks: arr)
+        
+        var arrRow1:[TSBook] = []
+        var arrRow2:[TSBook] = []
+        
+        
+        for index in 0..<arr.count{
+            if index % 2 == 0{
+                arrRow1.append(arr[index])
+            }else{
+                arrRow2.append(arr[index])
+            }
+        }
+      
+
+        self.mostPopularCollectionView.loadBooks(withBooks: arrRow1)
+        self.mostPopularWithoutTypeCollectionView.loadBooks(withBooks: arrRow2)
 
 //        self.mostPopularWithoutTypeCollectionView.loadBooks(withBooks: [TSBook(),TSBook(),TSBook(),TSBook()],isTypeHide: true  )
     }

@@ -6,7 +6,10 @@
 //
 
 import UIKit
-
+import Firebase
+import FirebaseDatabase
+import FirebaseStorage
+import FirebaseFirestoreSwift
 
 
 enum NavigationBarButtonItem
@@ -155,5 +158,37 @@ class BaseViewController: UIViewController {
         messageLabel.font = UIFont.font_bold(26)
         collectionView.backgroundView = messageLabel
         collectionView.backgroundView?.backgroundColor = UIColor.clear
+    }
+    
+    
+    func getUserData(){
+        
+        let ref = Database.database().reference(fromURL: "https://toonstreetbackend-default-rtdb.firebaseio.com/")
+
+        
+//        ref.child("users").child("\(userNameStr)").setValue(["username": userNameStr,"email":emailStr,"password":emailStr,""])//.child(authResult.uid)
+
+        
+        
+        _ = ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+            print(snapshot)
+            
+            guard let value = snapshot.value else { return }
+            
+            if let dictValue = value as? NSDictionary{
+                for objDict in dictValue.allKeys{
+                    if let objDict = dictValue.value(forKey: objDict as! String) as? NSDictionary{
+                        if objDict.value(forKey: "email") as! String == TSUser.shared.email{
+                            print(dictValue)
+                        }
+                    }
+                }
+            }
+
+            
+        })
+//
+//        
+//        
     }
 }
