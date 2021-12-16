@@ -48,8 +48,9 @@ class MyListCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
 //        self.imgViewProfile.image = UIImage()
-//        self.imgViewProfile.image = UIImage.init(named: "dummy_image")
-//        self.imgViewProfile.sd_cancelCurrentImageLoad()
+        self.imgViewProfile.image = UIImage.init(named: "dummy_image")
+//        self.imgViewProfile.image = nil
+        self.imgViewProfile.sd_cancelCurrentImageLoad()
         
     }
     

@@ -38,9 +38,11 @@ class ReleaseSoonCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
 //        self.imgViewBookProfile.image = UIImage()
 ////        self.imgViewBookProfile.image = nil
-//        self.imgViewBookProfile.image = UIImage.init(named: "dummy_image")
+        self.imgViewBookProfile.image = UIImage.init(named: "dummy_image")
 //
 //        self.imgViewBookProfile.sd_cancelCurrentImageLoad()
+//        self.imgViewBookProfile.image = nil
+        self.imgViewBookProfile.sd_cancelCurrentImageLoad()
         
     }
     
