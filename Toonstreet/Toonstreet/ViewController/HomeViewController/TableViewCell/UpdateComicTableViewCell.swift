@@ -53,7 +53,7 @@ class UpdateComicTableViewCell: TSTableViewCell {
         self.updateComicsCollectionView.setDidSelectPhotoHandler { [weak self] (aryBook, index) in
             
             if let value = self?.didSelectCellItem{
-                value(HomeType.UpdateComics,aryBook[index])
+                value(HomeType.MostPopular,aryBook[index])
             }
         }
     }

@@ -12,7 +12,9 @@ import SDWebImage
 class DetailViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
     var objBook:TSBook?
-    
+    var isPass:Bool?
+    var objReadingDict:NSDictionary?
+
     var arrGenre = ["Action","Adventure","Comedy","Drama","Fantasy","Game"]
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -35,24 +37,19 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+            
     }
         
     
     override func viewWillAppear(_ animated: Bool) {
-//        self.navigationController?.tabBarController?.tabBar.isHidden = false
-//        self.navigationController?.navigationBar.isHidden = false
-////        self.tabBarController?.tabBar.hidden = true/false
-        
 
     }
     
     override func setupUI() {
         
-        
        
         self.leftBarButtonItems = [.BackArrow]
 
-        
         self.scrollView.resizeScrollViewContentSize()
 //        self.tblEpisod.register(UINib.init(nibName: "EpisodesTableCell", bundle: nil), forCellReuseIdentifier:"EpisodesTableCell")
         
@@ -127,6 +124,37 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
         self.lblAuther.text = self.objBook?.publisher ?? ""
         self.navigationController?.navigationBar.topItem?.title = self.objBook?.title 
 
+        self.setupCoverImage()
+        
+    }
+    
+   
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.updateCollectionViewHeight()
+    }
+    
+    private func updateCollectionViewHeight(){
+       
+        let height = genreCollectionView.collectionViewLayout.collectionViewContentSize.height
+        collectionViewHeight.constant = height
+        self.view.layoutIfNeeded()
+    }
+    private func loadCollectionView(){
+        self.genreCollectionView.loadItems(items: self.arrGenre)
+        self.contentView.layoutIfNeeded()
+        self.viewDetails.layoutIfNeeded()
+    }
+    
+    //MARK: Button Action
+    @IBAction func btnShareClicked(_ sender: Any) {
+    }
+    
+    @IBAction func btnSubscribeClicked(_ sender: Any) {
+    }
+    
+    
+    func setupCoverImage(){
         if self.objBook?.cover != ""{
         let storage = Storage.storage()
         let starsRef = storage.reference(forURL: self.objBook?.cover ?? "")
@@ -137,15 +165,7 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
             // Handle any errors
               print(error)
           } else {
-            // Get the download URL for 'images/stars.jpg'
-//              print(url)
-//              self.imgProduct.sd_setImage(with: url, completed: nil)
-
-//              self.imgProduct.sd_imageIndicator = SDWebImageActivityIndicator.white
-////              self.imgViewBookProfile.sd_setImage(with: url, completed: nil)
-//              self.imgProduct.sd_setImage(with: url, placeholderImage: UIImage(named: ""))
-
-              
+  
               SDWebImageManager.shared.loadImage(
                 with: url,//.(imageShape: .square),
                   options: .handleCookies, // or .highPriority
@@ -173,32 +193,8 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
 
         }
     }
-   
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        self.updateCollectionViewHeight()
-    }
     
-    private func updateCollectionViewHeight(){
-       
-        let height = genreCollectionView.collectionViewLayout.collectionViewContentSize.height
-        collectionViewHeight.constant = height
-        self.view.layoutIfNeeded()
-    }
-    private func loadCollectionView(){
-        self.genreCollectionView.loadItems(items: self.arrGenre)
-        self.contentView.layoutIfNeeded()
-        self.viewDetails.layoutIfNeeded()
-    }
-    
-    //MARK: Button Action
-    @IBAction func btnShareClicked(_ sender: Any) {
-    }
-    
-    @IBAction func btnSubscribeClicked(_ sender: Any) {
-    }
-    
-    
+ 
     
     //MARK: Tableview methods
     
@@ -226,12 +222,17 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
         
         //PDFViewController
         
+//        if self.objBook?.isPurchased == 1{
         if let objPDFVC = self.storyboard?.instantiateViewController(withIdentifier: "PDFViewController") as? PDFViewController{
 //            self.hidesBottomBarWhenPushed = true
+            objPDFVC.selectedComic = self.objBook
             objPDFVC.bookTitle = self.objBook?.title ?? ""
             objPDFVC.episodeList = self.objBook?.episodes[indexPath.row].strContent
-            self.navigationController?.pushViewController(objPDFVC, animated: true )
+            self.navigationController?.pushViewController(objPDFVC, animated: true)
         }
+//        }else{
+//            print("Please purchase book")
+//        }
     }
 }
 /*

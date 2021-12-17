@@ -8,7 +8,7 @@
 import UIKit
 enum HomeType{
     case ResumeReading
-    case UpdateComics
+//    case UpdateComics
     case ReleaseSoon
     case MostPopular
 //    case ContinueReading
@@ -19,9 +19,10 @@ class HomeTableView: TSTableView {
     var arrComics:[TSBook] = []
     var arrNewRelease:[TSBook] = []
     var arrUpdate:[TSBook] = []
+    var arrContinueReading:[TSBook] = []
 
 
-    var aryHomeTypes:[HomeType] = [.ResumeReading,.UpdateComics,.ReleaseSoon,.MostPopular,.NewRelease]//,.ContinueReading
+    var aryHomeTypes:[HomeType] = [.ResumeReading,.ReleaseSoon,.MostPopular,.NewRelease]//.UpdateComics,,.ContinueReading
 
     private var didSelectTableCellSelectionHandler:HomeScreenBookTableViewCellSelectionHandler?
     
@@ -53,24 +54,32 @@ class HomeTableView: TSTableView {
         
     }
     
-    func setAndReloadTableViewComics(arr:[TSBook]){
+    func setAndReloadTableViewComics(arr:[TSBook], arrContinueReading:[TSBook]){
         self.arrComics = arr
+        self.arrContinueReading = arrContinueReading
         self.reloadData()
     }
     
-    func setAndReloadTableViewNewRelease(arr:[TSBook]){
+    func setAndReloadTableViewNewRelease(arr:[TSBook] , arrContinueReading:[TSBook]){
         self.arrNewRelease = arr
+        self.arrContinueReading = arrContinueReading
         self.reloadData()
     }
     
-    func setAndReloadTableViewUpdadte(arr:[TSBook]){
+    func setAndReloadTableViewUpdadte(arr:[TSBook], arrContinueReading:[TSBook]){
         self.arrUpdate = arr
+        self.arrContinueReading = arrContinueReading
         self.reloadData()
     }
     
-    func setTableViewData(){
+    func setTableViewData(isContinueReading:Bool){
         
-        self.aryHomeTypes = [.ResumeReading,.UpdateComics,.ReleaseSoon,.MostPopular,.NewRelease]//.ContinueReading,
+        if (isContinueReading == false){
+            self.aryHomeTypes = [.ReleaseSoon,.MostPopular,.NewRelease]//.UpdateComics,.ContinueReading,
+        }else{
+            self.aryHomeTypes = [.ResumeReading,.ReleaseSoon,.MostPopular,.NewRelease]//.UpdateComics,.ContinueReading,
+        }
+        
         self.delegate  = self
         self.dataSource = self
         self.reloadData()
@@ -108,23 +117,24 @@ extension HomeTableView:UITableViewDelegate,UITableViewDataSource{
         
         
         let type = self.aryHomeTypes[indexPath.row]
-        if type == .UpdateComics{
-            guard let cell:UpdateComicTableViewCell = tableView.dequeueReusableCell(withIdentifier: "UpdateComicTableViewCell")
-                    as? UpdateComicTableViewCell else {
-                return UITableViewCell()
-            }
-//            cell.arrComics = self.arrComics
-            cell.addAndReloadCell(arr: self.arrUpdate)
-            cell.didSelectCellItem { [weak self] (type, book) in
-                self?.handleCellItem(type: type, book: book)
-            }
-            return cell
-        }else if type == .ResumeReading{
+//        if type == .UpdateComics{
+//            guard let cell:UpdateComicTableViewCell = tableView.dequeueReusableCell(withIdentifier: "UpdateComicTableViewCell")
+//                    as? UpdateComicTableViewCell else {
+//                return UITableViewCell()
+//            }
+////            cell.arrComics = self.arrComics
+//            cell.addAndReloadCell(arr: self.arrUpdate)
+//            cell.didSelectCellItem { [weak self] (type, book) in
+//                self?.handleCellItem(type: type, book: book)
+//            }
+//            return cell
+//        }else
+        if type == .ResumeReading{
             guard let cell:ResumeReadingTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ResumeReadingTableViewCell") as? ResumeReadingTableViewCell else {
                 return UITableViewCell()
             }
-//            cell.arrComics = self.arrComics
-//            cell.addAndReloadCell(arr: self.arrComics)
+//            cell.arrComics = self.arrContinueReading
+            cell.addAndReloadCell(arr: self.arrContinueReading)
             cell.didSelectCellItem { [weak self] (type, book) in
                 self?.handleCellItem(type: type, book: book)
             }

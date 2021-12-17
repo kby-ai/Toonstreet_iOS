@@ -198,7 +198,7 @@ class DiscoverViewController: BaseViewController {
     func fetchComicData(){
         
         
-        let ref = Database.database().reference(fromURL: "https://toonstreetbackend-default-rtdb.firebaseio.com/")
+        let ref = Database.database().reference(fromURL: FirebaseBaseURL)
 
         _ = ref.child("comics").observeSingleEvent(of: .value, with: { (snapshot) in
             print(snapshot)

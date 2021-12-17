@@ -14,9 +14,12 @@ class TSUser: NSObject,NSCoding {
     var firstName:String = ""
     var lastName:String = ""
     var email:String = ""
-    var phoneNumber:String = ""
+    var username:String = ""
+    
     var uID:String = ""
-    var isLogin:Bool = false
+    var coins:Int = 0
+
+//    var isLogin:Bool = false
 
     private override init() {
         super.init()
@@ -48,15 +51,21 @@ class TSUser: NSObject,NSCoding {
         if let value = decoder.decodeObject(forKey: "email") as? String{
             self.email = value
         }
-        if let value = decoder.decodeObject(forKey: "phoneNumber") as? String{
-            self.phoneNumber = value
+        if let value = decoder.decodeObject(forKey: "username") as? String{
+            self.username = value
         }
         if let value = decoder.decodeObject(forKey: "uID") as? String{
             self.uID = value
         }
-        if let value = decoder.decodeObject(forKey: "isLogin") as? Bool{
-            self.isLogin = value
+        if let value = decoder.decodeObject(forKey: "coins") as? Int{
+            self.coins = value
         }
+        
+        
+        
+//        if let value = decoder.decodeObject(forKey: "isLogin") as? Bool{
+//            self.isLogin = value
+//        }
         
         
 
@@ -66,11 +75,11 @@ class TSUser: NSObject,NSCoding {
         coder.encode(self.firstName, forKey: "firstName")
         coder.encode(self.lastName, forKey: "lastName")
         coder.encode(self.email, forKey:"email")
-        coder.encode(self.phoneNumber, forKey:"phoneNumber")
+        coder.encode(self.username, forKey:"username")
         coder.encode(self.uID, forKey:"uID")
-        coder.encode(self.isLogin, forKey:"isLogin")
+        coder.encode(self.coins, forKey:"coins")
 
-     
+        
     }
     
     func insertCurrentUserValue(withContent content:NSDictionary) -> Void
@@ -82,20 +91,25 @@ class TSUser: NSObject,NSCoding {
         if let value = content.value(forKey: "last_name") as? String {
             TSUser.shared.lastName = value
         }
-        if let value = content.value(forKey: "phoneNumber") as? String {
-            TSUser.shared.phoneNumber = value
+        if let value = content.value(forKey: "username") as? String {
+            TSUser.shared.username = value
         }
 
         if let value = content.value(forKey: "email") as? String {
             TSUser.shared.email = value
         }
         
-        if let value = content.value(forKey: "isLogin") as? Bool {
-            TSUser.shared.isLogin = value
-        }
+//        if let value = content.value(forKey: "isLogin") as? Bool {
+//            TSUser.shared.isLogin = value
+//        }
+        
         if let value = content.value(forKey: "uID") as? String {
             TSUser.shared.uID = value
         }
+        if let value = content.value(forKey: "coins") as? Int {
+            TSUser.shared.coins = value
+        }
+        
        
         self.saveUserDetails();
     }
@@ -121,10 +135,12 @@ class TSUser: NSObject,NSCoding {
         self.firstName = user.firstName;
         self.lastName = user.lastName;
         self.email = user.email;
-        self.phoneNumber = user.phoneNumber;
+        self.username = user.username;
         
-        self.isLogin = user.isLogin
+//        self.isLogin = user.isLogin
         self.uID =  user.uID;
+        
+        self.coins = user.coins
     }
     /***********************************************/
     /*    Clear Current User Details               */
@@ -133,9 +149,9 @@ class TSUser: NSObject,NSCoding {
         self.firstName = ""
         self.lastName = ""
         self.email = ""
-        self.phoneNumber = "";
-        
-        self.isLogin = false
+        self.username = "";
+        self.coins = 0
+//        self.isLogin = false
         self.uID = ""
 
         self.saveUserDetails()

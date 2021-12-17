@@ -38,13 +38,12 @@ var kFontSemiBold = "NunitoSans-SemiBold"
 var kAppLanguage:String = "es"
 
 
+//FirebaseURL
+
+var FirebaseBaseURL = "https://toonstreetbackend-default-rtdb.firebaseio.com/"
 
 
 //MARK: Key
-
-var kRocketEntity = "RocketX"
-var kUpcomingEntity = "Upcoming"
-
 
 //MARK: Alert Titles
 

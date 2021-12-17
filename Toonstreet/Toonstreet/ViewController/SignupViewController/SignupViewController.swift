@@ -221,9 +221,9 @@ class SignupViewController: BaseViewController {
                                
                            }else{
                                
-                               let ref = Database.database().reference(fromURL: "https://toonstreetbackend-default-rtdb.firebaseio.com/")
+                               let ref = Database.database().reference(fromURL: FirebaseBaseURL)
 
-                               ref.child("users").child("\(userNameStr)").setValue(["username": userNameStr,"email":emailStr,"password":emailStr,"uid":authResult?.user.uid ?? ""])//.child(authResult.uid)
+                               ref.child(APIKey.users).child("\(userNameStr)").setValue(["username": userNameStr,"email":emailStr,"password":emailStr,"uid":authResult?.user.uid ?? ""])//.child(authResult.uid)
 
                //              guard let strongSelf = self else { return }
                                if error != nil{
@@ -258,9 +258,9 @@ class SignupViewController: BaseViewController {
     func checkUsernameAvailability(completion: @escaping (_ available:Bool)->()){
         guard let lowercasedText = txtUsername.text?.lowercased() else {completion(false); return}
         
-        var ref = Database.database().reference(fromURL: "https://toonstreetbackend-default-rtdb.firebaseio.com/")
+        var ref = Database.database().reference(fromURL: FirebaseBaseURL)
 
-       ref = Database.database().reference().child("users").child("\(lowercasedText)")
+       ref = Database.database().reference().child(APIKey.users).child("\(lowercasedText)")
         
         ref.observeSingleEvent(of: .value) { (snapshot) in
             if snapshot.exists(){

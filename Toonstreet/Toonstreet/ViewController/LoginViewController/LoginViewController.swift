@@ -194,9 +194,9 @@ class LoginViewController: BaseViewController {
                     TSLoader.shared.showLoader()
 
                     if emailStr.isValidEmail() == false{
-                        let ref = Database.database().reference(fromURL: "https://toonstreetbackend-default-rtdb.firebaseio.com/")
+                        let ref = Database.database().reference(fromURL: FirebaseBaseURL)
 
-                        _ = ref.child("users").child("\(emailStr)").observeSingleEvent(of: .value, with: { (snapshot) in
+                        _ = ref.child(APIKey.users).child("\(emailStr)").observeSingleEvent(of: .value, with: { (snapshot) in
 
 
                             guard let value = snapshot.value else { return }

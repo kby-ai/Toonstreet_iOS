@@ -19,6 +19,16 @@ class BuyCoinViewController: BaseViewController ,UITableViewDelegate, UITableVie
         //CoinTableCell
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        TSFirebaseAPI.shared.getCoins { [unowned self] available in
+            
+            DispatchQueue.main.async {
+                self.lblcoins.text = "\(TSUser.shared.coins) Coins"
+            }
+        }
+
+    }
+    
     override func setupUI() {
         
         self.tblBuyCoins.register(UINib.init(nibName: "CoinTableCell", bundle: nil), forCellReuseIdentifier: "CoinTableCell")
@@ -43,8 +53,27 @@ class BuyCoinViewController: BaseViewController ,UITableViewDelegate, UITableVie
 
         cell.selectionStyle = .none
         cell.setupCell(index: indexPath.row)
+        cell.btnBuyCoin.tag = indexPath.row
+        cell.btnBuyCoin.addTarget(self, action: #selector(self.btnBuyCoins(button:)), for: .touchUpInside)
+      
         return cell
     }
    
+    
+    @objc func btnBuyCoins(button:UIButton){
+        let index = button.tag + 1
+        
+        TSFirebaseAPI.shared.addCoins(newPoint: index*5)
+        
+        DispatchQueue.main.async {
+
+        TSFirebaseAPI.shared.getCoins { [unowned self] available in
+            
+            DispatchQueue.main.async {
+                self.lblcoins.text = "\(TSUser.shared.coins) Coins"
+            }
+        }
+        }
+    }
     
 }

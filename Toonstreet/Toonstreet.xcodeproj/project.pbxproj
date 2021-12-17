@@ -99,6 +99,7 @@
 		8ACE0036274D7D8600063BF2 /* BuyCoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACE0035274D7D8600063BF2 /* BuyCoinViewController.swift */; };
 		8ACE003A274D7E8B00063BF2 /* CoinTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACE0038274D7E8B00063BF2 /* CoinTableCell.swift */; };
 		8ACE003B274D7E8B00063BF2 /* CoinTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8ACE0039274D7E8B00063BF2 /* CoinTableCell.xib */; };
+		8AFC038E276D2F29008E48C1 /* TSFirebaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFC038D276D2F29008E48C1 /* TSFirebaseAPI.swift */; };
 		9DBFF594EC95984D7A1EBEDC /* Pods_Toonstreet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06AC0994BB852D3AC488D49A /* Pods_Toonstreet.framework */; };
 /* End PBXBuildFile section */
 
@@ -198,6 +199,7 @@
 		8ACE0035274D7D8600063BF2 /* BuyCoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCoinViewController.swift; sourceTree = "<group>"; };
 		8ACE0038274D7E8B00063BF2 /* CoinTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinTableCell.swift; sourceTree = "<group>"; };
 		8ACE0039274D7E8B00063BF2 /* CoinTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoinTableCell.xib; sourceTree = "<group>"; };
+		8AFC038D276D2F29008E48C1 /* TSFirebaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSFirebaseAPI.swift; sourceTree = "<group>"; };
 		AB3D1FD60C1563D85DDADEA5 /* Pods-Toonstreet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Toonstreet.debug.xcconfig"; path = "Target Support Files/Pods-Toonstreet/Pods-Toonstreet.debug.xcconfig"; sourceTree = "<group>"; };
 		C2A41D6B45D93EDAF33971B6 /* Pods-Toonstreet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Toonstreet.release.xcconfig"; path = "Target Support Files/Pods-Toonstreet/Pods-Toonstreet.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -490,6 +492,7 @@
 				8A8D7ECC2746C8D90073E261 /* Extension.swift */,
 				8A8D7ECF2746C8EC0073E261 /* TSLoader.swift */,
 				490492622748F181008827DF /* TSEmptyBackgroundView.swift */,
+				8AFC038D276D2F29008E48C1 /* TSFirebaseAPI.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -751,6 +754,7 @@
 				8AB7ECCE27494E9800455B31 /* DetailViewController.swift in Sources */,
 				490492A0274944B2008827DF /* ContinueReadingCollectionViewCell.swift in Sources */,
 				8ACE003A274D7E8B00063BF2 /* CoinTableCell.swift in Sources */,
+				8AFC038E276D2F29008E48C1 /* TSFirebaseAPI.swift in Sources */,
 				490492872749311C008827DF /* ReleaseSoonCollectionView.swift in Sources */,
 				8A5D8F0B274D5549008A4105 /* MyListCollectionView.swift in Sources */,
 				490492612748EFD1008827DF /* HomeTableView.swift in Sources */,

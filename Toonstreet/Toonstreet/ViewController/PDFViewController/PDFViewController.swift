@@ -16,7 +16,9 @@ class PDFViewController: BaseViewController {
     
     var episodeList:[String]?
     var bookTitle:String?
+    var passIndex:Int = 0
     var selectedIndex:Int = 0
+    var selectedComic:TSBook?
     
     @IBOutlet weak var webKit: WKWebView!
     @IBOutlet weak var imgComic: UIImageView!
@@ -25,25 +27,35 @@ class PDFViewController: BaseViewController {
     @IBOutlet weak var btnNext:UIButton!
     
     @IBOutlet weak var viewPDF: UIView!
-//    var pdfView:PDFView = PDFView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if (self.passIndex != 0) {
+            self.selectedIndex = passIndex
+        }else{
+            self.selectedIndex = 0
+        }
         self.leftBarButtonItems = [.BackArrow]
 
 
 //        self.setupPDFView()
         self.setupGesture()
         self.imgComic.enableZoom()
-       
+        self.addContinueReading()
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-
+  
+    //MARK: Add Continue reading
+    func addContinueReading(){
+    
+        self.selectedComic?.isReadStatus = 1
+        self.selectedComic?.lastIndex = self.selectedIndex
         
+        TSFirebaseAPI.shared.AddContinueReadingData(readingUserID: self.bookTitle ?? "", comic: self.selectedComic ?? TSBook(), comicIndex: self.episodeList ?? [""])
     }
+    
     
     
     
@@ -180,16 +192,27 @@ class PDFViewController: BaseViewController {
         }
     
     override func viewDidAppear(_ animated: Bool) {
-//        NotificationCenter.default.addObserver (self, selector: #selector(handlePageChange), name: Notification.Name.PDFViewPageChanged, object: nil)
         
         
         self.navigationController?.navigationBar.topItem?.title = bookTitle ?? ""
 
+        self.addCoverImage()
+       
         
+        
+        addContinueReading();
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        addContinueReading();
+
+    }
+    
+    func addCoverImage(){
         if episodeList?.count ?? 0 > 0{
 
         let storage = Storage.storage()
-        let starsRef = storage.reference(forURL: episodeList?[0] ?? "")
+        let starsRef = storage.reference(forURL: episodeList?[selectedIndex] ?? "")
          
         starsRef.downloadURL { url, error in
           if let error = error {
@@ -204,9 +227,7 @@ class PDFViewController: BaseViewController {
           }
         }
         }
-        
     }
-    
     
     @IBAction func btnPreviousClick(_ sender: Any) {
         

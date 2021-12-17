@@ -21,15 +21,27 @@ class ProfileViewController: BaseViewController {
     @IBOutlet weak var btnBuyCoin: TSButton!
     @IBOutlet weak var viewCoins: UIView!
     @IBOutlet weak var lblCoins: TSLabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.fetchComicData()
-        // Do any additional setup after loading the view.
+   
+        
+//        TSFirebaseAPI.shared.addCoins(newPoint: 5);
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        TSFirebaseAPI.shared.getCoins { [unowned self] available in
+            
+            DispatchQueue.main.async {
+                self.lblCoins.text = "\(TSUser.shared.coins) Coins"
+            }
+        }
+    }
+
 
     @IBAction func btnCoinsClicked(_ sender: Any) {
-//        BuyCoinViewController
         
         if let objSignupVC = self.storyboard?.instantiateViewController(withIdentifier: "BuyCoinViewController") as? BuyCoinViewController{
             self.navigationController?.pushViewController(objSignupVC, animated: true )
@@ -63,7 +75,7 @@ class ProfileViewController: BaseViewController {
     func fetchComicData(){
         
         
-        let ref = Database.database().reference(fromURL: "https://toonstreetbackend-default-rtdb.firebaseio.com/")
+        let ref = Database.database().reference(fromURL: FirebaseBaseURL)
 
         _ = ref.child("comics").observeSingleEvent(of: .value, with: { (snapshot) in
             print(snapshot)
