@@ -80,6 +80,13 @@ class TSFirebaseAPI: NSObject {
         
     }
     
+    func RemoveContinueReadingData(readingUserID:String){
+        
+        let ref = Database.database().reference(fromURL: FirebaseBaseURL)
+                
+        ref.child(APIKey.continueReading).child(TSUser.shared.uID).child("\(readingUserID)").removeValue()//.child(authResult.uid)
+        
+    }
     
     //check comic reading availability
     func checkComicReadingAvailability(completion: @escaping (_ available:Bool)->()){

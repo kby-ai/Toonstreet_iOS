@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dBb-fe-NnO">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -21,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="269"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="jII-oG-K31">
-                                        <rect key="frame" x="117" y="41" width="180" height="187"/>
+                                        <rect key="frame" x="117" y="-17" width="180" height="303"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -767,10 +768,10 @@
                                             <action selector="btnSubscribeClicked:" destination="x8N-LE-tAb" eventType="touchUpInside" id="bek-55-Eby"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbO-IR-pAT">
-                                        <rect key="frame" x="229" y="108.5" width="56" height="46"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="share"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbO-IR-pAT">
+                                        <rect key="frame" x="229" y="115.5" width="32" height="32"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="share"/>
                                         <connections>
                                             <action selector="btnShareClicked:" destination="x8N-LE-tAb" eventType="touchUpInside" id="d9D-7z-mcs"/>
                                         </connections>
@@ -1170,10 +1171,10 @@
                                             <action selector="btnSubscribeClicked:" destination="RXc-Xf-t8o" eventType="touchUpInside" id="64B-UP-V96"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYO-xD-CRw">
-                                        <rect key="frame" x="229" y="108.5" width="56" height="46"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="share"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYO-xD-CRw">
+                                        <rect key="frame" x="229" y="115.5" width="32" height="32"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="share"/>
                                         <connections>
                                             <action selector="btnShareClicked:" destination="RXc-Xf-t8o" eventType="touchUpInside" id="ltK-eW-Ahm"/>
                                         </connections>
@@ -1674,22 +1675,30 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dKs-qS-e97">
-                                <rect key="frame" x="153" y="812" width="108.5" height="50"/>
+                                <rect key="frame" x="142" y="812" width="130" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQh-LS-KXp">
-                                        <rect key="frame" x="0.0" y="0.0" width="39" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQh-LS-KXp">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <color key="backgroundColor" red="0.84313725490000002" green="0.25490196079999999" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="previous"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="qji-X5-X1J"/>
+                                            <constraint firstAttribute="width" secondItem="QQh-LS-KXp" secondAttribute="height" id="vdU-EO-zbN"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="previous"/>
                                         <connections>
                                             <action selector="btnPreviousClick:" destination="WNi-mX-H87" eventType="touchUpInside" id="kZD-1f-E4b"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="amr-v8-7u3">
-                                        <rect key="frame" x="69" y="0.0" width="39.5" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="amr-v8-7u3">
+                                        <rect key="frame" x="80" y="0.0" width="50" height="50"/>
                                         <color key="backgroundColor" red="0.84313725490000002" green="0.25490196079999999" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="next"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Hc6-Uw-6XM"/>
+                                            <constraint firstAttribute="width" secondItem="amr-v8-7u3" secondAttribute="height" id="V54-fj-qjW"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="next"/>
                                         <connections>
                                             <action selector="btnNextClick:" destination="WNi-mX-H87" eventType="touchUpInside" id="NFl-4d-HU0"/>
                                         </connections>
@@ -1782,7 +1791,7 @@
     <resources>
         <image name="coin" width="28" height="28"/>
         <image name="dummyimage1" width="300" height="396"/>
-        <image name="logo" width="221" height="187"/>
+        <image name="logo" width="341.33334350585938" height="303.33334350585938"/>
         <image name="next" width="15.5" height="20"/>
         <image name="previous" width="15.5" height="20"/>
         <image name="share" width="32" height="32"/>

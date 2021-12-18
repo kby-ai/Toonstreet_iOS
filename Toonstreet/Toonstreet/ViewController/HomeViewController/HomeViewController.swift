@@ -133,12 +133,12 @@ class HomeViewController: BaseViewController {
         }
         }
      
-
     }
     
     
     func fetchContinueReadingData(){
         
+        TSFirebaseAPI.shared.arrPurchasedComic = []
         
         TSFirebaseAPI.shared.fetchPurchaseData { [unowned self] status in
             TSFirebaseAPI.shared.fetchContinueReadingData { [unowned self] dict in

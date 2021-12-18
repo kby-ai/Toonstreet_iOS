@@ -13,7 +13,7 @@ import SDWebImage
 
 class PDFViewController: BaseViewController {
 
-    
+    var isLastEpisode:Bool?
     var episodeList:[String]?
     var bookTitle:String?
     var passIndex:Int = 0
@@ -44,6 +44,9 @@ class PDFViewController: BaseViewController {
         self.imgComic.enableZoom()
         self.addContinueReading()
         
+        
+        
+        
     }
     
   
@@ -57,27 +60,11 @@ class PDFViewController: BaseViewController {
     }
     
     
+    func removeContinueReading(){
+        TSFirebaseAPI.shared.RemoveContinueReadingData(readingUserID: self.bookTitle ?? "")
+    }
     
-    
-//    private func setupPDFView(){
-//        // Add PDFView to view controller.
-//        pdfView = PDFView(frame: CGRect.init(x: 0, y: 0, width: self.viewPDF.frame.width, height: self.viewPDF.frame.height))
-//        pdfView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        self.viewPDF.addSubview(pdfView)
-//
-//
-//
-//        let fileURL = Bundle.main.url(forResource: "testcomic", withExtension: "pdf")
-//        pdfView.displayMode = .singlePageContinuous
-//        pdfView.autoScales = true
-//        pdfView.displayDirection = .horizontal
-//        pdfView.document = PDFDocument(url: fileURL!)
-//        pdfView.goToFirstPage(nil)
-//        pdfView.isUserInteractionEnabled = false
-//
-//        self.updateButtonViewUI()
-//
-//    }
+
     private func setupGesture(){
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
         swipeRight.direction = UISwipeGestureRecognizer.Direction.right
@@ -206,6 +193,9 @@ class PDFViewController: BaseViewController {
     override func viewWillDisappear(_ animated: Bool) {
         addContinueReading();
 
+        if isLastEpisode == true && selectedIndex == self.episodeList?.count ?? 0 - 1{
+            removeContinueReading()
+        }
     }
     
     func addCoverImage(){

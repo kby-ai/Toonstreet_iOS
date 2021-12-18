@@ -38,6 +38,7 @@ class ProfileViewController: BaseViewController {
             }
         }
         
+        self.tblProfile.reloadData()
         
 //        TSFirebaseAPI.shared.fetchPurchaseData { [unowned self] status in
 //            if status == true{

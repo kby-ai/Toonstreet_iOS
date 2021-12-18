@@ -228,6 +228,12 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
             objPDFVC.selectedComic = self.objBook
             objPDFVC.bookTitle = self.objBook?.title ?? ""
             objPDFVC.episodeList = self.objBook?.episodes[indexPath.row].strContent
+            
+            if indexPath.row == self.objBook?.episodes.count ?? 0 - 1{
+                objPDFVC.isLastEpisode = true
+            }
+            
+            
             self.navigationController?.pushViewController(objPDFVC, animated: true)
         }
         }else{
@@ -247,6 +253,10 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
                                     objPDFVC.selectedComic = self.objBook
                                     objPDFVC.bookTitle = self.objBook?.title ?? ""
                                     objPDFVC.episodeList = self.objBook?.episodes[indexPath.row].strContent
+                                    
+                                    if indexPath.row == self.objBook?.episodes.count ?? 0 - 1{
+                                        objPDFVC.isLastEpisode = true
+                                    }
                                     self.navigationController?.pushViewController(objPDFVC, animated: true)
                                 }
                             }
