@@ -57,7 +57,7 @@ class TSUser: NSObject,NSCoding {
         if let value = decoder.decodeObject(forKey: "uID") as? String{
             self.uID = value
         }
-        if let value = decoder.decodeObject(forKey: "coins") as? Int{
+        if let value = decoder.decodeInteger(forKey: "coins") as? Int{
             self.coins = value
         }
         

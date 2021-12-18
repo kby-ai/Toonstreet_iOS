@@ -222,7 +222,7 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
         
         //PDFViewController
         
-//        if self.objBook?.isPurchased == 1{
+        if self.objBook?.isPurchased == 1{
         if let objPDFVC = self.storyboard?.instantiateViewController(withIdentifier: "PDFViewController") as? PDFViewController{
 //            self.hidesBottomBarWhenPushed = true
             objPDFVC.selectedComic = self.objBook
@@ -230,9 +230,33 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
             objPDFVC.episodeList = self.objBook?.episodes[indexPath.row].strContent
             self.navigationController?.pushViewController(objPDFVC, animated: true)
         }
-//        }else{
+        }else{
 //            print("Please purchase book")
-//        }
+//            UIAlertController.alert(message: "Please purchase book.")
+
+            UIAlertController.showAlert(andMessage: "Are you sure you want to purchase this comic", andButtonTitles: ["YES","Not now"]) { index in
+                if index == 0{
+                    
+                    TSFirebaseAPI.shared.purchaseBook(bookCoin: 5, book: self.objBook ?? TSBook()) { [unowned self] status in
+                        if status == true{
+                            self.self.objBook?.isPurchased = 1
+                            UIAlertController.showAlert(withTitle: "Success!", andMessage: "Comic purchased successfully", andButtonTitles: ["OK"]){ [unowned self] index in
+                               
+                                if let objPDFVC = self.storyboard?.instantiateViewController(withIdentifier: "PDFViewController") as? PDFViewController{
+                        //            self.hidesBottomBarWhenPushed = true
+                                    objPDFVC.selectedComic = self.objBook
+                                    objPDFVC.bookTitle = self.objBook?.title ?? ""
+                                    objPDFVC.episodeList = self.objBook?.episodes[indexPath.row].strContent
+                                    self.navigationController?.pushViewController(objPDFVC, animated: true)
+                                }
+                            }
+                        }else{
+                            self.self.objBook?.isPurchased = 0
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 /*

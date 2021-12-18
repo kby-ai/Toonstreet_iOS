@@ -14,7 +14,8 @@ import FirebaseFirestoreSwift
 
 class ProfileViewController: BaseViewController {
 
-    var arrComics:[TSBook] = []
+//    var arrMyList:[TSBook] = []
+//    var arrHistory:[TSBook] = []
 
     @IBOutlet weak var tblProfile: ProfileTableView!
     
@@ -25,19 +26,23 @@ class ProfileViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.fetchComicData()
+//        self.fetchComicData()
    
-        
 //        TSFirebaseAPI.shared.addCoins(newPoint: 5);
     }
     
     override func viewDidAppear(_ animated: Bool) {
         TSFirebaseAPI.shared.getCoins { [unowned self] available in
-            
             DispatchQueue.main.async {
                 self.lblCoins.text = "\(TSUser.shared.coins) Coins"
             }
         }
+        
+        
+//        TSFirebaseAPI.shared.fetchPurchaseData { [unowned self] status in
+//            if status == true{
+//            }
+//        }
     }
 
 
@@ -72,26 +77,26 @@ class ProfileViewController: BaseViewController {
     }
     
     
-    func fetchComicData(){
-        
-        
-        let ref = Database.database().reference(fromURL: FirebaseBaseURL)
-
-        _ = ref.child("comics").observeSingleEvent(of: .value, with: { (snapshot) in
-            print(snapshot)
-            self.arrComics = []
-            guard let value = snapshot.value else { return }
-
-            
-            if let arrValue = value as? [NSDictionary]{
-                for objDict in arrValue{
-                    print(objDict)
-                    self.arrComics.append(TSBook.init(dictObj:objDict))
-                }
-            }
-  
-            self.tblProfile.setAndReloadTableView(arr: self.arrComics)
-        })
-    }
+//    func fetchComicData(){
+//
+//
+//        let ref = Database.database().reference(fromURL: FirebaseBaseURL)
+//
+//        _ = ref.child("comics").observeSingleEvent(of: .value, with: { (snapshot) in
+//            print(snapshot)
+//            self.arrComics = []
+//            guard let value = snapshot.value else { return }
+//
+//
+//            if let arrValue = value as? [NSDictionary]{
+//                for objDict in arrValue{
+//                    print(objDict)
+//                    self.arrComics.append(TSBook.init(dictObj:objDict))
+//                }
+//            }
+//
+//            self.tblProfile.setAndReloadTableView(arr: self.arrComics)
+//        })
+//    }
 }
 

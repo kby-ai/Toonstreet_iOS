@@ -63,17 +63,10 @@ class BuyCoinViewController: BaseViewController ,UITableViewDelegate, UITableVie
     @objc func btnBuyCoins(button:UIButton){
         let index = button.tag + 1
         
-        TSFirebaseAPI.shared.addCoins(newPoint: index*5)
-        
-        DispatchQueue.main.async {
-
-        TSFirebaseAPI.shared.getCoins { [unowned self] available in
-            
+        TSFirebaseAPI.shared.addCoins(newPoint: index*5) { [unowned self] coin in
             DispatchQueue.main.async {
                 self.lblcoins.text = "\(TSUser.shared.coins) Coins"
             }
         }
-        }
     }
-    
 }

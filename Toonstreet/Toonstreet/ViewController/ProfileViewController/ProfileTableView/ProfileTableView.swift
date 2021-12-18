@@ -107,7 +107,7 @@ extension ProfileTableView:UITableViewDelegate,UITableViewDataSource{
                 return UITableViewCell()
             }
             
-            cell.setAndReloadTableView(arr: self.aryBooks)
+            cell.setAndReloadTableView(arr: TSFirebaseAPI.shared.arrPurchasedComic)
             
             cell.didSelectCellItem { [weak self] (type, book) in
                 self?.handleCellItem(type: type, book: book)
@@ -127,7 +127,7 @@ extension ProfileTableView:UITableViewDelegate,UITableViewDataSource{
                 self?.handleCellItem(type: type, book: book)
             }
             
-            cell.setAndReloadTableView(arr: self.aryBooks)
+            cell.setAndReloadTableView(arr: TSFirebaseAPI.shared.arrContinueReading)
 
             return cell
         }

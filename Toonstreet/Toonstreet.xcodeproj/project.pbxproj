@@ -86,6 +86,7 @@
 		8A8D7EDF2746DBD30073E261 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D7EDE2746DBD30073E261 /* TabBarController.swift */; };
 		8A8D7EE22746E3140073E261 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D7EE12746E3140073E261 /* SignupViewController.swift */; };
 		8AA31531275E7B8800C437E3 /* TSEpisodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA31530275E7B8800C437E3 /* TSEpisodes.swift */; };
+		8AB3F144276E6FA0009595F7 /* TSImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3F143276E6FA0009595F7 /* TSImageManager.swift */; };
 		8AB5CD19274EAFF500A3F15E /* testcomic.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 8AB5CD18274EAFF500A3F15E /* testcomic.pdf */; };
 		8AB7ECCE27494E9800455B31 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB7ECCD27494E9800455B31 /* DetailViewController.swift */; };
 		8AB7ECD32749549C00455B31 /* TSScollViewSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB7ECD22749549C00455B31 /* TSScollViewSegment.swift */; };
@@ -186,6 +187,7 @@
 		8A8D7EDE2746DBD30073E261 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		8A8D7EE12746E3140073E261 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		8AA31530275E7B8800C437E3 /* TSEpisodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSEpisodes.swift; sourceTree = "<group>"; };
+		8AB3F143276E6FA0009595F7 /* TSImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSImageManager.swift; sourceTree = "<group>"; };
 		8AB5CD18274EAFF500A3F15E /* testcomic.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = testcomic.pdf; sourceTree = "<group>"; };
 		8AB7ECCD27494E9800455B31 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8AB7ECD22749549C00455B31 /* TSScollViewSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSScollViewSegment.swift; sourceTree = "<group>"; };
@@ -493,6 +495,7 @@
 				8A8D7ECF2746C8EC0073E261 /* TSLoader.swift */,
 				490492622748F181008827DF /* TSEmptyBackgroundView.swift */,
 				8AFC038D276D2F29008E48C1 /* TSFirebaseAPI.swift */,
+				8AB3F143276E6FA0009595F7 /* TSImageManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -802,6 +805,7 @@
 				8ACE002D274D7A2E00063BF2 /* ProfileComicTableCell.swift in Sources */,
 				8AB9DCD3274EC0F800949BC7 /* TSUser.swift in Sources */,
 				8A8D7EC22746BFCC0073E261 /* TSTextField.swift in Sources */,
+				8AB3F144276E6FA0009595F7 /* TSImageManager.swift in Sources */,
 				49A0E22B274A1B09001F6CE9 /* SliderCollectionView.swift in Sources */,
 				490492632748F181008827DF /* TSEmptyBackgroundView.swift in Sources */,
 				4904927427491172008827DF /* TSBook.swift in Sources */,
@@ -962,6 +966,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q7332CR9FH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Toonstreet/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -969,6 +974,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -990,6 +996,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q7332CR9FH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Toonstreet/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -997,6 +1004,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

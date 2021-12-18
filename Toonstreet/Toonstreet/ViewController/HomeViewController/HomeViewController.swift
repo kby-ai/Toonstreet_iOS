@@ -18,8 +18,7 @@ class HomeViewController: BaseViewController {
     var objReadingDict:NSDictionary = NSDictionary()
 //    var viewControllerToInsertBelow : UIViewController?
 
-    var listReadComic:[String] = []
-    var arrContinueReading:[TSBook] = []
+
 
     var arrComics:[TSBook] = []
 //    var arrUpdate:[TSBook] = []
@@ -140,98 +139,74 @@ class HomeViewController: BaseViewController {
     
     func fetchContinueReadingData(){
         
-        let ref = Database.database().reference(fromURL: FirebaseBaseURL)
+        
+        TSFirebaseAPI.shared.fetchPurchaseData { [unowned self] status in
+            TSFirebaseAPI.shared.fetchContinueReadingData { [unowned self] dict in
+                self.objReadingDict = dict
+                self.fetchComicData()
+            }
+        }
+        
 
-        _ = ref.child("ContinueReading").child("\(TSUser.shared.uID)").observeSingleEvent(of: .value, with: { (snapshot) in
-                                               print(snapshot)
-                                               self.listReadComic = []
-                                               guard let value = snapshot.value else { return }
+//        let ref = Database.database().reference(fromURL: FirebaseBaseURL)
 
-            
-                                               if let arrValue = value as? NSDictionary {
-                                                   
-                                                   self.objReadingDict = arrValue;
-                                                   
-                                                   for strKey in arrValue.allKeys{
-                                                       self.listReadComic.append(strKey as? String ?? "")
-                                                   }
-//                                                   self.listReadComic = arrValue.allKeys
-                                                   self.fetchComicData()
-                                               }
-                                           })
+//        _ = ref.child("ContinueReading").child(TSUser.shared.uID).observeSingleEvent(of: .value, with: { (snapshot) in
+//                                               print(snapshot)
+//                                               self.listReadComic = []
+//                                               guard let value = snapshot.value else { return }
+//
+//
+//                                               if let arrValue = value as? NSDictionary {
+//
+//                                                   self.objReadingDict = arrValue;
+//
+//                                                   for strKey in arrValue.allKeys{
+//                                                       self.listReadComic.append(strKey as? String ?? "")
+//                                                   }
+////                                                   self.listReadComic = arrValue.allKeys
+//                                                   self.fetchComicData()
+//                                               }
+//                                           })
         
         
     }
     
     
     func fetchComicData(){
-        
-//        newrelease
-//        popular
-//        soonrelease
-//        update
-        
-        
-        arrContinueReading = []
+
+        TSFirebaseAPI.shared.arrContinueReading = []
                                            
-//
-        let ref = Database.database().reference(fromURL: FirebaseBaseURL)
+        self.arrComics = []
 
-        _ = ref.child("popular").observeSingleEvent(of: .value, with: { (snapshot) in
-            print(snapshot)
-            self.arrComics = []
-            guard let value = snapshot.value else { return }
-
+        TSFirebaseAPI.shared.fetchPopularData { [unowned self] arrBook in
             
-            if let arrValue = value as? [NSDictionary]{
-                for objDict in arrValue{
-                    print(objDict)
-                    
-                    let objBook = TSBook.init(dictObj:objDict)
-                    if self.listReadComic.contains(objBook.title){
-                        self.arrContinueReading.append(objBook)
-                    }
-                    self.arrComics.append(objBook)
-                }
-            }
-  
-            self.tblHomeTableView.setAndReloadTableViewComics(arr: self.arrComics, arrContinueReading: self.arrContinueReading)
-        })
-        
-        
-        
+            self.arrComics = arrBook
 
-        _ = ref.child("newrelease").observeSingleEvent(of: .value, with: { (snapshot) in
-            print(snapshot)
-            self.arrNewRelease = []
-            guard let value = snapshot.value else { return }
-
+            self.tblHomeTableView.setAndReloadTableViewComics(arr: self.arrComics, arrContinueReading: TSFirebaseAPI.shared.arrContinueReading)
             
-            if let arrValue = value as? [NSDictionary]{
-                for objDict in arrValue{
-                    print(objDict)
-                    
-                    let objBook = TSBook.init(dictObj:objDict)
-                    if self.listReadComic.contains(objBook.title){
-                        self.arrContinueReading.append(objBook)
-                    }
-                    self.arrNewRelease.append(objBook)
-                }
-            }
-  
-            self.tblHomeTableView.setAndReloadTableViewNewRelease(arr: self.arrNewRelease, arrContinueReading: self.arrContinueReading)
-        })
+        }
+       
+        
+        self.arrNewRelease = []
+        
+        TSFirebaseAPI.shared.fetchNewReleaseData { [unowned self] arrBook in
+            self.arrNewRelease = arrBook
+            self.tblHomeTableView.setAndReloadTableViewNewRelease(arr: self.arrNewRelease, arrContinueReading: TSFirebaseAPI.shared.arrContinueReading)
+        }
     }
     
-    //MARK: - UINavigationControllerDelegate
-//    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
-//           if let vc = viewControllerToInsertBelow {
-//               viewControllerToInsertBelow = nil
-//               let index = navigationController.viewControllers.indexOf(viewController)!
-//               navigationController.viewControllers.insert(vc, atIndex: index)
-//           }
-//       }
-
+    
+    func fetchPurchasedData(){
+        
+        
+        
+        TSFirebaseAPI.shared.fetchContinueReadingData { [unowned self] dict in
+            self.objReadingDict = dict
+            self.fetchComicData()
+        }
+        
+    }
+    
 }
 
 
