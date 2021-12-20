@@ -15,6 +15,8 @@ let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
 @available(iOS 13.0, *)
 let scene = UIApplication.shared.connectedScenes.first
 
+//@available(iOS 13.0, *)
+//let sceneDelegate:SceneDelegate = UIApplication.shared.delegate as! SceneDelegate
 
 //let baseObj = Basevc()
 //let AppDelObj : AppDelegate = AppDelegate().sharedInstance

@@ -322,6 +322,8 @@ class SignupViewController: BaseViewController {
            print(error)
        }
 
+    
+    
 }
 //MARK: - TextViewDelegate
 extension SignupViewController:UITextViewDelegate{
@@ -332,13 +334,19 @@ extension SignupViewController:UITextViewDelegate{
         if (url.absoluteString == self.model.termsOfServiceURL)
         {
             textView.resignFirstResponder()
-            self.openURLInSafari(url: self.model.termsOfServiceURL)
+       
+            if let objPDFVC = self.storyboard?.instantiateViewController(withIdentifier: "TearmsViewController") as? TearmsViewController{
+                self.navigationController?.pushViewController(objPDFVC, animated: true)
+            }
+            
         }
         else if (url.absoluteString == self.model.privacyPlocyURL)
         {
             textView.resignFirstResponder()
-            self.openURLInSafari(url: self.model.privacyPlocyURL)
             
+           if let objPDFVC = self.storyboard?.instantiateViewController(withIdentifier: "TearmsViewController") as? TearmsViewController{
+                self.navigationController?.pushViewController(objPDFVC, animated: true)
+            }
         }
         return false
     }

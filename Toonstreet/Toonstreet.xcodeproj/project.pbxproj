@@ -85,6 +85,8 @@
 		8A8D7EDC2746D8670073E261 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D7EDB2746D8670073E261 /* ValidationService.swift */; };
 		8A8D7EDF2746DBD30073E261 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D7EDE2746DBD30073E261 /* TabBarController.swift */; };
 		8A8D7EE22746E3140073E261 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D7EE12746E3140073E261 /* SignupViewController.swift */; };
+		8A930A0227708EFC002121F9 /* TearmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A930A0127708EFC002121F9 /* TearmsViewController.swift */; };
+		8A930A042770948E002121F9 /* ToonstreetTermsConditions.html in Resources */ = {isa = PBXBuildFile; fileRef = 8A930A032770948E002121F9 /* ToonstreetTermsConditions.html */; };
 		8AA31531275E7B8800C437E3 /* TSEpisodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA31530275E7B8800C437E3 /* TSEpisodes.swift */; };
 		8AB3F144276E6FA0009595F7 /* TSImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3F143276E6FA0009595F7 /* TSImageManager.swift */; };
 		8AB5CD19274EAFF500A3F15E /* testcomic.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 8AB5CD18274EAFF500A3F15E /* testcomic.pdf */; };
@@ -186,6 +188,8 @@
 		8A8D7EDB2746D8670073E261 /* ValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 		8A8D7EDE2746DBD30073E261 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		8A8D7EE12746E3140073E261 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		8A930A0127708EFC002121F9 /* TearmsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TearmsViewController.swift; sourceTree = "<group>"; };
+		8A930A032770948E002121F9 /* ToonstreetTermsConditions.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ToonstreetTermsConditions.html; sourceTree = "<group>"; };
 		8AA31530275E7B8800C437E3 /* TSEpisodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSEpisodes.swift; sourceTree = "<group>"; };
 		8AB3F143276E6FA0009595F7 /* TSImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSImageManager.swift; sourceTree = "<group>"; };
 		8AB5CD18274EAFF500A3F15E /* testcomic.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = testcomic.pdf; sourceTree = "<group>"; };
@@ -439,6 +443,7 @@
 		8A8D7EBA2746BD3E0073E261 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				8A930A0027708EE4002121F9 /* TearmsAndConditions */,
 				8AB5CD1D274EB23F00A3F15E /* PDFViewController */,
 				8ACE0034274D7D7200063BF2 /* BuyCoinViewController */,
 				8A233B65274C2AB8003BF645 /* ProfileViewController */,
@@ -496,6 +501,7 @@
 				490492622748F181008827DF /* TSEmptyBackgroundView.swift */,
 				8AFC038D276D2F29008E48C1 /* TSFirebaseAPI.swift */,
 				8AB3F143276E6FA0009595F7 /* TSImageManager.swift */,
+				8A930A032770948E002121F9 /* ToonstreetTermsConditions.html */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -528,6 +534,14 @@
 				8A8D7EE12746E3140073E261 /* SignupViewController.swift */,
 			);
 			path = SignupViewController;
+			sourceTree = "<group>";
+		};
+		8A930A0027708EE4002121F9 /* TearmsAndConditions */ = {
+			isa = PBXGroup;
+			children = (
+				8A930A0127708EFC002121F9 /* TearmsViewController.swift */,
+			);
+			path = TearmsAndConditions;
 			sourceTree = "<group>";
 		};
 		8AB5CD1D274EB23F00A3F15E /* PDFViewController */ = {
@@ -697,6 +711,7 @@
 				4904928B27493337008827DF /* ReleaseSoonCollectionViewCell.xib in Resources */,
 				4904929727493B7B008827DF /* MostPopularCollectionViewCell.xib in Resources */,
 				4904928527492EB5008827DF /* ReleaseSoonTableViewCell.xib in Resources */,
+				8A930A042770948E002121F9 /* ToonstreetTermsConditions.html in Resources */,
 				4904927627491992008827DF /* NunitoSans-ExtraBold.ttf in Resources */,
 				8A8D7ED12746D4280073E261 /* AvenirLTStd-Black.otf in Resources */,
 				8A8D7EAC2746BCCE0073E261 /* Main.storyboard in Resources */,
@@ -817,6 +832,7 @@
 				4904928427492EB5008827DF /* ReleaseSoonTableViewCell.swift in Sources */,
 				8A8D7ED02746C8EC0073E261 /* TSLoader.swift in Sources */,
 				4904929A274942ED008827DF /* ContinueReadingTableViewCell.swift in Sources */,
+				8A930A0227708EFC002121F9 /* TearmsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -33,12 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func navigateToTabViewController(){
-        
-//        if let objTabbar = self.storyboard?.instantiateViewController(withIdentifier: "TSTabBarControllerViewController") as? TSTabBarControllerViewController{
-//            appDelegate.window?.rootViewController = objTabbar
-//        }
-
-        
+     
         
         let destinationTab:TSTabBarControllerViewController = UIStoryboard(storyboard: .Main).instantiateViewController()
 //        self.storyboard?.instantiateViewController(withIdentifier: "TSTabBarControllerViewController") as? TSTabBarControllerViewController

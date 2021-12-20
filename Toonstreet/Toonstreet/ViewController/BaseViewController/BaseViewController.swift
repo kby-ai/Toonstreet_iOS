@@ -16,7 +16,8 @@ enum NavigationBarButtonItem
         case .BackArrow:
             return #imageLiteral(resourceName: "back")
         case .logOut:
-            return UIImage.init(systemName: "logout)
+            return #imageLiteral(resourceName: "logout")
+       
         }
    
     }
@@ -57,6 +58,8 @@ class BaseViewController: UIViewController {
                     btnNavigationItem.addTarget(self, action: #selector(BaseViewController.navigationBackButton_Clicked), for: UIControl.Event.touchUpInside)
                     break
                     
+                case .logOut:
+                    btnNavigationItem.addTarget(self, action: #selector(BaseViewController.navigationRightButton_Clicked), for: UIControl.Event.touchUpInside)
                 }
                 leftBarButtonItems.append(UIBarButtonItem.init(customView: btnNavigationItem))
             }
@@ -83,8 +86,8 @@ class BaseViewController: UIViewController {
                     btnNavigationItem.addTarget(self, action: #selector(BaseViewController.navigationBackButton_Clicked), for: UIControl.Event.touchUpInside)
                     break
                     
-                
-                    
+                case .logOut:
+                    btnNavigationItem.addTarget(self, action: #selector(BaseViewController.navigationRightButton_Clicked), for: UIControl.Event.touchUpInside)                    
                 }
                 leftBarButtonItems.append(UIBarButtonItem.init(customView: btnNavigationItem))
             }
@@ -96,6 +99,8 @@ class BaseViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @objc func navigationRightButton_Clicked()->(){
+    }
     
     func setupUI(){
         self.view.backgroundColor = UIColor.Theme.themeBlackColor

@@ -304,6 +304,10 @@ class LoginViewController: BaseViewController {
 //    }
 
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     //MARK: Login Success
     func loginSuccess() {
         

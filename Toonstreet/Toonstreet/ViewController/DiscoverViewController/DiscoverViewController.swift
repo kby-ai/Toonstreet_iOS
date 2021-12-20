@@ -26,11 +26,13 @@ class DiscoverModel:TSModel{
         
     }
 }
-class DiscoverViewController: BaseViewController {
+class DiscoverViewController: BaseViewController,UISearchBarDelegate {
     
     var arrComics:[TSBook] = []
+    var searchActive = false;
+    var arrFiltered:[TSBook] = []
 
-    
+    @IBOutlet weak var txtSearch: UISearchBar!
     //MARK: - IBOutlet
     @IBOutlet weak var itemCollectionView:SliderCollectionView!
     @IBOutlet weak var bookListCollectionView:BookListCollectionView!
@@ -48,7 +50,10 @@ class DiscoverViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.txtSearch.tintColor = UIColor.white
+        self.txtSearch.barTintColor = UIColor.white
         
+        self.txtSearch.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -197,7 +202,8 @@ class DiscoverViewController: BaseViewController {
     func fetchComicData(){
 
         TSFirebaseAPI.shared.arrContinueReading = []
-                                           
+        TSFirebaseAPI.shared.arrPurchasedComic = []
+
         self.arrComics = []
 
         TSFirebaseAPI.shared.fetchPopularData { [unowned self] arrBook in
@@ -251,6 +257,48 @@ class DiscoverViewController: BaseViewController {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
+        searchActive = false
+
     }
     
+  
+
+   func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+       searchActive = true
+   }
+
+   func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+       searchActive = false
+   }
+   func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+       searchActive = false
+   }
+  
+
+   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+
+       self.arrFiltered = arrComics.filter { $0.title.contains(searchText) }
+
+//       arrFiltered = arrComics.filter( $0.title.contains(searchText))
+//       arrFiltered = arrComics.filter({ (text) -> Bool in
+//           let tmp:NSString = text as NSString
+//           let range = tmp.range(of: searchText, options: NSString.CompareOptions.caseInsensitive)
+//           return range.location != NSNotFound
+//       })
+
+       if (arrFiltered.count == 0){
+           searchActive = false
+           self.bookListCollectionView.setAndReloadTableView(arr: self.arrComics)
+
+       }
+       else{
+           searchActive = true
+           self.bookListCollectionView.setAndReloadTableView(arr: self.arrFiltered)
+
+       }
+       
+
+       
+//       self.itemCollectionView.reloadData()
+   }
 }

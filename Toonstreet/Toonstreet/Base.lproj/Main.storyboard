@@ -478,6 +478,40 @@
             </objects>
             <point key="canvasLocation" x="-320.28985507246381" y="61.607142857142854"/>
         </scene>
+        <!--Tearms View Controller-->
+        <scene sceneID="w8I-aA-gVx">
+            <objects>
+                <viewController storyboardIdentifier="TearmsViewController" id="NnV-q2-1Og" customClass="TearmsViewController" customModule="Toonstreet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EUI-2j-a19">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2pJ-c9-LVq">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="n7A-IK-MCC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="n7A-IK-MCC" firstAttribute="bottom" secondItem="2pJ-c9-LVq" secondAttribute="bottom" id="eFs-Af-9wH"/>
+                            <constraint firstItem="2pJ-c9-LVq" firstAttribute="leading" secondItem="n7A-IK-MCC" secondAttribute="leading" id="kug-8j-umP"/>
+                            <constraint firstItem="2pJ-c9-LVq" firstAttribute="top" secondItem="n7A-IK-MCC" secondAttribute="top" id="mbf-dA-VqK"/>
+                            <constraint firstItem="n7A-IK-MCC" firstAttribute="trailing" secondItem="2pJ-c9-LVq" secondAttribute="trailing" id="zwS-hV-QCU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="wekView" destination="2pJ-c9-LVq" id="biF-C6-Xrw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JG9-8N-cTG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1356" y="699"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="C2u-qZ-Hio">
             <objects>
@@ -696,6 +730,7 @@
                         <outlet property="mainView" destination="5qd-kw-eLD" id="UNR-c0-onU"/>
                         <outlet property="searchBarView" destination="DM1-Sn-dsn" id="OTT-lU-bNV"/>
                         <outlet property="sliderView" destination="axZ-fc-4sP" id="eRX-y5-mQE"/>
+                        <outlet property="txtSearch" destination="Wg0-Jw-nrk" id="JUr-ZF-8TM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bez-hd-DSp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

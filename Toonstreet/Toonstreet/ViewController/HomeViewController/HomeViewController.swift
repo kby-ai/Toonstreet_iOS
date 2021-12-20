@@ -174,6 +174,7 @@ class HomeViewController: BaseViewController {
     
     func fetchComicData(){
 
+        TSFirebaseAPI.shared.arrPurchasedComic = []
         TSFirebaseAPI.shared.arrContinueReading = []
                                            
         self.arrComics = []
