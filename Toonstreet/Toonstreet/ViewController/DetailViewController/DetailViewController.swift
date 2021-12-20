@@ -17,9 +17,10 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
 
     var arrGenre:[String] = []//["Action","Adventure","Comedy","Drama","Fantasy","Game"]
     
+    @IBOutlet weak var lblTitle2: TSLabel!
     @IBOutlet weak var lblStatus: TSLabel!
     @IBOutlet weak var lblAltTitle: TSLabel!
-    @IBOutlet weak var lblTitle2: UIView!
+//    @IBOutlet weak var lblTitle2: UIView!
     @IBOutlet weak var lblAuther: TSLabel!
     @IBOutlet weak var lblPublisher: TSLabel!
     @IBOutlet weak var lblDetails: TSLabel!
@@ -117,9 +118,9 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
         self.lblDetails.text = self.objBook?.synopsis
 //        self.lblAuther.text = self.objBook?.publisher
 //        self.lblAuther2.text = self.objBook?.publisher
-//        self.lblTitle2.text = self.objBook?.title
+        self.lblTitle2.text = self.objBook?.title
         self.lblTitle.text = self.objBook?.title
-        self.lblPublisher.text = self.objBook?.publisher
+        self.lblPublisher.text = "By \(self.objBook?.publisher)"
 
     }
     @objc func segmentSelected(sender:TSScollViewSegment) {

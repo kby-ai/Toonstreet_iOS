@@ -1538,7 +1538,7 @@
                         <outlet property="lblStaticRating" destination="oqP-Qa-add" id="Lfn-bR-qW7"/>
                         <outlet property="lblStatus" destination="fsp-K9-beh" id="Cof-uL-fcW"/>
                         <outlet property="lblTitle" destination="b9J-Gh-eOl" id="mYl-9P-2pj"/>
-                        <outlet property="lblTitle2" destination="yxc-fO-n6y" id="C79-Pl-j03"/>
+                        <outlet property="lblTitle2" destination="vow-HJ-DVy" id="IXO-cW-w20"/>
                         <outlet property="mainView" destination="ZLD-eA-et3" id="Zes-qn-zYd"/>
                         <outlet property="scrollView" destination="ApE-Ey-1Gc" id="vFM-k0-TSC"/>
                         <outlet property="segmentController" destination="CFe-HZ-Ry0" id="Pkt-G8-9Fb"/>

@@ -19,6 +19,7 @@ enum DiscoveryCategory{
 class DiscoverModel:TSModel{
     var category:DiscoveryCategory = .Genre
     var strSearchTitles:String = ""
+    
 //    var aryDaily:[String] = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
     var aryGenre:[String] = ["Trending","New releases","Adventure","Action","Romance","Drama","Comedy","Thriller","Superhero","Sci-fi","Mystery","Fantasy"]
     
@@ -31,7 +32,7 @@ class DiscoverViewController: BaseViewController,UISearchBarDelegate {
     var arrComics:[TSBook] = []
     var searchActive = false;
     var arrFiltered:[TSBook] = []
-
+    var commicFilter:[TSBook] = []
     @IBOutlet weak var txtSearch: UISearchBar!
     //MARK: - IBOutlet
     @IBOutlet weak var itemCollectionView:SliderCollectionView!
@@ -52,7 +53,9 @@ class DiscoverViewController: BaseViewController,UISearchBarDelegate {
         super.viewDidLoad()
         self.txtSearch.tintColor = UIColor.white
 //        self.txtSearch.barTintColor = UIColor.white
-        
+//        txtSearch.setTextColor(color: UIColor.white)
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).textColor = UIColor.white
+
         self.txtSearch.delegate = self
         // Do any additional setup after loading the view.
     }
@@ -93,16 +96,18 @@ class DiscoverViewController: BaseViewController,UISearchBarDelegate {
              print(selectedItem)
              
              if self.model.category == .Genre {
-             var commicFilter:[TSBook] = []
+                 self.commicFilter = []
              
              for objComic in self.arrComics {
                  if objComic.category.contains(selectedItem){
-                     commicFilter.append(objComic)
+                     self.commicFilter.append(objComic)
                  }
              }
-                 self.bookListCollectionView.setAndReloadTableView(arr: commicFilter)
+                 self.bookListCollectionView.backgroundView = nil
 
-                 if commicFilter.count > 0{
+                 self.bookListCollectionView.setAndReloadTableView(arr: self.commicFilter)
+
+                 if self.commicFilter.count > 0{
                      self.bookListCollectionView.backgroundView = nil
                  } else {
                      // Display a message when the table is empty
@@ -149,13 +154,15 @@ class DiscoverViewController: BaseViewController,UISearchBarDelegate {
 //        }
         
 //        if self.model.category == .Genre {
-        var commicFilter:[TSBook] = []
+        self.commicFilter = []
         
         for objComic in self.arrComics {
             if objComic.category.contains(self.model.aryGenre[0]){
                 commicFilter.append(objComic)
             }
         }
+        self.bookListCollectionView.backgroundView = nil
+
             self.bookListCollectionView.setAndReloadTableView(arr: commicFilter)
             
             if commicFilter.count > 0{
@@ -212,6 +219,8 @@ class DiscoverViewController: BaseViewController,UISearchBarDelegate {
                 self.arrComics.append(book)
             }
 
+            self.bookListCollectionView.backgroundView = nil
+
         self.bookListCollectionView.setAndReloadTableView(arr: self.arrComics)
           self.updateCategoryUI()
         }
@@ -224,6 +233,8 @@ class DiscoverViewController: BaseViewController,UISearchBarDelegate {
             for book in arrBook{
                 self.arrComics.append(book)
             }
+            self.bookListCollectionView.backgroundView = nil
+
             self.bookListCollectionView.setAndReloadTableView(arr: self.arrComics)
               self.updateCategoryUI()
             
@@ -277,7 +288,7 @@ class DiscoverViewController: BaseViewController,UISearchBarDelegate {
 
    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 
-       self.arrFiltered = arrComics.filter { $0.title.contains(searchText) }
+       self.arrFiltered = commicFilter.filter { $0.title.lowercased().contains(searchText.lowercased()) }
 
 //       arrFiltered = arrComics.filter( $0.title.contains(searchText))
 //       arrFiltered = arrComics.filter({ (text) -> Bool in
@@ -288,10 +299,13 @@ class DiscoverViewController: BaseViewController,UISearchBarDelegate {
 
        if (arrFiltered.count == 0){
            searchActive = false
+           self.bookListCollectionView.backgroundView = nil
            self.bookListCollectionView.setAndReloadTableView(arr: self.arrComics)
 
        }
        else{
+           
+           self.bookListCollectionView.backgroundView = nil
            searchActive = true
            self.bookListCollectionView.setAndReloadTableView(arr: self.arrFiltered)
 
@@ -301,4 +315,12 @@ class DiscoverViewController: BaseViewController,UISearchBarDelegate {
        
 //       self.itemCollectionView.reloadData()
    }
+}
+public extension UISearchBar {
+
+    public func setTextColor(color: UIColor) {
+        let svs = subviews.flatMap { $0.subviews }
+        guard let tf = (svs.filter { $0 is UITextField }).first as? UITextField else { return }
+        tf.textColor = color
+    }
 }
