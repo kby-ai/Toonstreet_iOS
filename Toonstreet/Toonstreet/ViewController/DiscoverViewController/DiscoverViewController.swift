@@ -288,6 +288,7 @@ class DiscoverViewController: BaseViewController,UISearchBarDelegate {
 
    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 
+       self.arrFiltered = []
        self.arrFiltered = commicFilter.filter { $0.title.lowercased().contains(searchText.lowercased()) }
 
 //       arrFiltered = arrComics.filter( $0.title.contains(searchText))
@@ -300,8 +301,7 @@ class DiscoverViewController: BaseViewController,UISearchBarDelegate {
        if (arrFiltered.count == 0){
            searchActive = false
            self.bookListCollectionView.backgroundView = nil
-           self.bookListCollectionView.setAndReloadTableView(arr: self.arrComics)
-
+           self.bookListCollectionView.setAndReloadTableView(arr: self.commicFilter)
        }
        else{
            
@@ -316,11 +316,12 @@ class DiscoverViewController: BaseViewController,UISearchBarDelegate {
 //       self.itemCollectionView.reloadData()
    }
 }
-public extension UISearchBar {
 
-    public func setTextColor(color: UIColor) {
-        let svs = subviews.flatMap { $0.subviews }
-        guard let tf = (svs.filter { $0 is UITextField }).first as? UITextField else { return }
-        tf.textColor = color
-    }
-}
+//public extension UISearchBar {
+//
+//    public func setTextColor(color: UIColor) {
+//        let svs = subviews.flatMap { $0.subviews }
+//        guard let tf = (svs.filter { $0 is UITextField }).first as? UITextField else { return }
+//        tf.textColor = color
+//    }
+//}
