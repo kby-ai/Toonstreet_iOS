@@ -26,6 +26,8 @@ class ProfileViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 //        self.fetchComicData()
    
 //        TSFirebaseAPI.shared.addCoins(newPoint: 5);

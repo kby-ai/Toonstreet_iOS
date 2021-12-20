@@ -15,15 +15,21 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
     var isPass:Bool?
     var objReadingDict:NSDictionary?
 
-    var arrGenre = ["Action","Adventure","Comedy","Drama","Fantasy","Game"]
+    var arrGenre:[String] = []//["Action","Adventure","Comedy","Drama","Fantasy","Game"]
     
+    @IBOutlet weak var lblStatus: TSLabel!
+    @IBOutlet weak var lblAltTitle: TSLabel!
+    @IBOutlet weak var lblTitle2: UIView!
+    @IBOutlet weak var lblAuther: TSLabel!
+    @IBOutlet weak var lblPublisher: TSLabel!
+    @IBOutlet weak var lblDetails: TSLabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var segmentController: TSScollViewSegment!
     @IBOutlet weak var btnShare: UIButton!
     @IBOutlet weak var btnSubscribe: TSButton!
     @IBOutlet weak var lblStaticRating: TSLabel!
     @IBOutlet weak var lblRateValue: TSLabel!
-    @IBOutlet weak var lblAuther: TSLabel!
+//    @IBOutlet weak var lblAuther: TSLabel!
     @IBOutlet weak var lblTitle: TSLabel!
     @IBOutlet weak var viewEpisod: UIView!
     @IBOutlet weak var imgProduct: UIImageView!
@@ -35,6 +41,7 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var contentView:UIView!
     @IBOutlet weak var mainView:UIView!
     
+    @IBOutlet weak var lblAuther2: TSLabel!
     override func viewDidLoad() {
         super.viewDidLoad()
             
@@ -47,7 +54,7 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
     
     override func setupUI() {
         
-       
+//        arrGenre
         self.leftBarButtonItems = [.BackArrow]
 
         self.scrollView.resizeScrollViewContentSize()
@@ -58,6 +65,9 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
         
         self.tblEpisod.register(UINib.init(nibName: "EpisodesTableCell", bundle: nil), forCellReuseIdentifier: "EpisodesTableCell")
 
+        
+        print(self.objBook?.category)
+        
         self.loadCollectionView()
         
         self.tblEpisod.dataSource = self
@@ -102,6 +112,15 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
           // The width of each segment would be based on the text length and font size.
           segmentController.fixedSegmentWidth = true
       
+        
+        self.lblEpisodesTitle.text = self.objBook?.title
+        self.lblDetails.text = self.objBook?.synopsis
+//        self.lblAuther.text = self.objBook?.publisher
+//        self.lblAuther2.text = self.objBook?.publisher
+//        self.lblTitle2.text = self.objBook?.title
+        self.lblTitle.text = self.objBook?.title
+        self.lblPublisher.text = self.objBook?.publisher
+
     }
     @objc func segmentSelected(sender:TSScollViewSegment) {
           print("Segment at index \(sender.selectedSegmentIndex)  selected")
@@ -141,6 +160,9 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
         self.view.layoutIfNeeded()
     }
     private func loadCollectionView(){
+        
+        self.arrGenre = self.objBook?.category.components(separatedBy: ",") ?? []
+
         self.genreCollectionView.loadItems(items: self.arrGenre)
         self.contentView.layoutIfNeeded()
         self.viewDetails.layoutIfNeeded()
@@ -148,6 +170,27 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
     
     //MARK: Button Action
     @IBAction func btnShareClicked(_ sender: Any) {
+        
+//        let fileURL = NSURL(fileURLWithPath: self.objBook.d)
+        let shareTitle = self.objBook?.title
+        let shareImage = self.imgProduct.image
+        let shareDetail = self.objBook?.synopsis
+
+        // Create the Array which includes the files you want to share
+        var filesToShare = [Any]()
+
+        // Add the path of the file to the Array
+        filesToShare.append(shareTitle)
+        filesToShare.append(shareImage)
+        filesToShare.append(shareDetail)
+
+        // Make the activityViewContoller which shows the share-view
+        let activityViewController = UIActivityViewController(activityItems: filesToShare, applicationActivities: nil)
+
+        // Show the share-view
+        self.present(activityViewController, animated: true, completion: nil)
+        
+        
     }
     
     @IBAction func btnSubscribeClicked(_ sender: Any) {

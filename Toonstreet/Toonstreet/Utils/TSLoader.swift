@@ -19,9 +19,10 @@ class TSLoader: NSObject {
         SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.dark)
     }
     
-    func showLoader(WithMessage message:String = "Loading") -> Void {
+    func showLoader(WithMessage message:String = "") -> Void {
         OperationQueue.main.addOperation {
-            SVProgressHUD.show(withStatus: message)
+            SVProgressHUD.show()
+//            SVProgressHUD.show(withStatus: message)
         }
     }
     

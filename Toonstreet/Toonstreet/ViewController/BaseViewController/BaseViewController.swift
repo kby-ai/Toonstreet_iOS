@@ -10,12 +10,15 @@ import UIKit
 enum NavigationBarButtonItem
 {
     case BackArrow
-    
+    case logOut
     func getImage() -> UIImage {
         switch self {
         case .BackArrow:
             return #imageLiteral(resourceName: "back")
+        case .logOut:
+            return UIImage.init(systemName: "logout)
         }
+   
     }
     
     func getButtonName() -> String {

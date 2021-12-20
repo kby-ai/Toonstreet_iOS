@@ -194,30 +194,63 @@ class DiscoverViewController: BaseViewController {
 
     }
     
-    
     func fetchComicData(){
-        
-        
-        let ref = Database.database().reference(fromURL: FirebaseBaseURL)
 
-        _ = ref.child("comics").observeSingleEvent(of: .value, with: { (snapshot) in
-            print(snapshot)
-            self.arrComics = []
-            guard let value = snapshot.value else { return }
+        TSFirebaseAPI.shared.arrContinueReading = []
+                                           
+        self.arrComics = []
 
+        TSFirebaseAPI.shared.fetchPopularData { [unowned self] arrBook in
             
-            if let arrValue = value as? [NSDictionary]{
-                for objDict in arrValue{
-                    print(objDict)
-                    self.arrComics.append(TSBook.init(dictObj:objDict))
-                }
+            for book in arrBook{
+                self.arrComics.append(book)
             }
-            self.bookListCollectionView.backgroundView = nil
-            self.bookListCollectionView.setAndReloadTableView(arr: self.arrComics)
-            
-            self.updateCategoryUI()
 
-        })
+        self.bookListCollectionView.setAndReloadTableView(arr: self.arrComics)
+          self.updateCategoryUI()
+        }
+       
+        
+        
+        TSFirebaseAPI.shared.fetchNewReleaseData { [unowned self] arrBook in
+//            self.arrNewRelease = arrBook
+            
+            for book in arrBook{
+                self.arrComics.append(book)
+            }
+            self.bookListCollectionView.setAndReloadTableView(arr: self.arrComics)
+              self.updateCategoryUI()
+            
+//            self.tblHomeTableView.setAndReloadTableViewNewRelease(arr: self.arrNewRelease, arrContinueReading: TSFirebaseAPI.shared.arrContinueReading)
+        }
+    }
+    
+//    func fetchComicData(){
+//
+//
+//        let ref = Database.database().reference(fromURL: FirebaseBaseURL)
+//
+//        _ = ref.child("popular").observeSingleEvent(of: .value, with: { (snapshot) in
+//            print(snapshot)
+//            self.arrComics = []
+//            guard let value = snapshot.value else { return }
+//
+//
+//            if let arrValue = value as? [NSDictionary]{
+//                for objDict in arrValue{
+//                    print(objDict)
+//                    self.arrComics.append(TSBook.init(dictObj:objDict))
+//                }
+//            }
+//            self.bookListCollectionView.backgroundView = nil
+//            self.bookListCollectionView.setAndReloadTableView(arr: self.arrComics)
+//            self.updateCategoryUI()
+//
+//        })
+//    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
     
 }

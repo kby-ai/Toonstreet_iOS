@@ -179,24 +179,26 @@ extension HomeTableView:UITableViewDelegate,UITableViewDataSource{
                 return UITableViewCell()
             }
 //            cell.arrComics = self.arrComics
-//            cell.addAndReloadCell(arr: self.arrComics)
+            cell.addAndReloadCell(arr: self.arrNewRelease)
 
+            cell.blockNewReleaseComic = { [weak self] (book) in
+                self?.handleCellItem(type: .NewRelease, book: book)
+            }
+            
             return cell
         }
         else {
             return UITableViewCell()
         }
-        
-        
-        
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let type = self.aryHomeTypes[indexPath.row]
-        if type == .NewRelease{
-            self.handleCellItem(type: type, book: TSBook())
-
-        }
-            
-    }
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let type = self.aryHomeTypes[indexPath.row]
+//        if type == .NewRelease{
+//            self.handleCellItem(type: type, book: arrNewRelease)
+//
+//        }
+//            
+//    }
     
 }

@@ -1122,9 +1122,9 @@
                                             <constraint firstAttribute="width" secondItem="e57-8p-QR7" secondAttribute="height" multiplier="100:130" priority="999" id="xgp-oc-G9m"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OVERLOAD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9J-Gh-eOl" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                        <rect key="frame" x="135" y="20" width="92.5" height="21.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OVERLOAD" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9J-Gh-eOl" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
+                                        <rect key="frame" x="135" y="20" width="264" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1135,33 +1135,33 @@
                                             <constraint firstAttribute="height" constant="60" id="8ob-iv-FxY"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By: Maruyama Kugane" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2p-Ad-7RQ" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                        <rect key="frame" x="135" y="51.5" width="126" height="14.5"/>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By: Maruyama Kugane" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2p-Ad-7RQ" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
+                                        <rect key="frame" x="135" y="49.5" width="126" height="14.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="jJU-De-bty">
-                                        <rect key="frame" x="135" y="76" width="30" height="30"/>
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="jJU-De-bty">
+                                        <rect key="frame" x="135" y="64" width="30" height="10"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="HGg-kH-c4T"/>
+                                            <constraint firstAttribute="height" constant="10" id="HGg-kH-c4T"/>
                                             <constraint firstAttribute="width" constant="30" id="gai-QW-qa3"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBt-6W-ehu" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                        <rect key="frame" x="170" y="82.5" width="20.5" height="17"/>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBt-6W-ehu" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
+                                        <rect key="frame" x="170" y="60.5" width="20.5" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqP-Qa-add" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                        <rect key="frame" x="200.5" y="84" width="26" height="14.5"/>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqP-Qa-add" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
+                                        <rect key="frame" x="200.5" y="62" width="26" height="14.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSz-Yk-aVa" customClass="TSButton" customModule="Toonstreet" customModuleProvider="target">
-                                        <rect key="frame" x="135" y="116" width="89" height="31"/>
+                                        <rect key="frame" x="135" y="74" width="89" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Subscribe">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
@@ -1172,7 +1172,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYO-xD-CRw">
-                                        <rect key="frame" x="229" y="115.5" width="32" height="32"/>
+                                        <rect key="frame" x="234" y="73.5" width="32" height="32"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="share"/>
                                         <connections>
@@ -1185,6 +1185,7 @@
                                     <constraint firstItem="oqP-Qa-add" firstAttribute="centerY" secondItem="sBt-6W-ehu" secondAttribute="centerY" id="1GK-DP-DKc"/>
                                     <constraint firstItem="e57-8p-QR7" firstAttribute="width" secondItem="A1I-PM-mlM" secondAttribute="width" multiplier="100:414" id="4UJ-uX-EFb"/>
                                     <constraint firstItem="f2p-Ad-7RQ" firstAttribute="top" secondItem="b9J-Gh-eOl" secondAttribute="bottom" constant="10" id="4mb-XU-ijb"/>
+                                    <constraint firstAttribute="trailing" secondItem="b9J-Gh-eOl" secondAttribute="trailing" constant="15" id="5x6-uz-7Sh"/>
                                     <constraint firstItem="oqP-Qa-add" firstAttribute="leading" secondItem="sBt-6W-ehu" secondAttribute="trailing" constant="10" id="6RS-cY-N5y"/>
                                     <constraint firstAttribute="trailing" secondItem="CFe-HZ-Ry0" secondAttribute="trailing" id="7bg-qC-5Zo"/>
                                     <constraint firstItem="kSz-Yk-aVa" firstAttribute="leading" secondItem="e57-8p-QR7" secondAttribute="trailing" constant="15" id="AjM-Oj-0ks"/>
@@ -1193,16 +1194,16 @@
                                     <constraint firstAttribute="bottom" secondItem="CFe-HZ-Ry0" secondAttribute="bottom" id="I0n-0a-GQ9"/>
                                     <constraint firstItem="iYO-xD-CRw" firstAttribute="centerY" secondItem="kSz-Yk-aVa" secondAttribute="centerY" id="KLr-g7-fV2"/>
                                     <constraint firstItem="CFe-HZ-Ry0" firstAttribute="top" secondItem="e57-8p-QR7" secondAttribute="bottom" constant="15" id="Syf-CQ-vpH"/>
-                                    <constraint firstItem="jJU-De-bty" firstAttribute="top" secondItem="f2p-Ad-7RQ" secondAttribute="bottom" constant="10" id="TVh-ll-pOB"/>
+                                    <constraint firstItem="jJU-De-bty" firstAttribute="top" secondItem="f2p-Ad-7RQ" secondAttribute="bottom" id="TVh-ll-pOB"/>
                                     <constraint firstItem="jJU-De-bty" firstAttribute="leading" secondItem="e57-8p-QR7" secondAttribute="trailing" constant="15" id="YPq-L0-KFy"/>
-                                    <constraint firstItem="iYO-xD-CRw" firstAttribute="leading" secondItem="kSz-Yk-aVa" secondAttribute="trailing" constant="5" id="aFN-Uv-S28"/>
+                                    <constraint firstItem="iYO-xD-CRw" firstAttribute="leading" secondItem="kSz-Yk-aVa" secondAttribute="trailing" constant="10" id="aFN-Uv-S28"/>
                                     <constraint firstItem="f2p-Ad-7RQ" firstAttribute="leading" secondItem="e57-8p-QR7" secondAttribute="trailing" constant="15" id="czr-4U-dr9"/>
                                     <constraint firstItem="CFe-HZ-Ry0" firstAttribute="leading" secondItem="A1I-PM-mlM" secondAttribute="leading" id="idg-QS-gZh"/>
                                     <constraint firstItem="sBt-6W-ehu" firstAttribute="leading" secondItem="jJU-De-bty" secondAttribute="trailing" constant="5" id="kNC-5r-gbJ"/>
                                     <constraint firstItem="sBt-6W-ehu" firstAttribute="centerY" secondItem="jJU-De-bty" secondAttribute="centerY" id="lQu-nM-yIR"/>
                                     <constraint firstItem="b9J-Gh-eOl" firstAttribute="leading" secondItem="e57-8p-QR7" secondAttribute="trailing" constant="15" id="pam-QD-Kml"/>
                                     <constraint firstItem="e57-8p-QR7" firstAttribute="top" secondItem="A1I-PM-mlM" secondAttribute="top" constant="15" id="q24-gt-ATW"/>
-                                    <constraint firstItem="kSz-Yk-aVa" firstAttribute="top" secondItem="jJU-De-bty" secondAttribute="bottom" constant="10" id="qco-rF-Ir4"/>
+                                    <constraint firstItem="kSz-Yk-aVa" firstAttribute="top" secondItem="jJU-De-bty" secondAttribute="bottom" id="qco-rF-Ir4"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tqV-Gg-4Zf">
@@ -1219,9 +1220,9 @@
                                                     <outlet property="delegate" destination="ETV-CP-XxM" id="caY-ax-Mv5"/>
                                                 </connections>
                                             </tableView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 Episodes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpo-cV-Q3p" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="15" width="87" height="19.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 Episodes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpo-cV-Q3p" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="15" width="82.5" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -1282,19 +1283,19 @@
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maruyama Kugane" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPh-ir-I5L" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
+                                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPh-ir-I5L" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
                                                                         <rect key="frame" x="25" y="405.5" width="364" height="19.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Le Souverain Suprème (Manga)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQC-Qw-flv" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
+                                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQC-Qw-flv" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
                                                                         <rect key="frame" x="25" y="346.5" width="364" height="19.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overload" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vow-HJ-DVy" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
+                                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vow-HJ-DVy" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
                                                                         <rect key="frame" x="25" y="287.5" width="364" height="19.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1312,7 +1313,7 @@
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rilis 2014" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erj-Ia-KCo" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
+                                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erj-Ia-KCo" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
                                                                         <rect key="frame" x="25" y="523.5" width="364" height="19.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1360,13 +1361,13 @@
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ongoing" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsp-K9-beh" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
+                                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsp-K9-beh" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
                                                                         <rect key="frame" x="25" y="464.5" width="364" height="19.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mK7-pa-how" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
+                                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mK7-pa-how" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
                                                                         <rect key="frame" x="25" y="582.5" width="364" height="19.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1492,11 +1493,17 @@
                         <outlet property="contentView" destination="yxc-fO-n6y" id="HlS-mZ-vyl"/>
                         <outlet property="genreCollectionView" destination="LcF-eE-BsR" id="N6K-ky-xjo"/>
                         <outlet property="imgProduct" destination="e57-8p-QR7" id="bge-Iv-WAl"/>
-                        <outlet property="lblAuther" destination="f2p-Ad-7RQ" id="qei-Oc-8zC"/>
+                        <outlet property="lblAltTitle" destination="AQC-Qw-flv" id="jlh-dh-8nU"/>
+                        <outlet property="lblAuther" destination="f2p-Ad-7RQ" id="48e-3j-MAc"/>
+                        <outlet property="lblAuther2" destination="WPh-ir-I5L" id="QJq-36-a7w"/>
+                        <outlet property="lblDetails" destination="VwB-is-dz8" id="HHc-mH-6Ru"/>
                         <outlet property="lblEpisodesTitle" destination="tpo-cV-Q3p" id="654-Jn-sXf"/>
+                        <outlet property="lblPublisher" destination="mK7-pa-how" id="pCc-rq-Iqw"/>
                         <outlet property="lblRateValue" destination="sBt-6W-ehu" id="1u1-h1-FoS"/>
                         <outlet property="lblStaticRating" destination="oqP-Qa-add" id="Lfn-bR-qW7"/>
+                        <outlet property="lblStatus" destination="fsp-K9-beh" id="Cof-uL-fcW"/>
                         <outlet property="lblTitle" destination="b9J-Gh-eOl" id="mYl-9P-2pj"/>
+                        <outlet property="lblTitle2" destination="yxc-fO-n6y" id="C79-Pl-j03"/>
                         <outlet property="mainView" destination="ZLD-eA-et3" id="Zes-qn-zYd"/>
                         <outlet property="scrollView" destination="ApE-Ey-1Gc" id="vFM-k0-TSC"/>
                         <outlet property="segmentController" destination="CFe-HZ-Ry0" id="Pkt-G8-9Fb"/>

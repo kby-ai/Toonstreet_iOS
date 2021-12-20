@@ -221,7 +221,7 @@ class TSFirebaseAPI: NSObject {
             
             if let arrValue = value as? [NSDictionary]{
                 for objDict in arrValue{
-//                    print(objDict)
+                    print(objDict)
                     
                     let objBook = TSBook.init(dictObj:objDict)
                     if self.listReadComic.contains(objBook.title){
@@ -261,7 +261,7 @@ class TSFirebaseAPI: NSObject {
             
             if let arrValue = value as? [NSDictionary]{
                 for objDict in arrValue{
-//                    print(objDict)
+                    print(objDict)
                     
                     let objBook = TSBook.init(dictObj:objDict)
                     if self.listReadComic.contains(objBook.title){
@@ -308,7 +308,6 @@ class TSFirebaseAPI: NSObject {
                 }
                 
                 completion(arrValue)
-//                self.fetchComicData()
             }
         })
     }
