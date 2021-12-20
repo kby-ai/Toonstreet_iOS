@@ -51,7 +51,7 @@ class DiscoverViewController: BaseViewController,UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.txtSearch.tintColor = UIColor.white
-        self.txtSearch.barTintColor = UIColor.white
+//        self.txtSearch.barTintColor = UIColor.white
         
         self.txtSearch.delegate = self
         // Do any additional setup after loading the view.
