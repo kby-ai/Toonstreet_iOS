@@ -274,33 +274,32 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
             objPDFVC.bookTitle = self.objBook?.title ?? ""
             objPDFVC.episodeList = self.objBook?.episodes[indexPath.row].strContent
             
-            if indexPath.row == self.objBook?.episodes.count ?? 0 - 1{
+            if indexPath.row + 1 == self.objBook?.episodes.count{
                 objPDFVC.isLastEpisode = true
             }
-            
-            
             self.navigationController?.pushViewController(objPDFVC, animated: true)
         }
         }else{
             print("Please purchase book")
-            UIAlertController.alert(message: "Please purchase book.")
+//            UIAlertController.alert(message: "Please purchase book.")
 
-            UIAlertController.showAlert(andMessage: "Are you sure you want to purchase this comic", andButtonTitles: ["YES","Not now"]) { index in
+            UIAlertController.showAlert(andMessage: "Are you sure you want to purchase this episode", andButtonTitles: ["YES","Not now"]) { index in
                 if index == 0{
 
-                    TSFirebaseAPI.shared.purchaseBook(bookCoin: 4, book: self.objBook ?? TSBook(), episode: 0) { [unowned self] status in
+                    TSFirebaseAPI.shared.purchaseBook(bookCoin: 4, book: self.objBook ?? TSBook(), episode: indexPath.row) { [unowned self] status in
                         if status == true{
                             self.objBook?.isPurchased = 1
                             self.objBook?.episodes[indexPath.row].isPurchased = 1
-                            UIAlertController.showAlert(withTitle: "Success!", andMessage: "Comic purchased successfully", andButtonTitles: ["OK"]){ [unowned self] index in
+                            UIAlertController.showAlert(withTitle: "Success!", andMessage: "Episode purchased successfully", andButtonTitles: ["OK"]){ [unowned self] index in
 
                                 if let objPDFVC = self.storyboard?.instantiateViewController(withIdentifier: "PDFViewController") as? PDFViewController{
-                        //            self.hidesBottomBarWhenPushed = true
+                        //          self.hidesBottomBarWhenPushed = true
+                                
                                     objPDFVC.selectedComic = self.objBook
                                     objPDFVC.bookTitle = self.objBook?.title ?? ""
                                     objPDFVC.episodeList = self.objBook?.episodes[indexPath.row].strContent
 
-                                    if indexPath.row == self.objBook?.episodes.count ?? 0 - 1{
+                                    if indexPath.row + 1 == self.objBook?.episodes.count{
                                         objPDFVC.isLastEpisode = true
                                     }
                                     self.navigationController?.pushViewController(objPDFVC, animated: true)

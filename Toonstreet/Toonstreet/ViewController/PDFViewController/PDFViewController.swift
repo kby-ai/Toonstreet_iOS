@@ -86,7 +86,7 @@ class PDFViewController: BaseViewController {
             self.btnPrevious.isEnabled = true
         }
         
-        if selectedIndex == self.episodeList?.count ?? 0 - 1{
+        if selectedIndex + 1 == self.episodeList?.count{
             self.btnNext.isEnabled = false
         }else{
             self.btnNext.isEnabled = true
@@ -195,7 +195,7 @@ class PDFViewController: BaseViewController {
     override func viewWillDisappear(_ animated: Bool) {
         addContinueReading();
 
-        if isLastEpisode == true && selectedIndex == self.episodeList?.count ?? 0 - 1{
+        if isLastEpisode == true && selectedIndex + 1 == self.episodeList?.count{
             removeContinueReading()
         }
     }

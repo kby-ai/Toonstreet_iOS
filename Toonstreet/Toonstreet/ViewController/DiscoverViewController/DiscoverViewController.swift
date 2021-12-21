@@ -56,9 +56,36 @@ class DiscoverViewController: BaseViewController,UISearchBarDelegate {
 //        txtSearch.setTextColor(color: UIColor.white)
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).textColor = UIColor.white
 
+        
+        
+
+//        let alignedFlowLayout = AlignedCollectionViewFlowLayout(
+//            horizontalAlignment: .left,
+//            verticalAlignment: .top
+//        )
+
+//        bookListCollectionView.collectionViewLayout = alignedFlowLayout
+        
+        
         self.txtSearch.delegate = self
         // Do any additional setup after loading the view.
     }
+    
+//    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+//        var newAttributesArray = [UICollectionViewLayoutAttributes]()
+//        let superAttributesArray = super.layoutAttributesForElements(in: rect)!
+//        for (index, attributes) in superAttributesArray.enumerated() {
+//            if index == 0 || superAttributesArray[index - 1].frame.origin.y != attributes.frame.origin.y {
+//                attributes.frame.origin.x = sectionInset.left
+//            } else {
+//                let previousAttributes = superAttributesArray[index - 1]
+//                let previousFrameRight = previousAttributes.frame.origin.x + previousAttributes.frame.width
+//                attributes.frame.origin.x = previousFrameRight + minimumInteritemSpacing
+//            }
+//            newAttributesArray.append(attributes)
+//        }
+//        return newAttributesArray
+//    }
     
     override func viewWillAppear(_ animated: Bool) {
 //        self.navigationController?.tabBarController?.tabBar.isHidden = false

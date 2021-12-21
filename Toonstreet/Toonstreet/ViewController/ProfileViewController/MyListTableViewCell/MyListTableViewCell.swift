@@ -50,7 +50,7 @@ class MyListTableViewCell:TSTableViewCell {
     
     func commonInit(){
         
-        self.lblTitle.text = "My List"
+        self.lblTitle.text = "My Lists"
         self.lblTitle.numberOfLines = 0
         self.lblTitle.textColor = UIColor.white
         self.lblTitle.font = UIFont.appFont_Bold(Size: 20)

@@ -20,6 +20,7 @@ struct APIKey {
     static let purchasedBook = "PurchasedBook"
     static let popular = "popular"
     static let newrelease = "newrelease"
+    static let purchasedBookIndex = "PurchasedBookIndex"
 
     
     
@@ -31,6 +32,7 @@ class TSFirebaseAPI: NSObject {
     
     var listReadComic:[String] = []
     var listPurchasedComic:[String] = []
+    var listPurchasedEpisode:NSMutableDictionary = NSMutableDictionary()
 
     var arrContinueReading:[TSBook] = []
     var arrPurchasedComic:[TSBook] = []
@@ -187,10 +189,11 @@ class TSFirebaseAPI: NSObject {
             
             if available == true{
                 DispatchQueue.main.async {
-                    ref.child(APIKey.purchasedBook).child(TSUser.shared.uID).child(book.title).setValue(episode)//.child(authResult.uid)
+                    
+                    ref.child(APIKey.purchasedBook).child(TSUser.shared.uID).child(book.title).setValue("\(episode)")//.child(authResult.uid) //childbyautoid
+                                                        
 //                    ref.child(APIKey.purchasedBook).child(TSUser.shared.uID).child(book.title).setValue(1)//.child(authResult.uid)
                 }
-                
                 completion(true)
             }
             else{
@@ -235,12 +238,26 @@ class TSFirebaseAPI: NSObject {
                     if self.listPurchasedComic.contains(objBook.title){
                         objBook.isPurchased = 1
 
+                        if let arrIndex = self.listPurchasedEpisode.value(forKey: objBook.title) as? [Int]{
+                           
+                            for episodeIndex in 0..<objBook.episodes.count{
+                                if arrIndex.contains(episodeIndex){
+                                    objBook.episodes[episodeIndex].isPurchased = 1
+                                }else{
+                                    objBook.episodes[episodeIndex].isPurchased = 0
+                                }
+                            }
+                           
+                        }
                         self.arrPurchasedComic.append(objBook)
                     }else{
                         objBook.isPurchased = 0
                     }
                     
                     arr.append(objBook)
+                    
+                    
+                    //listPurchasedEpisode
                 }
                 completion(arr)
             }
@@ -274,12 +291,24 @@ class TSFirebaseAPI: NSObject {
                     
                     if self.listPurchasedComic.contains(objBook.title){
                         objBook.isPurchased = 1
+                        if let arrIndex = self.listPurchasedEpisode.value(forKey: objBook.title) as? [Int]{
+                           
+                            for episodeIndex in 0..<objBook.episodes.count{
+                                if arrIndex.contains(episodeIndex+1){
+                                    objBook.episodes[episodeIndex].isPurchased = 1
+                                }else{
+                                    objBook.episodes[episodeIndex].isPurchased = 0
+                                }
+                            }
+                        }
                         self.arrPurchasedComic.append(objBook)
                     }else{
                         objBook.isPurchased = 0
                     }
                                         
                     arr.append(objBook)
+                    
+                    //listPurchasedEpisode
                 }
                 completion(arr)
             }
@@ -344,19 +373,59 @@ class TSFirebaseAPI: NSObject {
             print(snapshot)
             
             self.listPurchasedComic = []
+            self.listPurchasedEpisode = NSMutableDictionary()
+            
             guard let value = snapshot.value else { return }
 
-
             if let arrValue = value as? NSDictionary {
-                                
+                
                 for strKey in arrValue.allKeys{
                     self.listPurchasedComic.append(strKey as? String ?? "")
+                    
+                    if let dictKey = arrValue.value(forKey: strKey as? String ?? ""){
+                        print(dictKey)
+                    }
+//                    _ = ref.child(APIKey.purchasedBook).child(TSUser.shared.uID).child(strKey as! String).observeSingleEvent(of: .value, with: { (snapshot1) in
+//
+//                        guard let value2 = snapshot1.value else { return }
+//
+//                        print(value2)
+////                        self.listPurchasedComic.
+//                    })
                 }
-                
                 completion(true)
             }else{
                 completion(true)
             }
         })
+        
+        
+//        for episode in listPurchasedComic {
+//
+//            _ = ref.child(APIKey.purchasedBook).child(TSUser.shared.uID).child(episode).observeSingleEvent(of: .value, with: { (snapshot) in
+//
+////                print(snapshot)
+//
+//                self.listPurchasedEpisode = []
+//                guard let value = snapshot.value else { return }
+//
+//                if let arrValue = value as? NSDictionary {
+//
+////                    for strKey in arrValue.allKeys{
+////                        self.listPurchasedEpisode.append(strKey as? String ?? "")
+////                    }
+//
+//                    completion(true)
+//                }else{
+//                    completion(true)
+//                }
+//            })
+//        }
+//        ref.child(APIKey.purchasedBook).child(TSUser.shared.uID).child(book.title).child("\(episode)")
+        
+        
+        
+        
+        //
     }
 }

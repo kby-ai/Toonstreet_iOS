@@ -30,9 +30,27 @@ class BookListCollectionView: UICollectionView {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.commonInit()
+     
+        
+//        self.collectionViewLayout = columnLayout
+//        self.contentInsetAdjustmentBehavior = .always
+//
+//
+//        self.contentMode = .left
+//        self.semanticContentAttribute = UISemanticContentAttribute.forceLeftToRight
+        
+        
     }
     
-
+//    func centerItemsInCollectionView(cellWidth: Double, numberOfItems: Double, spaceBetweenCell: Double, collectionView: UICollectionView) -> UIEdgeInsets {
+//        let totalWidth = cellWidth * numberOfItems
+//        let totalSpacingWidth = spaceBetweenCell * (numberOfItems - 1)
+//        let leftInset = (collectionView.frame.width - CGFloat(totalWidth + totalSpacingWidth)) / 2
+//        let rightInset = leftInset
+//        return UIEdgeInsets(top: 0, left: leftInset, bottom: 0, right: rightInset)
+//    }
+    
+    
     func setAndReloadTableView(arr:[TSBook]){
         self.aryBooks = arr
         self.reloadData()
@@ -51,7 +69,6 @@ class BookListCollectionView: UICollectionView {
         self.dataSource = self
         
         //self.collectionViewLayout = MosaicLayout()
-    
         self.register(UINib.init(nibName: "BookListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: BookListCollectionViewCell.identifer)
                 
         self.backgroundColor = UIColor.clear
@@ -101,6 +118,7 @@ extension BookListCollectionView: UICollectionViewDelegateFlowLayout {
         let cellWidth = screenWidth * 0.27;
         let cellHeight = screenWidth * 0.450 //0.385
 
+        
         return CGSize(width: cellWidth, height: cellHeight)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

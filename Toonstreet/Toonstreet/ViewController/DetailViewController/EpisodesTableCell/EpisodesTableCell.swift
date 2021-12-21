@@ -47,6 +47,11 @@ class EpisodesTableCell: UITableViewCell {
 //        btnDownload.imageView?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
         
         
+        if objEpisode.isPurchased == 1{
+            self.btnDownload.isHidden = true
+        }else{
+            self.btnDownload.isHidden = false
+        }
         if objEpisode.cover != ""{
         let storage = Storage.storage()
         let starsRef = storage.reference(forURL: objEpisode.cover)
