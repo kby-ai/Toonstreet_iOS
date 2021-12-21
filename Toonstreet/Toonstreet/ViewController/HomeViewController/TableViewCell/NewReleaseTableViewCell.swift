@@ -19,6 +19,7 @@ class NewReleaseTableViewCell: UITableViewCell {
     
     private var subscriber: AnyCancellable?
 
+    @IBOutlet weak var btnReleaseAll: UIButton!
     @IBOutlet weak var pageController: UIPageControl!
     @IBOutlet weak var lblTitle:TSLabel!
     @IBOutlet weak var lblSubTitle:TSLabel!

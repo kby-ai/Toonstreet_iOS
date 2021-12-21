@@ -49,7 +49,7 @@ class ProfileComicTableCell: UITableViewCell {
     
     
     func commonInit(){
-        self.lblTitle.text = "Comic History"
+        self.lblTitle.text = "All of your Comics"//"Comic History"
         self.lblTitle.numberOfLines = 0
         self.lblTitle.textColor = UIColor.white
         self.lblTitle.font = UIFont.appFont_Bold(Size: 20)

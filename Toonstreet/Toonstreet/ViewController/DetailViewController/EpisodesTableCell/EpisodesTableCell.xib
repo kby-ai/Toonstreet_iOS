@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,14 +13,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="59" id="KGk-i7-Jjw" customClass="EpisodesTableCell" customModule="Toonstreet" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+            <rect key="frame" x="0.0" y="0.0" width="441" height="69"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="441" height="69"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YmJ-u7-N7W">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="42"/>
+                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YmJ-u7-N7W">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="38"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummy_image" translatesAutoresizingMaskIntoConstraints="NO" id="meb-O2-nXv">
                                 <rect key="frame" x="20" y="10" width="45" height="45"/>
@@ -29,28 +30,40 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dx9-kM-9aM" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                <rect key="frame" x="80" y="12" width="65.5" height="18"/>
+                                <rect key="frame" x="80" y="12" width="65.5" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="d0h-Fn-1R0">
-                                <rect key="frame" x="80" y="35" width="20" height="20"/>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="d0h-Fn-1R0">
+                                <rect key="frame" x="80" y="58" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="B08-Sy-QSH"/>
                                     <constraint firstAttribute="width" constant="20" id="vGU-Fo-4Uu"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.2 (2308)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48K-V1-EQU" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                <rect key="frame" x="105" y="39" width="51.5" height="12"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.2 (2308)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48K-V1-EQU" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
+                                <rect key="frame" x="105" y="62" width="51.5" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ps-GN-GeO">
-                                <rect key="frame" x="384" y="10" width="20" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ps-GN-GeO">
+                                <rect key="frame" x="304" y="15" width="95" height="35"/>
+                                <color key="backgroundColor" name="themeYellow"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="N11-jk-VMg"/>
+                                    <constraint firstAttribute="width" constant="95" id="y0k-WZ-LRG"/>
+                                </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="download">
+                                <state key="normal" title=" 3.99" image="coin">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Upb-Mr-Xt7">
+                                <rect key="frame" x="165.5" y="17" width="24" height="31"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="info">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
@@ -58,19 +71,23 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="meb-O2-nXv" secondAttribute="bottom" constant="10" id="1dm-R7-FxY"/>
-                            <constraint firstAttribute="bottom" secondItem="6Ps-GN-GeO" secondAttribute="bottom" constant="10" id="EKn-y6-ftR"/>
+                            <constraint firstItem="6Ps-GN-GeO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Upb-Mr-Xt7" secondAttribute="trailing" constant="10" id="Fif-Qm-xD3"/>
                             <constraint firstItem="Dx9-kM-9aM" firstAttribute="top" secondItem="meb-O2-nXv" secondAttribute="top" constant="2" id="GRH-jP-N6A"/>
                             <constraint firstItem="48K-V1-EQU" firstAttribute="leading" secondItem="d0h-Fn-1R0" secondAttribute="trailing" constant="5" id="HcE-cW-pZa"/>
                             <constraint firstItem="meb-O2-nXv" firstAttribute="leading" secondItem="YmJ-u7-N7W" secondAttribute="leading" constant="20" id="JbH-0g-Ejc"/>
                             <constraint firstItem="d0h-Fn-1R0" firstAttribute="leading" secondItem="meb-O2-nXv" secondAttribute="trailing" constant="15" id="MPj-8M-n7r"/>
-                            <constraint firstItem="6Ps-GN-GeO" firstAttribute="top" secondItem="YmJ-u7-N7W" secondAttribute="top" constant="10" id="cda-iC-csy"/>
+                            <constraint firstItem="Upb-Mr-Xt7" firstAttribute="leading" secondItem="Dx9-kM-9aM" secondAttribute="trailing" constant="20" id="Ndc-fF-Yhp"/>
+                            <constraint firstItem="Upb-Mr-Xt7" firstAttribute="centerY" secondItem="6Ps-GN-GeO" secondAttribute="centerY" id="O7h-e1-IPn"/>
+                            <constraint firstItem="6Ps-GN-GeO" firstAttribute="centerY" secondItem="meb-O2-nXv" secondAttribute="centerY" id="YHY-67-I25"/>
                             <constraint firstItem="Dx9-kM-9aM" firstAttribute="leading" secondItem="meb-O2-nXv" secondAttribute="trailing" constant="15" id="fG8-xK-t4a"/>
                             <constraint firstItem="d0h-Fn-1R0" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="meb-O2-nXv" secondAttribute="bottom" id="fqc-BG-Dg7">
                                 <variation key="heightClass=regular-widthClass=regular" constant="-20"/>
                             </constraint>
+                            <constraint firstItem="Upb-Mr-Xt7" firstAttribute="height" secondItem="6Ps-GN-GeO" secondAttribute="height" multiplier="0.885714" id="jhk-u6-UhG"/>
                             <constraint firstItem="meb-O2-nXv" firstAttribute="top" secondItem="YmJ-u7-N7W" secondAttribute="top" constant="10" id="kd7-gQ-pD3"/>
+                            <constraint firstItem="Dx9-kM-9aM" firstAttribute="centerY" secondItem="meb-O2-nXv" secondAttribute="centerY" id="nic-GN-4Rz"/>
                             <constraint firstItem="d0h-Fn-1R0" firstAttribute="top" secondItem="Dx9-kM-9aM" secondAttribute="bottom" constant="5" id="qaR-Mu-46r"/>
-                            <constraint firstAttribute="trailing" secondItem="6Ps-GN-GeO" secondAttribute="trailing" constant="10" id="rSF-bj-EwL"/>
+                            <constraint firstAttribute="trailing" secondItem="6Ps-GN-GeO" secondAttribute="trailing" constant="15" id="rSF-bj-EwL"/>
                             <constraint firstItem="48K-V1-EQU" firstAttribute="centerY" secondItem="d0h-Fn-1R0" secondAttribute="centerY" id="yXl-Qa-E8x"/>
                         </constraints>
                     </view>
@@ -86,18 +103,23 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="btnDownload" destination="6Ps-GN-GeO" id="Mm5-0U-tEp"/>
+                <outlet property="btnInfo" destination="Upb-Mr-Xt7" id="ErI-Va-Daj"/>
                 <outlet property="imgBook" destination="meb-O2-nXv" id="8Fu-Zm-asK"/>
                 <outlet property="lblRates" destination="48K-V1-EQU" id="ZET-pO-FpE"/>
                 <outlet property="lblTitle" destination="Dx9-kM-9aM" id="Gha-1b-ZMf"/>
                 <outlet property="viewBack" destination="YmJ-u7-N7W" id="nk5-B4-13e"/>
             </connections>
-            <point key="canvasLocation" x="131.8840579710145" y="69.308035714285708"/>
+            <point key="canvasLocation" x="219.56521739130437" y="69.308035714285708"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="download" width="20" height="20"/>
+        <image name="coin" width="28" height="28"/>
         <image name="dummy_image" width="55.666667938232422" height="55.666667938232422"/>
+        <image name="info" width="24" height="24"/>
         <image name="star" width="24" height="24"/>
+        <namedColor name="themeYellow">
+            <color red="0.97254901960784312" green="1" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

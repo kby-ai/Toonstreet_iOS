@@ -50,7 +50,7 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
         
     
     override func viewWillAppear(_ animated: Bool) {
-
+        self.navigationController?.navigationBar.isHidden = false
     }
     
     override func setupUI() {
@@ -67,7 +67,7 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
         self.tblEpisod.register(UINib.init(nibName: "EpisodesTableCell", bundle: nil), forCellReuseIdentifier: "EpisodesTableCell")
 
         
-        print(self.objBook?.category)
+//        print(self.objBook?.category)
         
         self.loadCollectionView()
         
@@ -116,11 +116,11 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
         
         self.lblEpisodesTitle.text = self.objBook?.title
         self.lblDetails.text = self.objBook?.synopsis
-//        self.lblAuther.text = self.objBook?.publisher
+        self.lblAuther.text = self.objBook?.publisher
 //        self.lblAuther2.text = self.objBook?.publisher
         self.lblTitle2.text = self.objBook?.title
         self.lblTitle.text = self.objBook?.title
-        self.lblPublisher.text = "By \(self.objBook?.publisher)"
+        self.lblPublisher.text = "By \(self.objBook?.publisher ?? "")"
 
     }
     @objc func segmentSelected(sender:TSScollViewSegment) {
@@ -142,8 +142,7 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
        
         self.lblTitle.text = self.objBook?.title ?? "OVERLOAD"
         self.lblAuther.text = self.objBook?.publisher ?? ""
-        self.navigationController?.navigationBar.topItem?.title = self.objBook?.title 
-
+//        self.navigationController?.navigationBar.topItem?.title = self.objBook?.title
         self.setupCoverImage()
         
     }
@@ -256,7 +255,9 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
             cell.viewBack.backgroundColor = UIColor.Theme.themeLightBlackColor
         }
         cell.setupEpisodCell(objEpisode: objBook?.episodes[indexPath.row] ?? TSEpisodes())
-    
+        cell.btnInfo.tag = indexPath.row
+        cell.btnInfo.addTarget(self, action: #selector(self.btnInfoClicked(_sender:)), for: .touchUpInside)
+        
         cell.lblTitle.text = "Episode \(indexPath.row + 1)"
         return cell
     }
@@ -266,7 +267,7 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
         
         //PDFViewController
         
-        if self.objBook?.isPurchased == 1{
+        if self.objBook?.episodes[indexPath.row].isPurchased == 1{
         if let objPDFVC = self.storyboard?.instantiateViewController(withIdentifier: "PDFViewController") as? PDFViewController{
 //            self.hidesBottomBarWhenPushed = true
             objPDFVC.selectedComic = self.objBook
@@ -281,23 +282,24 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
             self.navigationController?.pushViewController(objPDFVC, animated: true)
         }
         }else{
-//            print("Please purchase book")
-//            UIAlertController.alert(message: "Please purchase book.")
+            print("Please purchase book")
+            UIAlertController.alert(message: "Please purchase book.")
 
             UIAlertController.showAlert(andMessage: "Are you sure you want to purchase this comic", andButtonTitles: ["YES","Not now"]) { index in
                 if index == 0{
-                    
-                    TSFirebaseAPI.shared.purchaseBook(bookCoin: 5, book: self.objBook ?? TSBook()) { [unowned self] status in
+
+                    TSFirebaseAPI.shared.purchaseBook(bookCoin: 4, book: self.objBook ?? TSBook(), episode: 0) { [unowned self] status in
                         if status == true{
-                            self.self.objBook?.isPurchased = 1
+                            self.objBook?.isPurchased = 1
+                            self.objBook?.episodes[indexPath.row].isPurchased = 1
                             UIAlertController.showAlert(withTitle: "Success!", andMessage: "Comic purchased successfully", andButtonTitles: ["OK"]){ [unowned self] index in
-                               
+
                                 if let objPDFVC = self.storyboard?.instantiateViewController(withIdentifier: "PDFViewController") as? PDFViewController{
                         //            self.hidesBottomBarWhenPushed = true
                                     objPDFVC.selectedComic = self.objBook
                                     objPDFVC.bookTitle = self.objBook?.title ?? ""
                                     objPDFVC.episodeList = self.objBook?.episodes[indexPath.row].strContent
-                                    
+
                                     if indexPath.row == self.objBook?.episodes.count ?? 0 - 1{
                                         objPDFVC.isLastEpisode = true
                                     }
@@ -305,11 +307,29 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
                                 }
                             }
                         }else{
-                            self.self.objBook?.isPurchased = 0
+                            self.self.objBook?.episodes[indexPath.row].isPurchased = 0
                         }
                     }
                 }
             }
+        }
+    }
+    
+    
+    
+    @objc func btnInfoClicked(_sender:UIButton){
+        let index = _sender.tag
+        if let objPDFVC = self.storyboard?.instantiateViewController(withIdentifier: "EpidsodeDetailsViewController") as? EpidsodeDetailsViewController{
+            objPDFVC.episodes = self.objBook?.episodes[index]
+            objPDFVC.bookTitle = self.objBook?.title ?? ""
+            objPDFVC.episodeList = self.objBook?.episodes[index].strContent
+            objPDFVC.selectedComic = self.objBook
+
+//            if index == self.objBook?.episodes.count ?? 0 - 1{
+//                objPDFVC.isLastEpisode = true
+//            }
+            
+        self.navigationController?.pushViewController(objPDFVC, animated: true)
         }
     }
 }

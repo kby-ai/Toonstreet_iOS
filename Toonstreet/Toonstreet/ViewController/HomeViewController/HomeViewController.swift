@@ -39,6 +39,10 @@ class HomeViewController: BaseViewController {
         
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     
     //MARK: Setup UI
      override func setupUI(){
@@ -46,7 +50,12 @@ class HomeViewController: BaseViewController {
          self.mainView.backgroundColor = UIColor.Theme.themeBlackColor
          self.view.backgroundColor = UIColor.Theme.themeBlackColor
         
-                
+          
+         self.tblHomeTableView.blockClickAllButton = { [weak self] (homeType) in
+
+             self?.openAllComicScreen(type: homeType)
+            
+         }
          
          self.tblHomeTableView.didSelectCellItem { [weak self] (type, book) in
              
@@ -75,6 +84,14 @@ class HomeViewController: BaseViewController {
             }
             
         })
+    }
+    
+    private func openAllComicScreen(type:HomeType){
+        if let objDetailView = self.storyboard?.instantiateViewController(withIdentifier: "AllEpisodeViewController") as? AllEpisodeViewController{
+//            objDetailView.arrComics = books
+            objDetailView.type = type
+            self.navigationController?.pushViewController(objDetailView, animated: true)
+        }
     }
     private func openDetailScreen(book:TSBook , isPass:Bool){
 //        print("Data")

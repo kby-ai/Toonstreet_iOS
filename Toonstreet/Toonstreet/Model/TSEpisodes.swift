@@ -15,8 +15,13 @@ class TSEpisodes: TSModel {
         var strDescription:String = ""
         var cover:String = ""
         var strContent:[String] = []
-        
-        
+        var artist:String = ""
+        var writer:String = ""
+        var isPurchased:Int = 0
+
+    
+    
+    
         override init() {
             super.init()
         }
@@ -29,6 +34,20 @@ class TSEpisodes: TSModel {
             
             if (dictObj["price"] as? String) != nil{
                 price = dictObj["price"] as? String ?? ""
+            }else if (dictObj["price"] as? Double) != nil{
+                let priceDouble = dictObj["price"] as? Double ?? 0.0
+                price = "\(priceDouble)"
+            }else if (dictObj["price"] as? Int) != nil{
+                let priceDouble = dictObj["price"] as? Int ?? 0
+                price = "\(priceDouble)"
+            }
+            
+            if (dictObj["artist"] as? String) != nil{
+                artist = dictObj["artist"] as? String ?? ""
+            }
+            
+            if (dictObj["writer"] as? String) != nil{
+                writer = dictObj["writer"] as? String ?? ""
             }
             
             if (dictObj["description"] as? String) != nil{
@@ -37,6 +56,10 @@ class TSEpisodes: TSModel {
             
             if (dictObj["cover"] as? String) != nil{
                 cover = dictObj["cover"] as? String ?? ""
+            }
+            
+            if (dictObj["isPurchased"] as? Int) != nil{
+                isPurchased = dictObj["isPurchased"] as? Int ?? 0
             }
             
             if let content = dictObj["contents"] as? [String]{

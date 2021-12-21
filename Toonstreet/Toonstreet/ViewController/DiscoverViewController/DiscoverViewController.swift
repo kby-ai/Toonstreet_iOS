@@ -61,14 +61,14 @@ class DiscoverViewController: BaseViewController,UISearchBarDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.tabBarController?.tabBar.isHidden = false
+//        self.navigationController?.tabBarController?.tabBar.isHidden = false
         self.navigationController?.navigationBar.isHidden = true
 
     }
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = false
-
-    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        self.navigationController?.navigationBar.isHidden = false
+//
+//    }
     
      override func setupUI(){
          
@@ -179,7 +179,7 @@ class DiscoverViewController: BaseViewController,UISearchBarDelegate {
 //            self.bookListCollectionView.setAndReloadTableView(arr: self.arrComics)
 //        }
     }
-    
+   
     //MARK: - Button Action
     @IBAction func btnDailyCategorySelection(_ sender:UIButton){
 //        self.model.category = .Daily

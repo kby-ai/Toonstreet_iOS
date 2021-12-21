@@ -67,8 +67,6 @@ class TSBook: TSModel {
             for value in arrValue{
                 episodes.append(TSEpisodes.init(dictObj: value))
             }
-        }
-        
-        
+        }        
     }
 }

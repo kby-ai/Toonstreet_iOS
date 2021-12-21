@@ -11,6 +11,9 @@ class ResumeReadingTableViewCell: TSTableViewCell {
     
 //    var arrComics:[TSBook] = []
 
+    @IBOutlet weak var btnResume: UIButton!
+    
+    
     @IBOutlet weak var lblTitle:TSLabel!
     @IBOutlet weak var mainView:UIView!
     @IBOutlet weak var viewCollection:UIView!

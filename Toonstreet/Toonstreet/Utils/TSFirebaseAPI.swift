@@ -179,7 +179,7 @@ class TSFirebaseAPI: NSObject {
     }
 
     
-    func purchaseBook(bookCoin:Int , book:TSBook, completion: @escaping (_ status:Bool)->()){
+    func purchaseBook(bookCoin:Int , book:TSBook, episode:Int , completion: @escaping (_ status:Bool)->()){
         
         let ref = Database.database().reference(fromURL: FirebaseBaseURL)
 
@@ -187,7 +187,8 @@ class TSFirebaseAPI: NSObject {
             
             if available == true{
                 DispatchQueue.main.async {
-                    ref.child(APIKey.purchasedBook).child(TSUser.shared.uID).child(book.title).setValue(1)//.child(authResult.uid)
+                    ref.child(APIKey.purchasedBook).child(TSUser.shared.uID).child(book.title).setValue(episode)//.child(authResult.uid)
+//                    ref.child(APIKey.purchasedBook).child(TSUser.shared.uID).child(book.title).setValue(1)//.child(authResult.uid)
                 }
                 
                 completion(true)

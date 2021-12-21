@@ -153,6 +153,10 @@
                                     <constraint firstAttribute="width" constant="20" id="pmS-B2-jkg"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTk-aH-d2y">
+                                <rect key="frame" x="0.0" y="0.0" width="406" height="87.5"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
@@ -162,11 +166,15 @@
                             <constraint firstItem="38e-9O-6nn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QDI-Fi-AsK" secondAttribute="trailing" constant="10" id="EZX-qd-Xy1"/>
                             <constraint firstItem="OWn-eL-yDS" firstAttribute="height" secondItem="wYG-B6-Pwa" secondAttribute="width" multiplier="176/375" priority="999" id="FC6-NQ-99Y"/>
                             <constraint firstAttribute="trailing" secondItem="OWn-eL-yDS" secondAttribute="trailing" constant="23" id="No0-bZ-eRe"/>
+                            <constraint firstItem="lTk-aH-d2y" firstAttribute="top" secondItem="wYG-B6-Pwa" secondAttribute="top" id="Oar-oR-z0E"/>
+                            <constraint firstItem="lTk-aH-d2y" firstAttribute="leading" secondItem="wYG-B6-Pwa" secondAttribute="leading" id="SdV-ME-t0M"/>
                             <constraint firstItem="QDI-Fi-AsK" firstAttribute="top" secondItem="kKa-Kh-iW5" secondAttribute="bottom" constant="2" id="TeE-da-Upu"/>
                             <constraint firstItem="38e-9O-6nn" firstAttribute="centerY" secondItem="QDI-Fi-AsK" secondAttribute="centerY" id="Wi8-Nk-4CR"/>
                             <constraint firstItem="kKa-Kh-iW5" firstAttribute="leading" secondItem="wYG-B6-Pwa" secondAttribute="leading" constant="23" id="Zng-mM-WTg"/>
                             <constraint firstAttribute="bottom" secondItem="OWn-eL-yDS" secondAttribute="bottom" constant="18" id="amz-Sv-I6L"/>
+                            <constraint firstItem="OWn-eL-yDS" firstAttribute="top" secondItem="lTk-aH-d2y" secondAttribute="bottom" constant="10" id="dlh-Rt-blZ"/>
                             <constraint firstItem="OWn-eL-yDS" firstAttribute="top" secondItem="QDI-Fi-AsK" secondAttribute="bottom" constant="10" id="j6k-tV-SBE"/>
+                            <constraint firstAttribute="trailing" secondItem="lTk-aH-d2y" secondAttribute="trailing" id="jLn-qY-kFr"/>
                             <constraint firstItem="QDI-Fi-AsK" firstAttribute="leading" secondItem="kKa-Kh-iW5" secondAttribute="leading" id="jOG-jD-RLA"/>
                             <constraint firstAttribute="trailing" secondItem="kKa-Kh-iW5" secondAttribute="trailing" constant="23" id="sbZ-BA-Uyo"/>
                             <constraint firstAttribute="trailing" secondItem="38e-9O-6nn" secondAttribute="trailing" constant="23" id="ugc-H0-xu1"/>
@@ -188,6 +196,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="bookPhotoView" destination="u4t-tI-l6N" id="9AS-o6-2SG"/>
+                <outlet property="btnReleaseAll" destination="lTk-aH-d2y" id="oNZ-3w-EMN"/>
                 <outlet property="coverPhotoBlurView" destination="kpO-Y6-GGv" id="uo3-N6-ehw"/>
                 <outlet property="imageViewBookCoverPhoto" destination="JQ6-jE-LMU" id="evb-2t-zH1"/>
                 <outlet property="imageViewBookPhoto" destination="7H0-7b-TE7" id="reg-NY-zOX"/>

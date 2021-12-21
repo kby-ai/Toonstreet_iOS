@@ -48,7 +48,9 @@ class PDFViewController: BaseViewController {
         
         
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
+    }
   
     //MARK: Add Continue reading
     func addContinueReading(){

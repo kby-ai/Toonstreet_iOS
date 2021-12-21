@@ -16,6 +16,10 @@ enum HomeType{
 }
 class HomeTableView: TSTableView {
    
+    
+    typealias ClickAllButton = ((HomeType)->(Void))
+    var blockClickAllButton:ClickAllButton?
+    
     var arrComics:[TSBook] = []
     var arrNewRelease:[TSBook] = []
     var arrUpdate:[TSBook] = []
@@ -133,6 +137,9 @@ extension HomeTableView:UITableViewDelegate,UITableViewDataSource{
             guard let cell:ResumeReadingTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ResumeReadingTableViewCell") as? ResumeReadingTableViewCell else {
                 return UITableViewCell()
             }
+            
+            
+            cell.btnResume.addTarget(self, action: #selector(self.btnAllContinueReadClicked), for: .touchUpInside)
 //            cell.arrComics = self.arrContinueReading
             cell.addAndReloadCell(arr: self.arrContinueReading)
             cell.didSelectCellItem { [weak self] (type, book) in
@@ -156,30 +163,21 @@ extension HomeTableView:UITableViewDelegate,UITableViewDataSource{
             }
 //            cell.arrComics = self.arrComics
             cell.addAndReloadCell(arr: self.arrComics)
+            cell.btnAllPopular.addTarget(self, action: #selector(self.btnAllMostPopularClicked), for: .touchUpInside)
 
             cell.didSelectCellItem { [weak self] (type, book) in
                 self?.handleCellItem(type: type, book: book)
             }
             return cell
         }
-//        else if type == .ContinueReading{
-//            guard let cell:ContinueReadingTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ContinueReadingTableViewCell") as? ContinueReadingTableViewCell else {
-//                return UITableViewCell()
-//            }
-////            cell.arrComics = self.arrComics
-//            cell.addAndReloadCell(arr: self.arrComics)
-//
-//            cell.didSelectCellItem { [weak self] (type, book) in
-//                self?.handleCellItem(type: type, book: book)
-//            }
-//            return cell
-//        }
+
         else if type == .NewRelease{
             guard let cell:NewReleaseTableViewCell = tableView.dequeueReusableCell(withIdentifier: "NewReleaseTableViewCell") as? NewReleaseTableViewCell else {
                 return UITableViewCell()
             }
 //            cell.arrComics = self.arrComics
             cell.addAndReloadCell(arr: self.arrNewRelease)
+            cell.btnReleaseAll.addTarget(self, action: #selector(self.btnAllNewReleaseClicked), for: .touchUpInside)
 
             cell.blockNewReleaseComic = { [weak self] (book) in
                 self?.handleCellItem(type: .NewRelease, book: book)
@@ -189,6 +187,27 @@ extension HomeTableView:UITableViewDelegate,UITableViewDataSource{
         }
         else {
             return UITableViewCell()
+        }
+    }
+    
+    
+    
+    @objc func btnAllContinueReadClicked(){
+        if blockClickAllButton != nil {
+            blockClickAllButton!(.ResumeReading)//(arrContinueReading)
+        }
+    }
+
+    @objc func btnAllMostPopularClicked(){
+        if blockClickAllButton != nil {
+            blockClickAllButton!(.MostPopular)
+        }
+    }
+    
+    
+    @objc func btnAllNewReleaseClicked(){
+        if blockClickAllButton != nil {
+            blockClickAllButton!(.NewRelease)
         }
     }
     

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -10,27 +11,27 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="292" id="KGk-i7-Jjw" customClass="ResumeReadingTableViewCell" customModule="Toonstreet" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="292"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="323" id="KGk-i7-Jjw" customClass="ResumeReadingTableViewCell" customModule="Toonstreet" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="485" height="323"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="292"/>
+                <rect key="frame" x="0.0" y="0.0" width="485" height="323"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEi-Fv-UGZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="292"/>
+                        <rect key="frame" x="0.0" y="0.0" width="485" height="323"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWu-Lk-DEQ" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                <rect key="frame" x="23" y="10" width="41.5" height="75.5"/>
+                                <rect key="frame" x="23" y="10" width="41.5" height="18.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OXq-0l-J6f">
-                                <rect key="frame" x="23" y="103.5" width="297" height="170.5"/>
+                                <rect key="frame" x="23" y="46.5" width="462" height="258.5"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hr3-eA-Yp8" customClass="ResumeReadingCollectionView" customModule="Toonstreet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="297" height="170.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="462" height="258.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gHo-so-5TR">
                                             <size key="itemSize" width="128" height="128"/>
@@ -49,20 +50,28 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="950-64-XhC">
-                                <rect key="frame" x="277" y="37.5" width="20" height="20"/>
+                                <rect key="frame" x="442" y="9" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="3fO-SM-yJf"/>
                                     <constraint firstAttribute="height" constant="20" id="lOE-zL-rN3"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56M-LV-S4G">
+                                <rect key="frame" x="0.0" y="0.0" width="485" height="41.5"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="mWu-Lk-DEQ" secondAttribute="trailing" constant="23" id="3xX-sM-WVq"/>
                             <constraint firstItem="950-64-XhC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mWu-Lk-DEQ" secondAttribute="trailing" constant="10" id="4q5-eu-KSL"/>
+                            <constraint firstAttribute="trailing" secondItem="56M-LV-S4G" secondAttribute="trailing" id="7zb-HW-vOo"/>
                             <constraint firstAttribute="bottom" secondItem="OXq-0l-J6f" secondAttribute="bottom" constant="18" id="FbD-zh-ULA"/>
                             <constraint firstAttribute="trailing" secondItem="950-64-XhC" secondAttribute="trailing" constant="23" id="VtP-bU-Bwg"/>
                             <constraint firstItem="OXq-0l-J6f" firstAttribute="leading" secondItem="mWu-Lk-DEQ" secondAttribute="leading" id="X0G-Lw-0H1"/>
+                            <constraint firstItem="OXq-0l-J6f" firstAttribute="top" secondItem="56M-LV-S4G" secondAttribute="bottom" constant="5" id="aky-hE-wzg"/>
+                            <constraint firstItem="56M-LV-S4G" firstAttribute="leading" secondItem="JEi-Fv-UGZ" secondAttribute="leading" id="bKA-FM-xEz"/>
+                            <constraint firstItem="56M-LV-S4G" firstAttribute="top" secondItem="JEi-Fv-UGZ" secondAttribute="top" id="jnd-Xn-kA5"/>
                             <constraint firstItem="mWu-Lk-DEQ" firstAttribute="top" secondItem="JEi-Fv-UGZ" secondAttribute="top" constant="10" id="mTb-gd-1MS"/>
                             <constraint firstItem="950-64-XhC" firstAttribute="centerY" secondItem="mWu-Lk-DEQ" secondAttribute="centerY" id="pd6-ku-ReZ"/>
                             <constraint firstAttribute="trailing" secondItem="OXq-0l-J6f" secondAttribute="trailing" id="rXD-hV-fbG"/>
@@ -86,12 +95,13 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="btnResume" destination="56M-LV-S4G" id="DMX-g0-up1"/>
                 <outlet property="lblTitle" destination="mWu-Lk-DEQ" id="ypo-EX-h8Q"/>
                 <outlet property="mainView" destination="JEi-Fv-UGZ" id="y3T-6t-Izr"/>
                 <outlet property="resumeCollectionView" destination="hr3-eA-Yp8" id="9y9-jq-317"/>
                 <outlet property="viewCollection" destination="OXq-0l-J6f" id="AiE-hw-kNV"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="81.696428571428569"/>
+            <point key="canvasLocation" x="257.24637681159425" y="92.075892857142847"/>
         </tableViewCell>
     </objects>
     <resources>

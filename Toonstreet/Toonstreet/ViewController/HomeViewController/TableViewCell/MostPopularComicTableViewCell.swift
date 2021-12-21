@@ -11,6 +11,7 @@ class MostPopularComicTableViewCell: UITableViewCell {
     
     var arrComics:[TSBook] = []
 
+    @IBOutlet weak var btnAllPopular: UIButton!
     @IBOutlet weak var lblTitle:TSLabel!
     @IBOutlet weak var lblSubTitle:TSLabel!
     @IBOutlet weak var mainView:UIView!

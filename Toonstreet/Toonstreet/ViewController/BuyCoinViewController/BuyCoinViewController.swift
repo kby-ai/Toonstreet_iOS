@@ -20,6 +20,8 @@ class BuyCoinViewController: BaseViewController ,UITableViewDelegate, UITableVie
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
+
         TSFirebaseAPI.shared.getCoins { [unowned self] available in
             
             DispatchQueue.main.async {
@@ -40,7 +42,7 @@ class BuyCoinViewController: BaseViewController ,UITableViewDelegate, UITableVie
         self.leftBarButtonItems = [.BackArrow]
 
     }
-
+  
  
     //MARK: Tableview methods
     
@@ -63,7 +65,7 @@ class BuyCoinViewController: BaseViewController ,UITableViewDelegate, UITableVie
     @objc func btnBuyCoins(button:UIButton){
         let index = button.tag + 1
         
-        TSFirebaseAPI.shared.addCoins(newPoint: index*5) { [unowned self] coin in
+        TSFirebaseAPI.shared.addCoins(newPoint: index) { [unowned self] coin in
             DispatchQueue.main.async {
                 self.lblcoins.text = "\(TSUser.shared.coins) Coins"
             }
