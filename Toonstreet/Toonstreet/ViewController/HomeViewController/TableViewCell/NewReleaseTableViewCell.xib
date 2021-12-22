@@ -147,7 +147,7 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="38e-9O-6nn">
-                                <rect key="frame" x="363" y="50" width="20" height="20"/>
+                                <rect key="frame" x="363" y="10.5" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="38e-9O-6nn" secondAttribute="height" id="85e-qs-0v2"/>
                                     <constraint firstAttribute="width" constant="20" id="pmS-B2-jkg"/>
@@ -161,6 +161,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="kKa-Kh-iW5" firstAttribute="top" secondItem="wYG-B6-Pwa" secondAttribute="top" constant="10" id="0bP-wn-5cB"/>
+                            <constraint firstItem="38e-9O-6nn" firstAttribute="centerY" secondItem="kKa-Kh-iW5" secondAttribute="centerY" id="2Wf-IG-L2E"/>
                             <constraint firstItem="OWn-eL-yDS" firstAttribute="leading" secondItem="kKa-Kh-iW5" secondAttribute="leading" id="3yW-a5-Wdx"/>
                             <constraint firstAttribute="trailing" secondItem="kKa-Kh-iW5" secondAttribute="trailing" constant="23" id="BXB-7n-Lqm"/>
                             <constraint firstItem="38e-9O-6nn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QDI-Fi-AsK" secondAttribute="trailing" constant="10" id="EZX-qd-Xy1"/>
@@ -169,7 +170,6 @@
                             <constraint firstItem="lTk-aH-d2y" firstAttribute="top" secondItem="wYG-B6-Pwa" secondAttribute="top" id="Oar-oR-z0E"/>
                             <constraint firstItem="lTk-aH-d2y" firstAttribute="leading" secondItem="wYG-B6-Pwa" secondAttribute="leading" id="SdV-ME-t0M"/>
                             <constraint firstItem="QDI-Fi-AsK" firstAttribute="top" secondItem="kKa-Kh-iW5" secondAttribute="bottom" constant="2" id="TeE-da-Upu"/>
-                            <constraint firstItem="38e-9O-6nn" firstAttribute="centerY" secondItem="QDI-Fi-AsK" secondAttribute="centerY" id="Wi8-Nk-4CR"/>
                             <constraint firstItem="kKa-Kh-iW5" firstAttribute="leading" secondItem="wYG-B6-Pwa" secondAttribute="leading" constant="23" id="Zng-mM-WTg"/>
                             <constraint firstAttribute="bottom" secondItem="OWn-eL-yDS" secondAttribute="bottom" constant="18" id="amz-Sv-I6L"/>
                             <constraint firstItem="OWn-eL-yDS" firstAttribute="top" secondItem="lTk-aH-d2y" secondAttribute="bottom" constant="10" id="dlh-Rt-blZ"/>

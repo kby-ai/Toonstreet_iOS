@@ -60,7 +60,7 @@ class HomeViewController: BaseViewController {
          self.tblHomeTableView.didSelectCellItem { [weak self] (type, book) in
              
              if type == .ResumeReading {
-                 self?.openDetailScreen(book: book, isPass: true)
+                 self?.openDetailScreen(book: book, isPass: false)//true
 
              }else{
                  self?.openDetailScreen(book: book, isPass: false)
@@ -90,7 +90,7 @@ class HomeViewController: BaseViewController {
         if let objDetailView = self.storyboard?.instantiateViewController(withIdentifier: "AllEpisodeViewController") as? AllEpisodeViewController{
 //            objDetailView.arrComics = books
             objDetailView.type = type
-            self.navigationController?.tabBarController?.hidesBottomBarWhenPushed = true
+//            self.navigationController?.tabBarController?.hidesBottomBarWhenPushed = true
 
             self.navigationController?.pushViewController(objDetailView, animated: true)
         }
@@ -109,9 +109,9 @@ class HomeViewController: BaseViewController {
                 let objBook1 = TSBook.init(dictObj: purchasedDict1[0])
                     objDetailView.objBook = objBook1
                     objDetailView.objReadingDict = self.objReadingDict.value(forKey: book.title) as? NSDictionary
-                    self.navigationController?.tabBarController?.hidesBottomBarWhenPushed = true
+//                    self.navigationController?.tabBarController?.hidesBottomBarWhenPushed = true
 
-                        self.navigationController?.pushViewController(objDetailView, animated: true)
+//                        self.navigationController?.pushViewController(objDetailView, animated: true)
                 }else{
                     objDetailView.objBook = book
                     objDetailView.objReadingDict = self.objReadingDict.value(forKey: book.title) as? NSDictionary
@@ -157,8 +157,9 @@ class HomeViewController: BaseViewController {
                             
                 
                 if var navstack = navigationController?.viewControllers{
-                        navstack.append(contentsOf: [objDetailView,objPDFVC])
-                        navigationController?.setViewControllers(navstack, animated: true)
+                        navstack.append(contentsOf: [objDetailView])//objPDFVC
+                    navstack.last?.present(objPDFVC, animated: true, completion: nil)
+//                        navigationController?.setViewControllers(navstack, animated: true)
                 }
             }
             }
@@ -172,12 +173,12 @@ class HomeViewController: BaseViewController {
                     let objBook1 = TSBook.init(dictObj: purchasedDict1[0])
                         objDetailView.objBook = objBook1
                         objDetailView.objReadingDict = self.objReadingDict.value(forKey: book.title) as? NSDictionary
-                        self.navigationController?.tabBarController?.hidesBottomBarWhenPushed = true
+//                        self.navigationController?.tabBarController?.hidesBottomBarWhenPushed = true
                             self.navigationController?.pushViewController(objDetailView, animated: true)
                     }else{
                         objDetailView.objBook = book
                         objDetailView.objReadingDict = self.objReadingDict.value(forKey: book.title) as? NSDictionary
-                        self.navigationController?.tabBarController?.hidesBottomBarWhenPushed = true
+//                        self.navigationController?.tabBarController?.hidesBottomBarWhenPushed = true
 
                             self.navigationController?.pushViewController(objDetailView, animated: true)
                     }
