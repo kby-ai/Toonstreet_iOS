@@ -259,6 +259,9 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
         cell.btnInfo.addTarget(self, action: #selector(self.btnInfoClicked(_sender:)), for: .touchUpInside)
         
         cell.lblTitle.text = "Episode \(indexPath.row + 1)"
+        cell.btnDownload.tag = indexPath.row
+        cell.btnDownload.addTarget(self, action: #selector(self.btnPurchaseClicked(_sender: )), for: .touchUpInside)
+        
         return cell
     }
    
@@ -267,7 +270,7 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
         
         //PDFViewController
         
-        if self.objBook?.episodes[indexPath.row].isPurchased == 1{
+//        if self.objBook?.episodes[indexPath.row].isPurchased == 1{
         if let objPDFVC = self.storyboard?.instantiateViewController(withIdentifier: "PDFViewController") as? PDFViewController{
 //            self.hidesBottomBarWhenPushed = true
             objPDFVC.selectedComic = self.objBook
@@ -279,43 +282,48 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
             }
             self.navigationController?.pushViewController(objPDFVC, animated: true)
         }
-        }else{
-            print("Please purchase book")
+//        }else{
+//            print("Please purchase book")
 //            UIAlertController.alert(message: "Please purchase book.")
-
-            UIAlertController.showAlert(andMessage: "Are you sure you want to purchase this episode", andButtonTitles: ["YES","Not now"]) { index in
+//
+////
+//            }
+        }
+    
+    
+@objc func btnPurchaseClicked(_sender:UIButton){
+    
+    let indexPath = _sender.tag
+    
+    UIAlertController.showAlert(andMessage: "Are you sure you want to purchase this episode", andButtonTitles: ["YES","Not now"]) { index in
                 if index == 0{
 
-                    TSFirebaseAPI.shared.purchaseBook(bookCoin: 4, book: self.objBook ?? TSBook(), episode: indexPath.row) { [unowned self] status in
+                    TSFirebaseAPI.shared.purchaseBook(bookCoin: 4, book: self.objBook ?? TSBook(), episode: indexPath) { [unowned self] status in
                         if status == true{
                             self.objBook?.isPurchased = 1
-                            self.objBook?.episodes[indexPath.row].isPurchased = 1
+                            self.objBook?.episodes[index].isPurchased = 1
                             UIAlertController.showAlert(withTitle: "Success!", andMessage: "Episode purchased successfully", andButtonTitles: ["OK"]){ [unowned self] index in
 
                                 if let objPDFVC = self.storyboard?.instantiateViewController(withIdentifier: "PDFViewController") as? PDFViewController{
                         //          self.hidesBottomBarWhenPushed = true
-                                
+
                                     objPDFVC.selectedComic = self.objBook
                                     objPDFVC.bookTitle = self.objBook?.title ?? ""
-                                    objPDFVC.episodeList = self.objBook?.episodes[indexPath.row].strContent
+                                    objPDFVC.episodeList = self.objBook?.episodes[indexPath].strContent
 
-                                    if indexPath.row + 1 == self.objBook?.episodes.count{
+                                    if index + 1 == self.objBook?.episodes.count{
                                         objPDFVC.isLastEpisode = true
                                     }
                                     self.navigationController?.pushViewController(objPDFVC, animated: true)
                                 }
                             }
                         }else{
-                            self.self.objBook?.episodes[indexPath.row].isPurchased = 0
+                            self.self.objBook?.episodes[indexPath].isPurchased = 0
                         }
                     }
                 }
-            }
-        }
     }
-    
-    
-    
+}
     @objc func btnInfoClicked(_sender:UIButton){
         let index = _sender.tag
         if let objPDFVC = self.storyboard?.instantiateViewController(withIdentifier: "EpidsodeDetailsViewController") as? EpidsodeDetailsViewController{

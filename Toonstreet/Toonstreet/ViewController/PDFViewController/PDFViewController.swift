@@ -49,6 +49,9 @@ class PDFViewController: BaseViewController {
         
     }
     override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.hidesBottomBarWhenPushed = false
+        
+//        self.tabBarController?.tabBar.isHidden = true
         self.navigationController?.navigationBar.isHidden = false
     }
   
@@ -69,12 +72,12 @@ class PDFViewController: BaseViewController {
 
     private func setupGesture(){
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
-        swipeRight.direction = UISwipeGestureRecognizer.Direction.right
+        swipeRight.direction = UISwipeGestureRecognizer.Direction.up
 //        self.viewPDF.addGestureRecognizer(swipeRight)
         self.imgComic.addGestureRecognizer(swipeRight)
 
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
-        swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
+        swipeLeft.direction = UISwipeGestureRecognizer.Direction.down
 //        self.viewPDF.addGestureRecognizer(swipeLeft)
         self.imgComic.addGestureRecognizer(swipeLeft)
 
@@ -108,7 +111,7 @@ class PDFViewController: BaseViewController {
     @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
             if let swipeGesture = gesture as? UISwipeGestureRecognizer {
                 switch swipeGesture.direction {
-                case UISwipeGestureRecognizer.Direction.left:
+                case UISwipeGestureRecognizer.Direction.up:
                     print("Swiped Left")
 //                    if pdfView.canGoToNextPage {
 //                        pdfView.goToNextPage(nil)
@@ -142,7 +145,7 @@ class PDFViewController: BaseViewController {
                     updateButtonViewUI()
 
                     
-                case UISwipeGestureRecognizer.Direction.right:
+                case UISwipeGestureRecognizer.Direction.down:
                     print("Swiped right")
                     
                     if selectedIndex > 0 {
@@ -297,4 +300,15 @@ extension UIImageView {
     sender.view?.transform = scale
     sender.scale = 1
   }
+}
+extension UITabBar {
+func tabsVisiblty(_ isVisiblty: Bool = true){
+    if isVisiblty {
+        self.isHidden = false
+        self.layer.zPosition = 0
+    } else {
+        self.isHidden = true
+        self.layer.zPosition = -1
+    }
+}
 }

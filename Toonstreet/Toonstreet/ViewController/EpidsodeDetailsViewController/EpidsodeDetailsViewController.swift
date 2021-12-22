@@ -95,7 +95,8 @@ class EpidsodeDetailsViewController: BaseViewController {
             objPDFVC.bookTitle = self.bookTitle
             objPDFVC.episodeList = self.episodeList
             objPDFVC.isLastEpisode = self.isLastEpisode
-            
+            tabBarController?.hidesBottomBarWhenPushed = true
+
             self.navigationController?.pushViewController(objPDFVC, animated: true)
         }
         
