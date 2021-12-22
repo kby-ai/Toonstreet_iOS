@@ -12,6 +12,7 @@ class AllEpisodeViewController: BaseViewController {
     
     var arrComics:[TSBook] = []
     var arrNewRelease:[TSBook] = []
+    var arrPurchasedComic:[TSBook] = []
 
     
     
@@ -84,7 +85,20 @@ class AllEpisodeViewController: BaseViewController {
         
         if let objDetailView = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController{
             
-            objDetailView.objBook = book
+            
+            let purchasedDict1 =  TSFirebaseAPI.shared.arrPurchasedComicDict.filter({$0.value(forKey: "title" ) as? String == book.title})
+
+            if purchasedDict1.count>0{
+            let objBook1 = TSBook.init(dictObj: purchasedDict1[0])
+                objDetailView.objBook = objBook1
+//                objDetailView.objReadingDict = self.objReadingDict.value(forKey: book.title) as? NSDictionary
+//                    self.navigationController?.pushViewController(objDetailView, animated: true)
+            }else{
+                objDetailView.objBook = book
+//                objDetailView.objReadingDict = self.objReadingDict.value(forKey: book.title) as? NSDictionary
+            }
+            
+//            objDetailView.objBook = book
             self.navigationController?.pushViewController(objDetailView, animated: true )
         }
     }
@@ -93,20 +107,25 @@ class AllEpisodeViewController: BaseViewController {
     
     func fetchContinueReadingData(){
         
-        TSFirebaseAPI.shared.arrPurchasedComic = []
+        self.arrPurchasedComic = []
         
-        TSFirebaseAPI.shared.fetchPurchaseData { [unowned self] status in
-            TSFirebaseAPI.shared.fetchContinueReadingData { [unowned self] dict in
-//                self.objReadingDict = dict
-                self.fetchComicData()
-            }
+        TSFirebaseAPI.shared.fetchPurchaseData {  [unowned self] arrPurchase in
+            
+            self.arrPurchasedComic = arrPurchase
         }
+        
+        
+        TSFirebaseAPI.shared.fetchContinueReadingData { [unowned self] dict in
+//                self.objReadingDict = dict
+            self.fetchComicData()
+        }
+        
+        
     }
     
     
     func fetchComicData(){
 
-        TSFirebaseAPI.shared.arrPurchasedComic = []
         TSFirebaseAPI.shared.arrContinueReading = []
                                            
         self.arrComics = []
@@ -143,7 +162,7 @@ class AllEpisodeViewController: BaseViewController {
     
     func fetchPurchasedData(){
         
-        TSFirebaseAPI.shared.arrPurchasedComic = []
+//        TSFirebaseAPI.shared.arrPurchasedComic = []
         TSFirebaseAPI.shared.arrContinueReading = []
         
         

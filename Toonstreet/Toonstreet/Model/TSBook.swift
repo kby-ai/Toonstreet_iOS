@@ -19,7 +19,8 @@ class TSBook: TSModel {
     var isReadStatus:Int = 0
     var selectedEpison:[String] = []
     var isPurchased:Int = 0
-    
+    var index:[Int] = []
+
     override init() {
         super.init()
     }
@@ -67,6 +68,16 @@ class TSBook: TSModel {
             for value in arrValue{
                 episodes.append(TSEpisodes.init(dictObj: value))
             }
-        }        
+        }
+        
+        if let content = dictObj["index"] as? [Int]{
+//            print(dictObj["title"])
+            for i in content{
+                if let ind = i as? Int{
+                    self.index.append(ind)
+                }
+            }
+        }
+        
     }
 }

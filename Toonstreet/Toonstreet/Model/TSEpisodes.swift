@@ -19,7 +19,7 @@ class TSEpisodes: TSModel {
         var writer:String = ""
         var isPurchased:Int = 0
 
-    
+
     
     
         override init() {
@@ -64,10 +64,10 @@ class TSEpisodes: TSModel {
             
             if let content = dictObj["contents"] as? [String]{
                 strContent = content;
-//                for cont in content{
-//                    strContent
-//                }
             }
+            
+           
+            
 //            if (dictObj["contents"] as? String) != nil{
 //                cover = dictObj["cover"] as? String ?? ""
 //            }

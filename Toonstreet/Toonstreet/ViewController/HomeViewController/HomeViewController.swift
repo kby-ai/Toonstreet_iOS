@@ -90,6 +90,8 @@ class HomeViewController: BaseViewController {
         if let objDetailView = self.storyboard?.instantiateViewController(withIdentifier: "AllEpisodeViewController") as? AllEpisodeViewController{
 //            objDetailView.arrComics = books
             objDetailView.type = type
+            self.navigationController?.tabBarController?.hidesBottomBarWhenPushed = true
+
             self.navigationController?.pushViewController(objDetailView, animated: true)
         }
     }
@@ -101,10 +103,21 @@ class HomeViewController: BaseViewController {
         if isPass == true{
             if let objDetailView = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController{
                 
-            objDetailView.objBook = book
-            objDetailView.objReadingDict = self.objReadingDict.value(forKey: book.title) as? NSDictionary
-            
-            
+                let purchasedDict1 =  TSFirebaseAPI.shared.arrPurchasedComicDict.filter({$0.value(forKey: "title" ) as? String == book.title})
+
+                if purchasedDict1.count>0{
+                let objBook1 = TSBook.init(dictObj: purchasedDict1[0])
+                    objDetailView.objBook = objBook1
+                    objDetailView.objReadingDict = self.objReadingDict.value(forKey: book.title) as? NSDictionary
+                    self.navigationController?.tabBarController?.hidesBottomBarWhenPushed = true
+
+                        self.navigationController?.pushViewController(objDetailView, animated: true)
+                }else{
+                    objDetailView.objBook = book
+                    objDetailView.objReadingDict = self.objReadingDict.value(forKey: book.title) as? NSDictionary
+                }
+                
+
             
             if let objPDFVC = self.storyboard?.instantiateViewController(withIdentifier: "PDFViewController") as? PDFViewController{
                 
@@ -116,7 +129,12 @@ class HomeViewController: BaseViewController {
                     if let arrEpisod = dictTitle["episode"] as? [String]{
                         objPDFVC.episodeList = arrEpisod
                     }else{
-                        self.navigationController?.pushViewController(objDetailView, animated: true)
+                        objPDFVC.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+
+                        self.navigationController?.present(objPDFVC, animated: true, completion: nil)
+
+//                        self.navigationController?.tabBarController?.hidesBottomBarWhenPushed = true
+//                        self.navigationController?.pushViewController(objDetailView, animated: true)
                         return
                     }
                
@@ -126,8 +144,13 @@ class HomeViewController: BaseViewController {
                         objPDFVC.passIndex = Int(index) ?? 0
                     }
                 }else{
-                    
-                    self.navigationController?.pushViewController(objDetailView, animated: true)
+                    objPDFVC.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+
+                    self.navigationController?.present(objPDFVC, animated: true, completion: nil)
+
+//                    self.navigationController?.tabBarController?.hidesBottomBarWhenPushed = true
+
+//                    self.navigationController?.pushViewController(objDetailView, animated: true)
                     return
                 }
                
@@ -140,14 +163,25 @@ class HomeViewController: BaseViewController {
             }
             }
         }else{
-            if let objDetailView = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController{
                 
-            objDetailView.objBook = book
-            objDetailView.objReadingDict = self.objReadingDict.value(forKey: book.title) as? NSDictionary
-                
-                self.navigationController?.pushViewController(objDetailView, animated: true)
+                if let objDetailView = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController{
+                    
+                    let purchasedDict1 =  TSFirebaseAPI.shared.arrPurchasedComicDict.filter({$0.value(forKey: "title" ) as? String == book.title})
 
-        }
+                    if purchasedDict1.count>0{
+                    let objBook1 = TSBook.init(dictObj: purchasedDict1[0])
+                        objDetailView.objBook = objBook1
+                        objDetailView.objReadingDict = self.objReadingDict.value(forKey: book.title) as? NSDictionary
+                        self.navigationController?.tabBarController?.hidesBottomBarWhenPushed = true
+                            self.navigationController?.pushViewController(objDetailView, animated: true)
+                    }else{
+                        objDetailView.objBook = book
+                        objDetailView.objReadingDict = self.objReadingDict.value(forKey: book.title) as? NSDictionary
+                        self.navigationController?.tabBarController?.hidesBottomBarWhenPushed = true
+
+                            self.navigationController?.pushViewController(objDetailView, animated: true)
+                    }
+                }
         }
      
     }
@@ -155,7 +189,7 @@ class HomeViewController: BaseViewController {
     
     func fetchContinueReadingData(){
         
-        TSFirebaseAPI.shared.arrPurchasedComic = []
+//        TSFirebaseAPI.shared.arrPurchasedComic = []
         
         TSFirebaseAPI.shared.fetchPurchaseData { [unowned self] status in
             TSFirebaseAPI.shared.fetchContinueReadingData { [unowned self] dict in
@@ -163,7 +197,7 @@ class HomeViewController: BaseViewController {
                 self.fetchComicData()
             }
         }
-        
+        self.fetchComicData()
 
 //        let ref = Database.database().reference(fromURL: FirebaseBaseURL)
 
@@ -191,7 +225,7 @@ class HomeViewController: BaseViewController {
     
     func fetchComicData(){
 
-        TSFirebaseAPI.shared.arrPurchasedComic = []
+//        TSFirebaseAPI.shared.arrPurchasedComic = []
         TSFirebaseAPI.shared.arrContinueReading = []
                                            
         self.arrComics = []

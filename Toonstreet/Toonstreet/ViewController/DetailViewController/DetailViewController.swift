@@ -46,10 +46,15 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
             
+        self.navigationController?.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.tabBarController?.tabBarController?.tabBar.isHidden = true
+        self.tabBarController?.tabBar.isHidden = true
+
     }
         
     
     override func viewWillAppear(_ animated: Bool) {
+        self.tblEpisod.reloadData()
         self.navigationController?.navigationBar.isHidden = false
     }
     
@@ -259,8 +264,23 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
         cell.btnInfo.addTarget(self, action: #selector(self.btnInfoClicked(_sender:)), for: .touchUpInside)
         
         cell.lblTitle.text = "Episode \(indexPath.row + 1)"
-        cell.btnDownload.tag = indexPath.row
-        cell.btnDownload.addTarget(self, action: #selector(self.btnPurchaseClicked(_sender: )), for: .touchUpInside)
+        
+        if objBook?.index.count ?? 0 > 0 {
+            if (objBook?.index.contains(indexPath.row) == true){
+                cell.btnDownload.isHidden = true
+                objBook?.episodes[indexPath.row].isPurchased = 1
+            }else{
+                objBook?.episodes[indexPath.row].isPurchased = 0
+                cell.btnDownload.isHidden = false
+                cell.btnDownload.tag = indexPath.row
+                cell.btnDownload.addTarget(self, action: #selector(self.btnPurchaseClicked(_sender: )), for: .touchUpInside)
+            }
+        }else{
+            cell.btnDownload.isHidden = false
+            cell.btnDownload.tag = indexPath.row
+            cell.btnDownload.addTarget(self, action: #selector(self.btnPurchaseClicked(_sender: )), for: .touchUpInside)
+        }
+    
         
         return cell
     }
@@ -270,7 +290,7 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
         
         //PDFViewController
         
-//        if self.objBook?.episodes[indexPath.row].isPurchased == 1{
+        if self.objBook?.episodes[indexPath.row].isPurchased == 1{
         if let objPDFVC = self.storyboard?.instantiateViewController(withIdentifier: "PDFViewController") as? PDFViewController{
 //            self.hidesBottomBarWhenPushed = true
             objPDFVC.selectedComic = self.objBook
@@ -280,14 +300,18 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
             if indexPath.row + 1 == self.objBook?.episodes.count{
                 objPDFVC.isLastEpisode = true
             }
-            self.navigationController?.pushViewController(objPDFVC, animated: true)
+            objPDFVC.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+
+            self.navigationController?.present(objPDFVC, animated: true, completion: nil)
+
+//            self.navigationController?.pushViewController(objPDFVC, animated: true)
         }
-//        }else{
-//            print("Please purchase book")
-//            UIAlertController.alert(message: "Please purchase book.")
+        }else{
+            print("Please purchase book")
+            UIAlertController.alert(message: "Please purchase book.")
+
 //
-////
-//            }
+            }
         }
     
     
@@ -297,11 +321,26 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
     
     UIAlertController.showAlert(andMessage: "Are you sure you want to purchase this episode", andButtonTitles: ["YES","Not now"]) { index in
                 if index == 0{
-
-                    TSFirebaseAPI.shared.purchaseBook(bookCoin: 4, book: self.objBook ?? TSBook(), episode: indexPath) { [unowned self] status in
+//self.objBook ?? TSBook()
+                    var purchasedDict = NSMutableDictionary()
+                    
+                    let purchasedDict1 =  TSFirebaseAPI.shared.arrPopularComicDict.filter({$0.value(forKey: "title" ) as? String == self.objBook?.title})
+                    
+                    if purchasedDict1.count > 0{
+                        purchasedDict = purchasedDict1[0] as! NSMutableDictionary
+                    }else{
+                        let purchasedDict2 =  TSFirebaseAPI.shared.arrNewReleaseDict.filter({$0.value(forKey: "title" ) as? String == self.objBook?.title})
+                        
+                        if purchasedDict2.count > 0{
+                            purchasedDict = purchasedDict2[0] as! NSMutableDictionary
+                        }
+                    }
+                                     
+                    TSFirebaseAPI.shared.purchaseBook(bookCoin: 4, book: purchasedDict , episode: indexPath) { [unowned self] status in
                         if status == true{
                             self.objBook?.isPurchased = 1
                             self.objBook?.episodes[index].isPurchased = 1
+                            self.objBook?.index.append(indexPath)
                             UIAlertController.showAlert(withTitle: "Success!", andMessage: "Episode purchased successfully", andButtonTitles: ["OK"]){ [unowned self] index in
 
                                 if let objPDFVC = self.storyboard?.instantiateViewController(withIdentifier: "PDFViewController") as? PDFViewController{
@@ -311,10 +350,15 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
                                     objPDFVC.bookTitle = self.objBook?.title ?? ""
                                     objPDFVC.episodeList = self.objBook?.episodes[indexPath].strContent
 
+                                    
                                     if index + 1 == self.objBook?.episodes.count{
                                         objPDFVC.isLastEpisode = true
                                     }
-                                    self.navigationController?.pushViewController(objPDFVC, animated: true)
+                                    objPDFVC.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+
+                                    self.navigationController?.present(objPDFVC, animated: true, completion: nil)
+
+//                                    self.navigationController?.pushViewController(objPDFVC, animated: true)
                                 }
                             }
                         }else{
@@ -322,7 +366,7 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
                         }
                     }
                 }
-    }
+        }
 }
     @objc func btnInfoClicked(_sender:UIButton){
         let index = _sender.tag

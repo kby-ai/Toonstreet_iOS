@@ -11,12 +11,15 @@ enum NavigationBarButtonItem
 {
     case BackArrow
     case logOut
+    case close
     func getImage() -> UIImage {
         switch self {
         case .BackArrow:
             return #imageLiteral(resourceName: "back")
         case .logOut:
             return #imageLiteral(resourceName: "logout")
+        case .close:
+            return #imageLiteral(resourceName: "close")
        
         }
    
@@ -57,7 +60,8 @@ class BaseViewController: UIViewController {
                 case .BackArrow:
                     btnNavigationItem.addTarget(self, action: #selector(BaseViewController.navigationBackButton_Clicked), for: UIControl.Event.touchUpInside)
                     break
-                    
+                case .close:
+                    btnNavigationItem.addTarget(self, action: #selector(BaseViewController.navigationBackButton_Clicked), for: UIControl.Event.touchUpInside)
                 case .logOut:
                     btnNavigationItem.addTarget(self, action: #selector(BaseViewController.navigationRightButton_Clicked), for: UIControl.Event.touchUpInside)
                 }
@@ -85,7 +89,8 @@ class BaseViewController: UIViewController {
                 case .BackArrow:
                     btnNavigationItem.addTarget(self, action: #selector(BaseViewController.navigationBackButton_Clicked), for: UIControl.Event.touchUpInside)
                     break
-                    
+                case .close:
+                    btnNavigationItem.addTarget(self, action: #selector(BaseViewController.navigationCloseButton_Clicked), for: UIControl.Event.touchUpInside)
                 case .logOut:
                     btnNavigationItem.addTarget(self, action: #selector(BaseViewController.navigationRightButton_Clicked), for: UIControl.Event.touchUpInside)                    
                 }
@@ -101,7 +106,9 @@ class BaseViewController: UIViewController {
     
     @objc func navigationRightButton_Clicked()->(){
     }
-    
+    @objc func navigationCloseButton_Clicked()->(){
+        self.navigationController?.dismiss(animated: true, completion: nil)
+    }
     func setupUI(){
         self.view.backgroundColor = UIColor.Theme.themeBlackColor
     }

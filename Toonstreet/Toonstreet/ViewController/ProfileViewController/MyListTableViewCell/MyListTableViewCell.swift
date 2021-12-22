@@ -45,7 +45,7 @@ class MyListTableViewCell:TSTableViewCell {
     func setAndReloadTableView(arr:[TSBook]){
         self.arrComics = arr
         self.myListCollectionView.loadBooks(withBooks: self.arrComics)
-//        self.myListCollectionView.reloadData()
+//      self.myListCollectionView.reloadData()
     }
     
     func commonInit(){
@@ -58,8 +58,7 @@ class MyListTableViewCell:TSTableViewCell {
         self.viewCollection.backgroundColor = UIColor.clear
         
         
-        
-//        self.myListCollectionView.loadBooks(withBooks: arrComics)
+//       self.myListCollectionView.loadBooks(withBooks: arrComics)
         
         self.myListCollectionView.setDidSelectPhotoHandler { [weak self] (aryBook, index) in
             
@@ -68,6 +67,7 @@ class MyListTableViewCell:TSTableViewCell {
             }
         }
     }
+    
     func didSelectCellItem(withHandler handler:ProfileScreenMyListTableViewCellSelectionHandler?){
         if let value = handler{
             self.didSelectCellItem = value

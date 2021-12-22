@@ -96,8 +96,10 @@ class EpidsodeDetailsViewController: BaseViewController {
             objPDFVC.episodeList = self.episodeList
             objPDFVC.isLastEpisode = self.isLastEpisode
             tabBarController?.hidesBottomBarWhenPushed = true
+            objPDFVC.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
 
-            self.navigationController?.pushViewController(objPDFVC, animated: true)
+            self.navigationController?.present(objPDFVC, animated: true, completion: nil)
+//            self.navigationController?.pushViewController(objPDFVC, animated: true)
         }
         
         

@@ -116,7 +116,7 @@ extension BookListCollectionView:UICollectionViewDataSource,UICollectionViewDele
 extension BookListCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellWidth = screenWidth * 0.27;
-        let cellHeight = screenWidth * 0.450 //0.385
+        let cellHeight = screenWidth * 0.480 //0.385
 
         
         return CGSize(width: cellWidth, height: cellHeight)

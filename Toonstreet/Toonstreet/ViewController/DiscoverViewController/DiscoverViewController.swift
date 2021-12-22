@@ -57,7 +57,7 @@ class DiscoverViewController: BaseViewController,UISearchBarDelegate {
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).textColor = UIColor.white
 
         
-        
+     
 
 //        let alignedFlowLayout = AlignedCollectionViewFlowLayout(
 //            horizontalAlignment: .left,
@@ -227,7 +227,15 @@ class DiscoverViewController: BaseViewController,UISearchBarDelegate {
         
         if let objDetailView = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController{
             
-            objDetailView.objBook = book
+            let purchasedDict1 =  TSFirebaseAPI.shared.arrPurchasedComicDict.filter({$0.value(forKey: "title" ) as? String == book.title})
+
+            if purchasedDict1.count>0{
+            let objBook1 = TSBook.init(dictObj: purchasedDict1[0])
+                objDetailView.objBook = objBook1
+            }else{
+                objDetailView.objBook = book
+            }
+            
             self.navigationController?.pushViewController(objDetailView, animated: true )
         }
 
@@ -236,7 +244,7 @@ class DiscoverViewController: BaseViewController,UISearchBarDelegate {
     func fetchComicData(){
 
         TSFirebaseAPI.shared.arrContinueReading = []
-        TSFirebaseAPI.shared.arrPurchasedComic = []
+//        TSFirebaseAPI.shared.arrPurchasedComic = []
 
         self.arrComics = []
 

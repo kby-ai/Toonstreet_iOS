@@ -17,6 +17,7 @@ class TSTabBarControllerViewController: UITabBarController {
         super.viewDidLoad()
         self.loadTabBar()
         //delegate = self
+        self.hidesBottomBarWhenPushed = true
     }
     
     private func loadTabBar() {

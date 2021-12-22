@@ -86,9 +86,7 @@ extension MyListCollectionView:UICollectionViewDataSource,UICollectionViewDelega
 }
 extension MyListCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellWidth = screenWidth * 0.58;
-        
-        
+        let cellWidth = screenWidth * 0.45;
         return CGSize(width: cellWidth, height: collectionView.bounds.height)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

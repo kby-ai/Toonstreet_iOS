@@ -15,7 +15,7 @@ import FirebaseFirestoreSwift
 class ProfileViewController: BaseViewController {
 
 //    var arrMyList:[TSBook] = []
-//    var arrHistory:[TSBook] = []
+//    var arrPurchased:[TSBook] = []
 
     @IBOutlet weak var tblProfile: ProfileTableView!
     
@@ -63,14 +63,16 @@ class ProfileViewController: BaseViewController {
         }
         
         TSFirebaseAPI.shared.arrContinueReading = []
-        TSFirebaseAPI.shared.arrPurchasedComic = []
+//      TSFirebaseAPI.shared.arrPurchasedComic = []
 
-        TSFirebaseAPI.shared.fetchPurchaseData { [unowned self] status in
-            TSFirebaseAPI.shared.fetchContinueReadingData { [unowned self] dict in
-//                self.objReadingDict = dict
-                fetchComicData()
-            }
+        TSFirebaseAPI.shared.fetchPurchaseData { [unowned self] arr in
+            self.tblProfile.setAndReloadTableView(arr: arr)
         }
+        
+        TSFirebaseAPI.shared.fetchContinueReadingData { [unowned self] dict in
+            fetchComicData()
+        }
+        
         
 //        TSFirebaseAPI.shared.fetchPurchaseData { [unowned self] status in
 //            if status == true{
@@ -84,23 +86,13 @@ class ProfileViewController: BaseViewController {
 
         TSFirebaseAPI.shared.fetchPopularData { [unowned self] arrBook in
             
-//            self.arrComics = arrBook
-
-//            self.tblHomeTableView.setAndReloadTableViewComics(arr: self.arrComics, arrContinueReading: TSFirebaseAPI.shared.arrContinueReading)
+            self.tblProfile.setAndReloadTableViewPurchase(arr: arrBook)
             self.tblProfile.reloadData()
-
         }
        
-        
-//        self.arrNewRelease = []
-        
-        TSFirebaseAPI.shared.fetchNewReleaseData { [unowned self] arrBook in
-//            self.arrNewRelease = arrBook
-//            self.tblHomeTableView.setAndReloadTableViewNewRelease(arr: self.arrNewRelease, arrContinueReading: TSFirebaseAPI.shared.arrContinueReading)
-            
-            self.tblProfile.reloadData()
+//            self.tblProfile.reloadData()
 
-        }
+//        }
     }
 
     @IBAction func btnCoinsClicked(_ sender: Any) {
@@ -127,10 +119,17 @@ class ProfileViewController: BaseViewController {
         
         if let objDetailView = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController{
             
-            objDetailView.objBook = book
-            self.navigationController?.pushViewController(objDetailView, animated: true )
-        }
+            let purchasedDict1 =  TSFirebaseAPI.shared.arrPurchasedComicDict.filter({$0.value(forKey: "title" ) as? String == book.title})
 
+            if purchasedDict1.count>0{
+            let objBook1 = TSBook.init(dictObj: purchasedDict1[0])
+                objDetailView.objBook = objBook1
+                self.navigationController?.pushViewController(objDetailView, animated: true )
+            }else{
+                objDetailView.objBook = book
+                self.navigationController?.pushViewController(objDetailView, animated: true )
+            }
+        }
     }
     
     

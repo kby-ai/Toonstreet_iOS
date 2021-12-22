@@ -36,25 +36,28 @@ class PDFViewController: BaseViewController {
         }else{
             self.selectedIndex = 0
         }
-        self.leftBarButtonItems = [.BackArrow]
-
+//        self.leftBarButtonItems = [.BackArrow]
+        self.rightBarButtonItems = [.close]
 
 //        self.setupPDFView()
         self.setupGesture()
         self.imgComic.enableZoom()
         self.addContinueReading()
-        
-        
-        
-        
+            
     }
+ 
+    
     override func viewWillAppear(_ animated: Bool) {
-        tabBarController?.hidesBottomBarWhenPushed = false
+        super.viewWillAppear(animated)
+//        self.navigationController?.tabBarController?.tabBar.isHidden = true///false
         
 //        self.tabBarController?.tabBar.isHidden = true
         self.navigationController?.navigationBar.isHidden = false
     }
   
+    @IBAction func btnCloseClicked(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     //MARK: Add Continue reading
     func addContinueReading(){
     

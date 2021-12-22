@@ -19,6 +19,8 @@ enum ProfileType{
 class ProfileTableView: TSTableView {
     
     var aryBooks:[TSBook] = []
+    var aryPurchased:[TSBook] = []
+
     var aryProfileTypes:[ProfileType] = [.MyList,.ComicHistory]//,.ComicHistory]
 
     private var didSelectTableCellSelectionHandler:ProfileScreenMyListTableViewCellSelectionHandler?
@@ -37,6 +39,11 @@ class ProfileTableView: TSTableView {
     
     func setAndReloadTableView(arr:[TSBook]){
         self.aryBooks = arr
+        self.reloadData()
+    }
+    
+    func setAndReloadTableViewPurchase(arr:[TSBook]){
+        self.aryPurchased = arr
         self.reloadData()
     }
     
@@ -106,8 +113,8 @@ extension ProfileTableView:UITableViewDelegate,UITableViewDataSource{
             guard let cell:MyListTableViewCell = tableView.dequeueReusableCell(withIdentifier: "MyListTableViewCell") as? MyListTableViewCell else {
                 return UITableViewCell()
             }
-            
-            cell.setAndReloadTableView(arr: TSFirebaseAPI.shared.arrPurchasedComic)
+            //temp
+            cell.setAndReloadTableView(arr: self.aryPurchased)
             
             cell.didSelectCellItem { [weak self] (type, book) in
                 self?.handleCellItem(type: type, book: book)
