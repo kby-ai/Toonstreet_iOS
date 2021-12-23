@@ -104,6 +104,8 @@
 		8ACE0036274D7D8600063BF2 /* BuyCoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACE0035274D7D8600063BF2 /* BuyCoinViewController.swift */; };
 		8ACE003A274D7E8B00063BF2 /* CoinTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACE0038274D7E8B00063BF2 /* CoinTableCell.swift */; };
 		8ACE003B274D7E8B00063BF2 /* CoinTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8ACE0039274D7E8B00063BF2 /* CoinTableCell.xib */; };
+		8AF684B127751C51004A78A9 /* PDFTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF684AF27751C51004A78A9 /* PDFTableViewCell.swift */; };
+		8AF684B227751C51004A78A9 /* PDFTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AF684B027751C51004A78A9 /* PDFTableViewCell.xib */; };
 		8AFC038E276D2F29008E48C1 /* TSFirebaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFC038D276D2F29008E48C1 /* TSFirebaseAPI.swift */; };
 		9DBFF594EC95984D7A1EBEDC /* Pods_Toonstreet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06AC0994BB852D3AC488D49A /* Pods_Toonstreet.framework */; };
 /* End PBXBuildFile section */
@@ -209,6 +211,8 @@
 		8ACE0035274D7D8600063BF2 /* BuyCoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCoinViewController.swift; sourceTree = "<group>"; };
 		8ACE0038274D7E8B00063BF2 /* CoinTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinTableCell.swift; sourceTree = "<group>"; };
 		8ACE0039274D7E8B00063BF2 /* CoinTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoinTableCell.xib; sourceTree = "<group>"; };
+		8AF684AF27751C51004A78A9 /* PDFTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFTableViewCell.swift; sourceTree = "<group>"; };
+		8AF684B027751C51004A78A9 /* PDFTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDFTableViewCell.xib; sourceTree = "<group>"; };
 		8AFC038D276D2F29008E48C1 /* TSFirebaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSFirebaseAPI.swift; sourceTree = "<group>"; };
 		AB3D1FD60C1563D85DDADEA5 /* Pods-Toonstreet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Toonstreet.debug.xcconfig"; path = "Target Support Files/Pods-Toonstreet/Pods-Toonstreet.debug.xcconfig"; sourceTree = "<group>"; };
 		C2A41D6B45D93EDAF33971B6 /* Pods-Toonstreet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Toonstreet.release.xcconfig"; path = "Target Support Files/Pods-Toonstreet/Pods-Toonstreet.release.xcconfig"; sourceTree = "<group>"; };
@@ -569,6 +573,7 @@
 		8AB5CD1D274EB23F00A3F15E /* PDFViewController */ = {
 			isa = PBXGroup;
 			children = (
+				8AF684AC27751BA1004A78A9 /* PDFTableViewCell */,
 				8A491FB3274EB54400D04A13 /* PDFViewController.swift */,
 			);
 			path = PDFViewController;
@@ -636,6 +641,15 @@
 				8ACE0039274D7E8B00063BF2 /* CoinTableCell.xib */,
 			);
 			path = CoinTableCell;
+			sourceTree = "<group>";
+		};
+		8AF684AC27751BA1004A78A9 /* PDFTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8AF684AF27751C51004A78A9 /* PDFTableViewCell.swift */,
+				8AF684B027751C51004A78A9 /* PDFTableViewCell.xib */,
+			);
+			path = PDFTableViewCell;
 			sourceTree = "<group>";
 		};
 		C7C79FB2E898991FEFA6D71C /* Pods */ = {
@@ -709,6 +723,7 @@
 			files = (
 				4904929B274942ED008827DF /* ContinueReadingTableViewCell.xib in Resources */,
 				8ACE0033274D7C3A00063BF2 /* MyListTableViewCell.xib in Resources */,
+				8AF684B227751C51004A78A9 /* PDFTableViewCell.xib in Resources */,
 				8A8D7EB12746BCCF0073E261 /* LaunchScreen.storyboard in Resources */,
 				4904928D2749357A008827DF /* NunitoSans-SemiBold.ttf in Resources */,
 				8A5D8F1E274D713C008A4105 /* MyListCollectionViewCell.xib in Resources */,
@@ -828,6 +843,7 @@
 				490492552748E388008827DF /* TSTabBarControllerViewController.swift in Sources */,
 				8A8D7EA72746BCCE0073E261 /* SceneDelegate.swift in Sources */,
 				4904925C2748EF34008827DF /* TSTableViewCell.swift in Sources */,
+				8AF684B127751C51004A78A9 /* PDFTableViewCell.swift in Sources */,
 				49755543274AC65E00FD2290 /* BookListCollectionViewCell.swift in Sources */,
 				8A233B63274C1A6D003BF645 /* GenreCollectionCell.swift in Sources */,
 				4904925F2748EFA2008827DF /* HomeViewController.swift in Sources */,

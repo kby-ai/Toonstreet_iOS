@@ -1728,13 +1728,11 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dKs-qS-e97">
-                                <rect key="frame" x="167" y="862" width="80" height="0.0"/>
+                                <rect key="frame" x="192" y="862" width="30" height="0.0"/>
                                 <subviews>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQh-LS-KXp">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <color key="backgroundColor" red="0.84313725490000002" green="0.25490196079999999" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="qji-X5-X1J"/>
                                             <constraint firstAttribute="width" secondItem="QQh-LS-KXp" secondAttribute="height" id="vdU-EO-zbN"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -1744,7 +1742,7 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="amr-v8-7u3">
-                                        <rect key="frame" x="80" y="0.0" width="0.0" height="0.0"/>
+                                        <rect key="frame" x="30" y="0.0" width="0.0" height="0.0"/>
                                         <color key="backgroundColor" red="0.84313725490000002" green="0.25490196079999999" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" id="Hc6-Uw-6XM"/>
@@ -1769,9 +1767,25 @@
                                     <constraint firstItem="amr-v8-7u3" firstAttribute="leading" secondItem="QQh-LS-KXp" secondAttribute="trailing" constant="30" id="z1n-R4-TWa"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3gM-iQ-O4H">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3gM-iQ-O4H">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j7L-kL-Fbu">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="qbQ-Qi-l1S">
+                                        <rect key="frame" x="0.0" y="60" width="414" height="758"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="qbQ-Qi-l1S" secondAttribute="trailing" id="1xR-Sv-xNl"/>
+                                    <constraint firstItem="qbQ-Qi-l1S" firstAttribute="top" secondItem="j7L-kL-Fbu" secondAttribute="top" constant="60" id="3u0-8p-IFe"/>
+                                    <constraint firstItem="qbQ-Qi-l1S" firstAttribute="leading" secondItem="j7L-kL-Fbu" secondAttribute="leading" id="V39-br-Muy"/>
+                                    <constraint firstAttribute="bottom" secondItem="qbQ-Qi-l1S" secondAttribute="bottom" id="l7U-9p-N26"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NzL-9d-n93">
                                 <rect key="frame" x="20" y="59" width="28" height="28"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -1792,14 +1806,18 @@
                             <constraint firstItem="3gM-iQ-O4H" firstAttribute="top" secondItem="o7E-YK-kzg" secondAttribute="top" id="LJ7-3h-89d"/>
                             <constraint firstItem="o7E-YK-kzg" firstAttribute="trailing" secondItem="242-v7-FMD" secondAttribute="trailing" id="LUq-ph-eYb"/>
                             <constraint firstItem="BXx-6d-GWp" firstAttribute="leading" secondItem="o7E-YK-kzg" secondAttribute="leading" id="LXS-es-NZh"/>
+                            <constraint firstItem="j7L-kL-Fbu" firstAttribute="top" secondItem="o7E-YK-kzg" secondAttribute="top" id="MCv-HC-d0h"/>
                             <constraint firstItem="3gM-iQ-O4H" firstAttribute="trailing" secondItem="o7E-YK-kzg" secondAttribute="trailing" id="PQS-dJ-gca"/>
+                            <constraint firstItem="o7E-YK-kzg" firstAttribute="trailing" secondItem="j7L-kL-Fbu" secondAttribute="trailing" id="WdQ-MO-DLS"/>
                             <constraint firstItem="3gM-iQ-O4H" firstAttribute="leading" secondItem="o7E-YK-kzg" secondAttribute="leading" id="e4S-KI-0Lc"/>
                             <constraint firstItem="dKs-qS-e97" firstAttribute="centerX" secondItem="UyY-qb-nnX" secondAttribute="centerX" id="nxv-RX-Kvn"/>
+                            <constraint firstItem="dKs-qS-e97" firstAttribute="top" secondItem="j7L-kL-Fbu" secondAttribute="bottom" id="qVH-3m-4DK"/>
                             <constraint firstItem="BXx-6d-GWp" firstAttribute="top" secondItem="o7E-YK-kzg" secondAttribute="top" id="quW-fK-r38"/>
                             <constraint firstItem="o7E-YK-kzg" firstAttribute="bottom" secondItem="242-v7-FMD" secondAttribute="bottom" constant="50" id="rr6-D4-6Nj"/>
                             <constraint firstItem="o7E-YK-kzg" firstAttribute="bottom" secondItem="dKs-qS-e97" secondAttribute="bottom" id="s3H-jT-Cus"/>
                             <constraint firstAttribute="bottom" secondItem="3gM-iQ-O4H" secondAttribute="bottom" id="uqv-P7-0b7"/>
                             <constraint firstItem="242-v7-FMD" firstAttribute="leading" secondItem="o7E-YK-kzg" secondAttribute="leading" id="vFJ-yj-oYJ"/>
+                            <constraint firstItem="j7L-kL-Fbu" firstAttribute="leading" secondItem="o7E-YK-kzg" secondAttribute="leading" id="zeT-3Z-hMV"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
@@ -1807,6 +1825,7 @@
                         <outlet property="btnNext" destination="amr-v8-7u3" id="iRf-v7-jfb"/>
                         <outlet property="btnPrevious" destination="QQh-LS-KXp" id="mhh-j2-Gcx"/>
                         <outlet property="imgComic" destination="3gM-iQ-O4H" id="eGw-51-zGu"/>
+                        <outlet property="tblView" destination="qbQ-Qi-l1S" id="Heh-6n-CR4"/>
                         <outlet property="viewPDF" destination="242-v7-FMD" id="Nrw-Ph-YCE"/>
                         <outlet property="webKit" destination="BXx-6d-GWp" id="83A-uL-oWd"/>
                     </connections>
