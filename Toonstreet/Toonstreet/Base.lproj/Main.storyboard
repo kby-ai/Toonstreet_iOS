@@ -147,7 +147,7 @@
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gkd-kd-FEf" customClass="HomeViewController" customModule="Toonstreet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wNF-zg-MUu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CPg-fc-p0l">
@@ -176,6 +176,7 @@
                             <constraint firstItem="CPg-fc-p0l" firstAttribute="leading" secondItem="kpe-0A-jzO" secondAttribute="leading" id="m5s-sl-Fzv"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="WBc-cY-A4O"/>
                     <connections>
                         <outlet property="mainView" destination="CPg-fc-p0l" id="smo-Xn-x9m"/>
@@ -196,6 +197,7 @@
                         <viewLayoutGuide key="safeArea" id="glT-iY-0qj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HLc-1M-PTt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -206,11 +208,12 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="hzq-H6-eIf" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WAV-e2-sjv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="7fI-pd-IZl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <tabBarItem key="tabBarItem" title="Item 2" id="H3v-dQ-ejG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fmC-6w-QWk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -220,13 +223,14 @@
         <!--Item 1-->
         <scene sceneID="rEJ-zm-3dS">
             <objects>
-                <viewController wantsFullScreenLayout="YES" id="Ryn-Fr-kCG" sceneMemberID="viewController">
+                <viewController id="Ryn-Fr-kCG" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BcS-4D-YyL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="BHR-o6-Rtr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Item 1" id="aaI-e5-fKg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s8Z-OS-hok" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -446,6 +450,7 @@
                             <constraint firstItem="Jig-kA-NC7" firstAttribute="leading" secondItem="s7y-ja-Pba" secondAttribute="leading" id="ndS-oK-fCU"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <connections>
                         <outlet property="btnCheckmark" destination="Gh5-F1-hmH" id="qA4-tB-vl2"/>
                         <outlet property="btnSignup" destination="ke5-9H-skh" id="l9o-wP-oHS"/>
@@ -719,6 +724,7 @@
                             <constraint firstItem="5qd-kw-eLD" firstAttribute="top" secondItem="q5k-ES-N8y" secondAttribute="top" id="d3d-z1-HZN"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="ads-zN-c3H"/>
                     <connections>
                         <outlet property="bookListCollectionView" destination="hpz-27-Ti8" id="D3v-i9-fd3"/>
@@ -1121,6 +1127,7 @@
                             <constraint firstItem="a21-kP-3c8" firstAttribute="leading" secondItem="1LV-8X-nMC" secondAttribute="leading" id="doB-5P-i9J"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <connections>
                         <outlet property="btnShare" destination="gbO-IR-pAT" id="R5T-ti-KYj"/>
                         <outlet property="btnSubscribe" destination="DLm-wx-Qp5" id="FQc-LE-HLG"/>
@@ -1521,6 +1528,7 @@
                             <constraint firstItem="tqV-Gg-4Zf" firstAttribute="leading" secondItem="VIY-Qg-VT2" secondAttribute="leading" id="tqu-u2-95h"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="btnShare" destination="iYO-xD-CRw" id="vHo-Ge-XQT"/>
@@ -1612,6 +1620,7 @@
                             <constraint firstItem="UFv-vR-8VG" firstAttribute="leading" secondItem="qZj-bM-M4S" secondAttribute="leading" id="kCY-9X-Vkg"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="7LV-G4-lq3"/>
                     <connections>
                         <outlet property="btnBuyCoin" destination="F8J-hZ-fQm" id="UzF-wM-Axa"/>
@@ -1688,6 +1697,7 @@
                             <constraint firstItem="ZCN-aA-Zle" firstAttribute="top" secondItem="zkG-9U-98r" secondAttribute="top" id="pOi-da-rwS"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <connections>
                         <outlet property="lblcoins" destination="d18-ho-P9T" id="oAf-bf-IoV"/>
                         <outlet property="tblBuyCoins" destination="6Gd-Hf-TzO" id="UO0-Ha-gbT"/>
@@ -1792,6 +1802,7 @@
                             <constraint firstItem="242-v7-FMD" firstAttribute="leading" secondItem="o7E-YK-kzg" secondAttribute="leading" id="vFJ-yj-oYJ"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <connections>
                         <outlet property="btnNext" destination="amr-v8-7u3" id="iRf-v7-jfb"/>
                         <outlet property="btnPrevious" destination="QQh-LS-KXp" id="mhh-j2-Gcx"/>
@@ -2048,6 +2059,7 @@
                             <constraint firstItem="ypA-xD-JyU" firstAttribute="trailing" secondItem="mE7-bY-HOh" secondAttribute="trailing" id="yDy-WA-ENv"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="imgEpisode" destination="rXB-aO-yYY" id="XPZ-20-SSm"/>
@@ -2118,6 +2130,7 @@
                             <constraint firstItem="MoV-L6-Vvv" firstAttribute="top" secondItem="jeU-Kw-rhR" secondAttribute="top" id="lVk-pN-o2b"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="FDI-cn-TsG"/>
                     <connections>
                         <outlet property="bookListCollectionView" destination="Tvq-5k-PTj" id="Kvi-RK-Q8N"/>

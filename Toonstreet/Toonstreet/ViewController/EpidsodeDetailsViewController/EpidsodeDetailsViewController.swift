@@ -77,7 +77,7 @@ class EpidsodeDetailsViewController: BaseViewController {
           } else {
             // Get the download URL for 'images/stars.jpg'
 //              print(url)
-              self.imgEpisode.sd_setImage(with: url, completed: nil)
+              self.imgEpisode.sd_setImage(with: url, placeholderImage: UIImage.init(named: "dummy_image"), options: .refreshCached)
 
           }
         }

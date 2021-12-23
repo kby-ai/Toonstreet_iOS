@@ -324,7 +324,7 @@ class DiscoverViewController: BaseViewController,UISearchBarDelegate {
    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 
        self.arrFiltered = []
-       self.arrFiltered = commicFilter.filter { $0.title.lowercased().contains(searchText.lowercased()) }
+       self.arrFiltered = arrComics.filter { $0.title.lowercased().contains(searchText.lowercased()) }
 
 //       arrFiltered = arrComics.filter( $0.title.contains(searchText))
 //       arrFiltered = arrComics.filter({ (text) -> Bool in
@@ -335,7 +335,12 @@ class DiscoverViewController: BaseViewController,UISearchBarDelegate {
 
        if (arrFiltered.count == 0){
            searchActive = false
-           self.bookListCollectionView.backgroundView = nil
+           if self.commicFilter.count == 0{
+               
+           }else{
+               self.createEmptyCollectionView(collectionView: self.bookListCollectionView)
+
+           }
            self.bookListCollectionView.setAndReloadTableView(arr: self.commicFilter)
        }
        else{

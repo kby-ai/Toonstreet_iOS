@@ -140,8 +140,9 @@ class NewReleaseTableViewCell: UITableViewCell {
             // Get the download URL for 'images/stars.jpg'
          
               if (url != nil) {
-                  self.imageViewBookPhoto.sd_setImage(with: url, completed: nil)
-                  self.imageViewBookCoverPhoto.sd_setImage(with: url, completed: nil)
+                  self.imageViewBookPhoto.sd_setImage(with: url, placeholderImage: UIImage.init(named: "dummy_image"), options: .refreshCached)
+
+                  self.imageViewBookCoverPhoto.sd_setImage(with: url, placeholderImage: UIImage.init(named: "dummy_image"), options: .refreshCached)
 
               }
           }

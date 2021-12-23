@@ -91,14 +91,10 @@ class AllEpisodeViewController: BaseViewController {
             if purchasedDict1.count>0{
             let objBook1 = TSBook.init(dictObj: purchasedDict1[0])
                 objDetailView.objBook = objBook1
-//                objDetailView.objReadingDict = self.objReadingDict.value(forKey: book.title) as? NSDictionary
-//                    self.navigationController?.pushViewController(objDetailView, animated: true)
+
             }else{
                 objDetailView.objBook = book
-//                objDetailView.objReadingDict = self.objReadingDict.value(forKey: book.title) as? NSDictionary
-            }
-            
-//            objDetailView.objBook = book
+            }            
             self.navigationController?.pushViewController(objDetailView, animated: true )
         }
     }

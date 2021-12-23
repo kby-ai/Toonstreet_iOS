@@ -139,7 +139,8 @@ class PDFViewController: BaseViewController {
                                 // Get the download URL for 'images/stars.jpg'
                              
                                   if (url != nil) {
-                                      self.imgComic.sd_setImage(with: url, completed: nil)
+                                      self.imgComic.sd_setImage(with: url, placeholderImage: UIImage.init(named: "dummy_image"), options: .refreshCached)
+
                                       self.imgComic.slideUpFromBottom()
                                   }
                               }
@@ -169,7 +170,8 @@ class PDFViewController: BaseViewController {
                             // Get the download URL for 'images/stars.jpg'
                          
                               if (url != nil) {
-                                  self.imgComic.sd_setImage(with: url, completed: nil)
+                                  self.imgComic.sd_setImage(with: url, placeholderImage: UIImage.init(named: "dummy_image"), options: .refreshCached)
+
                                   self.imgComic.slideUpFromTop()
 
                               }
@@ -224,7 +226,8 @@ class PDFViewController: BaseViewController {
             // Get the download URL for 'images/stars.jpg'
          
               if (url != nil) {
-                  self.imgComic.sd_setImage(with: url, completed: nil)
+                  self.imgComic.sd_setImage(with: url, placeholderImage: UIImage.init(named: "dummy_image"), options: .refreshCached)
+
               }
           }
         }
@@ -250,7 +253,7 @@ class PDFViewController: BaseViewController {
             // Get the download URL for 'images/stars.jpg'
          
               if (url != nil) {
-                  self.imgComic.sd_setImage(with: url, completed: nil)
+                  self.imgComic.sd_setImage(with: url, placeholderImage: UIImage.init(named: "dummy_image"), options: .refreshCached)
               }
           }
         }
@@ -278,7 +281,7 @@ class PDFViewController: BaseViewController {
             // Get the download URL for 'images/stars.jpg'
          
               if (url != nil) {
-                  self.imgComic.sd_setImage(with: url, completed: nil)
+                  self.imgComic.sd_setImage(with: url, placeholderImage: UIImage.init(named: "dummy_image"), options: .refreshCached)
               }
           }
         }
