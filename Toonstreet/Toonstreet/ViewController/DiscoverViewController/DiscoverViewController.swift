@@ -56,17 +56,6 @@ class DiscoverViewController: BaseViewController,UISearchBarDelegate {
 //        txtSearch.setTextColor(color: UIColor.white)
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).textColor = UIColor.white
 
-        
-     
-
-//        let alignedFlowLayout = AlignedCollectionViewFlowLayout(
-//            horizontalAlignment: .left,
-//            verticalAlignment: .top
-//        )
-
-//        bookListCollectionView.collectionViewLayout = alignedFlowLayout
-        
-        
         self.txtSearch.delegate = self
         // Do any additional setup after loading the view.
     }

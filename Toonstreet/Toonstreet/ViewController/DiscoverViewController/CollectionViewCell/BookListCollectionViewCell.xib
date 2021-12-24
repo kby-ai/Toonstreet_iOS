@@ -12,31 +12,36 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="BookListCollectionViewCell" customModule="Toonstreet" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="122" height="156"/>
+            <rect key="frame" x="0.0" y="0.0" width="197" height="249"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="122" height="156"/>
+                <rect key="frame" x="0.0" y="0.0" width="197" height="249"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5CH-YL-gmH">
-                        <rect key="frame" x="0.0" y="0.0" width="122" height="156"/>
+                        <rect key="frame" x="0.0" y="0.0" width="197" height="249"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" verticalCompressionResistancePriority="752" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hg6-UA-h1b" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="156" width="122" height="0.0"/>
+                                <rect key="frame" x="0.0" y="231" width="197" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="Jhs-Zg-Naf"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" verticalCompressionResistancePriority="753" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJn-8S-MKi" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="135" width="122" height="17"/>
+                                <rect key="frame" x="0.0" y="209" width="197" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="F2o-1h-vtU"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummy_image" translatesAutoresizingMaskIntoConstraints="NO" id="n2p-Bx-Tbs">
-                                <rect key="frame" x="0.0" y="0.0" width="100" height="125"/>
+                                <rect key="frame" x="0.0" y="0.0" width="197" height="199"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="fg2-Yw-3qS"/>
                                     <constraint firstAttribute="width" secondItem="n2p-Bx-Tbs" secondAttribute="height" multiplier="1:1.25" priority="999" id="mby-Ej-zW7"/>
                                 </constraints>
                             </imageView>
@@ -53,6 +58,7 @@
                             <constraint firstItem="hg6-UA-h1b" firstAttribute="trailing" secondItem="kJn-8S-MKi" secondAttribute="trailing" id="oXS-MH-49A"/>
                             <constraint firstItem="n2p-Bx-Tbs" firstAttribute="top" secondItem="5CH-YL-gmH" secondAttribute="top" id="rrb-9Y-xIl"/>
                             <constraint firstAttribute="trailing" secondItem="n2p-Bx-Tbs" secondAttribute="trailing" priority="999" id="trf-nD-Cm8"/>
+                            <constraint firstItem="n2p-Bx-Tbs" firstAttribute="width" secondItem="5CH-YL-gmH" secondAttribute="width" id="u2e-TY-H7g"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -64,14 +70,14 @@
                 <constraint firstAttribute="trailing" secondItem="5CH-YL-gmH" secondAttribute="trailing" id="fNz-p8-XjX"/>
                 <constraint firstItem="5CH-YL-gmH" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="qox-ce-cpD"/>
             </constraints>
-            <size key="customSize" width="122" height="156"/>
+            <size key="customSize" width="197" height="249"/>
             <connections>
                 <outlet property="imgViewProfile" destination="n2p-Bx-Tbs" id="m02-SL-S6P"/>
                 <outlet property="lblTitle" destination="kJn-8S-MKi" id="uaA-mj-1nZ"/>
                 <outlet property="lblType" destination="hg6-UA-h1b" id="j3O-jr-edA"/>
                 <outlet property="mainView" destination="5CH-YL-gmH" id="uW5-iv-mg6"/>
             </connections>
-            <point key="canvasLocation" x="189.85507246376812" y="113.16964285714285"/>
+            <point key="canvasLocation" x="244.20289855072465" y="144.30803571428569"/>
         </collectionViewCell>
     </objects>
     <resources>

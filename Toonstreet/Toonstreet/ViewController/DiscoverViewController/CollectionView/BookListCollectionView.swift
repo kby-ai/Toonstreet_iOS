@@ -32,14 +32,6 @@ class BookListCollectionView: UICollectionView {
         self.commonInit()
      
         
-//        self.collectionViewLayout = columnLayout
-//        self.contentInsetAdjustmentBehavior = .always
-//
-//
-//        self.contentMode = .left
-//        self.semanticContentAttribute = UISemanticContentAttribute.forceLeftToRight
-        
-        
     }
     
 //    func centerItemsInCollectionView(cellWidth: Double, numberOfItems: Double, spaceBetweenCell: Double, collectionView: UICollectionView) -> UIEdgeInsets {

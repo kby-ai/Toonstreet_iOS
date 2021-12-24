@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dBb-fe-NnO">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -15,7 +15,7 @@
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Toonstreet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E9R-CN-vd2">
@@ -34,7 +34,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username Or Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Jb-Dj-xZk" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                <rect key="frame" x="20" y="269" width="116.5" height="16"/>
+                                <rect key="frame" x="20.000000000000007" y="269" width="116.66666666666669" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" name="themeYellow"/>
                                 <nil key="highlightedColor"/>
@@ -56,13 +56,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gya-sA-stv" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                <rect key="frame" x="20" y="360" width="58.5" height="16"/>
+                                <rect key="frame" x="19.999999999999996" y="360" width="58.666666666666657" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" name="themeYellow"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezu-2F-pkF">
-                                <rect key="frame" x="282.5" y="443" width="121.5" height="28"/>
+                                <rect key="frame" x="282.66666666666669" y="443" width="121.33333333333331" height="28"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Forgot Password?">
                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
@@ -147,14 +147,14 @@
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gkd-kd-FEf" customClass="HomeViewController" customModule="Toonstreet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wNF-zg-MUu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CPg-fc-p0l">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="643"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Hkh-gk-9eG" customClass="HomeTableView" customModule="Toonstreet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="643"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                 </subviews>
@@ -192,7 +192,7 @@
             <objects>
                 <viewController storyboardIdentifier="TSTabBarControllerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sX8-hv-HqA" customClass="TSTabBarControllerViewController" customModule="Toonstreet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1fW-3F-cwn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="glT-iY-0qj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -208,7 +208,7 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="hzq-H6-eIf" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WAV-e2-sjv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="7fI-pd-IZl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -225,7 +225,7 @@
             <objects>
                 <viewController id="Ryn-Fr-kCG" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BcS-4D-YyL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="BHR-o6-Rtr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -260,32 +260,32 @@
             <objects>
                 <viewController storyboardIdentifier="SignupViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uZA-d6-8pL" customClass="SignupViewController" customModule="Toonstreet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NUH-Fn-ZbZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jig-kA-NC7">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fBu-da-19J">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="znu-sL-iDq">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="a6f-f1-Z7k">
-                                                        <rect key="frame" x="25" y="80" width="364" height="499"/>
+                                                        <rect key="frame" x="25" y="80.000000000000028" width="364" height="497.66666666666674"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5IM-pg-6v2">
-                                                                <rect key="frame" x="0.0" y="0.0" width="364" height="71"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="364" height="70.666666666666671"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AeL-f6-kAZ" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="364" height="16"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="364" height="15.666666666666666"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                         <color key="textColor" name="themeYellow"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4fa-QQ-pma" customClass="TSTextField" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="21" width="364" height="50"/>
+                                                                        <rect key="frame" x="0.0" y="20.666666666666671" width="364" height="50"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="50" id="Npa-JR-AbX"/>
                                                                         </constraints>
@@ -295,16 +295,16 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="XYU-NR-oOO">
-                                                                <rect key="frame" x="0.0" y="89" width="364" height="71"/>
+                                                                <rect key="frame" x="0.0" y="88.666666666666657" width="364" height="70.666666666666657"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lg8-d0-qBd" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="364" height="16"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="364" height="15.666666666666666"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                         <color key="textColor" name="themeYellow"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QOt-sE-G40" customClass="TSTextField" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="21" width="364" height="50"/>
+                                                                        <rect key="frame" x="0.0" y="20.666666666666686" width="364" height="50"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="50" id="3st-XF-0qx"/>
                                                                         </constraints>
@@ -314,16 +314,16 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Xvk-Je-ElT">
-                                                                <rect key="frame" x="0.0" y="178" width="364" height="71"/>
+                                                                <rect key="frame" x="0.0" y="177.33333333333331" width="364" height="70.666666666666686"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dkq-IZ-v7f" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="364" height="16"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="364" height="15.666666666666666"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                         <color key="textColor" name="themeYellow"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0OX-hd-cxh" customClass="TSTextField" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="21" width="364" height="50"/>
+                                                                        <rect key="frame" x="0.0" y="20.666666666666686" width="364" height="50"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="50" id="o7J-6B-9xF"/>
                                                                         </constraints>
@@ -333,16 +333,16 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="AG9-oF-e2m">
-                                                                <rect key="frame" x="0.0" y="267" width="364" height="71"/>
+                                                                <rect key="frame" x="0.0" y="266" width="364" height="70.666666666666686"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YW7-KO-uRH" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="364" height="16"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="364" height="15.666666666666666"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                         <color key="textColor" name="themeYellow"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4gt-UT-owe" customClass="TSTextField" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="21" width="364" height="50"/>
+                                                                        <rect key="frame" x="0.0" y="20.666666666666686" width="364" height="50"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="50" id="htO-Kq-cQ8"/>
                                                                         </constraints>
@@ -352,7 +352,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xib-QB-8nc">
-                                                                <rect key="frame" x="0.0" y="356" width="364" height="40"/>
+                                                                <rect key="frame" x="0.0" y="354.66666666666669" width="364" height="40"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="pup-rb-Hjl">
                                                                         <rect key="frame" x="0.0" y="0.0" width="364" height="40"/>
@@ -383,7 +383,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zzz-NO-4Z0">
-                                                                <rect key="frame" x="0.0" y="414" width="364" height="85"/>
+                                                                <rect key="frame" x="0.0" y="412.66666666666669" width="364" height="85"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Bf-a7-oQy">
                                                                         <rect key="frame" x="0.0" y="0.0" width="364" height="35"/>
@@ -395,7 +395,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ke5-9H-skh" customClass="TSButton" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="35" width="364" height="50"/>
+                                                                        <rect key="frame" x="0.0" y="34.999999999999943" width="364" height="50"/>
                                                                         <color key="backgroundColor" name="themeYellow"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="50" id="04l-NY-UtG"/>
@@ -471,7 +471,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dBb-fe-NnO" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uTQ-FO-ei5" customClass="TSNavigationBar" customModule="Toonstreet" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -488,11 +488,11 @@
             <objects>
                 <viewController storyboardIdentifier="TearmsViewController" id="NnV-q2-1Og" customClass="TearmsViewController" customModule="Toonstreet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EUI-2j-a19">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2pJ-c9-LVq">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -524,7 +524,7 @@
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nnz-FU-N8C" customClass="TSNavigationBar" customModule="Toonstreet" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <navigationBarAppearance key="standardAppearance"/>
                     </navigationBar>
@@ -545,11 +545,11 @@
             <objects>
                 <viewController storyboardIdentifier="DiscoverViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1vM-oO-bLO" customClass="DiscoverViewController" customModule="Toonstreet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gzm-P3-Nri">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5qd-kw-eLD">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DM1-Sn-dsn" userLabel="SearchBar View">
                                         <rect key="frame" x="25" y="25" width="364" height="45"/>
@@ -578,10 +578,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="axZ-fc-4sP">
-                                        <rect key="frame" x="0.0" y="115" width="414" height="52"/>
+                                        <rect key="frame" x="0.0" y="114.66666666666666" width="414" height="52"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="y1G-8n-qWj" customClass="SliderCollectionView" customModule="Toonstreet" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="51.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="51.666666666666664"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Oa1-V2-uwZ">
                                                     <size key="itemSize" width="128" height="128"/>
@@ -592,7 +592,7 @@
                                                 <cells/>
                                             </collectionView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMr-7k-hNh">
-                                                <rect key="frame" x="0.0" y="51.5" width="414" height="0.5"/>
+                                                <rect key="frame" x="0.0" y="51.666666666666686" width="414" height="0.3333333333333357"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="0.5" id="Dkg-Nm-keP"/>
@@ -615,10 +615,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qA0-Q8-TnR">
-                                        <rect key="frame" x="25" y="167" width="364" height="607"/>
+                                        <rect key="frame" x="25" y="166.66666666666669" width="364" height="525.33333333333326"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hpz-27-Ti8" customClass="BookListCollectionView" customModule="Toonstreet" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="25" width="364" height="582"/>
+                                                <rect key="frame" x="0.0" y="24.999999999999972" width="364" height="500.33333333333326"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zAm-HG-e5s">
                                                     <size key="itemSize" width="128" height="128"/>
@@ -638,13 +638,13 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKb-UE-DvY">
-                                        <rect key="frame" x="25" y="85" width="364" height="30"/>
+                                        <rect key="frame" x="25" y="85" width="364" height="29.666666666666671"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e4b-ut-O5Y">
-                                                <rect key="frame" x="0.0" y="0.0" width="364" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="364" height="29.666666666666668"/>
                                                 <subviews>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="254" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QfS-WT-mev" customClass="TSButton" customModule="Toonstreet" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="29.666666666666668"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Daily">
                                                             <fontDescription key="titleFontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="20"/>
@@ -654,7 +654,7 @@
                                                         </connections>
                                                     </button>
                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ds3-DD-xvi">
-                                                        <rect key="frame" x="-1" y="0.0" width="1" height="30"/>
+                                                        <rect key="frame" x="-1" y="0.0" width="1" height="29.666666666666668"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="1" id="CYq-Jd-4Um"/>
@@ -664,7 +664,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfH-fF-qbm" customClass="TSButton" customModule="Toonstreet" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="29.666666666666668"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Genre">
                                                             <fontDescription key="titleFontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="20"/>
@@ -674,7 +674,7 @@
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3vu-ro-wQv">
-                                                        <rect key="frame" x="80" y="0.0" width="284" height="30"/>
+                                                        <rect key="frame" x="80" y="0.0" width="284" height="29.666666666666668"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                 </subviews>
@@ -748,11 +748,11 @@
             <objects>
                 <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="x8N-LE-tAb" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UQ2-2l-Qi6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2d5-6C-4g5">
-                                <rect key="frame" x="0.0" y="44" width="414" height="220"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummyimage1" translatesAutoresizingMaskIntoConstraints="NO" id="RRW-lY-ldo">
                                         <rect key="frame" x="20" y="15" width="100" height="130"/>
@@ -761,7 +761,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OVERLOAD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJT-Cf-N68" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                        <rect key="frame" x="135" y="20" width="92.5" height="21.5"/>
+                                        <rect key="frame" x="135" y="20" width="92.666666666666686" height="21.666666666666671"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -774,7 +774,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By: Maruyama Kugane" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHH-xn-beg" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                        <rect key="frame" x="135" y="51.5" width="126" height="14.5"/>
+                                        <rect key="frame" x="135" y="51.666666666666664" width="125.66666666666669" height="14.333333333333336"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -787,13 +787,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3TA-XN-hx7" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                        <rect key="frame" x="170" y="82.5" width="20.5" height="17"/>
+                                        <rect key="frame" x="170" y="82.666666666666671" width="20.333333333333343" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RoZ-bn-0lg" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                        <rect key="frame" x="200.5" y="84" width="26" height="14.5"/>
+                                        <rect key="frame" x="200.33333333333334" y="84" width="25.666666666666657" height="14.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -810,7 +810,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbO-IR-pAT">
-                                        <rect key="frame" x="229" y="115.5" width="32" height="32"/>
+                                        <rect key="frame" x="229" y="115.66666666666669" width="32" height="32"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="share"/>
                                         <connections>
@@ -844,13 +844,13 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a21-kP-3c8">
-                                <rect key="frame" x="0.0" y="264" width="414" height="632"/>
+                                <rect key="frame" x="0.0" y="220" width="414" height="516"/>
                                 <subviews>
                                     <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cwl-ni-jlN">
-                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="632"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="516"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hTR-p3-u4t">
-                                                <rect key="frame" x="0.0" y="50" width="0.0" height="582"/>
+                                                <rect key="frame" x="0.0" y="50" width="0.0" height="466"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <connections>
                                                     <outlet property="dataSource" destination="cwl-ni-jlN" id="DxH-9g-K9w"/>
@@ -858,7 +858,7 @@
                                                 </connections>
                                             </tableView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 Episodes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2A-2a-wAh" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="15" width="87" height="19.5"/>
+                                                <rect key="frame" x="20" y="14.999999999999998" width="87" height="19.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -875,28 +875,28 @@
                                         </constraints>
                                     </view>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wD8-Uh-G6v">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="632"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="516"/>
                                         <subviews>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rRX-3T-bak">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="632"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="516"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4yn-fW-A0J">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="702"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="699.66666666666663"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8i-eD-fJQ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="702"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="699.66666666666663"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kjW-sI-d53">
                                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="124"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Synopsis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baV-WD-80E" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                                <rect key="frame" x="25" y="15" width="364" height="21.5"/>
+                                                                                <rect key="frame" x="25" y="15.000000000000002" width="364" height="21.666666666666671"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLz-9h-DXE" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                                <rect key="frame" x="25" y="51.5" width="364" height="57.5"/>
+                                                                                <rect key="frame" x="25" y="51.666666666666686" width="364" height="57.333333333333343"/>
                                                                                 <string key="text">The final hour of the popular virtual reality game Yggdrasil has come. However, Momonga, a powerful wizard and master of the dark guild Ainz Ooal Gown, decides to spend his last few moments in the game as the servers begin to shut down.</string>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -915,61 +915,61 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publisher" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fK2-HH-qZT" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="25" y="638" width="364" height="14.5"/>
+                                                                        <rect key="frame" x="25" y="636" width="364" height="14.333333333333371"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maruyama Kugane" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oed-FX-OeG" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="25" y="485.5" width="364" height="19.5"/>
+                                                                        <rect key="frame" x="25" y="484.33333333333337" width="364" height="19.333333333333314"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Le Souverain Suprème (Manga)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnp-ND-w11" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="25" y="426.5" width="364" height="19.5"/>
+                                                                        <rect key="frame" x="25" y="425.66666666666663" width="364" height="19.333333333333314"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overload" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRy-lu-J9X" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="25" y="367.5" width="364" height="19.5"/>
+                                                                        <rect key="frame" x="25" y="367" width="364" height="19.333333333333314"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alt Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRf-FZ-fHW" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="25" y="402" width="364" height="14.5"/>
+                                                                        <rect key="frame" x="25" y="401.33333333333337" width="364" height="14.333333333333314"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsn-Zd-9ja" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="25" y="520" width="364" height="14.5"/>
+                                                                        <rect key="frame" x="25" y="518.66666666666663" width="364" height="14.333333333333371"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rilis 2014" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28G-z1-lwi" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="25" y="603.5" width="364" height="19.5"/>
+                                                                        <rect key="frame" x="25" y="601.66666666666663" width="364" height="19.333333333333371"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUb-wj-t8F" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="25" y="461" width="364" height="14.5"/>
+                                                                        <rect key="frame" x="25" y="460" width="364" height="14.333333333333314"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MB7-jZ-95q" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="25" y="139" width="364" height="19.5"/>
+                                                                        <rect key="frame" x="25" y="139" width="364" height="19.333333333333343"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Dlu-mV-zfX">
-                                                                        <rect key="frame" x="25" y="173.5" width="364" height="120"/>
+                                                                        <rect key="frame" x="25" y="173.33333333333331" width="364" height="120"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="120" id="weW-UR-ElC"/>
@@ -983,31 +983,31 @@
                                                                         <cells/>
                                                                     </collectionView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsc-tz-nge" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="25" y="308.5" width="364" height="19.5"/>
+                                                                        <rect key="frame" x="25" y="308.33333333333337" width="364" height="19.333333333333314"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Published" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OM6-Yn-MrK" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="25" y="579" width="364" height="14.5"/>
+                                                                        <rect key="frame" x="25" y="577.33333333333337" width="364" height="14.333333333333371"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ongoing" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPZ-aT-sFm" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="25" y="544.5" width="364" height="19.5"/>
+                                                                        <rect key="frame" x="25" y="543" width="364" height="19.333333333333371"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jF9-lv-Bih" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="25" y="662.5" width="364" height="19.5"/>
+                                                                        <rect key="frame" x="25" y="660.33333333333337" width="364" height="19.333333333333371"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9N-3y-ROM" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="25" y="343" width="364" height="14.5"/>
+                                                                        <rect key="frame" x="25" y="342.66666666666663" width="364" height="14.333333333333314"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
@@ -1152,7 +1152,7 @@
             <objects>
                 <viewController storyboardIdentifier="DetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RXc-Xf-t8o" customClass="DetailViewController" customModule="Toonstreet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZBQ-Uc-vu8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A1I-PM-mlM">
@@ -1165,7 +1165,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OVERLOAD" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9J-Gh-eOl" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                        <rect key="frame" x="155" y="20" width="244" height="19.5"/>
+                                        <rect key="frame" x="155" y="20" width="244" height="19.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -1178,26 +1178,26 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By: Maruyama Kugane" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2p-Ad-7RQ" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                        <rect key="frame" x="155" y="44.5" width="126" height="14.5"/>
+                                        <rect key="frame" x="155" y="44.333333333333329" width="125.66666666666669" height="14.333333333333336"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="jJU-De-bty">
-                                        <rect key="frame" x="155" y="59" width="30" height="10"/>
+                                        <rect key="frame" x="155" y="58.666666666666671" width="30" height="10"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="10" id="HGg-kH-c4T"/>
                                             <constraint firstAttribute="width" constant="30" id="gai-QW-qa3"/>
                                         </constraints>
                                     </imageView>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBt-6W-ehu" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                        <rect key="frame" x="190" y="55.5" width="20.5" height="17"/>
+                                        <rect key="frame" x="190" y="55.333333333333329" width="20.333333333333343" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqP-Qa-add" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                        <rect key="frame" x="220.5" y="57" width="26" height="14.5"/>
+                                        <rect key="frame" x="220.33333333333334" y="56.666666666666671" width="25.666666666666657" height="14.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -1214,7 +1214,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYO-xD-CRw">
-                                        <rect key="frame" x="254" y="129.5" width="32" height="32"/>
+                                        <rect key="frame" x="254" y="129.66666666666666" width="32" height="32"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="share"/>
                                         <connections>
@@ -1249,13 +1249,13 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tqV-Gg-4Zf">
-                                <rect key="frame" x="0.0" y="246" width="414" height="562"/>
+                                <rect key="frame" x="0.0" y="246" width="414" height="446"/>
                                 <subviews>
                                     <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ETV-CP-XxM">
-                                        <rect key="frame" x="-40" y="0.0" width="40" height="562"/>
+                                        <rect key="frame" x="-40" y="0.0" width="40" height="446"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pL1-1t-D1y">
-                                                <rect key="frame" x="0.0" y="55" width="40" height="507"/>
+                                                <rect key="frame" x="0.0" y="55" width="40" height="391"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <outlet property="dataSource" destination="ETV-CP-XxM" id="KCx-BC-aGU"/>
@@ -1281,28 +1281,28 @@
                                         </constraints>
                                     </view>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oHW-TV-eQ8">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="562"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="446"/>
                                         <subviews>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ApE-Ey-1Gc">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="562"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="446"/>
                                                 <subviews>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZLD-eA-et3">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="445"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="443.66666666666669"/>
                                                         <subviews>
                                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yxc-fO-n6y">
-                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="445"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="443.66666666666669"/>
                                                                 <subviews>
                                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ewr-NU-S7d">
                                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="124"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Synopsis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ga6-kI-n0p" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                                <rect key="frame" x="25" y="15" width="364" height="21.5"/>
+                                                                                <rect key="frame" x="25" y="15.000000000000002" width="364" height="21.666666666666671"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VwB-is-dz8" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                                <rect key="frame" x="25" y="51.5" width="364" height="57.5"/>
+                                                                                <rect key="frame" x="25" y="51.666666666666686" width="364" height="57.333333333333343"/>
                                                                                 <string key="text">The final hour of the popular virtual reality game Yggdrasil has come. However, Momonga, a powerful wizard and master of the dark guild Ainz Ooal Gown, decides to spend his last few moments in the game as the servers begin to shut down.</string>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1321,61 +1321,61 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publisher" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NhE-Zf-vKk" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="25" y="381" width="364" height="14.5"/>
+                                                                        <rect key="frame" x="25" y="380" width="364" height="14.333333333333314"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPh-ir-I5L" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="25" y="405.5" width="364" height="19.5"/>
+                                                                        <rect key="frame" x="25" y="404.33333333333337" width="364" height="19.333333333333314"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQC-Qw-flv" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="25" y="346.5" width="364" height="19.5"/>
+                                                                        <rect key="frame" x="25" y="345.66666666666663" width="364" height="19.333333333333314"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vow-HJ-DVy" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="25" y="287.5" width="364" height="19.5"/>
+                                                                        <rect key="frame" x="25" y="287" width="364" height="19.333333333333314"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alt Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vO-DJ-BIr" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="25" y="322" width="364" height="14.5"/>
+                                                                        <rect key="frame" x="25" y="321.33333333333337" width="364" height="14.333333333333314"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMQ-My-XJ3" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="25" y="440" width="364" height="14.5"/>
+                                                                        <rect key="frame" x="25" y="438.66666666666663" width="364" height="14.333333333333314"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erj-Ia-KCo" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="25" y="523.5" width="364" height="19.5"/>
+                                                                        <rect key="frame" x="25" y="521.66666666666663" width="364" height="19.333333333333371"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8N-pt-PD7" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="25" y="381" width="364" height="14.5"/>
+                                                                        <rect key="frame" x="25" y="380" width="364" height="14.333333333333314"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrc-zs-Pqk" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="25" y="139" width="364" height="19.5"/>
+                                                                        <rect key="frame" x="25" y="139" width="364" height="19.333333333333343"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LcF-eE-BsR" customClass="GenreCollectionView" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="25" y="173.5" width="364" height="40"/>
+                                                                        <rect key="frame" x="25" y="173.33333333333331" width="364" height="40"/>
                                                                         <color key="backgroundColor" name="lightBlack"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="40" id="9oe-kC-PKh"/>
@@ -1393,31 +1393,31 @@
                                                                         </connections>
                                                                     </collectionView>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ves-d9-Vno" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="25" y="228.5" width="364" height="19.5"/>
+                                                                        <rect key="frame" x="25" y="228.33333333333337" width="364" height="19.333333333333343"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Published" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTQ-x2-ues" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="25" y="499" width="364" height="14.5"/>
+                                                                        <rect key="frame" x="25" y="497.33333333333337" width="364" height="14.333333333333314"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsp-K9-beh" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="25" y="464.5" width="364" height="19.5"/>
+                                                                        <rect key="frame" x="25" y="463" width="364" height="19.333333333333314"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mK7-pa-how" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="25" y="405.5" width="364" height="19.5"/>
+                                                                        <rect key="frame" x="25" y="404.33333333333337" width="364" height="19.333333333333314"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucS-iw-NeU" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                                        <rect key="frame" x="25" y="263" width="364" height="14.5"/>
+                                                                        <rect key="frame" x="25" y="262.66666666666663" width="364" height="14.333333333333314"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
@@ -1565,23 +1565,23 @@
             <objects>
                 <viewController storyboardIdentifier="ProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RCV-5h-fgE" customClass="ProfileViewController" customModule="Toonstreet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qZj-bM-M4S">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ey-5e-A5X">
-                                <rect key="frame" x="0.0" y="88" width="414" height="80"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="80"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coin" translatesAutoresizingMaskIntoConstraints="NO" id="178-6h-FA6">
                                         <rect key="frame" x="20" y="26" width="28" height="28"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="320 coins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0b-PO-5wc" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                        <rect key="frame" x="63" y="30.5" width="72" height="19.5"/>
+                                        <rect key="frame" x="63" y="30.333333333333329" width="72" height="19.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8J-hZ-fQm" customClass="TSButton" customModule="Toonstreet" customModuleProvider="target">
-                                        <rect key="frame" x="310" y="24.5" width="89" height="31"/>
+                                        <rect key="frame" x="310" y="24.666666666666671" width="89" height="31"/>
                                         <color key="backgroundColor" name="themeYellow"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Buy Coins">
@@ -1604,7 +1604,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UFv-vR-8VG" customClass="ProfileTableView" customModule="Toonstreet" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="168" width="414" height="728"/>
+                                <rect key="frame" x="0.0" y="124" width="414" height="612"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -1638,14 +1638,14 @@
             <objects>
                 <viewController storyboardIdentifier="BuyCoinViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VpH-wU-CsJ" customClass="BuyCoinViewController" customModule="Toonstreet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8mU-ps-yRd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZCN-aA-Zle">
-                                <rect key="frame" x="0.0" y="44" width="414" height="80"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W9f-eQ-zcy">
-                                        <rect key="frame" x="129.5" y="0.0" width="155" height="80"/>
+                                        <rect key="frame" x="129.66666666666666" y="0.0" width="154.99999999999997" height="80"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coin" translatesAutoresizingMaskIntoConstraints="NO" id="o4O-LT-e33">
                                                 <rect key="frame" x="20" y="26" width="28" height="28"/>
@@ -1655,7 +1655,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="320 coins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d18-ho-P9T" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                <rect key="frame" x="63" y="30.5" width="72" height="19.5"/>
+                                                <rect key="frame" x="63" y="30.333333333333336" width="72" height="19.333333333333336"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1681,7 +1681,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6Gd-Hf-TzO">
-                                <rect key="frame" x="0.0" y="124" width="414" height="772"/>
+                                <rect key="frame" x="0.0" y="80" width="414" height="656"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -1712,15 +1712,15 @@
             <objects>
                 <viewController storyboardIdentifier="PDFViewController" id="WNi-mX-H87" customClass="PDFViewController" customModule="Toonstreet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UyY-qb-nnX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="242-v7-FMD">
-                                <rect key="frame" x="0.0" y="44" width="414" height="768"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="686"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <wkWebView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BXx-6d-GWp">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -1728,7 +1728,7 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dKs-qS-e97">
-                                <rect key="frame" x="192" y="862" width="30" height="0.0"/>
+                                <rect key="frame" x="192" y="736" width="30" height="0.0"/>
                                 <subviews>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQh-LS-KXp">
                                         <color key="backgroundColor" red="0.84313725490000002" green="0.25490196079999999" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1768,13 +1768,13 @@
                                 </constraints>
                             </view>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3gM-iQ-O4H">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j7L-kL-Fbu">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="qbQ-Qi-l1S">
-                                        <rect key="frame" x="0.0" y="60" width="414" height="758"/>
+                                        <rect key="frame" x="0.0" y="60" width="414" height="676"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                 </subviews>
@@ -1787,7 +1787,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NzL-9d-n93">
-                                <rect key="frame" x="20" y="59" width="28" height="28"/>
+                                <rect key="frame" x="20" y="15" width="28" height="28"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="back"/>
                                 <connections>
@@ -1840,7 +1840,7 @@
                 <navigationController storyboardIdentifier="ProfileNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="06q-NB-Gkv" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UWQ-K8-HCe">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1858,7 +1858,7 @@
                 <navigationController storyboardIdentifier="DiscoveryNavigationBarController" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="K3n-Mp-jq1" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="phx-1z-dig">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1875,7 +1875,7 @@
             <objects>
                 <viewController storyboardIdentifier="EpidsodeDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7gG-Eh-It0" customClass="EpidsodeDetailsViewController" customModule="Toonstreet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HFH-DA-qzQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghY-jc-Fvo">
@@ -1888,13 +1888,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OVERLOAD" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUp-48-qax" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                        <rect key="frame" x="155" y="20" width="244" height="19.5"/>
+                                        <rect key="frame" x="155" y="20" width="244" height="19.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By: Maruyama Kugane" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHW-Yi-iQa" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                        <rect key="frame" x="155" y="49.5" width="126" height="14.5"/>
+                                        <rect key="frame" x="155" y="49.333333333333329" width="125.66666666666669" height="14.333333333333336"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -1938,13 +1938,13 @@
                                         <rect key="frame" x="0.0" y="128" width="414" height="128"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auther" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzA-c9-yW1" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="10" width="364" height="83.5"/>
+                                                <rect key="frame" x="25" y="10" width="364" height="78.666666666666671"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Gn-u2-qLj" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="98.5" width="364" height="19.5"/>
+                                                <rect key="frame" x="25" y="98.666666666666686" width="364" height="19.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1959,20 +1959,19 @@
                                             <constraint firstAttribute="bottom" secondItem="0Gn-u2-qLj" secondAttribute="bottom" constant="10" id="lE7-T1-vPv"/>
                                             <constraint firstAttribute="trailing" secondItem="0Gn-u2-qLj" secondAttribute="trailing" constant="25" id="q9I-l9-ark"/>
                                             <constraint firstItem="RzA-c9-yW1" firstAttribute="leading" secondItem="PyR-Qj-jY0" secondAttribute="leading" constant="25" id="qug-iV-tjb"/>
-                                            <constraint firstItem="0Gn-u2-qLj" firstAttribute="top" secondItem="RzA-c9-yW1" secondAttribute="bottom" constant="5" id="sg4-O1-y8v"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wmG-Wa-xhu">
                                         <rect key="frame" x="0.0" y="256" width="414" height="128"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Writer" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSK-im-lu5" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="10" width="364" height="78.5"/>
+                                                <rect key="frame" x="25" y="10" width="364" height="14.333333333333336"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64Z-NT-ofd" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="98.5" width="364" height="19.5"/>
+                                                <rect key="frame" x="25" y="34.333333333333378" width="364" height="83.666666666666686"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1981,7 +1980,6 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="rSK-im-lu5" secondAttribute="trailing" constant="25" id="1jq-f4-oc5"/>
-                                            <constraint firstItem="64Z-NT-ofd" firstAttribute="top" secondItem="rSK-im-lu5" secondAttribute="bottom" constant="5" id="Qn1-RK-n43"/>
                                             <constraint firstAttribute="bottom" secondItem="64Z-NT-ofd" secondAttribute="bottom" constant="10" id="Xna-hE-qV0"/>
                                             <constraint firstItem="rSK-im-lu5" firstAttribute="top" secondItem="wmG-Wa-xhu" secondAttribute="top" constant="10" id="Z4P-ew-Pha"/>
                                             <constraint firstItem="64Z-NT-ofd" firstAttribute="top" secondItem="rSK-im-lu5" secondAttribute="bottom" constant="10" id="ZHs-eS-J4V"/>
@@ -1991,7 +1989,7 @@
                                         </constraints>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FFn-LI-tON">
-                                        <rect key="frame" x="0.0" y="384" width="414" height="25"/>
+                                        <rect key="frame" x="0.0" y="384" width="414" height="30"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ke0-Do-PY0" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
                                                 <rect key="frame" x="25" y="10" width="364" height="0.0"/>
@@ -2000,7 +1998,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ln8-NQ-GT0" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="15" width="364" height="0.0"/>
+                                                <rect key="frame" x="25" y="20" width="364" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -2012,14 +2010,13 @@
                                             <constraint firstItem="ke0-Do-PY0" firstAttribute="top" secondItem="FFn-LI-tON" secondAttribute="top" constant="10" id="Qdg-4W-ZRF"/>
                                             <constraint firstAttribute="bottom" secondItem="Ln8-NQ-GT0" secondAttribute="bottom" constant="10" id="WkO-Oh-teE"/>
                                             <constraint firstAttribute="trailing" secondItem="Ln8-NQ-GT0" secondAttribute="trailing" constant="25" id="bqO-09-hnR"/>
-                                            <constraint firstItem="Ln8-NQ-GT0" firstAttribute="top" secondItem="ke0-Do-PY0" secondAttribute="bottom" constant="5" id="kIP-uS-m9q"/>
                                             <constraint firstItem="Ln8-NQ-GT0" firstAttribute="leading" secondItem="FFn-LI-tON" secondAttribute="leading" constant="25" id="kb6-Qu-bLr"/>
                                             <constraint firstAttribute="trailing" secondItem="ke0-Do-PY0" secondAttribute="trailing" constant="25" id="rqr-eN-c65"/>
                                             <constraint firstItem="ke0-Do-PY0" firstAttribute="leading" secondItem="FFn-LI-tON" secondAttribute="leading" constant="25" id="xEj-LE-b1A"/>
                                         </constraints>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZJV-Lv-uXV">
-                                        <rect key="frame" x="0.0" y="384" width="414" height="25"/>
+                                        <rect key="frame" x="0.0" y="384" width="414" height="30"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kn1-Qi-DPz" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
                                                 <rect key="frame" x="25" y="10" width="364" height="0.0"/>
@@ -2028,7 +2025,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69H-wk-xYN" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="15" width="364" height="0.0"/>
+                                                <rect key="frame" x="25" y="20" width="364" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -2037,7 +2034,6 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="69H-wk-xYN" firstAttribute="top" secondItem="kn1-Qi-DPz" secondAttribute="bottom" constant="10" id="KYp-Md-ICE"/>
-                                            <constraint firstItem="69H-wk-xYN" firstAttribute="top" secondItem="kn1-Qi-DPz" secondAttribute="bottom" constant="5" id="OcM-Cg-3pZ"/>
                                             <constraint firstItem="69H-wk-xYN" firstAttribute="leading" secondItem="ZJV-Lv-uXV" secondAttribute="leading" constant="25" id="Pvb-Gh-I7s"/>
                                             <constraint firstItem="kn1-Qi-DPz" firstAttribute="leading" secondItem="ZJV-Lv-uXV" secondAttribute="leading" constant="25" id="Q38-ta-yyP"/>
                                             <constraint firstAttribute="trailing" secondItem="kn1-Qi-DPz" secondAttribute="trailing" constant="25" id="Sks-WH-Tv0"/>
@@ -2100,25 +2096,28 @@
             <objects>
                 <viewController storyboardIdentifier="AllEpisodeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5wH-KD-dsv" customClass="AllEpisodeViewController" customModule="Toonstreet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hwP-tE-Hdb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MoV-L6-Vvv">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l16-46-CvB">
-                                        <rect key="frame" x="25" y="10" width="364" height="808"/>
+                                        <rect key="frame" x="25" y="10" width="364" height="726"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Tvq-5k-PTj" customClass="BookListCollectionView" customModule="Toonstreet" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="25" width="364" height="783"/>
+                                                <rect key="frame" x="0.0" y="25" width="364" height="701"/>
                                                 <color key="backgroundColor" name="lightBlack"/>
-                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8V8-8V-Qh8">
-                                                    <size key="itemSize" width="101" height="128"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="twA-0R-Lu5">
+                                                    <size key="itemSize" width="128" height="128"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells/>
+                                                <connections>
+                                                    <outlet property="prefetchDataSource" destination="l16-46-CvB" id="w4W-bW-Q7O"/>
+                                                </connections>
                                             </collectionView>
                                         </subviews>
                                         <color key="backgroundColor" name="lightBlack"/>
@@ -2165,8 +2164,8 @@
         <image name="coin" width="28" height="28"/>
         <image name="dummyimage1" width="300" height="396"/>
         <image name="logo" width="341.33334350585938" height="303.33334350585938"/>
-        <image name="next" width="15.5" height="20"/>
-        <image name="previous" width="15.5" height="20"/>
+        <image name="next" width="15.333333015441895" height="20"/>
+        <image name="previous" width="15.333333015441895" height="20"/>
         <image name="share" width="32" height="32"/>
         <image name="star" width="24" height="24"/>
         <namedColor name="lightBlack">

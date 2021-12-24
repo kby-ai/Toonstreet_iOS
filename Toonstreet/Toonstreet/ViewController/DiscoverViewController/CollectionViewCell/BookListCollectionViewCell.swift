@@ -27,8 +27,19 @@ class BookListCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         
+//           self.contentView.autoresizingMask = flexibleHeight | flexibleWidth
+        //UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+        
+//        self.contentView.translatesAutoresizingMaskIntoConstraints = true;
+           
+        
         self.commonInit()
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
+    
     
 //    override func prepareForReuse() {
 //        super.prepareForReuse()
@@ -55,11 +66,11 @@ class BookListCollectionViewCell: UICollectionViewCell {
   
     
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        
-    }
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//
+//
+//    }
     func updateUI(withIsHideType isHide:Bool){
         self.lblType.isHidden = isHide
     }
@@ -77,6 +88,9 @@ class BookListCollectionViewCell: UICollectionViewCell {
         self.lblType.text = "Fantasy, Shounen"
         
         self.mainView.backgroundColor = UIColor.clear
+        
+        self.contentView.translatesAutoresizingMaskIntoConstraints = false
+
     }
     
     func setupCellData(objBook:TSBook){
