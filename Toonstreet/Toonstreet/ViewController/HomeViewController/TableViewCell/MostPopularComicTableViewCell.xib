@@ -11,33 +11,33 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="445" id="KGk-i7-Jjw" customClass="MostPopularComicTableViewCell" customModule="Toonstreet" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="333" height="405"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="998" id="KGk-i7-Jjw" customClass="MostPopularComicTableViewCell" customModule="Toonstreet" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="599" height="958"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="333" height="405"/>
+                <rect key="frame" x="0.0" y="0.0" width="599" height="958"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Uo-je-cai">
-                        <rect key="frame" x="0.0" y="0.0" width="333" height="405"/>
+                        <rect key="frame" x="0.0" y="0.0" width="599" height="958"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezD-83-fcu" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                <rect key="frame" x="23" y="10" width="287" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezD-83-fcu" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
+                                <rect key="frame" x="23" y="10" width="553" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDm-jV-ZIi" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                <rect key="frame" x="23" y="32.5" width="41.5" height="25.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDm-jV-ZIi" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
+                                <rect key="frame" x="23" y="32.5" width="41.5" height="152.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="alk-nb-2eE">
-                                <rect key="frame" x="23" y="39.5" width="310" height="169"/>
+                                <rect key="frame" x="23" y="195" width="576" height="367.5"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Eac-16-r6C" customClass="MostPopularCollectionView" customModule="Toonstreet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="310" height="169"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="576" height="367.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hwz-to-OaX">
                                             <size key="itemSize" width="128" height="128"/>
@@ -56,10 +56,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ytp-ur-k7h" userLabel="MostPopularWithoutType">
-                                <rect key="frame" x="23" y="218.5" width="310" height="168.5"/>
+                                <rect key="frame" x="23" y="572.5" width="576" height="367.5"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="7k4-ne-4N9" customClass="MostPopularCollectionView" customModule="Toonstreet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="310" height="168.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="576" height="367.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ope-xx-4Jm">
                                             <size key="itemSize" width="128" height="128"/>
@@ -78,11 +78,11 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rD7-Fw-rb6">
-                                <rect key="frame" x="0.0" y="0.0" width="333" height="29.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="599" height="185"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="next_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="qkf-u6-C9c">
-                                <rect key="frame" x="290" y="35" width="20" height="20"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="qkf-u6-C9c">
+                                <rect key="frame" x="556" y="10.5" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="Equ-SA-o27"/>
                                     <constraint firstAttribute="width" constant="20" id="Xun-b6-wJ2"/>
@@ -96,13 +96,13 @@
                             <constraint firstItem="Ytp-ur-k7h" firstAttribute="trailing" secondItem="alk-nb-2eE" secondAttribute="trailing" id="5M7-nZ-TcO"/>
                             <constraint firstItem="Ytp-ur-k7h" firstAttribute="leading" secondItem="alk-nb-2eE" secondAttribute="leading" id="88N-Om-uJB"/>
                             <constraint firstItem="qkf-u6-C9c" firstAttribute="centerY" secondItem="ezD-83-fcu" secondAttribute="centerY" id="8pY-AR-bP5"/>
-                            <constraint firstItem="alk-nb-2eE" firstAttribute="height" secondItem="9Uo-je-cai" secondAttribute="width" multiplier="190/375" priority="999" id="BAN-Yq-7n4"/>
+                            <constraint firstItem="alk-nb-2eE" firstAttribute="height" secondItem="9Uo-je-cai" secondAttribute="width" multiplier="230/375" id="BAN-Yq-7n4"/>
                             <constraint firstItem="ezD-83-fcu" firstAttribute="top" secondItem="9Uo-je-cai" secondAttribute="top" constant="10" id="EeP-kw-nvs"/>
                             <constraint firstItem="alk-nb-2eE" firstAttribute="top" secondItem="DDm-jV-ZIi" secondAttribute="bottom" constant="10" id="PVZ-iS-m9g"/>
                             <constraint firstItem="DDm-jV-ZIi" firstAttribute="top" secondItem="ezD-83-fcu" secondAttribute="bottom" constant="2" id="Pba-5q-f88"/>
                             <constraint firstItem="Ytp-ur-k7h" firstAttribute="top" secondItem="alk-nb-2eE" secondAttribute="bottom" constant="10" id="RRa-H3-fGr"/>
                             <constraint firstAttribute="trailing" secondItem="qkf-u6-C9c" secondAttribute="trailing" constant="23" id="SSB-Xo-raP"/>
-                            <constraint firstItem="Ytp-ur-k7h" firstAttribute="height" secondItem="9Uo-je-cai" secondAttribute="width" multiplier="190/375" priority="999" id="X2K-Pg-BBL"/>
+                            <constraint firstItem="Ytp-ur-k7h" firstAttribute="height" secondItem="9Uo-je-cai" secondAttribute="width" multiplier="230/375" id="X2K-Pg-BBL"/>
                             <constraint firstAttribute="trailing" secondItem="ezD-83-fcu" secondAttribute="trailing" constant="23" id="ZiV-Vw-Ttq"/>
                             <constraint firstAttribute="trailing" secondItem="rD7-Fw-rb6" secondAttribute="trailing" id="e4R-f4-q0J"/>
                             <constraint firstItem="rD7-Fw-rb6" firstAttribute="top" secondItem="9Uo-je-cai" secondAttribute="top" id="ice-CS-h6R"/>
@@ -138,7 +138,7 @@
                 <outlet property="viewCollection" destination="alk-nb-2eE" id="tkT-1K-VUC"/>
                 <outlet property="viewCollectionWithoutType" destination="Ytp-ur-k7h" id="z8G-i7-Z3c"/>
             </connections>
-            <point key="canvasLocation" x="147.10144927536234" y="198.54910714285714"/>
+            <point key="canvasLocation" x="507.97101449275368" y="186.83035714285714"/>
         </tableViewCell>
     </objects>
     <resources>

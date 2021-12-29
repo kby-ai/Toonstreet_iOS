@@ -86,7 +86,7 @@ extension ResumeReadingCollectionView:UICollectionViewDataSource,UICollectionVie
 }
 extension ResumeReadingCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellWidth = screenWidth * 0.58;
+        let cellWidth = screenWidth;
         
         
         return CGSize(width: cellWidth, height: collectionView.bounds.height)

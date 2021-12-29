@@ -20,6 +20,7 @@ class PDFViewController: BaseViewController{//},UITableViewDelegate, UITableView
     var selectedIndex:Int = 0
     var selectedComic:TSBook?
     
+    @IBOutlet weak var btnBack: UIButton!
     @IBOutlet weak var tblView: UITableView!
     @IBOutlet weak var webKit: WKWebView!
     @IBOutlet weak var imgComic: UIImageView!
@@ -31,6 +32,7 @@ class PDFViewController: BaseViewController{//},UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tblView.contentInset = UIEdgeInsets(top: 60, left: 0, bottom: 0, right: 0);
 
         if (self.passIndex != 0) {
             self.selectedIndex = passIndex
@@ -222,6 +224,27 @@ class PDFViewController: BaseViewController{//},UITableViewDelegate, UITableView
             removeContinueReading()
         }
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+
+            let scrollViewContentHeight = scrollView.contentSize.height
+            let scrollViewHeight = scrollView.frame.height
+
+        if scrollView.contentOffset.y < 40
+        {
+            btnBack.isHidden = false
+        }else{
+            btnBack.isHidden = true
+        }
+//            if scrollView.contentOffset.y < (scrollViewContentHeight - scrollViewHeight){
+//                //Custom view show
+//                btnBack.isHidden = false
+//            }else{
+//                //Custom view Hide
+//                btnBack.isHidden = true
+//            }
+        }
+    
 //     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
 //           let location = scrollView.panGestureRecognizer.location(in:tableView)
 //         

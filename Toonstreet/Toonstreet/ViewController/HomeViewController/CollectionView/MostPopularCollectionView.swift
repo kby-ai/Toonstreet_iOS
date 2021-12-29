@@ -87,7 +87,7 @@ extension MostPopularCollectionView:UICollectionViewDataSource,UICollectionViewD
 }
 extension MostPopularCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellWidth = screenWidth * 0.27;
+        let cellWidth = screenWidth * 0.30;
         return CGSize(width: cellWidth, height: collectionView.bounds.height)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

@@ -11,27 +11,27 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="323" id="KGk-i7-Jjw" customClass="ResumeReadingTableViewCell" customModule="Toonstreet" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="485" height="323"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="588" id="KGk-i7-Jjw" customClass="ResumeReadingTableViewCell" customModule="Toonstreet" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="590" height="588"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="485" height="323"/>
+                <rect key="frame" x="0.0" y="0.0" width="590" height="588"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEi-Fv-UGZ">
-                        <rect key="frame" x="0.0" y="0.0" width="485" height="323"/>
+                        <rect key="frame" x="0.0" y="0.0" width="590" height="588"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWu-Lk-DEQ" customClass="TSLabel" customModule="Toonstreet" customModuleProvider="target">
-                                <rect key="frame" x="23" y="10" width="41.5" height="18.5"/>
+                                <rect key="frame" x="23" y="10" width="41.5" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OXq-0l-J6f">
-                                <rect key="frame" x="23" y="46.5" width="462" height="258.5"/>
+                                <rect key="frame" x="23" y="66.5" width="567" height="503.5"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hr3-eA-Yp8" customClass="ResumeReadingCollectionView" customModule="Toonstreet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="462" height="258.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="567" height="503.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gHo-so-5TR">
                                             <size key="itemSize" width="128" height="128"/>
@@ -50,14 +50,14 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="950-64-XhC">
-                                <rect key="frame" x="442" y="9" width="20" height="20"/>
+                                <rect key="frame" x="547" y="19.5" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="3fO-SM-yJf"/>
                                     <constraint firstAttribute="height" constant="20" id="lOE-zL-rN3"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56M-LV-S4G">
-                                <rect key="frame" x="0.0" y="0.0" width="485" height="41.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="590" height="61.5"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             </button>
                         </subviews>
@@ -75,7 +75,7 @@
                             <constraint firstItem="mWu-Lk-DEQ" firstAttribute="top" secondItem="JEi-Fv-UGZ" secondAttribute="top" constant="10" id="mTb-gd-1MS"/>
                             <constraint firstItem="950-64-XhC" firstAttribute="centerY" secondItem="mWu-Lk-DEQ" secondAttribute="centerY" id="pd6-ku-ReZ"/>
                             <constraint firstAttribute="trailing" secondItem="OXq-0l-J6f" secondAttribute="trailing" id="rXD-hV-fbG"/>
-                            <constraint firstItem="OXq-0l-J6f" firstAttribute="height" secondItem="JEi-Fv-UGZ" secondAttribute="width" multiplier="200/375" priority="999" id="ull-BD-pJH"/>
+                            <constraint firstItem="OXq-0l-J6f" firstAttribute="height" secondItem="JEi-Fv-UGZ" secondAttribute="width" multiplier="320:375" priority="999" id="ull-BD-pJH"/>
                             <constraint firstItem="mWu-Lk-DEQ" firstAttribute="leading" secondItem="JEi-Fv-UGZ" secondAttribute="leading" constant="23" id="v5s-t1-KrQ"/>
                             <constraint firstItem="OXq-0l-J6f" firstAttribute="top" secondItem="mWu-Lk-DEQ" secondAttribute="bottom" constant="18" id="wV0-NE-UmD"/>
                         </constraints>
@@ -101,7 +101,7 @@
                 <outlet property="resumeCollectionView" destination="hr3-eA-Yp8" id="9y9-jq-317"/>
                 <outlet property="viewCollection" destination="OXq-0l-J6f" id="AiE-hw-kNV"/>
             </connections>
-            <point key="canvasLocation" x="257.24637681159425" y="92.075892857142847"/>
+            <point key="canvasLocation" x="333.33333333333337" y="103.79464285714285"/>
         </tableViewCell>
     </objects>
     <resources>
