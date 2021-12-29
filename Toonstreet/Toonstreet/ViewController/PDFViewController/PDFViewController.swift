@@ -13,13 +13,18 @@ import SDWebImage
 
 class PDFViewController: BaseViewController{//},UITableViewDelegate, UITableViewDataSource {
 
+    typealias DetailButtonClicked = ()->(Void)
+    var blockDetailButtonClicked:DetailButtonClicked?
+    
     var isLastEpisode:Bool?
     var episodeList:[String]?
     var bookTitle:String?
     var passIndex:Int = 0
     var selectedIndex:Int = 0
     var selectedComic:TSBook?
+    var selectedEpisode:TSEpisodes?
     
+    @IBOutlet weak var btnInfo: UIButton!
     @IBOutlet weak var btnBack: UIButton!
     @IBOutlet weak var tblView: UITableView!
     @IBOutlet weak var webKit: WKWebView!
@@ -67,6 +72,16 @@ class PDFViewController: BaseViewController{//},UITableViewDelegate, UITableView
   
     @IBAction func btnCloseClicked(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func btnInfoClicked(_ sender: Any) {
+        
+        self.dismiss(animated: false) {
+            if (self.blockDetailButtonClicked != nil){
+                self.blockDetailButtonClicked!()
+            }
+        }
+       
     }
     //MARK: Add Continue reading
     func addContinueReading(){
@@ -233,8 +248,12 @@ class PDFViewController: BaseViewController{//},UITableViewDelegate, UITableView
         if scrollView.contentOffset.y < 40
         {
             btnBack.isHidden = false
+            btnInfo.isHidden = false
+
         }else{
             btnBack.isHidden = true
+            btnInfo.isHidden = true
+
         }
 //            if scrollView.contentOffset.y < (scrollViewContentHeight - scrollViewHeight){
 //                //Custom view show

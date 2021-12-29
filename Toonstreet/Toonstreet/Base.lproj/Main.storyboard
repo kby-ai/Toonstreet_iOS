@@ -1794,6 +1794,14 @@
                                     <action selector="btnCloseClicked:" destination="WNi-mX-H87" eventType="touchUpInside" id="bWs-5v-l6S"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwa-hb-Srb">
+                                <rect key="frame" x="370" y="17" width="24" height="24"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="info"/>
+                                <connections>
+                                    <action selector="btnInfoClicked:" destination="WNi-mX-H87" eventType="touchUpInside" id="hcn-Ax-mMx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="o7E-YK-kzg"/>
                         <color key="backgroundColor" name="themeBlack"/>
@@ -1807,9 +1815,11 @@
                             <constraint firstItem="o7E-YK-kzg" firstAttribute="trailing" secondItem="242-v7-FMD" secondAttribute="trailing" id="LUq-ph-eYb"/>
                             <constraint firstItem="BXx-6d-GWp" firstAttribute="leading" secondItem="o7E-YK-kzg" secondAttribute="leading" id="LXS-es-NZh"/>
                             <constraint firstItem="j7L-kL-Fbu" firstAttribute="top" secondItem="o7E-YK-kzg" secondAttribute="top" id="MCv-HC-d0h"/>
+                            <constraint firstItem="o7E-YK-kzg" firstAttribute="trailing" secondItem="bwa-hb-Srb" secondAttribute="trailing" constant="20" id="Ojv-VL-Jwf"/>
                             <constraint firstItem="3gM-iQ-O4H" firstAttribute="trailing" secondItem="o7E-YK-kzg" secondAttribute="trailing" id="PQS-dJ-gca"/>
                             <constraint firstItem="o7E-YK-kzg" firstAttribute="trailing" secondItem="j7L-kL-Fbu" secondAttribute="trailing" id="WdQ-MO-DLS"/>
                             <constraint firstItem="3gM-iQ-O4H" firstAttribute="leading" secondItem="o7E-YK-kzg" secondAttribute="leading" id="e4S-KI-0Lc"/>
+                            <constraint firstItem="bwa-hb-Srb" firstAttribute="centerY" secondItem="NzL-9d-n93" secondAttribute="centerY" id="nPz-lK-2KU"/>
                             <constraint firstItem="dKs-qS-e97" firstAttribute="centerX" secondItem="UyY-qb-nnX" secondAttribute="centerX" id="nxv-RX-Kvn"/>
                             <constraint firstItem="dKs-qS-e97" firstAttribute="top" secondItem="j7L-kL-Fbu" secondAttribute="bottom" id="qVH-3m-4DK"/>
                             <constraint firstItem="BXx-6d-GWp" firstAttribute="top" secondItem="o7E-YK-kzg" secondAttribute="top" id="quW-fK-r38"/>
@@ -1823,6 +1833,7 @@
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <connections>
                         <outlet property="btnBack" destination="NzL-9d-n93" id="yDP-m3-T1Z"/>
+                        <outlet property="btnInfo" destination="bwa-hb-Srb" id="Ums-V7-jeV"/>
                         <outlet property="btnNext" destination="amr-v8-7u3" id="iRf-v7-jfb"/>
                         <outlet property="btnPrevious" destination="QQh-LS-KXp" id="mhh-j2-Gcx"/>
                         <outlet property="imgComic" destination="3gM-iQ-O4H" id="eGw-51-zGu"/>
@@ -2164,6 +2175,7 @@
         <image name="back" width="28" height="28"/>
         <image name="coin" width="28" height="28"/>
         <image name="dummyimage1" width="300" height="396"/>
+        <image name="info" width="24" height="24"/>
         <image name="logo" width="341.33334350585938" height="303.33334350585938"/>
         <image name="next" width="15.333333015441895" height="20"/>
         <image name="previous" width="15.333333015441895" height="20"/>

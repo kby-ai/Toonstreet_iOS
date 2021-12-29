@@ -11,6 +11,10 @@ import FirebaseStorage
 
 class EpidsodeDetailsViewController: BaseViewController {
 
+    typealias RedirectToPDF = ()->(Void)
+    var blockRedirectToPDF:RedirectToPDF?
+    
+    
     var isLastEpisode:Bool?
     var episodeList:[String]?
     var bookTitle:String?
@@ -18,7 +22,7 @@ class EpidsodeDetailsViewController: BaseViewController {
     var selectedIndex:Int = 0
     var episodes:TSEpisodes?
     var selectedComic:TSBook?
-    
+    var isFromBlock:Bool?
     
     @IBOutlet weak var lblProduction: TSLabel!
     @IBOutlet weak var lblTitle: TSLabel!
@@ -47,7 +51,15 @@ class EpidsodeDetailsViewController: BaseViewController {
 //        self.lblStaticRating.font = .font_semibold(12)
         self.leftBarButtonItems = [.BackArrow]
 
-
+    }
+    
+    override func navigationBackButton_Clicked() {
+        super.navigationBackButton_Clicked()
+        if isFromBlock == true{
+        if (self.blockRedirectToPDF != nil) {
+            self.blockRedirectToPDF!()
+        }
+        }
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
@@ -95,6 +107,26 @@ class EpidsodeDetailsViewController: BaseViewController {
             objPDFVC.bookTitle = self.bookTitle
             objPDFVC.episodeList = self.episodeList
             objPDFVC.isLastEpisode = self.isLastEpisode
+            objPDFVC.selectedEpisode = self.episodes
+
+            objPDFVC.blockDetailButtonClicked = { [unowned self]() in
+                        if let objAllEpisodeVC = self.storyboard?.instantiateViewController(withIdentifier: "EpidsodeDetailsViewController") as? EpidsodeDetailsViewController{
+                            objAllEpisodeVC.episodes = self.episodes
+                            objAllEpisodeVC.bookTitle = self.bookTitle ?? ""
+                            objAllEpisodeVC.episodeList = self.episodeList
+                            objAllEpisodeVC.selectedComic = self.selectedComic
+                            
+                            objAllEpisodeVC.blockRedirectToPDF = {
+
+                            self.navigationController?.present(objPDFVC, animated: false, completion: nil)
+
+                            }
+                            
+                            self.navigationController?.pushViewController(objAllEpisodeVC, animated: true)
+                        }
+            }
+            
+            
             tabBarController?.hidesBottomBarWhenPushed = true
             objPDFVC.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
 

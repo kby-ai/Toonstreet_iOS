@@ -296,12 +296,31 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
             objPDFVC.selectedComic = self.objBook
             objPDFVC.bookTitle = self.objBook?.title ?? ""
             objPDFVC.episodeList = self.objBook?.episodes[indexPath.row].strContent
-            
+            objPDFVC.selectedEpisode = self.objBook?.episodes[indexPath.row]
+
             if indexPath.row + 1 == self.objBook?.episodes.count{
                 objPDFVC.isLastEpisode = true
             }
             objPDFVC.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
 
+            objPDFVC.blockDetailButtonClicked = { [unowned self]() in
+                        if let objAllEpisodeVC = self.storyboard?.instantiateViewController(withIdentifier: "EpidsodeDetailsViewController") as? EpidsodeDetailsViewController{
+                            objAllEpisodeVC.episodes = self.objBook?.episodes[indexPath.row]
+                            objAllEpisodeVC.bookTitle = self.objBook?.title ?? ""
+                            objAllEpisodeVC.episodeList = self.objBook?.episodes[indexPath.row].strContent
+                            objAllEpisodeVC.selectedComic = self.objBook
+                            objAllEpisodeVC.isFromBlock = true
+                            objAllEpisodeVC.blockRedirectToPDF = {
+
+                                    self.navigationController?.present(objPDFVC, animated: false, completion: nil)
+
+                            }
+                            self.navigationController?.pushViewController(objAllEpisodeVC, animated: true)
+                        }
+            }
+
+            
+            
             self.navigationController?.present(objPDFVC, animated: true, completion: nil)
 
 //            self.navigationController?.pushViewController(objPDFVC, animated: true)

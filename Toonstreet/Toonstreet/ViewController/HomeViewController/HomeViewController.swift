@@ -123,7 +123,8 @@ class HomeViewController: BaseViewController {
                 
                 objPDFVC.selectedComic = book
                 objPDFVC.bookTitle = book.title
-                
+//                objPDFVC.selectedEpisode = book
+
                 if let dictTitle = self.objReadingDict.value(forKey: book.title) as? NSDictionary {
                    
                     if let arrEpisod = dictTitle["episode"] as? [String]{
