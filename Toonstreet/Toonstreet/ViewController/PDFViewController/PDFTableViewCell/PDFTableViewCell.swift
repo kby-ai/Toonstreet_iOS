@@ -16,11 +16,12 @@ class PDFTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.imgComic.enableZoom()
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        self.imgComic.enableZoom()
 
         // Configure the view for the selected state
     }

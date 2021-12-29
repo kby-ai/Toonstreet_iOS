@@ -227,8 +227,8 @@ class PDFViewController: BaseViewController{//},UITableViewDelegate, UITableView
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
 
-            let scrollViewContentHeight = scrollView.contentSize.height
-            let scrollViewHeight = scrollView.frame.height
+//            let scrollViewContentHeight = scrollView.contentSize.height
+//            let scrollViewHeight = scrollView.frame.height
 
         if scrollView.contentOffset.y < 40
         {
