@@ -58,7 +58,6 @@ let kOk = "OK"
 let kPlzCheckInternetConnection = "Please check your internet connection."
 
 
-
 struct Keys {
     static let kId = "id"
     static let kName = "name"

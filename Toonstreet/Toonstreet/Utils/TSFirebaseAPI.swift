@@ -22,10 +22,12 @@ struct APIKey {
 
     static let popular = "popular"
     static let newrelease = "newrelease"
+    static let purchasedByPublisher = "PurchasedByPublisher"
+
 //    static let purchasedBookIndex = "PurchasedBookIndex"
     
-    static let purchasedComic = "PurchasedComic"
-    static let continueReadingComic = "ContinueReadingComic"
+//    static let purchasedComic = "PurchasedComic"
+//    static let continueReadingComic = "ContinueReadingComic"
 
 
 }
@@ -197,7 +199,7 @@ class TSFirebaseAPI: NSObject {
             
             if available == true{
                                             
-                var bookMutableDict:NSMutableDictionary = NSMutableDictionary()
+                let bookMutableDict:NSMutableDictionary = NSMutableDictionary()
                 var arrPurchasedIndex:[Int] = []
                 bookMutableDict.setDictionary(book as! [AnyHashable : Any])
 
@@ -208,8 +210,37 @@ class TSFirebaseAPI: NSObject {
                 }else{
                     bookMutableDict.setValue([episode], forKey: "index")
                 }
+                var arrIssuesDict:[NSDictionary] = []
+                if let arrIssues = book.value(forKey: "issues") as? [NSDictionary]{
+//                    arrPurchasedIndex = arrIssues
+//                    arrPurchasedIndex.append(episode)
+//                    bookMutableDict.setValue(arrPurchasedIndex, forKey: "index")
+                    
+                    for index in 0..<arrIssues.count{
+//
+                        let dict:NSMutableDictionary = arrIssues[index] as! NSMutableDictionary
+                        dict.setValue(index, forKey: "episode_number")
+                        arrIssuesDict.append(dict)
+                    }
+                }else{
+                   // bookMutableDict.setValue([episode], forKey: "index")
+                }
+                
+                bookMutableDict.setValue(arrIssuesDict, forKey: "issues")
 //                bookDict = book;
+                
+                bookMutableDict.setValue(arrIssuesDict, forKey: "issues")
+                
+                
+                let todaysDate = Date()
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                let DateInFormat = dateFormatter.string(from: todaysDate)
+                bookMutableDict.setValue(DateInFormat, forKey: "purchased_date")            
+                
                 ref.child(APIKey.purchasedBookDict).child(TSUser.shared.uID).childByAutoId().setValue(bookMutableDict)
+                
+                
                 
                 
                 
