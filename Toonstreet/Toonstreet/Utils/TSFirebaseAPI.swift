@@ -18,7 +18,7 @@ struct APIKey {
     static let points = "Points"
     static let continueReading = "ContinueReading"
 //    static let purchasedBook = "PurchasedBook"
-    static let purchasedBookDict = "PurchasedBook1"
+    static let purchasedBookDict = "PurchasedBook"
 
     static let popular = "popular"
     static let newrelease = "newrelease"
@@ -191,9 +191,9 @@ class TSFirebaseAPI: NSObject {
     }
 
     
-    func purchaseBook(bookCoin:Int , book:NSDictionary, episode:Int , completion: @escaping (_ status:Bool)->()){
+    func purchaseBook(bookId:String , bookCoin:Int , book:NSDictionary, episode:Int , completion: @escaping (_ status:Bool , _ key:String )->()){
         
-        let ref = Database.database().reference(fromURL: FirebaseBaseURL)
+        let refPurchase = Database.database().reference(fromURL: FirebaseBaseURL)
 
         self.redeemCoins(redeemPoint: bookCoin) { available in
             
@@ -206,39 +206,73 @@ class TSFirebaseAPI: NSObject {
                 if let arrIndex = book.value(forKey: "index") as? [Int]{
                     arrPurchasedIndex = arrIndex
                     arrPurchasedIndex.append(episode)
+                    
                     bookMutableDict.setValue(arrPurchasedIndex, forKey: "index")
                 }else{
                     bookMutableDict.setValue([episode], forKey: "index")
                 }
+                
+                
+//                bookMutableDict["issues"][]
+                
+                if let value = bookMutableDict["issues"] as? Array<Any>{
+                    
+                    if let dict = value[episode] as? NSDictionary{
+                        let todaysDate = Date()
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.dateFormat = "yyyy-MM"
+                        let DateInFormat = dateFormatter.string(from: todaysDate)
+                        dict.setValue(DateInFormat, forKey: "purchased_date")
+                    }
+                    
+                    
+                }
+               
+                
+                
+                
                 var arrIssuesDict:[NSDictionary] = []
                 if let arrIssues = book.value(forKey: "issues") as? [NSDictionary]{
-//                    arrPurchasedIndex = arrIssues
-//                    arrPurchasedIndex.append(episode)
-//                    bookMutableDict.setValue(arrPurchasedIndex, forKey: "index")
-                    
+  
                     for index in 0..<arrIssues.count{
 //
                         let dict:NSMutableDictionary = arrIssues[index] as! NSMutableDictionary
                         dict.setValue(index, forKey: "episode_number")
                         arrIssuesDict.append(dict)
                     }
-                }else{
-                   // bookMutableDict.setValue([episode], forKey: "index")
                 }
                 
                 bookMutableDict.setValue(arrIssuesDict, forKey: "issues")
 //                bookDict = book;
                 
-                bookMutableDict.setValue(arrIssuesDict, forKey: "issues")
                 
                 
-                let todaysDate = Date()
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd"
-                let DateInFormat = dateFormatter.string(from: todaysDate)
-                bookMutableDict.setValue(DateInFormat, forKey: "purchased_date")            
+//
                 
-                ref.child(APIKey.purchasedBookDict).child(TSUser.shared.uID).childByAutoId().setValue(bookMutableDict)
+                
+                
+                if bookId != "" {
+                    refPurchase.child(APIKey.purchasedBookDict).child(TSUser.shared.uID).child(bookId).setValue(bookMutableDict)
+                    completion(true , bookId)
+                }else{
+                    
+//                    refPurchase.child(APIKey.purchasedBookDict).child(TSUser.shared.uID).observe(.childAdded)
+//                       { (snapshot:DataSnapshot) in
+//                           print(snapshot.key)
+//                           guard let value = snapshot.value else { return }
+//
+//                           completion(true , snapshot.key)
+//                           //-MsnFbqiVc76vNKLp0AQ , Msn5RH9OHIE5LVUIUkk
+//                       }
+                    
+                    let keyValue = refPurchase.child(APIKey.purchasedBookDict).child(TSUser.shared.uID).childByAutoId().key
+
+                    refPurchase.child(APIKey.purchasedBookDict).child(TSUser.shared.uID).child(keyValue ?? "").setValue(bookMutableDict)
+                    completion(true , keyValue ?? "")
+                  
+                    
+                }
+
                 
                 
                 
@@ -253,10 +287,9 @@ class TSFirebaseAPI: NSObject {
 
 //                    ref.child(APIKey.purchasedBook).child(TSUser.shared.uID).child(book.title).setValue(1)//.child(authResult.uid)
                 
-                completion(true)
             }
             else{
-                completion(false)
+                completion(false , "")
 
             }
           
@@ -443,6 +476,8 @@ class TSFirebaseAPI: NSObject {
                 
                 for strKey in objDict.allKeys{
                     if let dictObj = objDict.value(forKey: strKey as! String) as? NSDictionary{
+                        
+                        dictObj.setValue(strKey, forKey: "bookId")
                         self.arrPurchasedComicDict.append(dictObj)
                         
                         let tsBook = TSBook.init(dictObj:dictObj)

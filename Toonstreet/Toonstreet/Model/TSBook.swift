@@ -20,7 +20,7 @@ class TSBook: TSModel {
     var selectedEpison:[String] = []
     var isPurchased:Int = 0
     var index:[Int] = []
-
+    var bookId:String = ""
     override init() {
         super.init()
     }
@@ -30,7 +30,11 @@ class TSBook: TSModel {
         if (dictObj["title"] as? String) != nil{
             title = dictObj["title"] as? String ?? ""
         }
+        if (dictObj["bookId"] as? String) != nil{
+            bookId = dictObj["bookId"] as? String ?? ""
+        }
         
+            
         if (dictObj["synopsis"] as? String) != nil{
             synopsis = dictObj["synopsis"] as? String ?? ""
         }

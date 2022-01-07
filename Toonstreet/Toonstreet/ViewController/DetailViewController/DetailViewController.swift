@@ -312,7 +312,7 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
                             objAllEpisodeVC.isFromBlock = true
                             objAllEpisodeVC.blockRedirectToPDF = {
 
-                                    self.navigationController?.present(objPDFVC, animated: false, completion: nil)
+                            self.navigationController?.present(objPDFVC, animated: false, completion: nil)
 
                             }
                             self.navigationController?.pushViewController(objAllEpisodeVC, animated: true)
@@ -347,6 +347,7 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
                     
                     if purchasedDict1.count > 0{
                         purchasedDict = purchasedDict1[0] as! NSMutableDictionary
+                        
                     }else{
                         let purchasedDict2 =  TSFirebaseAPI.shared.arrNewReleaseDict.filter({$0.value(forKey: "title" ) as? String == self.objBook?.title})
                         
@@ -354,12 +355,23 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
                             purchasedDict = purchasedDict2[0] as! NSMutableDictionary
                         }
                     }
+                    
+                    if let indexArr = self.objBook?.index{
+                        
+                        purchasedDict.setValue(indexArr, forKey: "index")
+                    }
                                      
-                    TSFirebaseAPI.shared.purchaseBook(bookCoin: 4, book: purchasedDict , episode: indexPath) { [unowned self] status in
+                    var bookId = ""
+                    
+                    if let value = self.objBook?.bookId {
+                        bookId = value
+                    }
+                    TSFirebaseAPI.shared.purchaseBook(bookId: bookId, bookCoin: 4, book: purchasedDict , episode: indexPath) { [unowned self] (status,childKey)  in
                         if status == true{
                             self.objBook?.isPurchased = 1
                             self.objBook?.episodes[index].isPurchased = 1
                             self.objBook?.index.append(indexPath)
+                            self.objBook?.bookId = childKey
                             UIAlertController.showAlert(withTitle: "Success!", andMessage: "Episode purchased successfully", andButtonTitles: ["OK"]){ [unowned self] index in
 
                                 if let objPDFVC = self.storyboard?.instantiateViewController(withIdentifier: "PDFViewController") as? PDFViewController{
@@ -377,7 +389,6 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
 
                                     self.navigationController?.present(objPDFVC, animated: true, completion: nil)
 
-//                                    self.navigationController?.pushViewController(objPDFVC, animated: true)
                                 }
                             }
                         }else{
